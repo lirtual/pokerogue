@@ -780,11 +780,11 @@ export const modifierTypes = {
   RARE_EVOLUTION_ITEM: () => new EvolutionItemModifierTypeGenerator(true),
   FORM_CHANGE_ITEM: () => new FormChangeItemModifierTypeGenerator(),
 
-  MEGA_BRACELET: () => new ModifierType('超级手镯', '超级石可以使用了。', (type, _args) => new Modifiers.MegaEvolutionAccessModifier(type)),
-  DYNAMAX_BAND: () => new ModifierType('极巨腕带', '极巨蘑菇可以使用了。', (type, _args) => new Modifiers.GigantamaxAccessModifier(type)),
-  TERA_ORB: () => new ModifierType('太晶珠', '太晶碎块可以使用了。', (type, _args) => new Modifiers.TerastallizeAccessModifier(type)),
+  MEGA_BRACELET: () => new ModifierType('超级手镯', '解锁超级进化石。', (type, _args) => new Modifiers.MegaEvolutionAccessModifier(type)),
+  DYNAMAX_BAND: () => new ModifierType('极巨腕带', '解锁极巨菇菇。', (type, _args) => new Modifiers.GigantamaxAccessModifier(type)),
+  TERA_ORB: () => new ModifierType('太晶珠', '解锁太晶碎块。', (type, _args) => new Modifiers.TerastallizeAccessModifier(type)),
 
-  MAP: () => new ModifierType('地图', '让你在岔路口选择你的目的地', (type, _args) => new Modifiers.MapModifier(type)),
+  MAP: () => new ModifierType('地图', '允许你在十字路口选择目的地', (type, _args) => new Modifiers.MapModifier(type)),
 
   POTION: () => new PokemonHpRestoreModifierType('伤药', 20, 10),
   SUPER_POTION: () => new PokemonHpRestoreModifierType('好伤药', 50, 25),
@@ -803,7 +803,7 @@ export const modifierTypes = {
     (type, args) => new Modifiers.PokemonInstantReviveModifier(type, (args[0] as Pokemon).id)),
 
   ETHER: () => new PokemonPpRestoreModifierType('ＰＰ单项小补剂', 10),
-  MAX_ETHER: () => new PokemonPpRestoreModifierType('Max Ether', -1),
+  MAX_ETHER: () => new PokemonPpRestoreModifierType('ＰＰ单项全补剂', -1),
 
   ELIXIR: () => new PokemonAllMovePpRestoreModifierType('ＰＰ多项小补剂', 10),
   MAX_ELIXIR: () => new PokemonAllMovePpRestoreModifierType('ＰＰ多项全补剂', -1),
@@ -881,17 +881,17 @@ export const modifierTypes = {
 
   MEMORY_MUSHROOM: () => new RememberMoveModifierType('记忆蘑菇', '让一只宝可梦回忆起遗忘的招式', 'big_mushroom'),
 
-  EXP_SHARE: () => new ModifierType('全体经验值', '非参与者获得单个参与者20%的经验值。',
-    (type, _args) => new Modifiers.ExpShareModifier(type), 'exp_share'),
-  EXP_BALANCE: () => new ModifierType('平衡经验值', '将战斗中获得的经验值\n偏向等级较低的队伍成员',
-    (type, _args) => new Modifiers.ExpBalanceModifier(type)),
+  EXP_SHARE: () => new ModifierType('学习装置', '未参加战斗的宝可梦获得20%的经验值。',
+  (type, _args) => new Modifiers.ExpShareModifier(type), 'exp_share'),
+  EXP_BALANCE: () => new ModifierType('平衡秤', '战斗获得的经验值会向等级较低的队伍成员倾斜',
+  (type, _args) => new Modifiers.ExpBalanceModifier(type)),  
 
-  OVAL_CHARM: () => new ModifierType('圆形护符', '当多只宝可梦参与战斗时，每只宝可梦\n获得额外10%的总经验值。',
-    (type, _args) => new Modifiers.MultipleParticipantExpBonusModifier(type)),
+  OVAL_CHARM: () => new ModifierType('圆形护符', '当多只宝可梦参与战斗时，每只宝可梦获得额外10%的总经验值。',
+(type, _args) => new Modifiers.MultipleParticipantExpBonusModifier(type)),
 
-  EXP_CHARM: () => new ExpBoosterModifierType('魅力经验值', 25),
-  SUPER_EXP_CHARM: () => new ExpBoosterModifierType('超级魅力经验值', 60),
-  GOLDEN_EXP_CHARM: () => new ExpBoosterModifierType('黄金魅力经验值', 100),
+  EXP_CHARM: () => new ExpBoosterModifierType('经验护符', 25),
+  SUPER_EXP_CHARM: () => new ExpBoosterModifierType('超级经验护符', 60),
+  GOLDEN_EXP_CHARM: () => new ExpBoosterModifierType('黄金经验护符', 100),
 
   LUCKY_EGG: () => new PokemonExpBoosterModifierType('幸运蛋', 40),
   GOLDEN_EGG: () => new PokemonExpBoosterModifierType('黄金蛋', 100),
@@ -933,14 +933,14 @@ export const modifierTypes = {
   SHELL_BELL: () => new PokemonHeldItemModifierType('贝壳之铃', '恢复宝可梦造成伤害的1/8',
     (type, args) => new Modifiers.HitHealModifier(type, (args[0] as Pokemon).id)),
 
-  BATON: () => new PokemonHeldItemModifierType('接棒', '切换宝可梦时可以传递效果，\n并且可以绕过陷阱',
-    (type, args) => new Modifiers.SwitchEffectTransferModifier(type, (args[0] as Pokemon).id), 'stick'),
-
-  SHINY_CHARM: () => new ModifierType('闪耀护符', '大幅提升野生宝可梦出现闪光的几率', (type, _args) => new Modifiers.ShinyRateBoosterModifier(type)),
-  ABILITY_CHARM: () => new ModifierType('特性护符', '允许在切换宝可梦时传递效果，\n这也绕过了陷阱，大大增加了\n野生宝可梦拥有隐藏能力的几率', (type, _args) => new Modifiers.HiddenAbilityRateBoosterModifier(type)),
-
-  IV_SCANNER: () => new ModifierType('个体值扫描仪', '允许扫描野生宝可梦的IV。每叠显示\n2个IV。首先显示最佳IV。', (type, _args) => new Modifiers.IvScannerModifier(type), 'scanner'),
-
+  BATON: () => new PokemonHeldItemModifierType('接力棒', '切换宝可梦时可以传递效果，\n并且可以绕过陷阱',
+  (type, args) => new Modifiers.SwitchEffectTransferModifier(type, (args[0] as Pokemon).id), 'stick'),
+  
+  SHINY_CHARM: () => new ModifierType('闪光护符', '大幅提高野生宝可梦闪光的几率', (type, _args) => new Modifiers.ShinyRateBoosterModifier(type)),
+  ABILITY_CHARM: () => new ModifierType('特性护符', '大幅提高野生宝可梦拥有隐藏特性的几率', (type, _args) => new Modifiers.HiddenAbilityRateBoosterModifier(type)),
+  
+  IV_SCANNER: () => new ModifierType('个体值扫描仪', '允许扫描野生宝可梦的个体值，每层显示2个个体值，最好的个体值会先显示。', (type, _args) => new Modifiers.IvScannerModifier(type), 'scanner'),
+    
   DNA_SPLICERS: () => new FusePokemonModifierType('基因之楔'),
 
   MINI_BLACK_HOLE: () => new TurnHeldItemTransferModifierType('迷你黑洞'),
@@ -952,17 +952,17 @@ export const modifierTypes = {
   GOLDEN_POKEBALL: () => new ModifierType(`黄金${getPokeballName(PokeballType.POKEBALL)}`, '在每场战斗结束时添加1个\n额外的物品选项',
     (type, _args) => new Modifiers.ExtraModifierModifier(type), 'pb_gold', null, 'pb_bounce_1'),
 
-  ENEMY_DAMAGE_BOOSTER: () => new ModifierType('伤害令牌', '提高伤害5%', (type, _args) => new Modifiers.EnemyDamageBoosterModifier(type, 5), 'wl_item_drop'),
-  ENEMY_DAMAGE_REDUCTION: () => new ModifierType('保护令牌', '减少受到的伤害2.5%', (type, _args) => new Modifiers.EnemyDamageReducerModifier(type, 2.5), 'wl_guard_spec'),
+  ENEMY_DAMAGE_BOOSTER: () => new ModifierType('伤害令牌', '将伤害提高5%', (type, _args) => new Modifiers.EnemyDamageBoosterModifier(type, 5), 'wl_item_drop'), 
+  ENEMY_DAMAGE_REDUCTION: () => new ModifierType('保护令牌', '将受到的伤害降低2.5%', (type, _args) => new Modifiers.EnemyDamageReducerModifier(type, 2.5), 'wl_guard_spec'), 
   //ENEMY_SUPER_EFFECT_BOOSTER: () => new ModifierType('Type Advantage Token', 'Increases damage of super effective attacks by 30%', (type, _args) => new Modifiers.EnemySuperEffectiveDamageBoosterModifier(type, 30), 'wl_custom_super_effective'),
-  ENEMY_HEAL: () => new ModifierType('再生令牌', '每回合恢复最大生命值的2%', (type, _args) => new Modifiers.EnemyTurnHealModifier(type, 2), 'wl_potion'),
-  ENEMY_ATTACK_POISON_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('毒药令牌', 10, StatusEffect.POISON, 'wl_antidote'),
-  ENEMY_ATTACK_PARALYZE_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('麻痹令牌', 10, StatusEffect.PARALYSIS, 'wl_paralyze_heal'),
-  ENEMY_ATTACK_SLEEP_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('睡眠令牌', 10, StatusEffect.SLEEP, 'wl_awakening'),
-  ENEMY_ATTACK_FREEZE_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('冻结令牌', 10, StatusEffect.FREEZE, 'wl_ice_heal'),
-  ENEMY_ATTACK_BURN_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('燃烧令牌', 10, StatusEffect.BURN, 'wl_burn_heal'),
-  ENEMY_STATUS_EFFECT_HEAL_CHANCE: () => new ModifierType('痊愈令牌', '每回合有10%的几率治愈异常状态', (type, _args) => new Modifiers.EnemyStatusEffectHealChanceModifier(type, 10), 'wl_full_heal'),
-  ENEMY_ENDURE_CHANCE: () => new EnemyEndureChanceModifierType('忍耐令牌', 2.5, 'wl_reset_urge'),
+  ENEMY_HEAL: () => new ModifierType('再生令牌', '每回合恢复最大生命值的2%', (type, _args) => new Modifiers.EnemyTurnHealModifier(type, 2), 'wl_potion'), 
+  ENEMY_ATTACK_POISON_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('毒药令牌', 10, StatusEffect.POISON, 'wl_antidote'), 
+  ENEMY_ATTACK_PARALYZE_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('麻痹令牌', 10, StatusEffect.PARALYSIS, 'wl_paralyze_heal'), 
+  ENEMY_ATTACK_SLEEP_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('睡眠令牌', 10, StatusEffect.SLEEP, 'wl_awakening'), 
+  ENEMY_ATTACK_FREEZE_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('冻结令牌', 10, StatusEffect.FREEZE, 'wl_ice_heal'), 
+  ENEMY_ATTACK_BURN_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('燃烧令牌', 10, StatusEffect.BURN, 'wl_burn_heal'), 
+  ENEMY_STATUS_EFFECT_HEAL_CHANCE: () => new ModifierType('痊愈令牌', '每回合有10%的几率治愈异常状态', (type, _args) => new Modifiers.EnemyStatusEffectHealChanceModifier(type, 10), 'wl_full_heal'), 
+  ENEMY_ENDURE_CHANCE: () => new EnemyEndureChanceModifierType('忍耐令牌', 2.5, 'wl_reset_urge'), 
   ENEMY_FUSED_CHANCE: () => new ModifierType('融合令牌', '野生宝可梦有1%的几率是融合宝可梦', (type, _args) => new Modifiers.EnemyFusionChanceModifier(type, 1), 'wl_custom_spliced'),
 };
 
