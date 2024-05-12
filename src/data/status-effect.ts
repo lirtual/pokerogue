@@ -35,17 +35,17 @@ export function getStatusEffectObtainText(statusEffect: StatusEffect, sourceText
   const sourceClause = sourceText ? ` ${statusEffect !== StatusEffect.SLEEP ? 'by' : 'from'} ${sourceText}` : '';
   switch (statusEffect) {
     case StatusEffect.POISON:
-      return `\nwas poisoned${sourceClause}!`;
+      return `\n中毒了${sourceClause}！`;
     case StatusEffect.TOXIC:
-      return `\nwas badly poisoned${sourceClause}!`;
+      return `\n中了剧毒${sourceClause}！`;
     case StatusEffect.PARALYSIS:
-      return ` was paralyzed${sourceClause}!\nIt may be unable to move!`;
+      return `陷入麻痹状态了${sourceClause}！\n它可能无法动弹！`;
     case StatusEffect.SLEEP:
-      return `\nfell asleep${sourceClause}!`;
+      return `\n睡着了${sourceClause}！`;
     case StatusEffect.FREEZE:
-      return `\nwas frozen solid${sourceClause}!`;
+      return `\n被冻住了${sourceClause}！`;
     case StatusEffect.BURN:
-      return `\nwas burned${sourceClause}!`;
+      return `\n被烧伤了${sourceClause}！`;
   }
 
   return '';
@@ -55,15 +55,15 @@ export function getStatusEffectActivationText(statusEffect: StatusEffect): strin
   switch (statusEffect) {
     case StatusEffect.POISON:
     case StatusEffect.TOXIC:
-      return ' is hurt\nby poison!';
+      return '中毒了！';
     case StatusEffect.PARALYSIS:
-      return ' is paralyzed!\nIt can\'t move!';
+      return '麻痹了！\n它不能动了！';
     case StatusEffect.SLEEP:
-      return ' is fast asleep.';
+      return '睡着了。';
     case StatusEffect.FREEZE:
-      return ' is\nfrozen solid!';
+      return '冰冻了！';
     case StatusEffect.BURN:
-      return ' is hurt\nby its burn!';
+      return '被灼伤了！';
   }
 
   return '';
@@ -73,15 +73,15 @@ export function getStatusEffectOverlapText(statusEffect: StatusEffect): string {
   switch (statusEffect) {
     case StatusEffect.POISON:
     case StatusEffect.TOXIC:
-      return ' is\nalready poisoned!';
+      return '\n已经中毒了！';
     case StatusEffect.PARALYSIS:
-      return ' is\nalready paralyzed!';
+      return '\n已经麻痹了！';
     case StatusEffect.SLEEP:
-      return ' is\nalready asleep!';
+      return '\n已经睡着了！';
     case StatusEffect.FREEZE:
-      return ' is\nalready frozen!';
+      return '\n已经冰冻了！';
     case StatusEffect.BURN:
-      return ' is\nalready burned!';
+      return '\n已经烧伤了！';
   }
 
   return '';
@@ -91,15 +91,15 @@ export function getStatusEffectHealText(statusEffect: StatusEffect): string {
   switch (statusEffect) {
     case StatusEffect.POISON:
     case StatusEffect.TOXIC:
-      return ' was\ncured of its poison!';
+      return '\n解毒成功！';
     case StatusEffect.PARALYSIS:
-      return ' was\nhealed of paralysis!';
+      return '\n麻痹治好了！';
     case StatusEffect.SLEEP:
-      return ' woke up!';
+      return '\n醒过来了！';
     case StatusEffect.FREEZE:
-      return ' was\ndefrosted!';
+      return '\n解冻了！';
     case StatusEffect.BURN:
-      return ' was\nhealed of its burn!';
+      return '\n烧伤治好了！';
   }
 
   return '';
