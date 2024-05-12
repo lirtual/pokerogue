@@ -52,14 +52,14 @@ export class Voucher {
 export function getVoucherTypeName(voucherType: VoucherType): string {
   switch (voucherType) {
     case VoucherType.REGULAR:
-      return 'Egg Voucher';
+      return '普通蛋券';
     case VoucherType.PLUS:
-      return 'Egg Voucher Plus';
+      return '高级蛋券';
     case VoucherType.PREMIUM:
-      return 'Egg Voucher Premium';
+      return '稀有蛋券';
     case VoucherType.GOLDEN:
-      return 'Egg Voucher Gold';
-  }
+      return '黄金蛋券';
+  }  
 }
 
 export function getVoucherTypeIcon(voucherType: VoucherType): string {
@@ -107,7 +107,7 @@ const voucherAchvs: Achv[] = [ achvs.CLASSIC_VICTORY ];
           ? VoucherType.PLUS
           : VoucherType.PREMIUM;
         const key = TrainerType[trainerType];
-        vouchers[key] = new Voucher(voucherType, `Defeat ${trainerConfigs[trainerType].name}`);
+        vouchers[key] = new Voucher(voucherType, `击败${trainerConfigs[trainerType].name}`);
       }
 
       const voucherKeys = Object.keys(vouchers);

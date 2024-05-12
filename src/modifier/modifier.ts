@@ -774,7 +774,7 @@ export class TurnHealModifier extends PokemonHeldItemModifier {
     if (pokemon.getHpRatio() < 1) {
       const scene = pokemon.scene;
       scene.unshiftPhase(new PokemonHealPhase(scene, pokemon.getBattlerIndex(),
-        Math.max(Math.floor(pokemon.getMaxHp() / 16) * this.stackCount, 1), getPokemonMessage(pokemon, `'s ${this.type.name}\nrestored its HP a little!`), true));
+        Math.max(Math.floor(pokemon.getMaxHp() / 16) * this.stackCount, 1), getPokemonMessage(pokemon, `${this.type.name}属性的宝可梦\n恢复了少许HP！`), true));
       return true;
     }
 
@@ -805,7 +805,7 @@ export class HitHealModifier extends PokemonHeldItemModifier {
     if (pokemon.turnData.damageDealt && pokemon.getHpRatio() < 1) {
       const scene = pokemon.scene;
       scene.unshiftPhase(new PokemonHealPhase(scene, pokemon.getBattlerIndex(),
-        Math.max(Math.floor(pokemon.turnData.damageDealt / 8) * this.stackCount, 1), getPokemonMessage(pokemon, `'s ${this.type.name}\nrestored its HP a little!`), true));
+        Math.max(Math.floor(pokemon.turnData.damageDealt / 8) * this.stackCount, 1), getPokemonMessage(pokemon, `的${this.type.name}属性\n恢复了少许 HP！`), true));
     }
 
     return true;
@@ -935,7 +935,7 @@ export class PokemonInstantReviveModifier extends PokemonHeldItemModifier {
     const pokemon = args[0] as Pokemon;
 
     pokemon.scene.unshiftPhase(new PokemonHealPhase(pokemon.scene, pokemon.getBattlerIndex(),
-      Math.max(Math.floor(pokemon.getMaxHp() / 2), 1), getPokemonMessage(pokemon, ` was revived\nby its ${this.type.name}!`), false, false, true));
+      Math.max(Math.floor(pokemon.getMaxHp() / 2), 1), getPokemonMessage(pokemon, `因其${this.type.name}属性\n而复活了！`), false, false, true));
 
     pokemon.resetStatus();
 
@@ -1647,7 +1647,7 @@ export class MoneyInterestModifier extends PersistentModifier {
     const interestAmount = Math.floor(scene.money * 0.1 * this.getStackCount());
     scene.addMoney(interestAmount);
 
-    scene.queueMessage(`You received interest of ₽${interestAmount.toLocaleString('en-US')}\nfrom the ${this.type.name}!`, null, true);
+    scene.queueMessage(`你从${this.type.name}获得了₽${interestAmount.toLocaleString('en-US')}\n的利息！`, null, true);
 
     return true;
   }
@@ -1834,7 +1834,7 @@ export class TurnHeldItemTransferModifier extends HeldItemTransferModifier {
   }
 
   getTransferMessage(pokemon: Pokemon, targetPokemon: Pokemon, item: ModifierTypes.ModifierType): string {
-    return getPokemonMessage(targetPokemon, `'s ${item.name} was absorbed\nby ${pokemon.name}'s ${this.type.name}!`);
+    return getPokemonMessage(targetPokemon, `的${item.name}被${pokemon.name}的${this.type.name}吸收了！`);
   }
 
   getMaxHeldItemCount(pokemon: Pokemon): integer {
@@ -1868,7 +1868,7 @@ export class ContactHeldItemTransferChanceModifier extends HeldItemTransferModif
   }
 
   getTransferMessage(pokemon: Pokemon, targetPokemon: Pokemon, item: ModifierTypes.ModifierType): string {
-    return getPokemonMessage(targetPokemon, `'s ${item.name} was snatched\nby ${pokemon.name}'s ${this.type.name}!`);
+    return getPokemonMessage(targetPokemon, `的${item.name}被${pokemon.name}的${this.type.name}抢走了！`);
   }
 
   getMaxHeldItemCount(pokemon: Pokemon): integer {
@@ -2026,7 +2026,7 @@ export class EnemyTurnHealModifier extends EnemyPersistentModifier {
     if (pokemon.getHpRatio() < 1) {
       const scene = pokemon.scene;
       scene.unshiftPhase(new PokemonHealPhase(scene, pokemon.getBattlerIndex(),
-        Math.max(Math.floor(pokemon.getMaxHp() / (100 / this.healPercent)) * this.stackCount, 1), getPokemonMessage(pokemon, `\nrestored some HP!`), true, false, false, false, true));
+        Math.max(Math.floor(pokemon.getMaxHp() / (100 / this.healPercent)) * this.stackCount, 1), getPokemonMessage(pokemon, `\n恢复了一些 HP！`), true, false, false, false, true));
       return true;
     }
 

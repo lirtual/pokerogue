@@ -56,34 +56,36 @@ export function getEggDescriptor(egg: Egg): string {
     return 'Manaphy';
   switch (egg.tier) {
     case EggTier.GREAT:
-      return 'Rare';
+      return '稀有';
     case EggTier.ULTRA:
-      return 'Epic';
+      return '史诗';
     case EggTier.MASTER:
-      return 'Legendary';
+      return '传说';
     default:
-      return 'Common';
-  }
+      return '普通';
+  }  
 }
 
 export function getEggHatchWavesMessage(hatchWaves: integer): string {
-  if (hatchWaves <= 5)
-    return 'Sounds can be heard coming from inside! It will hatch soon!';
-  if (hatchWaves <= 15)
-    return 'It appears to move occasionally. It may be close to hatching.';
-  if (hatchWaves <= 50)
-    return 'What will hatch from this? It doesn\'t seem close to hatching.';
-  return 'It looks like this Egg will take a long time to hatch.';
+  if (hatchWaves <= 5) {
+    return '可以听到里面传来的声音！很快就会孵化！';
+  } else if (hatchWaves <= 15) {
+    return '它似乎偶尔会动。可能快要孵化了。';
+  } else if (hatchWaves <= 50) {
+    return '会从里面孵出什么？它看起来离孵化还很远。';
+  } else {
+    return '看起来这颗蛋需要很长时间才能孵化。';
+  }
 }
 
 export function getEggGachaTypeDescriptor(scene: BattleScene, egg: Egg): string {
   switch (egg.gachaType) {
     case GachaType.LEGENDARY:
-      return `Legendary Rate Up (${getPokemonSpecies(getLegendaryGachaSpeciesForTimestamp(scene, egg.timestamp)).getName()})`;
+      return `传说宝可梦概率提升（${getPokemonSpecies(getLegendaryGachaSpeciesForTimestamp(scene, egg.timestamp)).getName()}）`;
     case GachaType.MOVE:
-      return 'Rare Egg Move Rate Up';
+      return '稀有招式概率提升';
     case GachaType.SHINY:
-      return 'Shiny Rate Up';
+      return '闪光宝可梦概率提升';
   }
 }
 

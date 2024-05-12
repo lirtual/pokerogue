@@ -69,7 +69,7 @@ function getTextStyleOptions(style: TextStyle, uiTheme: UiTheme, extraStyleOptio
 
   let styleOptions: Phaser.Types.GameObjects.Text.TextStyle = {
     fontFamily: 'emerald',
-    fontSize: '96px',
+    fontSize: '84px',
     color: getTextColor(style, false, uiTheme),
     padding: {
       bottom: 6
@@ -90,21 +90,21 @@ function getTextStyleOptions(style: TextStyle, uiTheme: UiTheme, extraStyleOptio
     case TextStyle.MESSAGE:
     case TextStyle.SETTINGS_LABEL:
     case TextStyle.SETTINGS_SELECTED:
-      styleOptions.fontSize = '96px';
+      styleOptions.fontSize = '83px';
       break;
     case TextStyle.BATTLE_INFO:
     case TextStyle.MONEY:
     case TextStyle.TOOLTIP_TITLE:
-      styleOptions.fontSize = '72px';
+      styleOptions.fontSize = '56px';
       shadowSize = 4.5;
       break;
     case TextStyle.PARTY:
     case TextStyle.PARTY_RED:
-      styleOptions.fontFamily = 'pkmnems';
-      styleOptions.fontSize = '66px';
+      // styleOptions.fontFamily = 'pkmnems';
+      styleOptions.fontSize = '56px';
       break;
     case TextStyle.TOOLTIP_CONTENT:
-      styleOptions.fontSize = '64px';
+      styleOptions.fontSize = '56px';
       shadowSize = 4;
       break;
     case TextStyle.MOVE_INFO_CONTENT:

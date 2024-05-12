@@ -220,7 +220,7 @@ export function executeIf<T>(condition: boolean, promiseFunc: () => Promise<T>):
 }
 
 export const sessionIdKey = 'pokerogue_sessionId';
-export const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '';
+export const isLocal = true; // 开启本地导入功能 window.location.hostname === 'localhost' || window.location.hostname === '';
 export const serverUrl = isLocal ? 'http://localhost:8001' : '';
 export const apiUrl = isLocal ? serverUrl : 'https://api.pokerogue.net';
 
@@ -341,4 +341,14 @@ export function rgbHexToRgba(hex: string) {
 
 export function rgbaToInt(rgba: integer[]): integer {
   return (rgba[0] << 24) + (rgba[1] << 16) + (rgba[2] << 8) + rgba[3];
+}
+
+export function wrapText(text: string, wrapLength:integer) {
+  let wrappedText = '';
+
+  for (let i = 0; i < text.length; i += wrapLength) {
+    wrappedText += text.slice(i, i + wrapLength) + '\n';
+  }
+
+  return wrappedText;
 }

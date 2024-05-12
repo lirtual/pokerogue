@@ -31,6 +31,37 @@ export enum Setting {
   Vibration = "VIBRATION"
 }
 
+// 定义一个映射表，将枚举值映射到对应的中文值
+const settingMap = {
+  [Setting.Game_Speed]: '游戏速度',
+  [Setting.Master_Volume]: '主音量',
+  [Setting.BGM_Volume]: '背景音乐音量',
+  [Setting.SE_Volume]: '音效音量',
+  [Setting.Language]: '语言',
+  [Setting.Damage_Numbers]: '伤害数值',
+  [Setting.UI_Theme]: '界面主题',
+  [Setting.Window_Type]: '窗口类型',
+  [Setting.Tutorials]: '教程',
+  [Setting.Enable_Retries]: '启用重试',
+  [Setting.Sprite_Set]: '精灵图集',
+  [Setting.Move_Animations]: '招式动画',
+  [Setting.Show_Stats_on_Level_Up]: '升级时显示能力值',
+  [Setting.EXP_Gains_Speed]: '经验获取速度',
+  [Setting.EXP_Party_Display]: '队伍经验显示',
+  [Setting.HP_Bar_Speed]: '生命条速度',
+  [Setting.Fusion_Palette_Swaps]: '合体调色板交换',
+  [Setting.Player_Gender]: '玩家性别',
+  [Setting.Gamepad_Support]: '手柄支持',
+  [Setting.Swap_A_and_B]: '交换A和B按钮',
+  [Setting.Touch_Controls]: '触控操作',
+  [Setting.Vibration]: '震动'
+};
+
+// 获取对应枚举值的中文值
+export function getSettingChineseValue(setting: Setting) {
+  return settingMap[setting];
+}
+
 export interface SettingOptions {
   [key: string]: string[]
 }

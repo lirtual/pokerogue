@@ -7,7 +7,7 @@ import MessageUiHandler from "./message-ui-handler";
 import { Gender, getGenderColor, getGenderSymbol } from "../data/gender";
 import { allAbilities } from "../data/ability";
 import { GameModes, gameModes } from "../game-mode";
-import { GrowthRate, getGrowthRateColor } from "../data/exp";
+import { GrowthRate, getGrowthRateColor, getGrowthRateChineseValue } from "../data/exp";
 import { AbilityAttr, DexAttr, DexAttrProps, DexEntry, Passive as PassiveAttr, StarterFormMoveData, StarterMoveset } from "../system/game-data";
 import * as Utils from "../utils";
 import PokemonIconAnimHandler, { PokemonIconAnimMode } from "./pokemon-icon-anim-handler";
@@ -220,55 +220,55 @@ export default class StarterSelectUiHandler extends MessageUiHandler {
     this.iconAnimHandler = new PokemonIconAnimHandler();
     this.iconAnimHandler.setup(this.scene);
 
-    this.pokemonNumberText = addTextObject(this.scene, 17, 1, '0000', TextStyle.SUMMARY);
+    this.pokemonNumberText = addTextObject(this.scene, 18, 4, '0000', TextStyle.SUMMARY, { fontSize: '64px' });
     this.pokemonNumberText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonNumberText);
 
-    this.pokemonNameText = addTextObject(this.scene, 6, 112, '', TextStyle.SUMMARY);
+    this.pokemonNameText = addTextObject(this.scene, 6, 113, '', TextStyle.SUMMARY, { fontSize: '64px' });
     this.pokemonNameText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonNameText);
 
-    this.pokemonGrowthRateLabelText = addTextObject(this.scene, 8, 106, i18next.t("starterSelectUiHandler:growthRate"), TextStyle.SUMMARY_ALT, { fontSize: '36px' });
+    this.pokemonGrowthRateLabelText = addTextObject(this.scene, 8, 105, i18next.t("starterSelectUiHandler:growthRate"), TextStyle.SUMMARY_ALT, { fontSize: '34px' });
     this.pokemonGrowthRateLabelText.setOrigin(0, 0);
     this.pokemonGrowthRateLabelText.setVisible(false);
     this.starterSelectContainer.add(this.pokemonGrowthRateLabelText);
 
-    this.pokemonGrowthRateText = addTextObject(this.scene, 34, 106, '', TextStyle.SUMMARY_PINK, { fontSize: '36px' });
+    this.pokemonGrowthRateText = addTextObject(this.scene, 36, 105, '', TextStyle.SUMMARY_PINK, { fontSize: '34px' });
     this.pokemonGrowthRateText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonGrowthRateText);
 
-    this.pokemonGenderText = addTextObject(this.scene, 96, 112, '', TextStyle.SUMMARY_ALT);
+    this.pokemonGenderText = addTextObject(this.scene, 92, 114, '', TextStyle.SUMMARY_ALT,  { fontSize: '52px' });
     this.pokemonGenderText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonGenderText);
 
-    this.pokemonUncaughtText = addTextObject(this.scene, 6, 127, 'Uncaught', TextStyle.SUMMARY_ALT, { fontSize: '56px' });
+    this.pokemonUncaughtText = addTextObject(this.scene, 6, 127, '未捕获', TextStyle.SUMMARY_ALT, { fontSize: '48px' });
     this.pokemonUncaughtText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonUncaughtText);
 
-    this.pokemonAbilityLabelText = addTextObject(this.scene, 6, 127, i18next.t("starterSelectUiHandler:ability"), TextStyle.SUMMARY_ALT, { fontSize: '56px' });
+    this.pokemonAbilityLabelText = addTextObject(this.scene, 6, 127, i18next.t("starterSelectUiHandler:ability"), TextStyle.SUMMARY_ALT, { fontSize: '48px' });
     this.pokemonAbilityLabelText.setOrigin(0, 0);
     this.pokemonAbilityLabelText.setVisible(false);
     this.starterSelectContainer.add(this.pokemonAbilityLabelText);
 
-    this.pokemonAbilityText = addTextObject(this.scene, 31, 127, '', TextStyle.SUMMARY_ALT, { fontSize: '56px' });
+    this.pokemonAbilityText = addTextObject(this.scene, 31, 127, '', TextStyle.SUMMARY_ALT, { fontSize: '48px' });
     this.pokemonAbilityText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonAbilityText);
 
-    this.pokemonPassiveLabelText = addTextObject(this.scene, 6, 136, i18next.t("starterSelectUiHandler:passive"), TextStyle.SUMMARY_ALT, { fontSize: '56px' });
+    this.pokemonPassiveLabelText = addTextObject(this.scene, 6, 136, i18next.t("starterSelectUiHandler:passive"), TextStyle.SUMMARY_ALT, { fontSize: '48px' });
     this.pokemonPassiveLabelText.setOrigin(0, 0);
     this.pokemonPassiveLabelText.setVisible(false);
     this.starterSelectContainer.add(this.pokemonPassiveLabelText);
 
-    this.pokemonPassiveText = addTextObject(this.scene, 31, 136, '', TextStyle.SUMMARY_ALT, { fontSize: '56px' });
+    this.pokemonPassiveText = addTextObject(this.scene, 31, 136, '', TextStyle.SUMMARY_ALT, { fontSize: '48px' });
     this.pokemonPassiveText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonPassiveText);
 
-    this.pokemonNatureLabelText = addTextObject(this.scene, 6, 145, i18next.t("starterSelectUiHandler:nature"), TextStyle.SUMMARY_ALT, { fontSize: '56px' });
+    this.pokemonNatureLabelText = addTextObject(this.scene, 6, 145, i18next.t("starterSelectUiHandler:nature"), TextStyle.SUMMARY_ALT, { fontSize: '48px' });
     this.pokemonNatureLabelText.setOrigin(0, 0);
     this.pokemonNatureLabelText.setVisible(false);
     this.starterSelectContainer.add(this.pokemonNatureLabelText);
 
-    this.pokemonNatureText = addBBCodeTextObject(this.scene, 31, 145, '', TextStyle.SUMMARY_ALT, { fontSize: '56px' });
+    this.pokemonNatureText = addBBCodeTextObject(this.scene, 31, 145, '', TextStyle.SUMMARY_ALT, { fontSize: '48px' });
     this.pokemonNatureText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonNatureText);
 
@@ -426,21 +426,21 @@ export default class StarterSelectUiHandler extends MessageUiHandler {
     this.pokemonSprite.setPipeline(this.scene.spritePipeline, { tone: [ 0.0, 0.0, 0.0, 0.0 ], ignoreTimeTint: true });
     this.starterSelectContainer.add(this.pokemonSprite);
 
-    this.type1Icon = this.scene.add.sprite(8, 98, 'types');
+    this.type1Icon = this.scene.add.sprite(8, 97, 'types');
     this.type1Icon.setScale(0.5);
     this.type1Icon.setOrigin(0, 0);
     this.starterSelectContainer.add(this.type1Icon);
 
-    this.type2Icon = this.scene.add.sprite(26, 98, 'types');
+    this.type2Icon = this.scene.add.sprite(26, 97, 'types');
     this.type2Icon.setScale(0.5);
     this.type2Icon.setOrigin(0, 0);
     this.starterSelectContainer.add(this.type2Icon);
 
-    this.pokemonLuckLabelText = addTextObject(this.scene, 8, 89, 'Luck:', TextStyle.WINDOW_ALT, { fontSize: '56px' });
+    this.pokemonLuckLabelText = addTextObject(this.scene, 8, 89, 'Luck:', TextStyle.WINDOW_ALT, { fontSize: '48px' });
     this.pokemonLuckLabelText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonLuckLabelText);
 
-    this.pokemonLuckText = addTextObject(this.scene, 8 + this.pokemonLuckLabelText.displayWidth + 2, 89, '0', TextStyle.WINDOW, { fontSize: '56px' });
+    this.pokemonLuckText = addTextObject(this.scene, 8 + this.pokemonLuckLabelText.displayWidth + 2, 89, '0', TextStyle.WINDOW, { fontSize: '48px' });
     this.pokemonLuckText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonLuckText);
 
@@ -466,7 +466,7 @@ export default class StarterSelectUiHandler extends MessageUiHandler {
     this.pokemonCandyDarknessOverlay.setInteractive(new Phaser.Geom.Rectangle(0, 0, 16, 16), Phaser.Geom.Rectangle.Contains);
     this.starterSelectContainer.add(this.pokemonCandyDarknessOverlay);
 
-    this.pokemonCandyCountText = addTextObject(this.scene, 14, 18, 'x0', TextStyle.WINDOW_ALT, { fontSize: '56px' });
+    this.pokemonCandyCountText = addTextObject(this.scene, 14, 18, 'x0', TextStyle.WINDOW_ALT, { fontSize: '48px' });
     this.pokemonCandyCountText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonCandyCountText);
 
@@ -501,7 +501,7 @@ export default class StarterSelectUiHandler extends MessageUiHandler {
       const moveBg = this.scene.add.nineslice(0, 0, 'type_bgs', 'unknown', 92, 14, 2, 2, 2, 2);
       moveBg.setOrigin(1, 0);
 
-      const moveLabel = addTextObject(this.scene, -moveBg.width / 2, 0, '-', TextStyle.PARTY);
+      const moveLabel = addTextObject(this.scene, -moveBg.width / 2, 2, '-', TextStyle.PARTY);
       moveLabel.setOrigin(0.5, 0);
 
       this.pokemonMoveBgs.push(moveBg);
@@ -535,7 +535,7 @@ export default class StarterSelectUiHandler extends MessageUiHandler {
       const eggMoveBg = this.scene.add.nineslice(0, 0, 'type_bgs', 'unknown', 92, 14, 2, 2, 2, 2);
       eggMoveBg.setOrigin(1, 0);
 
-      const eggMoveLabel = addTextObject(this.scene, -eggMoveBg.width / 2, 0, '???', TextStyle.PARTY);
+      const eggMoveLabel = addTextObject(this.scene, -eggMoveBg.width / 2, 2, '???', TextStyle.PARTY);
       eggMoveLabel.setOrigin(0.5, 0);
 
       this.pokemonEggMoveBgs.push(eggMoveBg);
@@ -1294,7 +1294,7 @@ export default class StarterSelectUiHandler extends MessageUiHandler {
         this.pokemonLuckText.setTint(getVariantTint(Math.min(luck - 1, 2) as Variant));
         this.pokemonLuckLabelText.setVisible(this.pokemonLuckText.visible);
 
-        this.pokemonGrowthRateText.setText(Utils.toReadableString(GrowthRate[species.growthRate]));
+        this.pokemonGrowthRateText.setText(getGrowthRateChineseValue(species.growthRate));
         this.pokemonGrowthRateText.setColor(getGrowthRateColor(species.growthRate));
         this.pokemonGrowthRateText.setShadowColor(getGrowthRateColor(species.growthRate, true));
         this.pokemonGrowthRateLabelText.setVisible(true);
@@ -1538,7 +1538,7 @@ export default class StarterSelectUiHandler extends MessageUiHandler {
         this.pokemonAbilityText.setShadowColor(this.getTextColor(!isHidden ? TextStyle.SUMMARY_ALT : TextStyle.SUMMARY_GOLD, true));
 
         const passiveAttr = this.scene.gameData.starterData[species.speciesId].passiveAttr;
-        this.pokemonPassiveText.setText(passiveAttr & PassiveAttr.UNLOCKED ? passiveAttr & PassiveAttr.ENABLED ? allAbilities[starterPassiveAbilities[this.lastSpecies.speciesId]].name : 'Disabled' : 'Locked');
+        this.pokemonPassiveText.setText(passiveAttr & PassiveAttr.UNLOCKED ? passiveAttr & PassiveAttr.ENABLED ? allAbilities[starterPassiveAbilities[this.lastSpecies.speciesId]].name : '失效' : '锁定');
         this.pokemonPassiveText.setColor(this.getTextColor(passiveAttr === (PassiveAttr.UNLOCKED | PassiveAttr.ENABLED) ? TextStyle.SUMMARY_ALT : TextStyle.SUMMARY_GRAY));
         this.pokemonPassiveText.setShadowColor(this.getTextColor(passiveAttr === (PassiveAttr.UNLOCKED | PassiveAttr.ENABLED) ? TextStyle.SUMMARY_ALT : TextStyle.SUMMARY_GRAY, true));
 

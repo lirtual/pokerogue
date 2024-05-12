@@ -236,7 +236,7 @@ export default class Trainer extends Phaser.GameObjects.Container {
       let tier = tierValue >= 156 ? TrainerPoolTier.COMMON : tierValue >= 32 ? TrainerPoolTier.UNCOMMON : tierValue >= 6 ? TrainerPoolTier.RARE : tierValue >= 1 ? TrainerPoolTier.SUPER_RARE : TrainerPoolTier.ULTRA_RARE
       console.log(TrainerPoolTier[tier]);
       while (!this.config.speciesPools.hasOwnProperty(tier) || !this.config.speciesPools[tier].length) {
-        console.log(`Downgraded trainer Pokemon rarity tier from ${TrainerPoolTier[tier]} to ${TrainerPoolTier[tier - 1]}`);
+        console.log(`训练家的宝可梦稀有度从${TrainerPoolTier[tier]}降级为${TrainerPoolTier[tier - 1]}`);
         tier--;
       }
       const tierPool = this.config.speciesPools[tier];
@@ -259,7 +259,7 @@ export default class Trainer extends Phaser.GameObjects.Container {
 
     if (!retry && this.config.specialtyTypes.length && !this.config.specialtyTypes.find(t => ret.isOfType(t))) {
       retry = true;
-      console.log('Attempting reroll of species evolution to fit specialty type...');
+      console.log('尝试改变宝可梦的进化形态以符合特定属性...');
       let evoAttempt = 0;
       while (retry && evoAttempt++ < 10) {
         ret = getPokemonSpecies(species.getTrainerSpeciesForLevel(level, true, strength));
@@ -270,7 +270,7 @@ export default class Trainer extends Phaser.GameObjects.Container {
     }
 
     if (retry && (attempt || 0) < 10) {
-      console.log('Rerolling party member...')
+      console.log('重新选择队员...')
       ret = this.genNewPartyMemberSpecies(level, strength, (attempt || 0) + 1);
     }
 

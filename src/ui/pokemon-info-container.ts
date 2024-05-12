@@ -52,7 +52,7 @@ export default class PokemonInfoContainer extends Phaser.GameObjects.Container {
     movesBg.setOrigin(1, 0);
     this.pokemonMovesContainer.add(movesBg);
 
-    const movesLabel = addTextObject(this.scene, -movesBg.width / 2, 6, 'Moveset', TextStyle.WINDOW, { fontSize: '64px' });
+    const movesLabel = addTextObject(this.scene, -movesBg.width / 2, 6, '招式表', TextStyle.WINDOW, { fontSize: '64px' });
     movesLabel.setOrigin(0.5, 0);
     this.pokemonMovesContainer.add(movesLabel);
 
@@ -63,7 +63,7 @@ export default class PokemonInfoContainer extends Phaser.GameObjects.Container {
       const moveBg = this.scene.add.nineslice(0, 0, 'type_bgs', 'unknown', 92, 14, 2, 2, 2, 2);
       moveBg.setOrigin(1, 0);
 
-      const moveLabel = addTextObject(this.scene, -moveBg.width / 2, 0, '-', TextStyle.PARTY);
+      const moveLabel = addTextObject(this.scene, -moveBg.width / 2, 1, '-', TextStyle.PARTY, { fontSize: '66px' });
       moveLabel.setOrigin(0.5, 0);
 
       this.pokemonMoveBgs.push(moveBg);
@@ -83,7 +83,7 @@ export default class PokemonInfoContainer extends Phaser.GameObjects.Container {
     this.add(infoBg);
     this.add(this.statsContainer);
 
-    this.pokemonGenderLabelText = addTextObject(this.scene, -18, 18, 'Gender:', TextStyle.WINDOW, { fontSize: '64px' });
+    this.pokemonGenderLabelText = addTextObject(this.scene, -18, 18, '性别:', TextStyle.WINDOW, { fontSize: '64px' });
     this.pokemonGenderLabelText.setOrigin(1, 0);
     this.pokemonGenderLabelText.setVisible(false);
     this.add(this.pokemonGenderLabelText);
@@ -93,7 +93,7 @@ export default class PokemonInfoContainer extends Phaser.GameObjects.Container {
     this.pokemonGenderText.setVisible(false);
     this.add(this.pokemonGenderText);
 
-    this.pokemonAbilityLabelText = addTextObject(this.scene, -18, 28, 'Ability:', TextStyle.WINDOW, { fontSize: '64px' });
+    this.pokemonAbilityLabelText = addTextObject(this.scene, -18, 28, '特性:', TextStyle.WINDOW, { fontSize: '64px' });
     this.pokemonAbilityLabelText.setOrigin(1, 0);
     this.add(this.pokemonAbilityLabelText);
 
@@ -101,7 +101,7 @@ export default class PokemonInfoContainer extends Phaser.GameObjects.Container {
     this.pokemonAbilityText.setOrigin(0, 0);
     this.add(this.pokemonAbilityText);
 
-    this.pokemonNatureLabelText = addTextObject(this.scene, -18, 38, 'Nature:', TextStyle.WINDOW, { fontSize: '64px' });
+    this.pokemonNatureLabelText = addTextObject(this.scene, -18, 38, '性格:', TextStyle.WINDOW, { fontSize: '64px' });
     this.pokemonNatureLabelText.setOrigin(1, 0);
     this.add(this.pokemonNatureLabelText);
 

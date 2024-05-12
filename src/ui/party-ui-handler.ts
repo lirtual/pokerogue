@@ -18,7 +18,7 @@ import { SpeciesFormChangeItemTrigger } from "../data/pokemon-forms";
 import { getVariantTint } from "#app/data/variant";
 import {Button} from "../enums/buttons";
 
-const defaultMessage = 'Choose a Pokémon.';
+const defaultMessage = '选择一只宝可梦';
 
 export enum PartyUiMode {
   SWITCH,
@@ -52,6 +52,33 @@ export enum PartyOption {
   MOVE_2,
   MOVE_3,
   MOVE_4
+}
+
+// 定义一个映射表，将枚举值映射到对应的中文值
+const partyOptionMap = {
+  [PartyOption.CANCEL]: '取消',
+  [PartyOption.SEND_OUT]: '派出',
+  [PartyOption.PASS_BATON]: '接力',
+  [PartyOption.APPLY]: '使用',
+  [PartyOption.TEACH]: '教授',
+  [PartyOption.TRANSFER]: '寄放',
+  [PartyOption.SUMMARY]: '详情',
+  [PartyOption.UNPAUSE_EVOLUTION]: '中止进化',
+  [PartyOption.SPLICE]: '融合',
+  [PartyOption.UNSPLICE]: '分离',
+  [PartyOption.RELEASE]: '放生',
+  [PartyOption.SCROLL_UP]: '向上滚动',
+  [PartyOption.SCROLL_DOWN]: '向下滚动',
+  [PartyOption.FORM_CHANGE_ITEM]: '形态变化道具',
+  [PartyOption.MOVE_1]: '招式1',
+  [PartyOption.MOVE_2]: '招式2',
+  [PartyOption.MOVE_3]: '招式3',
+  [PartyOption.MOVE_4]: '招式4'
+};
+
+// 获取对应枚举值的中文值
+export function getPartyOptionChineseValue(partyOption: PartyOption) {
+  return partyOptionMap[partyOption];
 }
 
 export type PartySelectCallback = (cursor: integer, option: PartyOption) => void;
@@ -99,7 +126,7 @@ export default class PartyUiHandler extends MessageUiHandler {
 
   public static FilterNonFainted = (pokemon: PlayerPokemon) => {
     if (pokemon.isFainted())
-      return `${pokemon.name} has no energy\nleft to battle!`;
+      return `${pokemon.name} 的体力已经耗尽，无法继续战斗！`;
     return null;
   };
 
@@ -108,11 +135,11 @@ export default class PartyUiHandler extends MessageUiHandler {
   public static FilterItemMaxStacks = (pokemon: PlayerPokemon, modifier: PokemonHeldItemModifier) => {
     const matchingModifier = pokemon.scene.findModifier(m => m instanceof PokemonHeldItemModifier && m.pokemonId === pokemon.id && m.matchType(modifier)) as PokemonHeldItemModifier;
     if (matchingModifier && matchingModifier.stackCount === matchingModifier.getMaxStackCount(pokemon.scene))
-      return `${pokemon.name} has too many\nof this item!`;
+      return `${pokemon.name} 有太多这种物品了！`;
     return null;
   };
 
-  public static NoEffectMessage = 'It won\'t have any effect.';
+  public static NoEffectMessage = '没有任何效果。';
 
   constructor(scene: BattleScene) {
     super(scene, Mode.PARTY);
@@ -146,7 +173,7 @@ export default class PartyUiHandler extends MessageUiHandler {
 
     this.partyMessageBox = partyMessageBox;
 
-    const partyMessageText = addTextObject(this.scene, 8, 10, defaultMessage, TextStyle.WINDOW, { maxLines: 2 });
+    const partyMessageText = addTextObject(this.scene, 8, 9, defaultMessage, TextStyle.WINDOW, { maxLines: 2 });
     
     partyMessageText.setOrigin(0, 0);
     partyMessageBoxContainer.add(partyMessageText);
@@ -303,18 +330,18 @@ export default class PartyUiHandler extends MessageUiHandler {
           this.clearOptions();
           ui.playSelect();
           pokemon.pauseEvolutions = false;
-          this.showText(`Evolutions have been unpaused for ${pokemon.name}.`, null, () => this.showText(null, 0), null, true);
+          this.showText(`${pokemon.name}的进化已被中止。`, null, () => this.showText(null, 0), null, true);
         } else if (option === PartyOption.UNSPLICE) {
           this.clearOptions();
           ui.playSelect();
-          this.showText(`Do you really want to unsplice ${pokemon.fusionSpecies.name}\nfrom ${pokemon.name}? ${pokemon.fusionSpecies.name} will be lost.`, null, () => {
+          this.showText(`你真的要将${pokemon.fusionSpecies.name}从${pokemon.name}中分离吗？\n${pokemon.fusionSpecies.name}将会消失。`, null, () => {
             ui.setModeWithoutClear(Mode.CONFIRM, () => {
               const fusionName = pokemon.name;
               pokemon.unfuse().then(() => {
                 this.clearPartySlots();
                 this.populatePartySlots();
                 ui.setMode(Mode.PARTY);
-                this.showText(`${fusionName} was reverted to ${pokemon.name}.`, null, () => {
+                this.showText(`${fusionName}已还原为${pokemon.name}。`, null, () => {
                   ui.setMode(Mode.PARTY);
                   this.showText(null, 0);
                 }, null, true);
@@ -328,7 +355,7 @@ export default class PartyUiHandler extends MessageUiHandler {
           this.clearOptions();
           ui.playSelect();
           if (this.cursor >= this.scene.currentBattle.getBattlerCount()) {
-            this.showText(`Do you really want to release ${pokemon.name}?`, null, () => {
+            this.showText(`你真的要放生${pokemon.name}吗？`, null, () => {
               ui.setModeWithoutClear(Mode.CONFIRM, () => {
                 ui.setMode(Mode.PARTY);
                 this.doRelease(this.cursor);
@@ -338,7 +365,7 @@ export default class PartyUiHandler extends MessageUiHandler {
               });
             });
           } else
-            this.showText('You can\'t release a Pokémon that\'s in battle!', null, () => this.showText(null, 0), null, true);
+            this.showText('你不能放生正在战斗的宝可梦！', null, () => this.showText(null, 0), null, true);
           return true;
         } else if (option === PartyOption.CANCEL)
           return this.processInput(Button.CANCEL);
@@ -515,19 +542,19 @@ export default class PartyUiHandler extends MessageUiHandler {
     
     this.optionsMode = true;
 
-    let optionsMessage = 'Do what with this Pokémon?';
+    let optionsMessage = '用这只宝可梦做什么？';
 
     switch (this.partyUiMode) {
       case PartyUiMode.MOVE_MODIFIER:
-        optionsMessage = 'Select a move.';
+        optionsMessage = '选择一个招式';
         break;
       case PartyUiMode.MODIFIER_TRANSFER:
         if (!this.transferMode)
-          optionsMessage = 'Select a held item to transfer.';
+          optionsMessage = '选择要转移的持有道具';
         break;
       case PartyUiMode.SPLICE:
         if (!this.transferMode)
-          optionsMessage = 'Select another Pokémon to splice.';
+          optionsMessage = '选择另一只宝可梦进行融合';
         break;
     }
 
@@ -678,9 +705,9 @@ export default class PartyUiHandler extends MessageUiHandler {
           default:
             if (formChangeItemModifiers && option >= PartyOption.FORM_CHANGE_ITEM) {
               const modifier = formChangeItemModifiers[option - PartyOption.FORM_CHANGE_ITEM];
-              optionName = `${modifier.active ? 'Deactivate' : 'Activate'} ${modifier.type.name}`;
+              optionName = `${modifier.active ? '停用' : '激活'} ${modifier.type.name}`;
             } else
-              optionName = Utils.toReadableString(PartyOption[option]);
+              optionName = getPartyOptionChineseValue(option);
             break;
         }
       } else if (this.partyUiMode === PartyUiMode.REMEMBER_MOVE_MODIFIER) {
@@ -748,25 +775,25 @@ export default class PartyUiHandler extends MessageUiHandler {
   getReleaseMessage(pokemonName: string): string {
     const rand = Utils.randInt(128);
     if (rand < 20)
-      return `Goodbye, ${pokemonName}!`;
+      return `再见, ${pokemonName}!`;
     else if (rand < 40)
-      return `Byebye, ${pokemonName}!`;
+      return `拜拜, ${pokemonName}!`;
     else if (rand < 60)
-      return `Farewell, ${pokemonName}!`;
+      return `祝一切顺利, ${pokemonName}!`;
     else if (rand < 80)
-      return `So long, ${pokemonName}!`;
+      return `后会有期, ${pokemonName}!`;
     else if (rand < 100)
-      return `This is where we part, ${pokemonName}!`;
+      return `我们就在此分别了, ${pokemonName}!`;
     else if (rand < 108)
-      return `I'll miss you, ${pokemonName}!`;
+      return `我会想念你的, ${pokemonName}!`;
     else if (rand < 116)
-      return `I'll never forget you, ${pokemonName}!`;
+      return `我永远不会忘记你的, ${pokemonName}!`;
     else if (rand < 124)
-      return `Until we meet again, ${pokemonName}!`;
+      return `期待与你再次相遇, ${pokemonName}!`;
     else if (rand < 127)
-      return `Sayonara, ${pokemonName}!`
+      return `珍重, ${pokemonName}!`
     else
-      return `Smell ya later, ${pokemonName}!`;
+      return `回头见, ${pokemonName}!`;
   }
 
   getOptionsCursorWithScroll(): integer {
@@ -875,7 +902,7 @@ class PartySlot extends Phaser.GameObjects.Container {
     slotLevelLabel.setOrigin(0, 0);
 
     const slotLevelText = addTextObject(this.scene, 0, 0, this.pokemon.level.toString(), this.pokemon.level < (this.scene as BattleScene).getMaxExpLevel() ? TextStyle.PARTY : TextStyle.PARTY_RED);
-    slotLevelText.setPositionRelative(slotLevelLabel, 9, 0);
+    slotLevelText.setPositionRelative(slotLevelLabel, 9, 1);
     slotLevelText.setOrigin(0, 0.25);
 
     slotInfoContainer.add([ slotName, slotLevelLabel, slotLevelText ]);
@@ -887,9 +914,9 @@ class PartySlot extends Phaser.GameObjects.Container {
       slotGenderText.setColor(getGenderColor(this.pokemon.getGender(true)));
       slotGenderText.setShadowColor(getGenderColor(this.pokemon.getGender(true), true));
       if (this.slotIndex >= battlerCount)
-        slotGenderText.setPositionRelative(slotLevelLabel, 36, 0);
+        slotGenderText.setPositionRelative(slotLevelLabel, 32, 0);
       else
-        slotGenderText.setPositionRelative(slotName, 76, 3);
+        slotGenderText.setPositionRelative(slotName, 72, 3);
       slotGenderText.setOrigin(0, 0.25);
 
       slotInfoContainer.add(slotGenderText);
@@ -943,7 +970,7 @@ class PartySlot extends Phaser.GameObjects.Container {
 
       const hpRatio = this.pokemon.getHpRatio();
 
-      const slotHpOverlay = this.scene.add.sprite(0, 0, 'party_slot_hp_overlay', hpRatio > 0.5 ? 'high' : hpRatio > 0.25 ? 'medium' : 'low');
+      const slotHpOverlay = this.scene.add.sprite(0, 0, 'party_slot_hp_overlay', hpRatio > 0.5 ? '高' : hpRatio > 0.25 ? '中' : '低');
       slotHpOverlay.setPositionRelative(slotHpBar, 16, 2);
       slotHpOverlay.setOrigin(0, 0);
       slotHpOverlay.setScale(hpRatio, 1);
@@ -957,13 +984,13 @@ class PartySlot extends Phaser.GameObjects.Container {
       let slotTmText: string;
       switch (true) {
         case (this.pokemon.compatibleTms.indexOf(tmMoveId) === -1):
-          slotTmText = 'Not Able';
+          slotTmText = '不能学';
           break;
         case (this.pokemon.getMoveset().filter(m => m?.moveId === tmMoveId).length > 0):
-          slotTmText = 'Learned';
+          slotTmText = '已学会';
           break;
         default:
-          slotTmText = 'Able';
+          slotTmText = '可以学';
           break;
       }
 
@@ -1035,7 +1062,7 @@ class PartyCancelButton extends Phaser.GameObjects.Container {
 
     this.partyCancelPb = partyCancelPb;
 
-    const partyCancelText = addTextObject(this.scene, -7, -6, 'Cancel', TextStyle.PARTY);
+    const partyCancelText = addTextObject(this.scene, -7, -5, '取消', TextStyle.PARTY);
     this.add(partyCancelText);
   }
 

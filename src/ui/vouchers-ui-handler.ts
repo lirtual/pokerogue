@@ -40,7 +40,7 @@ export default class VouchersUiHandler extends MessageUiHandler {
     const headerBg = addWindow(this.scene, 0, 0, (this.scene.game.canvas.width / 6) - 2, 24);
     headerBg.setOrigin(0, 0);
 
-    const headerText = addTextObject(this.scene, 0, 0, 'Vouchers', TextStyle.SETTINGS_LABEL);
+    const headerText = addTextObject(this.scene, 0, 0, '兑换券', TextStyle.SETTINGS_LABEL);
     headerText.setOrigin(0, 0);
     headerText.setPositionRelative(headerBg, 8, 4);
 
@@ -127,7 +127,7 @@ export default class VouchersUiHandler extends MessageUiHandler {
 
     this.titleText.setText(getVoucherTypeName(voucher.voucherType));
     this.showText(voucher.description);
-    this.unlockText.setText(unlocked ? new Date(voucherUnlocks[voucher.id]).toLocaleDateString() : 'Locked');
+    this.unlockText.setText(unlocked ? new Date(voucherUnlocks[voucher.id]).toLocaleDateString() : '锁定');
   }
 
   processInput(button: Button): boolean {

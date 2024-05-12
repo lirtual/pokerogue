@@ -22,31 +22,51 @@ export enum BerryType {
   LEPPA
 }
 
+// 定义一个映射表，将枚举值映射到对应的中文值
+const berryTypeMap = {
+  [BerryType.SITRUS]: '柑果',
+  [BerryType.LUM]: '亮光果',
+  [BerryType.ENIGMA]: '神秘果',
+  [BerryType.LIECHI]: '荔枝果',
+  [BerryType.GANLON]: '龙睛果',
+  [BerryType.PETAYA]: '火龙果',
+  [BerryType.APICOT]: '杏仔果',
+  [BerryType.SALAC]: '沙鳞果',
+  [BerryType.LANSAT]: '蓝橘果',
+  [BerryType.STARF]: '星桃果',
+  [BerryType.LEPPA]: '零余果'
+};
+
+// 获取对应枚举值的中文值
+function getBerryTypeChineseValue(berryType) {
+  return berryTypeMap[berryType];
+}
+
 export function getBerryName(berryType: BerryType) {
-  return `${Utils.toReadableString(BerryType[berryType])} Berry`;
+  return getBerryTypeChineseValue(berryType);
 }
 
 export function getBerryEffectDescription(berryType: BerryType) {
   switch (berryType) {
     case BerryType.SITRUS:
-      return 'Restores 25% HP if HP is below 50%';
+      return '当宝可梦的HP低于50%时，恢复25%的HP。';
     case BerryType.LUM:
-      return 'Cures any non-volatile status condition and confusion';
+      return '治疗任何非永久性状态异常和混乱状态。';
     case BerryType.ENIGMA:
-      return 'Restores 25% HP if hit by a super effective move';
+      return '如果受到超级有效的招式攻击，则恢复25%的HP。';
     case BerryType.LIECHI:
     case BerryType.GANLON:
     case BerryType.PETAYA:
     case BerryType.APICOT:
     case BerryType.SALAC:
       const stat = (berryType - BerryType.LIECHI) as BattleStat;
-      return `Raises ${getBattleStatName(stat)} if HP is below 25%`;
+      return `如果宝可梦的HP低于25%，则提升 ${getBattleStatName(stat)}。`;
     case BerryType.LANSAT:
-      return 'Raises critical hit ratio if HP is below 25%';
+      return '如果宝可梦的HP低于25%，则提升其击中要害率。';
     case BerryType.STARF:
-      return 'Sharply raises a random stat if HP is below 25%';
+      return '如果生命值低于25%，则大幅提升一项随机属性';
     case BerryType.LEPPA:
-      return 'Restores 10 PP to a move if its PP reaches 0';
+      return '如果招式PP值降为0，则恢复该招式10PP值';
   }
 }
 
@@ -104,7 +124,7 @@ export function getBerryEffectFunc(berryType: BerryType): BerryEffectFunc {
         const hpHealed = new Utils.NumberHolder(Math.floor(pokemon.getMaxHp() / 4));
         applyAbAttrs(DoubleBerryEffectAbAttr, pokemon, null, hpHealed);
         pokemon.scene.unshiftPhase(new PokemonHealPhase(pokemon.scene, pokemon.getBattlerIndex(),
-          hpHealed.value, getPokemonMessage(pokemon, `'s ${getBerryName(berryType)}\nrestored its HP!`), true));
+          hpHealed.value, getPokemonMessage(pokemon, `的${getBerryName(berryType)}恢复了体力！`), true));
       };
     case BerryType.LUM:
       return (pokemon: Pokemon) => {
@@ -151,7 +171,7 @@ export function getBerryEffectFunc(berryType: BerryType): BerryEffectFunc {
           pokemon.battleData.berriesEaten.push(berryType);
         const ppRestoreMove = pokemon.getMoveset().find(m => !m.getPpRatio());
         ppRestoreMove.ppUsed = Math.max(ppRestoreMove.ppUsed - 10, 0);
-        pokemon.scene.queueMessage(getPokemonMessage(pokemon, ` restored PP to its move ${ppRestoreMove.getName()}\nusing its ${getBerryName(berryType)}!`));
+        pokemon.scene.queueMessage(getPokemonMessage(pokemon, `使用${getBerryName(berryType)}恢复了${ppRestoreMove.getName()}的PP！`));
       };
   }
 }

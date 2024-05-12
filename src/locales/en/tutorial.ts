@@ -1,42 +1,42 @@
 import { SimpleTranslationEntries } from "#app/plugins/i18n";
 
 export const tutorial: SimpleTranslationEntries = {
-    "intro": `Welcome to PokéRogue! This is a battle-focused Pokémon fangame with roguelite elements.
-    $This game is not monetized and we claim no ownership of Pokémon nor of the copyrighted assets used.
-    $The game is a work in progress, but fully playable.\nFor bug reports, please use the Discord community.
-    $If the game runs slowly, please ensure 'Hardware Acceleration' is turned on in your browser settings.`,
+    "intro": `欢迎来到PokéRogue！这是一款以战斗为核心的\n融合了roguelite元素的宝可梦同人游戏。
+    $本游戏未进行商业化，我们没有Pokémon\n或Pokémon使用的版权资产的所有权。
+    $游戏仍在开发中，但已可完整游玩。\n如需报告错误，请使用 Discord 社区。
+    $如果游戏运行缓慢，\n请确保在浏览器设置中打开了“硬件加速”。`,
     
-    "accessMenu": `To access the menu, press M or Escape while awaiting input.\nThe menu contains settings and various features.`,
+    "accessMenu": `在等待输入时，按 M 或 Escape 键可访问菜\n单。菜单包含设置和各种功能。`,
     
-    "menu": `From this menu you can access the settings.
-    $From the settings you can change game speed, window style, and other options.
-    $There are also various other features here, so be sure to check them all!`,
+    "menu": `在此菜单中，您可以访问设置。
+    $在设置中，您可以更改游戏速度\n、窗口样式和其他选项。
+    $这里还有各种其他功能，请务必\n全部查看！`,
 
-    "starterSelect": `From this screen, you can select your starters.\nThese are your initial party members.
-    $Each starter has a value. Your party can have up to\n6 members as long as the total does not exceed 10.
-    $You can also select gender, ability, and form depending on\nthe variants you've caught or hatched.
-    $The IVs for a species are also the best of every one you've\ncaught or hatched, so try to get lots of the same species!`,
+    "starterSelect": `在此页面中，您可以选择您的初始宝可梦。\n这些是您最初的队伍成员。
+    $每个初始宝可梦都有一个费用。您的队伍最多可\n以拥有6名成员，只要总费用不超过10。
+    $您还可以根据您捕获或孵化的变种选择性别、特\n性和形态。
+    $一个物种的个体值是您捕获或孵化的所有宝可梦\n中最好的，所以尽量获得更多同种宝可梦！`,
 
-    "pokerus": `A daily random 3 selectable starters have a purple border.
-    $If you see a starter you own with one of these,\ntry adding it to your party. Be sure to check its summary!`,
+    "pokerus": `每天随机3个可选的初始宝可梦会有紫色边框。
+    $如果您看到您拥有的初始宝可梦带有紫色边框，\n请尝试将其添加到您的队伍中。请务必查看其\n概况！`,
 
-    "statChange": `Stat changes persist across battles as long as your Pokémon aren't recalled.
-    $Your Pokémon are recalled before a trainer battle and before entering a new biome.
-    $You can also view the stat changes for the Pokémon on the field by holding C or Shift.`,
+    "statChange": `只要您的宝可梦没有被召回，属性变化就会在战斗\n中持续存在。
+    $在训练家战斗之前和进入新的宝可梦群落之前，\n您的宝可梦会被召回。
+    $您还可以通过按住 C 或 Shift 键\n来查看场上宝可梦的能力变化。`,
 
-    "selectItem": `After every battle, you are given a choice of 3 random items.\nYou may only pick one.
-    $These range from consumables, to Pokémon held items, to passive permanent items.
-    $Most non-consumable item effects will stack in various ways.
-    $Some items will only show up if they can be used, such as evolution items.
-    $You can also transfer held items between Pokémon using the transfer option.
-    $The transfer option will appear in the bottom right once you have obtained a held item.
-    $You may purchase consumable items with money, and a larger variety will be available the further you get.
-    $Be sure to buy these before you pick your random item, as it will progress to the next battle once you do.`,
+    "selectItem": `每次战斗后，您都可以选择3个随机物品。\n您只能选择其中一个。
+    $这些物品包括消耗品、宝可梦携带物品和永久被\n动道具。
+    $大多数非消耗品的效果会以各种方式叠加。
+    $某些物品只有在可以使用时才会出现\n，例如进化物品。
+    $您还可以使用转移选项在宝可梦之间转移携带\n物品。
+    $一旦您获得了携带物品，转移选项就会出现在\n右下角。
+    $您可以用金钱购买消耗品，并且随着您游戏\n的深入，将会有更多种类的消耗品可供选择。
+    $请务必在选择随机物品之前购买这些消耗品，\n因为一旦您选择，游戏就会进入下一场战斗。`,
 
-    "eggGacha": `From this screen, you can redeem your vouchers for\nPokémon eggs.
-    $Eggs have to be hatched and get closer to hatching after\nevery battle. Rarer eggs take longer to hatch.
-    $Hatched Pokémon also won't be added to your party, they will\nbe added to your starters.
-    $Pokémon hatched from eggs generally have better IVs than\nwild Pokémon.
-    $Some Pokémon can only even be obtained from eggs.
-    $There are 3 different machines to pull from with different\nbonuses, so pick the one that suits you best!`,
+    "eggGacha": `在此页面中，您可以使用您的兑换券兑换\n宝可梦蛋。
+    $蛋需要孵化，并且在每场战斗后都会减少孵化周期。稀有蛋需要更长时间才能孵化。
+    $孵化的宝可梦不会被添加到您的队伍中，它们将被添加到您的初始宝可梦中。
+    $从蛋中孵化的宝可梦通常比\n野生宝可梦具有更好的个体值。
+    $有些宝可梦只能从蛋中获得。
+    $有 3 种不同的扭蛋机可供选择，每种扭蛋机都有不同的\n奖励，请选择最适合您的！`,
 } as const;

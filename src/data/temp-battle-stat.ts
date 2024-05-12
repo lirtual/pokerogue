@@ -19,18 +19,18 @@ export function getTempBattleStatName(tempBattleStat: TempBattleStat) {
 export function getTempBattleStatBoosterItemName(tempBattleStat: TempBattleStat) {
   switch (tempBattleStat) {
     case TempBattleStat.ATK:
-      return 'X Attack';
+      return '力量强化';
     case TempBattleStat.DEF:
-      return 'X Defense';
+      return '防御强化';
     case TempBattleStat.SPATK:
-      return 'X Sp. Atk';
+      return '特攻强化';
     case TempBattleStat.SPDEF:
-      return 'X Sp. Def';
+      return '特防强化';
     case TempBattleStat.SPD:
-      return 'X Speed';
+      return '速度强化';
     case TempBattleStat.ACC:
-      return 'X Accuracy';
+      return '命中强化';
     case TempBattleStat.CRIT:
-      return 'Dire Hit';
+      return '要害攻击';
   }
 }

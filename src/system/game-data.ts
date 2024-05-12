@@ -915,19 +915,19 @@ export class GameData {
               const displayError = (error: string) => this.scene.ui.showText(error, null, () => this.scene.ui.showText(null, 0), Utils.fixedInt(1500));
 
               if (!valid)
-                return this.scene.ui.showText(`Your ${dataName} data could not be loaded. It may be corrupted.`, null, () => this.scene.ui.showText(null, 0), Utils.fixedInt(1500));
-              this.scene.ui.showText(`Your ${dataName} data will be overridden and the page will reload. Proceed?`, null, () => {
+                return this.scene.ui.showText(`你的 ${dataName} 数据无法加载，它可能已损坏。`, null, () => this.scene.ui.showText(null, 0), Utils.fixedInt(1500));
+              this.scene.ui.showText(`你的 ${dataName} 数据将被覆盖，页面将重新加载，是否继续？`, null, () => {
                 this.scene.ui.setOverlayMode(Mode.CONFIRM, () => {
                   if (!bypassLogin && dataType < GameDataType.SETTINGS) {
                     updateUserInfo().then(success => {
                       if (!success)
-                        return displayError(`Could not contact the server. Your ${dataName} data could not be imported.`);
+                        return displayError(`无法连接服务器， 你的 ${dataName} 数据无法导入。`);
                       Utils.apiPost(`savedata/update?datatype=${dataType}${dataType === GameDataType.SESSION ? `&slot=${slotId}` : ''}&trainerId=${this.trainerId}&secretId=${this.secretId}`, dataStr, undefined, true)
                         .then(response => response.text())
                         .then(error => {
                           if (error) {
                             console.error(error);
-                            return displayError(`An error occurred while updating ${dataName} data. Please contact the administrator.`);
+                            return displayError(`更新 ${dataName} 数据时出错，请联系管理员。`);
                           }
                           window.location = window.location;
                         });
@@ -1087,7 +1087,7 @@ export class GameData {
 
       if (newCatch && speciesStarters.hasOwnProperty(species.speciesId)) {
         this.scene.playSound('level_up_fanfare');
-        this.scene.ui.showText(`${species.name} has been\nadded as a starter!`, null, () => checkPrevolution(), null, true);
+        this.scene.ui.showText(`${species.name}已被添加为初始宝可梦！`, null, () => checkPrevolution(), null, true);
       } else
         checkPrevolution();
     });
@@ -1145,7 +1145,7 @@ export class GameData {
       this.starterData[speciesId].eggMoves |= value;
 
       this.scene.playSound('level_up_fanfare');
-      this.scene.ui.showText(`${eggMoveIndex === 3 ? 'Rare ' : ''}Egg Move unlocked: ${allMoves[speciesEggMoves[speciesId][eggMoveIndex]].name}`, null, () => resolve(true), null, true);
+      this.scene.ui.showText(`${eggMoveIndex === 3 ? '稀有' : ''}遗传招式解锁： ${allMoves[speciesEggMoves[speciesId][eggMoveIndex]].name}`, null, () => resolve(true), null, true);
     });
   }
 

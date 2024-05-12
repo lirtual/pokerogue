@@ -1,5 +1,5 @@
 import BattleScene from "../battle-scene";
-import { Setting, reloadSettings, settingDefaults, settingOptions } from "../system/settings";
+import { Setting, reloadSettings, settingDefaults, settingOptions, getSettingChineseValue } from "../system/settings";
 import { hasTouchscreen, isMobile } from "../touch-controls";
 import { TextStyle, addTextObject } from "./text";
 import { Mode } from "./ui";
@@ -42,7 +42,7 @@ export default class SettingsUiHandler extends UiHandler {
     const headerBg = addWindow(this.scene, 0, 0, (this.scene.game.canvas.width / 6) - 2, 24);
     headerBg.setOrigin(0, 0);
 
-    const headerText = addTextObject(this.scene, 0, 0, 'Options', TextStyle.SETTINGS_LABEL);
+    const headerText = addTextObject(this.scene, 0, 0, '选项', TextStyle.SETTINGS_LABEL);
     headerText.setOrigin(0, 0);
     headerText.setPositionRelative(headerBg, 8, 4);
 
@@ -55,9 +55,9 @@ export default class SettingsUiHandler extends UiHandler {
     this.optionValueLabels = [];
 
     Object.keys(Setting).forEach((setting, s) => {
-      let settingName = setting.replace(/\_/g, ' ');
+      let settingName = getSettingChineseValue(Setting[setting]);
       if (reloadSettings.includes(Setting[setting]))
-        settingName += ' (Requires Reload)';
+        settingName += ' (需要重新加载）';
 
       this.settingLabels[s] = addTextObject(this.scene, 8, 28 + s * 16, settingName, TextStyle.SETTINGS_LABEL);
       this.settingLabels[s].setOrigin(0, 0);

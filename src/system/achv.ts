@@ -67,7 +67,7 @@ export class MoneyAchv extends Achv {
   private moneyAmount: integer;
 
   constructor(name: string, moneyAmount: integer, iconImage: string, score: integer) {
-    super(name, `Accumulate a total of ₽${moneyAmount.toLocaleString('en-US')}`, iconImage, score, (scene: BattleScene, _args: any[]) => scene.money >= this.moneyAmount);
+    super(name, `累计获得₽${moneyAmount.toLocaleString('en-US')}`, iconImage, score, (scene: BattleScene, _args: any[]) => scene.money >= this.moneyAmount);
 
     this.moneyAmount = moneyAmount;
   }
@@ -77,7 +77,7 @@ export class RibbonAchv extends Achv {
   private ribbonAmount: integer;
 
   constructor(name: string, ribbonAmount: integer, iconImage: string, score: integer) {
-    super(name, `Accumulate a total of ${ribbonAmount.toLocaleString('en-US')} Ribbons`, iconImage, score, (scene: BattleScene, _args: any[]) => scene.gameData.gameStats.ribbonsOwned >= this.ribbonAmount);
+    super(name, `累计获得${ribbonAmount.toLocaleString('en-US')}个缎带勋章`, iconImage, score, (scene: BattleScene, _args: any[]) => scene.gameData.gameStats.ribbonsOwned >= this.ribbonAmount);
 
     this.ribbonAmount = ribbonAmount;
   }
@@ -87,7 +87,7 @@ export class DamageAchv extends Achv {
   private damageAmount: integer;
 
   constructor(name: string, damageAmount: integer, iconImage: string, score: integer) {
-    super(name, `Inflict ${damageAmount.toLocaleString('en-US')} damage in one hit`, iconImage, score, (_scene: BattleScene, args: any[]) => (args[0] as Utils.NumberHolder).value >= this.damageAmount);
+    super(name, `一击造成${damageAmount.toLocaleString('en-US')}伤害`, iconImage, score, (_scene: BattleScene, args: any[]) => (args[0] as Utils.NumberHolder).value >= this.damageAmount);
 
     this.damageAmount = damageAmount;
   }
@@ -97,7 +97,7 @@ export class HealAchv extends Achv {
   private healAmount: integer;
 
   constructor(name: string, healAmount: integer, iconImage: string, score: integer) {
-    super(name, `Heal ${healAmount.toLocaleString('en-US')} HP at once with a move, ability, or held item`, iconImage, score, (_scene: BattleScene, args: any[]) => (args[0] as Utils.NumberHolder).value >= this.healAmount);
+    super(name, `通过招式、特性或携带道具，一次性回复 ${healAmount.toLocaleString('en-US')} 点 HP。`, iconImage, score, (_scene: BattleScene, args: any[]) => (args[0] as Utils.NumberHolder).value >= this.healAmount);
 
     this.healAmount = healAmount;
   }
@@ -107,7 +107,7 @@ export class LevelAchv extends Achv {
   private level: integer;
 
   constructor(name: string, level: integer, iconImage: string, score: integer) {
-    super(name, `Level up a Pokémon to Lv${level}`, iconImage, score, (scene: BattleScene, args: any[]) => (args[0] as Utils.IntegerHolder).value >= this.level);
+    super(name, `将一只宝可梦提升至 ${level} 级`, iconImage, score, (scene: BattleScene, args: any[]) => (args[0] as Utils.IntegerHolder).value >= this.level);
 
     this.level = level;
   }
@@ -120,46 +120,46 @@ export class ModifierAchv extends Achv {
 }
 
 export const achvs = {
-  _10K_MONEY: new MoneyAchv('Money Haver', 10000, 'nugget', 10),
-  _100K_MONEY: new MoneyAchv('Rich', 100000, 'big_nugget', 25).setSecret(true),
-  _1M_MONEY: new MoneyAchv('Millionaire', 1000000, 'relic_gold', 50).setSecret(true),
-  _10M_MONEY: new MoneyAchv('One Percenter', 10000000, 'coin_case', 100).setSecret(true),
-  _250_DMG: new DamageAchv('Hard Hitter', 250, 'lucky_punch', 10),
-  _1000_DMG: new DamageAchv('Harder Hitter', 1000, 'lucky_punch_great', 25).setSecret(true),
-  _2500_DMG: new DamageAchv('That\'s a Lotta Damage!', 2500, 'lucky_punch_ultra', 50).setSecret(true),
-  _10000_DMG: new DamageAchv('One Punch Man', 10000, 'lucky_punch_master', 100).setSecret(true),
-  _250_HEAL: new HealAchv('Novice Healer', 250, 'potion', 10),
-  _1000_HEAL: new HealAchv('Big Healer', 1000, 'super_potion', 25).setSecret(true),
-  _2500_HEAL: new HealAchv('Cleric', 2500, 'hyper_potion', 50).setSecret(true),
-  _10000_HEAL: new HealAchv('Recovery Master', 10000, 'max_potion', 100).setSecret(true),
-  LV_100: new LevelAchv('But Wait, There\'s More!', 100, 'rare_candy', 25).setSecret(),
-  LV_250: new LevelAchv('Elite', 250, 'rarer_candy', 50).setSecret(true),
-  LV_1000: new LevelAchv('To Go Even Further Beyond', 1000, 'candy_jar', 100).setSecret(true),
-  _10_RIBBONS: new RibbonAchv('Pokémon League Champion', 10, 'bronze_ribbon', 10),
-  _25_RIBBONS: new RibbonAchv('Great League Champion', 25, 'great_ribbon', 25).setSecret(true),
-  _50_RIBBONS: new RibbonAchv('Ultra League Champion', 50, 'ultra_ribbon', 50).setSecret(true),
-  _75_RIBBONS: new RibbonAchv('Rogue League Champion', 75, 'rogue_ribbon', 75).setSecret(true),
-  _100_RIBBONS: new RibbonAchv('Master League Champion', 100, 'master_ribbon', 100).setSecret(true),
-  TRANSFER_MAX_BATTLE_STAT: new Achv('Teamwork', 'Baton pass to another party member with at least one stat maxed out', 'stick', 20),
-  MAX_FRIENDSHIP: new Achv('Friendmaxxing', 'Reach max friendship on a Pokémon', 'soothe_bell', 25),
-  MEGA_EVOLVE: new Achv('Megamorph', 'Mega evolve a Pokémon', 'mega_bracelet', 50),
-  GIGANTAMAX: new Achv('Absolute Unit', 'Gigantamax a Pokémon', 'dynamax_band', 50),
-  TERASTALLIZE: new Achv('STAB Enthusiast', 'Terastallize a Pokémon', 'tera_orb', 25),
-  STELLAR_TERASTALLIZE: new Achv('The Hidden Type', 'Stellar Terastallize a Pokémon', 'stellar_tera_shard', 25).setSecret(true),
-  SPLICE: new Achv('Infinite Fusion', 'Splice two Pokémon together with DNA Splicers', 'dna_splicers', 10),
-  MINI_BLACK_HOLE: new ModifierAchv('A Hole Lot of Items', 'Acquire a Mini Black Hole', 'mini_black_hole', 25, modifier => modifier instanceof TurnHeldItemTransferModifier).setSecret(),
-  CATCH_MYTHICAL: new Achv('Mythical', 'Catch a mythical Pokémon', 'strange_ball', 50).setSecret(),
-  CATCH_SUB_LEGENDARY: new Achv('(Sub-)Legendary', 'Catch a sub-legendary Pokémon', 'rb', 75).setSecret(),
-  CATCH_LEGENDARY: new Achv('Legendary', 'Catch a legendary Pokémon', 'mb', 100).setSecret(),
-  SEE_SHINY: new Achv('Shiny', 'Find a shiny Pokémon in the wild', 'pb_gold', 75),
-  SHINY_PARTY: new Achv('That\'s Dedication', 'Have a full party of shiny Pokémon', 'shiny_charm', 100).setSecret(true),
-  HATCH_MYTHICAL: new Achv('Mythical Egg', 'Hatch a mythical Pokémon from an egg', 'pair_of_tickets', 75).setSecret(),
-  HATCH_SUB_LEGENDARY: new Achv('Sub-Legendary Egg', 'Hatch a sub-legendary Pokémon from an egg', 'mystic_ticket', 100).setSecret(),
-  HATCH_LEGENDARY: new Achv('Legendary Egg', 'Hatch a legendary Pokémon from an egg', 'mystic_ticket', 125).setSecret(),
-  HATCH_SHINY: new Achv('Shiny Egg', 'Hatch a shiny Pokémon from an egg', 'golden_mystic_ticket', 100).setSecret(),
-  HIDDEN_ABILITY: new Achv('Hidden Potential', 'Catch a Pokémon with a hidden ability', 'ability_charm', 75),
-  PERFECT_IVS: new Achv('Certificate of Authenticity', 'Get perfect IVs on a Pokémon', 'blunder_policy', 100),
-  CLASSIC_VICTORY: new Achv('Undefeated', 'Beat the game in classic mode', 'relic_crown', 150)
+  _10K_MONEY: new MoneyAchv('小富翁', 10000, 'nugget', 10),
+  _100K_MONEY: new MoneyAchv('富豪', 100000, 'big_nugget', 25).setSecret(true),
+  _1M_MONEY: new MoneyAchv('百万富翁', 1000000, 'relic_gold', 50).setSecret(true),
+  _10M_MONEY: new MoneyAchv('百分之一富豪', 10000000, 'coin_case', 100).setSecret(true),
+  _250_DMG: new DamageAchv('重拳出击', 250, 'lucky_punch', 10),
+  _1000_DMG: new DamageAchv('更重拳出击', 1000, 'lucky_punch_great', 25).setSecret(true),
+  _2500_DMG: new DamageAchv('伤害爆表！', 2500, 'lucky_punch_ultra', 50).setSecret(true),
+  _10000_DMG: new DamageAchv('一拳超人', 10000, 'lucky_punch_master', 100).setSecret(true),
+  _250_HEAL: new HealAchv('新手治疗师', 250, 'potion', 10),
+  _1000_HEAL: new HealAchv('高级治疗师', 1000, 'super_potion', 25).setSecret(true),
+  _2500_HEAL: new HealAchv('牧师', 2500, 'hyper_potion', 50).setSecret(true),
+  _10000_HEAL: new HealAchv('恢复大师', 10000, 'max_potion', 100).setSecret(true),
+  LV_100: new LevelAchv('但这还不是全部！', 100, 'rare_candy', 25).setSecret(),
+  LV_250: new LevelAchv('精英', 250, 'rarer_candy', 50).setSecret(true),
+  LV_1000: new LevelAchv('超越极限', 1000, 'candy_jar', 100).setSecret(true),
+  _10_RIBBONS: new RibbonAchv('宝可梦联盟冠军', 10, 'bronze_ribbon', 10),
+  _25_RIBBONS: new RibbonAchv('高级联盟冠军', 25, 'great_ribbon', 25).setSecret(true),
+  _50_RIBBONS: new RibbonAchv('超级联盟冠军', 50, 'ultra_ribbon', 50).setSecret(true),
+  _75_RIBBONS: new RibbonAchv('大师联盟冠军', 75, 'rogue_ribbon', 75).setSecret(true),
+  _100_RIBBONS: new RibbonAchv('大师联盟冠军', 100, 'master_ribbon', 100).setSecret(true),
+  TRANSFER_MAX_BATTLE_STAT: new Achv('团队合作', '将至少一项属性达到最大值的宝可梦接力给另一位队友', 'stick', 20),
+  MAX_FRIENDSHIP: new Achv('亲密无间', '与宝可梦达到最高亲密度', 'soothe_bell', 25),
+  MEGA_EVOLVE: new Achv('超级进化', '超级进化一只宝可梦', 'mega_bracelet', 50),
+  GIGANTAMAX: new Achv('庞然大物', '极巨化一只宝可梦', 'dynamax_band', 50),
+  TERASTALLIZE: new Achv('属性爱好者', '太晶化一只宝可梦', 'tera_orb', 25),
+  STELLAR_TERASTALLIZE: new Achv('隐藏的属性', '闪耀太晶化一只宝可梦', 'stellar_tera_shard', 25).setSecret(true),
+  SPLICE: new Achv('无限融合', '使用DNA拼接器拼接两只宝可梦', 'dna_splicers', 10),
+  MINI_BLACK_HOLE: new ModifierAchv('道具多多', '获得迷你黑洞', 'mini_black_hole', 25, modifier => modifier instanceof TurnHeldItemTransferModifier).setSecret(),
+  CATCH_MYTHICAL: new Achv('幻之宝可梦', '捕捉一只幻之宝可梦', 'strange_ball', 50).setSecret(),
+  CATCH_SUB_LEGENDARY: new Achv('准神兽', '捕捉一只准神兽', 'rb', 75).setSecret(),
+  CATCH_LEGENDARY: new Achv('神兽', '捕捉一只神兽', 'mb', 100).setSecret(),
+  SEE_SHINY: new Achv('闪光宝可梦', '在野外发现一只闪光宝可梦', 'pb_gold', 75),
+  SHINY_PARTY: new Achv('真爱粉', '拥有一支全员闪光宝可梦的队伍', 'shiny_charm', 100).setSecret(true),
+  HATCH_MYTHICAL: new Achv('幻之宝可梦蛋', '从蛋中孵化一只幻之宝可梦', 'pair_of_tickets', 75).setSecret(),
+  HATCH_SUB_LEGENDARY: new Achv('准神兽蛋', '从蛋中孵化一只准神兽', 'mystic_ticket', 100).setSecret(),
+  HATCH_LEGENDARY: new Achv('神兽蛋', '从蛋中孵化一只神兽', 'mystic_ticket', 125).setSecret(),
+  HATCH_SHINY: new Achv('闪光宝可梦蛋', '从蛋中孵化一只闪光宝可梦', 'golden_mystic_ticket', 100).setSecret(),
+  HIDDEN_ABILITY: new Achv('隐藏潜力', '捕捉一只拥有隐藏特性的宝可梦', 'ability_charm', 75),
+  PERFECT_IVS: new Achv('正品证书', '获得一只宝可梦的完美个体值', 'blunder_policy', 100),
+  CLASSIC_VICTORY: new Achv('不败战绩', '在经典模式下通关游戏', 'relic_crown', 150)
 };
 
 {

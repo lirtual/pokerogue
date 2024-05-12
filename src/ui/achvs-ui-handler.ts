@@ -32,7 +32,7 @@ export default class AchvsUiHandler extends MessageUiHandler {
     const headerBg = addWindow(this.scene, 0, 0, (this.scene.game.canvas.width / 6) - 2, 24);
     headerBg.setOrigin(0, 0);
 
-    const headerText = addTextObject(this.scene, 0, 0, 'Achievements', TextStyle.SETTINGS_LABEL);
+    const headerText = addTextObject(this.scene, 0, 0, '成就', TextStyle.SETTINGS_LABEL);
     headerText.setOrigin(0, 0);
     headerText.setPositionRelative(headerBg, 8, 4);
 
@@ -142,7 +142,7 @@ export default class AchvsUiHandler extends MessageUiHandler {
     this.titleText.setText(unlocked ? achv.name : '???');
     this.showText(!hidden ? achv.description : '');
     this.scoreText.setText(`${achv.score}pt`);
-    this.unlockText.setText(unlocked ? new Date(achvUnlocks[achv.id]).toLocaleDateString() : 'Locked');
+    this.unlockText.setText(unlocked ? new Date(achvUnlocks[achv.id]).toLocaleDateString() : '锁定');
   }
 
   processInput(button: Button): boolean {

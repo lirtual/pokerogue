@@ -146,7 +146,7 @@ class AddPokeballModifierType extends ModifierType implements Localizable {
   localize(): void {
     // TODO: Actually use i18n to localize this description.
     this.name = `${this.count}x ${getPokeballName(this.pokeballType)}`;
-    this.description = `Receive ${getPokeballName(this.pokeballType)} x${this.count} (Inventory: {AMOUNT}) \nCatch Rate: ${getPokeballCatchMultiplier(this.pokeballType) > -1 ? `${getPokeballCatchMultiplier(this.pokeballType)}x` : 'Certain'}`;
+    this.description = `获得${getPokeballName(this.pokeballType)} x${this.count} (拥有: {AMOUNT}) \n捕获率: ${getPokeballCatchMultiplier(this.pokeballType) > -1 ? `${getPokeballCatchMultiplier(this.pokeballType)}x` : 'Certain'}`;
   }
   
   getDescription(scene: BattleScene): string {
@@ -158,7 +158,7 @@ class AddPokeballModifierType extends ModifierType implements Localizable {
 
 class AddVoucherModifierType extends ModifierType {
   constructor(voucherType: VoucherType, count: integer) {
-    super(`${count}x ${getVoucherTypeName(voucherType)}`, `Receive ${getVoucherTypeName(voucherType)} x${count}`,
+    super(`${count}x ${getVoucherTypeName(voucherType)}`, `获得${getVoucherTypeName(voucherType)} x${count}`,
       (_type, _args) => new Modifiers.AddVoucherModifier(this, voucherType, count), getVoucherTypeIcon(voucherType), 'voucher');
   }
 }
@@ -180,9 +180,9 @@ export class PokemonHeldItemModifierType extends PokemonModifierType {
       const matchingModifier = pokemon.scene.findModifier(m => m instanceof Modifiers.PokemonHeldItemModifier && m.pokemonId === pokemon.id && m.matchType(dummyModifier)) as Modifiers.PokemonHeldItemModifier;
       const maxStackCount = dummyModifier.getMaxStackCount(pokemon.scene);
       if (!maxStackCount)
-        return `${pokemon.name} can\'t take\nthis item!`;
+        return `${pokemon.name}不能拿着这个物品！`;
       if (matchingModifier && matchingModifier.stackCount === maxStackCount)
-        return `${pokemon.name} has too many\nof this item!`;
+        return `${pokemon.name}有太多这种物品了！`;
       return null;
     }, iconImage, group, soundName);
   }
@@ -198,7 +198,7 @@ export class PokemonHpRestoreModifierType extends PokemonModifierType {
   protected healStatus: boolean;
 
   constructor(name: string, restorePoints: integer, restorePercent: integer, healStatus: boolean = false, newModifierFunc?: NewModifierFunc, selectFilter?: PokemonSelectFilter, iconImage?: string, group?: string) {
-    super(name, restorePoints ? `Restores ${restorePoints} HP or ${restorePercent}% HP for one Pokémon, whichever is higher` : `Fully restores HP for one Pokémon${healStatus ? ' and heals any status ailment' : ''}`,
+    super(name, restorePoints ? `为一只宝可梦恢复${restorePoints}点HP或${restorePercent}%HP，以较高者为准` : `完全恢复一只宝可梦的HP${healStatus ? '并治愈任何异常状态' : ''}`,
       newModifierFunc || ((_type, args) => new Modifiers.PokemonHpRestoreModifier(this, (args[0] as PlayerPokemon).id, this.restorePoints, this.restorePercent, this.healStatus, false)),
     selectFilter || ((pokemon: PlayerPokemon) => {
       if (!pokemon.hp || (pokemon.hp >= pokemon.getMaxHp() && (!this.healStatus || !pokemon.status)))
@@ -221,7 +221,7 @@ export class PokemonReviveModifierType extends PokemonHpRestoreModifierType {
         return null;
       }), iconImage, 'revive');
 
-    this.description = `Revives one Pokémon and restores ${restorePercent}% HP`;
+    this.description = `复活一只宝可梦并恢复${restorePercent}%HP`;
     this.selectFilter = (pokemon: PlayerPokemon) => {
       if (pokemon.hp)
         return PartyUiHandler.NoEffectMessage;
@@ -232,7 +232,7 @@ export class PokemonReviveModifierType extends PokemonHpRestoreModifierType {
 
 export class PokemonStatusHealModifierType extends PokemonModifierType {
   constructor(name: string) {
-    super(name, `Heals any status ailment for one Pokémon`,
+    super(name, `治愈一只宝可梦的任何异常状态`,
       ((_type, args) => new Modifiers.PokemonStatusHealModifier(this, (args[0] as PlayerPokemon).id)),
       ((pokemon: PlayerPokemon) => {
         if (!pokemon.hp || !pokemon.status)
@@ -257,7 +257,7 @@ export class PokemonPpRestoreModifierType extends PokemonMoveModifierType {
   protected restorePoints: integer;
 
   constructor(name: string, restorePoints: integer, iconImage?: string) {
-    super(name, `Restores ${restorePoints > -1 ? restorePoints : 'all'} PP for one Pokémon move`, (_type, args) => new Modifiers.PokemonPpRestoreModifier(this, (args[0] as PlayerPokemon).id, (args[1] as integer), this.restorePoints),
+    super(name, `为一只宝可梦的招式恢复${restorePoints > -1 ? restorePoints : '全部'}PP`, (_type, args) => new Modifiers.PokemonPpRestoreModifier(this, (args[0] as PlayerPokemon).id, (args[1] as integer), this.restorePoints),
       (_pokemon: PlayerPokemon) => {
       return null;
     }, (pokemonMove: PokemonMove) => {
@@ -274,7 +274,7 @@ export class PokemonAllMovePpRestoreModifierType extends PokemonModifierType {
   protected restorePoints: integer;
 
   constructor(name: string, restorePoints: integer, iconImage?: string) {
-    super(name, `Restores ${restorePoints > -1 ? restorePoints : 'all'} PP for all of one Pokémon's moves`, (_type, args) => new Modifiers.PokemonAllMovePpRestoreModifier(this, (args[0] as PlayerPokemon).id, this.restorePoints),
+    super(name, `为一只宝可梦的所有招式恢复${restorePoints > -1 ? restorePoints : '全部'}PP`, (_type, args) => new Modifiers.PokemonAllMovePpRestoreModifier(this, (args[0] as PlayerPokemon).id, this.restorePoints),
       (pokemon: PlayerPokemon) => {
         if (!pokemon.getMoveset().filter(m => m.ppUsed).length)
           return PartyUiHandler.NoEffectMessage;
@@ -289,7 +289,7 @@ export class PokemonPpUpModifierType extends PokemonMoveModifierType {
   protected upPoints: integer;
 
   constructor(name: string, upPoints: integer, iconImage?: string) {
-    super(name, `Permanently increases PP for one Pokémon move by ${upPoints} for every 5 maximum PP (maximum 3)`, (_type, args) => new Modifiers.PokemonPpUpModifier(this, (args[0] as PlayerPokemon).id, (args[1] as integer), this.upPoints),
+    super(name, `永久增加一只宝可梦的招式PP，每5个最大PP增加${upPoints}（最多3个）`, (_type, args) => new Modifiers.PokemonPpUpModifier(this, (args[0] as PlayerPokemon).id, (args[1] as integer), this.upPoints),
       (_pokemon: PlayerPokemon) => {
       return null;
     }, (pokemonMove: PokemonMove) => {
@@ -306,7 +306,7 @@ export class PokemonNatureChangeModifierType extends PokemonModifierType {
   protected nature: Nature;
 
   constructor(nature: Nature) {
-    super(`${getNatureName(nature)} Mint`, `Changes a Pokémon\'s nature to ${getNatureName(nature, true, true, true)} and permanently unlocks the nature for the starter.`, ((_type, args) => new Modifiers.PokemonNatureChangeModifier(this, (args[0] as PlayerPokemon).id, this.nature)),
+    super(`${getNatureName(nature)}薄荷`, `将一只宝可梦的性格改为${getNatureName(nature, true, true, true)}并永久解锁初始宝可梦的性格。`, ((_type, args) => new Modifiers.PokemonNatureChangeModifier(this, (args[0] as PlayerPokemon).id, this.nature)),
       ((pokemon: PlayerPokemon) => {
         if (pokemon.getNature() === this.nature)
           return PartyUiHandler.NoEffectMessage;
@@ -332,7 +332,7 @@ export class DoubleBattleChanceBoosterModifierType extends ModifierType {
   public battleCount: integer;
 
   constructor(name: string, battleCount: integer) {
-    super(name, `Doubles the chance of an encounter being a double battle for ${battleCount} battles`, (_type, _args) => new Modifiers.DoubleBattleChanceBoosterModifier(this, this.battleCount),
+    super(name, `在接下来的${battleCount}场战斗中，遭遇双打对战的几率翻倍`, (_type, _args) => new Modifiers.DoubleBattleChanceBoosterModifier(this, this.battleCount),
       null, 'lure');
 
     this.battleCount = battleCount;
@@ -344,7 +344,7 @@ export class TempBattleStatBoosterModifierType extends ModifierType implements G
 
   constructor(tempBattleStat: TempBattleStat) {
     super(getTempBattleStatBoosterItemName(tempBattleStat),
-      `Increases the ${getTempBattleStatName(tempBattleStat)} of all party members by 1 stage for 5 battles`,
+      `提升我方全体的 ${getTempBattleStatName(tempBattleStat)}1级，持续5场战斗`,
       (_type, _args) => new Modifiers.TempBattleStatBoosterModifier(this, this.tempBattleStat),
       getTempBattleStatBoosterItemName(tempBattleStat).replace(/\./g, '').replace(/[ ]/g, '_').toLowerCase());
 
@@ -375,41 +375,41 @@ export class BerryModifierType extends PokemonHeldItemModifierType implements Ge
 function getAttackTypeBoosterItemName(type: Type) {
   switch (type) {
     case Type.NORMAL:
-      return 'Silk Scarf';
+      return '丝绸围巾';
     case Type.FIGHTING:
-      return 'Black Belt';
+      return '黑带';
     case Type.FLYING:
-      return 'Sharp Beak';
+      return '锐利鸟嘴';
     case Type.POISON:
-      return 'Poison Barb';
+      return '毒针';
     case Type.GROUND:
-      return 'Soft Sand';
+      return '柔软沙子';
     case Type.ROCK:
-      return 'Hard Stone';
+      return '硬石头';
     case Type.BUG:
-      return 'Silver Powder';
+      return '银粉';
     case Type.GHOST:
-      return 'Spell Tag';
+      return '诅咒之符';
     case Type.STEEL:
-      return 'Metal Coat';
+      return '金属膜';
     case Type.FIRE:
-      return 'Charcoal';
+      return '木炭';
     case Type.WATER:
-      return 'Mystic Water';
+      return '神秘水滴';
     case Type.GRASS:
-      return 'Miracle Seed';
+      return '奇迹种子';
     case Type.ELECTRIC:
-      return 'Magnet';
+      return '磁铁';
     case Type.PSYCHIC:
-      return 'Twisted Spoon';
+      return '弯曲的汤匙';
     case Type.ICE:
-      return 'Never-Melt Ice'
+      return '不融冰'
     case Type.DRAGON:
-      return 'Dragon Fang';
+      return '龙之牙';
     case Type.DARK:
-      return 'Black Glasses';
+      return '黑色眼镜';
     case Type.FAIRY:
-      return 'Fairy Feather';
+      return '妖精之羽';
   }
 }
 
@@ -418,7 +418,7 @@ export class AttackTypeBoosterModifierType extends PokemonHeldItemModifierType i
   public boostPercent: integer;
 
   constructor(moveType: Type, boostPercent: integer) {
-    super(getAttackTypeBoosterItemName(moveType), `Increases the power of a Pokémon's ${Utils.toReadableString(Type[moveType])}-type moves by 20%`,
+    super(getAttackTypeBoosterItemName(moveType), `提升宝可梦${Utils.toReadableString(Type[moveType])}属性招式的威力20%`,
       (_type, args) => new Modifiers.AttackTypeBoosterModifier(this, (args[0] as Pokemon).id, moveType, boostPercent),
       `${getAttackTypeBoosterItemName(moveType).replace(/[ \-]/g, '_').toLowerCase()}`);
 
@@ -433,31 +433,31 @@ export class AttackTypeBoosterModifierType extends PokemonHeldItemModifierType i
 
 export class PokemonLevelIncrementModifierType extends PokemonModifierType {
   constructor(name: string, iconImage?: string) {
-    super(name, `Increases a Pokémon\'s level by 1`, (_type, args) => new Modifiers.PokemonLevelIncrementModifier(this, (args[0] as PlayerPokemon).id),
+    super(name, `提升一只宝可梦的等级1级`, (_type, args) => new Modifiers.PokemonLevelIncrementModifier(this, (args[0] as PlayerPokemon).id),
       (_pokemon: PlayerPokemon) => null, iconImage);
   }
 }
 
 export class AllPokemonLevelIncrementModifierType extends ModifierType {
   constructor(name: string, iconImage?: string) {
-    super(name, `Increases all party members' level by 1`, (_type, _args) => new Modifiers.PokemonLevelIncrementModifier(this, -1), iconImage);
+    super(name, `提升我方全体的等级1级`, (_type, _args) => new Modifiers.PokemonLevelIncrementModifier(this, -1), iconImage);
   }
 }
 
 function getBaseStatBoosterItemName(stat: Stat) {
   switch (stat) {
     case Stat.HP:
-      return 'HP Up';
+      return 'ＨＰ增强剂';
     case Stat.ATK:
-      return 'Protein';
+      return '攻击增强剂';
     case Stat.DEF:
-      return 'Iron';
+      return '防御增强剂';
     case Stat.SPATK:
-      return 'Calcium';
+      return '特攻增强剂';
     case Stat.SPDEF:
-      return 'Zinc';
+      return '特防增强剂';
     case Stat.SPD:
-      return 'Carbos';
+      return '速度增强剂';
   }
 }
 
@@ -465,7 +465,7 @@ export class PokemonBaseStatBoosterModifierType extends PokemonHeldItemModifierT
   private stat: Stat;
 
   constructor(name: string, stat: Stat, _iconImage?: string) {
-    super(name, `Increases the holder's base ${getStatName(stat)} by 10%. The higher your IVs, the higher the stack limit.`, (_type, args) => new Modifiers.PokemonBaseStatModifier(this, (args[0] as Pokemon).id, this.stat));
+    super(name, `提升持有者10%的基础${getStatName(stat)}，个体值越高，叠加层数上限越高。`, (_type, args) => new Modifiers.PokemonBaseStatModifier(this, (args[0] as Pokemon).id, this.stat));
 
     this.stat = stat;
   }
@@ -477,13 +477,13 @@ export class PokemonBaseStatBoosterModifierType extends PokemonHeldItemModifierT
 
 class AllPokemonFullHpRestoreModifierType extends ModifierType {
   constructor(name: string, description?: string, newModifierFunc?: NewModifierFunc, iconImage?: string) {
-    super(name, description || `Restores 100% HP for all Pokémon`, newModifierFunc || ((_type, _args) => new Modifiers.PokemonHpRestoreModifier(this, -1, 0, 100, false)), iconImage);
+    super(name, description || `回复我方全体100%的HP`, newModifierFunc || ((_type, _args) => new Modifiers.PokemonHpRestoreModifier(this, -1, 0, 100, false)), iconImage);
   }
 }
 
 class AllPokemonFullReviveModifierType extends AllPokemonFullHpRestoreModifierType {
   constructor(name: string, iconImage?: string) {
-    super(name, `Revives all fainted Pokémon, fully restoring HP`, (_type, _args) => new Modifiers.PokemonHpRestoreModifier(this, -1, 0, 100, false, true), iconImage);
+    super(name, `复活所有倒下的宝可梦，并完全恢复HP`, (_type, _args) => new Modifiers.PokemonHpRestoreModifier(this, -1, 0, 100, false, true), iconImage);
   }
 }
 
@@ -491,7 +491,7 @@ export class MoneyRewardModifierType extends ModifierType {
   private moneyMultiplier: number;
 
   constructor(name: string, moneyMultiplier: number, moneyMultiplierDescriptor: string, iconImage?: string) {
-    super(name, `Grants a ${moneyMultiplierDescriptor} amount of money (₽{AMOUNT})`, (_type, _args) => new Modifiers.MoneyRewardModifier(this, moneyMultiplier), iconImage, 'money', 'buy');
+    super(name, `给予${moneyMultiplierDescriptor}金钱(₽{AMOUNT})`, (_type, _args) => new Modifiers.MoneyRewardModifier(this, moneyMultiplier), iconImage, 'money', 'buy');
 
     this.moneyMultiplier = moneyMultiplier;
   }
@@ -503,32 +503,32 @@ export class MoneyRewardModifierType extends ModifierType {
 
 export class ExpBoosterModifierType extends ModifierType {
   constructor(name: string, boostPercent: integer, iconImage?: string) {
-    super(name, `Increases gain of EXP. Points by ${boostPercent}%`, () => new Modifiers.ExpBoosterModifier(this, boostPercent), iconImage);
+    super(name, `经验值的获取量提高${boostPercent}%`, () => new Modifiers.ExpBoosterModifier(this, boostPercent), iconImage);
   }
 }
 
 export class PokemonExpBoosterModifierType extends PokemonHeldItemModifierType {
   constructor(name: string, boostPercent: integer, iconImage?: string) {
-    super(name, `Increases the holder's gain of EXP. Points by ${boostPercent}%`, (_type, args) => new Modifiers.PokemonExpBoosterModifier(this, (args[0] as Pokemon).id, boostPercent),
+    super(name, `持有者的经验值获取量提高${boostPercent}%`, (_type, args) => new Modifiers.PokemonExpBoosterModifier(this, (args[0] as Pokemon).id, boostPercent),
       iconImage);
   }
 }
 
 export class PokemonFriendshipBoosterModifierType extends PokemonHeldItemModifierType {
   constructor(name: string, iconImage?: string) {
-    super(name,'Increases friendship gain per victory by 50%', (_type, args) => new Modifiers.PokemonFriendshipBoosterModifier(this, (args[0] as Pokemon).id), iconImage);
+    super(name,'每场胜利获得的友谊点数提高50%', (_type, args) => new Modifiers.PokemonFriendshipBoosterModifier(this, (args[0] as Pokemon).id), iconImage);
   }
 }
 
 export class PokemonMoveAccuracyBoosterModifierType extends PokemonHeldItemModifierType {
   constructor(name: string, amount: integer, iconImage?: string, group?: string, soundName?: string) {
-    super(name, `Increases move accuracy by ${amount} (maximum 100)`, (_type, args) => new Modifiers.PokemonMoveAccuracyBoosterModifier(this, (args[0] as Pokemon).id, amount), iconImage, group, soundName);
+    super(name, `将招式命中率提高${amount}（最高100）`, (_type, args) => new Modifiers.PokemonMoveAccuracyBoosterModifier(this, (args[0] as Pokemon).id, amount), iconImage, group, soundName);
   }
 }
 
 export class PokemonMultiHitModifierType extends PokemonHeldItemModifierType {
   constructor(name: string, iconImage?: string) {
-    super(name, `Attacks hit one additional time at the cost of a 60/75/82.5% power reduction per stack respectively.`, (type, args) => new Modifiers.PokemonMultiHitModifier(type as PokemonMultiHitModifierType, (args[0] as Pokemon).id), iconImage);
+    super(name, `攻击会额外命中一次，\n但每次叠加会分别降低60%/75%/82.5%的威力。`, (type, args) => new Modifiers.PokemonMultiHitModifier(type as PokemonMultiHitModifierType, (args[0] as Pokemon).id), iconImage);
   }
 }
 
@@ -536,7 +536,7 @@ export class TmModifierType extends PokemonModifierType {
   public moveId: Moves;
 
   constructor(moveId: Moves) {
-    super(`TM${Utils.padInt(Object.keys(tmSpecies).indexOf(moveId.toString()) + 1, 3)} - ${allMoves[moveId].name}`, `Teach ${allMoves[moveId].name} to a Pokémon`, (_type, args) => new Modifiers.TmModifier(this, (args[0] as PlayerPokemon).id),
+    super(`TM${Utils.padInt(Object.keys(tmSpecies).indexOf(moveId.toString()) + 1, 3)} - ${allMoves[moveId].name}`, `教一只宝可梦${allMoves[moveId].name}`, (_type, args) => new Modifiers.TmModifier(this, (args[0] as PlayerPokemon).id),
       (pokemon: PlayerPokemon) => {
         if (pokemon.compatibleTms.indexOf(moveId) === -1 || pokemon.getMoveset().filter(m => m?.moveId === moveId).length)
           return PartyUiHandler.NoEffectMessage;
@@ -551,7 +551,7 @@ export class EvolutionItemModifierType extends PokemonModifierType implements Ge
   public evolutionItem: EvolutionItem;
 
   constructor(evolutionItem: EvolutionItem) {
-    super(Utils.toReadableString(EvolutionItem[evolutionItem]), `Causes certain Pokémon to evolve`, (_type, args) => new Modifiers.EvolutionItemModifier(this, (args[0] as PlayerPokemon).id),
+    super(Utils.toReadableString(EvolutionItem[evolutionItem]), `使特定的宝可梦进化`, (_type, args) => new Modifiers.EvolutionItemModifier(this, (args[0] as PlayerPokemon).id),
     (pokemon: PlayerPokemon) => {
       if (pokemonEvolutions.hasOwnProperty(pokemon.species.speciesId) && pokemonEvolutions[pokemon.species.speciesId].filter(e => e.item === this.evolutionItem
         && (!e.condition || e.condition.predicate(pokemon))).length)
@@ -575,7 +575,7 @@ export class FormChangeItemModifierType extends PokemonModifierType implements G
   public formChangeItem: FormChangeItem;
 
   constructor(formChangeItem: FormChangeItem) {
-    super(Utils.toReadableString(FormChangeItem[formChangeItem]), `Causes certain Pokémon to change form`, (_type, args) => new Modifiers.PokemonFormChangeItemModifier(this, (args[0] as PlayerPokemon).id, formChangeItem, true),
+    super(Utils.toReadableString(FormChangeItem[formChangeItem]), `使某些宝可梦改变形态`, (_type, args) => new Modifiers.PokemonFormChangeItemModifier(this, (args[0] as PlayerPokemon).id, formChangeItem, true),
     (pokemon: PlayerPokemon) => {
       if (pokemonFormChanges.hasOwnProperty(pokemon.species.speciesId) && !!pokemonFormChanges[pokemon.species.speciesId].find(fc => fc.trigger.hasTriggerType(SpeciesFormChangeItemTrigger)
         && (fc.trigger as SpeciesFormChangeItemTrigger).item === this.formChangeItem))
@@ -594,7 +594,7 @@ export class FormChangeItemModifierType extends PokemonModifierType implements G
 
 export class FusePokemonModifierType extends PokemonModifierType {
   constructor(name: string, iconImage?: string) {
-    super(name, 'Combines two Pokémon (transfers Ability, splits base stats and types, shares move pool)', (_type, args) => new Modifiers.FusePokemonModifier(this, (args[0] as PlayerPokemon).id, (args[1] as PlayerPokemon).id),
+    super(name, '将两只宝可梦合二为一（转移特性，\n分割基础属性和属性，共享招式池）', (_type, args) => new Modifiers.FusePokemonModifier(this, (args[0] as PlayerPokemon).id, (args[1] as PlayerPokemon).id),
       (pokemon: PlayerPokemon) => {
         if (pokemon.isFusion())
           return PartyUiHandler.NoEffectMessage;
@@ -712,7 +712,7 @@ export class TerastallizeModifierType extends PokemonHeldItemModifierType implem
   private teraType: Type;
 
   constructor(teraType: Type) {
-    super(`${Utils.toReadableString(Type[teraType])} Tera Shard`, `${Utils.toReadableString(Type[teraType])} Terastallizes the holder for up to 10 battles`, (type, args) => new Modifiers.TerastallizeModifier(type as TerastallizeModifierType, (args[0] as Pokemon).id, teraType), null, 'tera_shard');
+    super(`${Utils.toReadableString(Type[teraType])}太晶碎块`, `${Utils.toReadableString(Type[teraType])}使持有者太晶化，最多持续10场战斗`, (type, args) => new Modifiers.TerastallizeModifier(type as TerastallizeModifierType, (args[0] as Pokemon).id, teraType), null, 'tera_shard');
 
     this.teraType = teraType;
   }
@@ -724,25 +724,25 @@ export class TerastallizeModifierType extends PokemonHeldItemModifierType implem
 
 export class ContactHeldItemTransferChanceModifierType extends PokemonHeldItemModifierType {
   constructor(name: string, chancePercent: integer, iconImage?: string, group?: string, soundName?: string) {
-    super(name, `Upon attacking, there is a ${chancePercent}% chance the foe's held item will be stolen.`, (type, args) => new Modifiers.ContactHeldItemTransferChanceModifier(type, (args[0] as Pokemon).id, chancePercent), iconImage, group, soundName);
+    super(name, `攻击时，有${chancePercent}%的几率偷取对手携带的道具。`, (type, args) => new Modifiers.ContactHeldItemTransferChanceModifier(type, (args[0] as Pokemon).id, chancePercent), iconImage, group, soundName);
   }
 }
 
 export class TurnHeldItemTransferModifierType extends PokemonHeldItemModifierType {
   constructor(name: string, iconImage?: string, group?: string, soundName?: string) {
-    super(name, 'Every turn, the holder acquires one held item from the foe.', (type, args) => new Modifiers.TurnHeldItemTransferModifier(type, (args[0] as Pokemon).id), iconImage, group, soundName);
+    super(name, '每回合，持有者从对手那里获得一个携带的道具。', (type, args) => new Modifiers.TurnHeldItemTransferModifier(type, (args[0] as Pokemon).id), iconImage, group, soundName);
   }
 }
 
 export class EnemyAttackStatusEffectChanceModifierType extends ModifierType {
   constructor(name: string, chancePercent: integer, effect: StatusEffect, iconImage?: string) {
-    super(name, `Adds a ${chancePercent}% chance to inflict ${getStatusEffectDescriptor(effect)} with attack moves`, (type, args) => new Modifiers.EnemyAttackStatusEffectChanceModifier(type, effect, chancePercent), iconImage, 'enemy_status_chance')
+    super(name, `使用攻击招式时，有${chancePercent}%的几率使对手${getStatusEffectDescriptor(effect)}`, (type, args) => new Modifiers.EnemyAttackStatusEffectChanceModifier(type, effect, chancePercent), iconImage, 'enemy_status_chance')
   }
 }
 
 export class EnemyEndureChanceModifierType extends ModifierType {
   constructor(name: string, chancePercent: number, iconImage?: string) {
-    super(name, `Adds a ${chancePercent}% chance of enduring a hit`, (type, _args) => new Modifiers.EnemyEndureChanceModifier(type, chancePercent), iconImage, 'enemy_endure');
+    super(name, `有${chancePercent}%的几率承受住一次攻击`, (type, _args) => new Modifiers.EnemyEndureChanceModifier(type, chancePercent), iconImage, 'enemy_endure');
   }
 }
 
@@ -773,51 +773,51 @@ export const modifierTypes = {
   ROGUE_BALL: () => new AddPokeballModifierType(PokeballType.ROGUE_BALL, 5, 'rb'),
   MASTER_BALL: () => new AddPokeballModifierType(PokeballType.MASTER_BALL, 1, 'mb'),
 
-  RARE_CANDY: () => new PokemonLevelIncrementModifierType('Rare Candy'),
-  RARER_CANDY: () => new AllPokemonLevelIncrementModifierType('Rarer Candy'),
+  RARE_CANDY: () => new PokemonLevelIncrementModifierType('神奇糖果'),
+  RARER_CANDY: () => new AllPokemonLevelIncrementModifierType('稀有糖果'),
 
   EVOLUTION_ITEM: () => new EvolutionItemModifierTypeGenerator(false),
   RARE_EVOLUTION_ITEM: () => new EvolutionItemModifierTypeGenerator(true),
   FORM_CHANGE_ITEM: () => new FormChangeItemModifierTypeGenerator(),
 
-  MEGA_BRACELET: () => new ModifierType('Mega Bracelet', 'Mega Stones become available.', (type, _args) => new Modifiers.MegaEvolutionAccessModifier(type)),
-  DYNAMAX_BAND: () => new ModifierType('Dynamax Band', 'Max Mushrooms become available.', (type, _args) => new Modifiers.GigantamaxAccessModifier(type)),
-  TERA_ORB: () => new ModifierType('Tera Orb', 'Tera Shards become available.', (type, _args) => new Modifiers.TerastallizeAccessModifier(type)),
+  MEGA_BRACELET: () => new ModifierType('超级手镯', '超级石可以使用了。', (type, _args) => new Modifiers.MegaEvolutionAccessModifier(type)),
+  DYNAMAX_BAND: () => new ModifierType('极巨腕带', '极巨蘑菇可以使用了。', (type, _args) => new Modifiers.GigantamaxAccessModifier(type)),
+  TERA_ORB: () => new ModifierType('太晶珠', '太晶碎块可以使用了。', (type, _args) => new Modifiers.TerastallizeAccessModifier(type)),
 
-  MAP: () => new ModifierType('Map', 'Allows you to choose your destination at a crossroads', (type, _args) => new Modifiers.MapModifier(type)),
+  MAP: () => new ModifierType('地图', '让你在岔路口选择你的目的地', (type, _args) => new Modifiers.MapModifier(type)),
 
-  POTION: () => new PokemonHpRestoreModifierType('Potion', 20, 10),
-  SUPER_POTION: () => new PokemonHpRestoreModifierType('Super Potion', 50, 25),
-  HYPER_POTION: () => new PokemonHpRestoreModifierType('Hyper Potion', 200, 50),
-  MAX_POTION: () => new PokemonHpRestoreModifierType('Max Potion', 0, 100),
-  FULL_RESTORE: () => new PokemonHpRestoreModifierType('Full Restore', 0, 100, true),
+  POTION: () => new PokemonHpRestoreModifierType('伤药', 20, 10),
+  SUPER_POTION: () => new PokemonHpRestoreModifierType('好伤药', 50, 25),
+  HYPER_POTION: () => new PokemonHpRestoreModifierType('厉害伤药', 200, 50),
+  MAX_POTION: () => new PokemonHpRestoreModifierType('全满药', 0, 100),
+  FULL_RESTORE: () => new PokemonHpRestoreModifierType('全复药', 0, 100, true),
   
-  REVIVE: () => new PokemonReviveModifierType('Revive', 50),
-  MAX_REVIVE: () => new PokemonReviveModifierType('Max Revive', 100),
+  REVIVE: () => new PokemonReviveModifierType('活力碎片', 50),
+  MAX_REVIVE: () => new PokemonReviveModifierType('活力块', 100),
 
-  FULL_HEAL: () => new PokemonStatusHealModifierType('Full Heal'),
+  FULL_HEAL: () => new PokemonStatusHealModifierType('万灵药'),
 
-  SACRED_ASH: () => new AllPokemonFullReviveModifierType('Sacred Ash'),
+  SACRED_ASH: () => new AllPokemonFullReviveModifierType('圣灰'),
 
-  REVIVER_SEED: () => new PokemonHeldItemModifierType('Reviver Seed', 'Revives the holder for 1/2 HP upon fainting',
+  REVIVER_SEED: () => new PokemonHeldItemModifierType('复活草', '让持有者在濒死时以1/2的HP复活',
     (type, args) => new Modifiers.PokemonInstantReviveModifier(type, (args[0] as Pokemon).id)),
 
-  ETHER: () => new PokemonPpRestoreModifierType('Ether', 10),
+  ETHER: () => new PokemonPpRestoreModifierType('ＰＰ单项小补剂', 10),
   MAX_ETHER: () => new PokemonPpRestoreModifierType('Max Ether', -1),
 
-  ELIXIR: () => new PokemonAllMovePpRestoreModifierType('Elixir', 10),
-  MAX_ELIXIR: () => new PokemonAllMovePpRestoreModifierType('Max Elixir', -1),
+  ELIXIR: () => new PokemonAllMovePpRestoreModifierType('ＰＰ多项小补剂', 10),
+  MAX_ELIXIR: () => new PokemonAllMovePpRestoreModifierType('ＰＰ多项全补剂', -1),
 
-  PP_UP: () => new PokemonPpUpModifierType('PP Up', 1),
-  PP_MAX: () => new PokemonPpUpModifierType('PP Max', 3),
+  PP_UP: () => new PokemonPpUpModifierType('ＰＰ提升剂', 1),
+  PP_MAX: () => new PokemonPpUpModifierType('ＰＰ极限提升剂', 3),
 
   /*REPEL: () => new DoubleBattleChanceBoosterModifierType('Repel', 5),
   SUPER_REPEL: () => new DoubleBattleChanceBoosterModifierType('Super Repel', 10),
   MAX_REPEL: () => new DoubleBattleChanceBoosterModifierType('Max Repel', 25),*/
 
-  LURE: () => new DoubleBattleChanceBoosterModifierType('Lure', 5),
-  SUPER_LURE: () => new DoubleBattleChanceBoosterModifierType('Super Lure', 10),
-  MAX_LURE: () => new DoubleBattleChanceBoosterModifierType('Max Lure', 25),
+  LURE: () => new DoubleBattleChanceBoosterModifierType('引虫香水', 5),
+  SUPER_LURE: () => new DoubleBattleChanceBoosterModifierType('白银香水', 10),
+  MAX_LURE: () => new DoubleBattleChanceBoosterModifierType('黄金香水', 25),
 
   TEMP_STAT_BOOSTER: () => new ModifierTypeGenerator((party: Pokemon[], pregenArgs?: any[]) => {
     if (pregenArgs)
@@ -879,91 +879,91 @@ export const modifierTypes = {
   TM_GREAT: () => new TmModifierTypeGenerator(ModifierTier.GREAT),
   TM_ULTRA: () => new TmModifierTypeGenerator(ModifierTier.ULTRA),
 
-  MEMORY_MUSHROOM: () => new RememberMoveModifierType('Memory Mushroom', 'Recall one Pokémon\'s forgotten move', 'big_mushroom'),
+  MEMORY_MUSHROOM: () => new RememberMoveModifierType('记忆蘑菇', '让一只宝可梦回忆起遗忘的招式', 'big_mushroom'),
 
-  EXP_SHARE: () => new ModifierType('EXP. All', 'Non-participants receive 20% of a single participant\'s EXP. Points.',
+  EXP_SHARE: () => new ModifierType('全体经验值', '非参与者获得单个参与者20%的经验值。',
     (type, _args) => new Modifiers.ExpShareModifier(type), 'exp_share'),
-  EXP_BALANCE: () => new ModifierType('EXP. Balance', 'Weighs EXP. Points received from battles towards lower-leveled party members',
+  EXP_BALANCE: () => new ModifierType('平衡经验值', '将战斗中获得的经验值\n偏向等级较低的队伍成员',
     (type, _args) => new Modifiers.ExpBalanceModifier(type)),
 
-  OVAL_CHARM: () => new ModifierType('Oval Charm', 'When multiple Pokémon participate in a battle, each gets an extra 10% of the total EXP.',
+  OVAL_CHARM: () => new ModifierType('圆形护符', '当多只宝可梦参与战斗时，每只宝可梦\n获得额外10%的总经验值。',
     (type, _args) => new Modifiers.MultipleParticipantExpBonusModifier(type)),
 
-  EXP_CHARM: () => new ExpBoosterModifierType('EXP. Charm', 25),
-  SUPER_EXP_CHARM: () => new ExpBoosterModifierType('Super EXP. Charm', 60),
-  GOLDEN_EXP_CHARM: () => new ExpBoosterModifierType('Golden EXP. Charm', 100),
+  EXP_CHARM: () => new ExpBoosterModifierType('魅力经验值', 25),
+  SUPER_EXP_CHARM: () => new ExpBoosterModifierType('超级魅力经验值', 60),
+  GOLDEN_EXP_CHARM: () => new ExpBoosterModifierType('黄金魅力经验值', 100),
 
-  LUCKY_EGG: () => new PokemonExpBoosterModifierType('Lucky Egg', 40),
-  GOLDEN_EGG: () => new PokemonExpBoosterModifierType('Golden Egg', 100),
+  LUCKY_EGG: () => new PokemonExpBoosterModifierType('幸运蛋', 40),
+  GOLDEN_EGG: () => new PokemonExpBoosterModifierType('黄金蛋', 100),
 
-  SOOTHE_BELL: () => new PokemonFriendshipBoosterModifierType('Soothe Bell'),
+  SOOTHE_BELL: () => new PokemonFriendshipBoosterModifierType('安抚之铃'),
 
-  SOUL_DEW: () => new PokemonHeldItemModifierType('Soul Dew', 'Increases the influence of a Pokémon\'s nature on its stats by 10% (additive)', (type, args) => new Modifiers.PokemonNatureWeightModifier(type, (args[0] as Pokemon).id)),
+  SOUL_DEW: () => new PokemonHeldItemModifierType('心之水滴', '将宝可梦的性格对其属性的影响\n增加10%（加法）', (type, args) => new Modifiers.PokemonNatureWeightModifier(type, (args[0] as Pokemon).id)),
 
-  NUGGET: () => new MoneyRewardModifierType('Nugget', 1, 'small'),
-  BIG_NUGGET: () => new MoneyRewardModifierType('Big Nugget', 2.5, 'moderate'),
-  RELIC_GOLD: () => new MoneyRewardModifierType('Relic Gold', 10, 'large'),
+  NUGGET: () => new MoneyRewardModifierType('金珠', 1, '少量'),
+  BIG_NUGGET: () => new MoneyRewardModifierType('巨大金珠', 2.5, '中等'),
+  RELIC_GOLD: () => new MoneyRewardModifierType('古代金币', 10, '大量'),
 
-  AMULET_COIN: () => new ModifierType('Amulet Coin', 'Increases money rewards by 20%', (type, _args) => new Modifiers.MoneyMultiplierModifier(type)),
-  GOLDEN_PUNCH: () => new PokemonHeldItemModifierType('Golden Punch', 'Grants 50% of damage inflicted as money', (type, args) => new Modifiers.DamageMoneyRewardModifier(type, (args[0] as Pokemon).id)),
-  COIN_CASE: () => new ModifierType('Coin Case', 'After every 10th battle, receive 10% of your money in interest.', (type, _args) => new Modifiers.MoneyInterestModifier(type)),
+  AMULET_COIN: () => new ModifierType('护符金币', '将金钱奖励增加20%', (type, _args) => new Modifiers.MoneyMultiplierModifier(type)),
+  GOLDEN_PUNCH: () => new PokemonHeldItemModifierType('黄金拳', '将造成伤害的50%转换为金钱', (type, args) => new Modifiers.DamageMoneyRewardModifier(type, (args[0] as Pokemon).id)),
+  COIN_CASE: () => new ModifierType('代币盒', '每10场战斗后，获得你金钱的10%作为利息。', (type, _args) => new Modifiers.MoneyInterestModifier(type)),
 
-  LOCK_CAPSULE: () => new ModifierType('Lock Capsule', 'Allows you to lock item rarities when rerolling items', (type, _args) => new Modifiers.LockModifierTiersModifier(type), 'lock_capsule'),
+  LOCK_CAPSULE: () => new ModifierType('上锁的容器', '允许你在重新掷骰道具时锁定道具的稀有度', (type, _args) => new Modifiers.LockModifierTiersModifier(type), 'lock_capsule'),
 
-  GRIP_CLAW: () => new ContactHeldItemTransferChanceModifierType('Grip Claw', 10),
-  WIDE_LENS: () => new PokemonMoveAccuracyBoosterModifierType('Wide Lens', 5, 'wide_lens'),
+  GRIP_CLAW: () => new ContactHeldItemTransferChanceModifierType('紧缠钩爪', 10),
+  WIDE_LENS: () => new PokemonMoveAccuracyBoosterModifierType('广角镜', 5, 'wide_lens'),
 
-  MULTI_LENS: () => new PokemonMultiHitModifierType('Multi Lens', 'zoom_lens'),
+  MULTI_LENS: () => new PokemonMultiHitModifierType('多重镜片', 'zoom_lens'),
 
-  HEALING_CHARM: () => new ModifierType('Healing Charm', 'Increases the effectiveness of HP restoring moves and items by 10% (excludes Revives)',
+  HEALING_CHARM: () => new ModifierType('治愈护符', '将HP恢复招式和道具的效果提高10%（不包括复活）',
     (type, _args) => new Modifiers.HealingBoosterModifier(type, 1.1), 'healing_charm'),
-  CANDY_JAR: () => new ModifierType('Candy Jar', 'Increases the number of levels added by Rare Candy items by 1', (type, _args) => new Modifiers.LevelIncrementBoosterModifier(type)),
+  CANDY_JAR: () => new ModifierType('糖果罐', '将稀有糖果道具增加的等级数量增加1', (type, _args) => new Modifiers.LevelIncrementBoosterModifier(type)),
 
-  BERRY_POUCH: () => new ModifierType('Berry Pouch', 'Adds a 25% chance that a used berry will not be consumed',
+  BERRY_POUCH: () => new ModifierType('树果袋', '使用树果时有25%的几率不会消耗树果',
     (type, _args) => new Modifiers.PreserveBerryModifier(type)),
 
-  FOCUS_BAND: () => new PokemonHeldItemModifierType('Focus Band', 'Adds a 10% chance to survive with 1 HP after being damaged enough to faint',
+  FOCUS_BAND: () => new PokemonHeldItemModifierType('气势头带', '在受到足以昏厥的伤害后，\n有10%的几率以1HP存活',
     (type, args) => new Modifiers.SurviveDamageModifier(type, (args[0] as Pokemon).id)),
 
-  KINGS_ROCK: () => new PokemonHeldItemModifierType('King\'s Rock', 'Adds a 10% chance an attack move will cause the opponent to flinch',
+  KINGS_ROCK: () => new PokemonHeldItemModifierType('王者之证', '攻击招式有10%的几率使对手畏缩',
     (type, args) => new Modifiers.FlinchChanceModifier(type, (args[0] as Pokemon).id)),
 
-  LEFTOVERS: () => new PokemonHeldItemModifierType('Leftovers', 'Heals 1/16 of a Pokémon\'s maximum HP every turn',
+  LEFTOVERS: () => new PokemonHeldItemModifierType('吃剩的东西', '每回合恢复宝可梦最大HP的1/16',
     (type, args) => new Modifiers.TurnHealModifier(type, (args[0] as Pokemon).id)),
-  SHELL_BELL: () => new PokemonHeldItemModifierType('Shell Bell', 'Heals 1/8 of a Pokémon\'s dealt damage',
+  SHELL_BELL: () => new PokemonHeldItemModifierType('贝壳之铃', '恢复宝可梦造成伤害的1/8',
     (type, args) => new Modifiers.HitHealModifier(type, (args[0] as Pokemon).id)),
 
-  BATON: () => new PokemonHeldItemModifierType('Baton', 'Allows passing along effects when switching Pokémon, which also bypasses traps',
+  BATON: () => new PokemonHeldItemModifierType('接棒', '切换宝可梦时可以传递效果，\n并且可以绕过陷阱',
     (type, args) => new Modifiers.SwitchEffectTransferModifier(type, (args[0] as Pokemon).id), 'stick'),
 
-  SHINY_CHARM: () => new ModifierType('Shiny Charm', 'Dramatically increases the chance of a wild Pokémon being Shiny', (type, _args) => new Modifiers.ShinyRateBoosterModifier(type)),
-  ABILITY_CHARM: () => new ModifierType('Ability Charm', 'Dramatically increases the chance of a wild Pokémon having a Hidden Ability', (type, _args) => new Modifiers.HiddenAbilityRateBoosterModifier(type)),
+  SHINY_CHARM: () => new ModifierType('闪耀护符', '大幅提升野生宝可梦出现闪光的几率', (type, _args) => new Modifiers.ShinyRateBoosterModifier(type)),
+  ABILITY_CHARM: () => new ModifierType('特性护符', '允许在切换宝可梦时传递效果，\n这也绕过了陷阱，大大增加了\n野生宝可梦拥有隐藏能力的几率', (type, _args) => new Modifiers.HiddenAbilityRateBoosterModifier(type)),
 
-  IV_SCANNER: () => new ModifierType('IV Scanner', 'Allows scanning the IVs of wild Pokémon. 2 IVs are revealed per stack. The best IVs are shown first.', (type, _args) => new Modifiers.IvScannerModifier(type), 'scanner'),
+  IV_SCANNER: () => new ModifierType('个体值扫描仪', '允许扫描野生宝可梦的IV。每叠显示\n2个IV。首先显示最佳IV。', (type, _args) => new Modifiers.IvScannerModifier(type), 'scanner'),
 
-  DNA_SPLICERS: () => new FusePokemonModifierType('DNA Splicers'),
+  DNA_SPLICERS: () => new FusePokemonModifierType('基因之楔'),
 
-  MINI_BLACK_HOLE: () => new TurnHeldItemTransferModifierType('Mini Black Hole'),
+  MINI_BLACK_HOLE: () => new TurnHeldItemTransferModifierType('迷你黑洞'),
   
   VOUCHER: () => new AddVoucherModifierType(VoucherType.REGULAR, 1),
   VOUCHER_PLUS: () => new AddVoucherModifierType(VoucherType.PLUS, 1),
   VOUCHER_PREMIUM: () => new AddVoucherModifierType(VoucherType.PREMIUM, 1),
 
-  GOLDEN_POKEBALL: () => new ModifierType(`Golden ${getPokeballName(PokeballType.POKEBALL)}`, 'Adds 1 extra item option at the end of every battle',
+  GOLDEN_POKEBALL: () => new ModifierType(`黄金${getPokeballName(PokeballType.POKEBALL)}`, '在每场战斗结束时添加1个\n额外的物品选项',
     (type, _args) => new Modifiers.ExtraModifierModifier(type), 'pb_gold', null, 'pb_bounce_1'),
 
-  ENEMY_DAMAGE_BOOSTER: () => new ModifierType('Damage Token', 'Increases damage by 5%', (type, _args) => new Modifiers.EnemyDamageBoosterModifier(type, 5), 'wl_item_drop'),
-  ENEMY_DAMAGE_REDUCTION: () => new ModifierType('Protection Token', 'Reduces incoming damage by 2.5%', (type, _args) => new Modifiers.EnemyDamageReducerModifier(type, 2.5), 'wl_guard_spec'),
+  ENEMY_DAMAGE_BOOSTER: () => new ModifierType('伤害令牌', '提高伤害5%', (type, _args) => new Modifiers.EnemyDamageBoosterModifier(type, 5), 'wl_item_drop'),
+  ENEMY_DAMAGE_REDUCTION: () => new ModifierType('保护令牌', '减少受到的伤害2.5%', (type, _args) => new Modifiers.EnemyDamageReducerModifier(type, 2.5), 'wl_guard_spec'),
   //ENEMY_SUPER_EFFECT_BOOSTER: () => new ModifierType('Type Advantage Token', 'Increases damage of super effective attacks by 30%', (type, _args) => new Modifiers.EnemySuperEffectiveDamageBoosterModifier(type, 30), 'wl_custom_super_effective'),
-  ENEMY_HEAL: () => new ModifierType('Recovery Token', 'Heals 2% of max HP every turn', (type, _args) => new Modifiers.EnemyTurnHealModifier(type, 2), 'wl_potion'),
-  ENEMY_ATTACK_POISON_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('Poison Token', 10, StatusEffect.POISON, 'wl_antidote'),
-  ENEMY_ATTACK_PARALYZE_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('Paralyze Token', 10, StatusEffect.PARALYSIS, 'wl_paralyze_heal'),
-  ENEMY_ATTACK_SLEEP_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('Sleep Token', 10, StatusEffect.SLEEP, 'wl_awakening'),
-  ENEMY_ATTACK_FREEZE_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('Freeze Token', 10, StatusEffect.FREEZE, 'wl_ice_heal'),
-  ENEMY_ATTACK_BURN_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('Burn Token', 10, StatusEffect.BURN, 'wl_burn_heal'),
-  ENEMY_STATUS_EFFECT_HEAL_CHANCE: () => new ModifierType('Full Heal Token', 'Adds a 10% chance every turn to heal a status condition', (type, _args) => new Modifiers.EnemyStatusEffectHealChanceModifier(type, 10), 'wl_full_heal'),
-  ENEMY_ENDURE_CHANCE: () => new EnemyEndureChanceModifierType('Endure Token', 2.5, 'wl_reset_urge'),
-  ENEMY_FUSED_CHANCE: () => new ModifierType('Fusion Token', 'Adds a 1% chance that a wild Pokémon will be a fusion', (type, _args) => new Modifiers.EnemyFusionChanceModifier(type, 1), 'wl_custom_spliced'),
+  ENEMY_HEAL: () => new ModifierType('再生令牌', '每回合恢复最大生命值的2%', (type, _args) => new Modifiers.EnemyTurnHealModifier(type, 2), 'wl_potion'),
+  ENEMY_ATTACK_POISON_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('毒药令牌', 10, StatusEffect.POISON, 'wl_antidote'),
+  ENEMY_ATTACK_PARALYZE_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('麻痹令牌', 10, StatusEffect.PARALYSIS, 'wl_paralyze_heal'),
+  ENEMY_ATTACK_SLEEP_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('睡眠令牌', 10, StatusEffect.SLEEP, 'wl_awakening'),
+  ENEMY_ATTACK_FREEZE_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('冻结令牌', 10, StatusEffect.FREEZE, 'wl_ice_heal'),
+  ENEMY_ATTACK_BURN_CHANCE: () => new EnemyAttackStatusEffectChanceModifierType('燃烧令牌', 10, StatusEffect.BURN, 'wl_burn_heal'),
+  ENEMY_STATUS_EFFECT_HEAL_CHANCE: () => new ModifierType('痊愈令牌', '每回合有10%的几率治愈异常状态', (type, _args) => new Modifiers.EnemyStatusEffectHealChanceModifier(type, 10), 'wl_full_heal'),
+  ENEMY_ENDURE_CHANCE: () => new EnemyEndureChanceModifierType('忍耐令牌', 2.5, 'wl_reset_urge'),
+  ENEMY_FUSED_CHANCE: () => new ModifierType('融合令牌', '野生宝可梦有1%的几率是融合宝可梦', (type, _args) => new Modifiers.EnemyFusionChanceModifier(type, 1), 'wl_custom_spliced'),
 };
 
 interface ModifierPool {

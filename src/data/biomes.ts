@@ -9,18 +9,18 @@ import { SpeciesFormEvolution } from "./pokemon-evolutions";
 
 export function getBiomeName(biome: Biome | -1) {
   if (biome === -1)
-    return 'Somewhere you can\'t remember';
+    return '地点你已经记不清了';
   switch (biome) {
     case Biome.GRASS:
-      return 'Grassy Field';
+      return '草地';
     case Biome.RUINS:
-      return 'Ancient Ruins';
+      return '古代遗迹';
     case Biome.ABYSS:
-      return 'The Abyss';
+      return '深渊';
     case Biome.SPACE:
-      return 'Stratosphere';
+      return '同温层';
     case Biome.END:
-      return 'Final Destination';
+      return '最终之地';
     default:
       return Utils.toReadableString(Biome[biome]);
   }

@@ -39,7 +39,7 @@ export default class AbilityBar extends Phaser.GameObjects.Container {
   }
 
   showAbility(pokemon: Pokemon, passive: boolean = false): void {
-    this.pokemonNameText.setText(`${pokemon.name}'s${passive ? ' Passive' : ''}`);
+    this.pokemonNameText.setText(`${pokemon.name}的${passive ? '被动' : ''}`);
     this.abilityNameText.setText((!passive ? pokemon.getAbility() : pokemon.getPassiveAbility()).name);
 
     if (this.shown)

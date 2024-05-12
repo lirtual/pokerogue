@@ -31,8 +31,43 @@ export enum Nature {
   QUIRKY
 }
 
+// 定义一个映射表，将枚举值映射到对应的中文值
+const natureMap = {
+  [Nature.HARDY]: '勤奋',
+  [Nature.LONELY]: '孤独',
+  [Nature.BRAVE]: '勇敢',
+  [Nature.ADAMANT]: '固执',
+  [Nature.NAUGHTY]: '顽皮',
+  [Nature.BOLD]: '大胆',
+  [Nature.DOCILE]: '温顺',
+  [Nature.RELAXED]: '悠闲',
+  [Nature.IMPISH]: '淘气',
+  [Nature.LAX]: '马虎',
+  [Nature.TIMID]: '胆小',
+  [Nature.HASTY]: '急躁',
+  [Nature.SERIOUS]: '认真',
+  [Nature.JOLLY]: '开朗',
+  [Nature.NAIVE]: '天真',
+  [Nature.MODEST]: '谦虚',
+  [Nature.MILD]: '温和',
+  [Nature.QUIET]: '安静',
+  [Nature.BASHFUL]: '害羞',
+  [Nature.RASH]: '鲁莽',
+  [Nature.CALM]: '冷静',
+  [Nature.GENTLE]: '温柔',
+  [Nature.SASSY]: '自大',
+  [Nature.CAREFUL]: '谨慎',
+  [Nature.QUIRKY]: '古怪'
+};
+
+// 获取对应枚举值的中文值
+export function getNatureChineseValue(nature: Nature) {
+  return natureMap[nature];
+}
+
 export function getNatureName(nature: Nature, includeStatEffects: boolean = false, forStarterSelect: boolean = false, ignoreBBCode: boolean = false, uiTheme: UiTheme = UiTheme.DEFAULT): string {
-  let ret = Utils.toReadableString(Nature[nature]);
+  // let ret = Utils.toReadableString(Nature[nature]);
+  let ret = getNatureChineseValue(nature);
   if (includeStatEffects) {
     const stats = Utils.getEnumValues(Stat).slice(1);
     let increasedStat: Stat = null;

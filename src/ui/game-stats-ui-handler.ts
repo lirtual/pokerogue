@@ -20,70 +20,71 @@ interface DisplayStats {
 
 const displayStats: DisplayStats = {
   playTime: {
+    label: '游戏时长',
     sourceFunc: gameData => Utils.getPlayTimeString(gameData.gameStats.playTime)
   },
-  battles: 'Total Battles',
+  battles: '战斗总数',
   startersUnlocked: {
-    label: 'Starters',
+    label: '初始宝可梦',
     sourceFunc: gameData => {
       const starterCount = gameData.getStarterCount(d => !!d.caughtAttr);
       return `${starterCount} (${Math.floor((starterCount / Object.keys(speciesStarters).length) * 1000) / 10}%)`;
     }
   },
   shinyStartersUnlocked: {
-    label: 'Shiny Starters',
+    label: '异色初始宝可梦',
     sourceFunc: gameData => {
       const starterCount = gameData.getStarterCount(d => !!(d.caughtAttr & DexAttr.SHINY));
       return `${starterCount} (${Math.floor((starterCount / Object.keys(speciesStarters).length) * 1000) / 10}%)`;
     }
   },
   dexSeen: {
-    label: 'Species Seen',
+    label: '已发现宝可梦',
     sourceFunc: gameData => {
       const seenCount = gameData.getSpeciesCount(d => !!d.seenAttr);
       return `${seenCount} (${Math.floor((seenCount / Object.keys(gameData.dexData).length) * 1000) / 10}%)`;
     }
   },
   dexCaught: {
-    label: 'Species Caught',
+    label: '已捕获宝可梦',
     sourceFunc: gameData => {
       const caughtCount = gameData.getSpeciesCount(d => !!d.caughtAttr);
       return `${caughtCount} (${Math.floor((caughtCount / Object.keys(gameData.dexData).length) * 1000) / 10}%)`;
     }
   },
-  ribbonsOwned: 'Ribbons Owned',
-  classicSessionsPlayed: 'Classic Runs',
-  sessionsWon: 'Classic Wins',
-  dailyRunSessionsPlayed: 'Daily Run Attempts',
-  dailyRunSessionsWon: 'Daily Run Wins',
-  endlessSessionsPlayed: 'Endless Runs?',
-  highestEndlessWave: 'Highest Wave (Endless)?',
-  highestMoney: 'Highest Money',
-  highestDamage: 'Highest Damage',
-  highestHeal: 'Highest HP Healed',
-  pokemonSeen: 'Pokémon Encountered',
-  pokemonDefeated: 'Pokémon Defeated',
-  pokemonCaught: 'Pokémon Caught',
-  pokemonHatched: 'Eggs Hatched',
-  subLegendaryPokemonSeen: 'Sub-Legends Seen?',
-  subLegendaryPokemonCaught: 'Sub-Legends Caught?',
-  subLegendaryPokemonHatched: 'Sub-Legends Hatched?',
-  legendaryPokemonSeen: 'Legends Seen?',
-  legendaryPokemonCaught: 'Legends Caught?',
-  legendaryPokemonHatched: 'Legends Hatched?',
-  mythicalPokemonSeen: 'Mythicals Seen?',
-  mythicalPokemonCaught: 'Mythicals Caught?',
-  mythicalPokemonHatched: 'Mythicals Hatched?',
-  shinyPokemonSeen: 'Shinies Seen?',
-  shinyPokemonCaught: 'Shinies Caught?',
-  shinyPokemonHatched: 'Shinies Hatched?',
-  pokemonFused: 'Pokémon Fused?',
-  trainersDefeated: 'Trainers Defeated',
-  eggsPulled: 'Eggs Pulled',
-  rareEggsPulled: 'Rare Eggs Pulled?',
-  epicEggsPulled: 'Epic Eggs Pulled?',
-  legendaryEggsPulled: 'Legendary Eggs Pulled?',
-  manaphyEggsPulled: 'Manaphy Eggs Pulled?'
+  ribbonsOwned: '获得的缎带数量',
+  classicSessionsPlayed: '经典模式游戏次数',
+  sessionsWon: '经典模式胜利次数',
+  dailyRunSessionsPlayed: '每日挑战尝试次数',
+  dailyRunSessionsWon: '每日挑战胜利次数',
+  endlessSessionsPlayed: '无尽模式游戏次数',
+  highestEndlessWave: '最高波数 (无尽模式)',
+  highestMoney: '最高金钱',
+  highestDamage: '最高伤害',
+  highestHeal: '最高生命值回复',
+  pokemonSeen: '遇到的宝可梦数量',
+  pokemonDefeated: '击败的宝可梦数量',
+  pokemonCaught: '捕捉的宝可梦数量',
+  pokemonHatched: '孵化的宝可梦数量',
+  subLegendaryPokemonSeen: '遇到的准神兽数量',
+  subLegendaryPokemonCaught: '捕捉的准神兽数量',
+  subLegendaryPokemonHatched: '孵化的准神兽数量',
+  legendaryPokemonSeen: '遇到的神兽数量',
+  legendaryPokemonCaught: '捕捉的神兽数量',
+  legendaryPokemonHatched: '孵化的神兽数量',
+  mythicalPokemonSeen: '遇到的幻之宝可梦数量',
+  mythicalPokemonCaught: '捕捉的幻之宝可梦数量',
+  mythicalPokemonHatched: '孵化的幻之宝可梦数量',
+  shinyPokemonSeen: '遇到的闪光宝可梦数量',
+  shinyPokemonCaught: '捕捉的闪光宝可梦数量',
+  shinyPokemonHatched: '孵化的闪光宝可梦数量',
+  pokemonFused: '融合的宝可梦数量',
+  trainersDefeated: '击败的训练家数量',
+  eggsPulled: '获得的蛋数量',
+  rareEggsPulled: '获得的稀有蛋数量',
+  epicEggsPulled: '获得的史诗蛋数量',
+  legendaryEggsPulled: '获得的传说蛋数量',
+  manaphyEggsPulled: '获得的霏欧纳蛋数量'
 };
 
 export default class GameStatsUiHandler extends UiHandler {
@@ -110,7 +111,7 @@ export default class GameStatsUiHandler extends UiHandler {
     const headerBg = addWindow(this.scene, 0, 0, (this.scene.game.canvas.width / 6) - 2, 24);
     headerBg.setOrigin(0, 0);
 
-    const headerText = addTextObject(this.scene, 0, 0, 'Stats', TextStyle.SETTINGS_LABEL);
+    const headerText = addTextObject(this.scene, 0, 0, '数据统计', TextStyle.SETTINGS_LABEL);
     headerText.setOrigin(0, 0);
     headerText.setPositionRelative(headerBg, 8, 4);
 

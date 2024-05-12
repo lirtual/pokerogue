@@ -44,7 +44,7 @@ export default class ModifierSelectUiHandler extends AwaitableUiHandler {
     this.transferButtonContainer.setVisible(false);
     ui.add(this.transferButtonContainer);
 
-    const transferButtonText = addTextObject(this.scene, -4, -2, 'Transfer', TextStyle.PARTY);
+    const transferButtonText = addTextObject(this.scene, -4, -2, '转移', TextStyle.PARTY);
     transferButtonText.setOrigin(1, 0);
     this.transferButtonContainer.add(transferButtonText);
 
@@ -52,7 +52,7 @@ export default class ModifierSelectUiHandler extends AwaitableUiHandler {
     this.rerollButtonContainer.setVisible(false);
     ui.add(this.rerollButtonContainer);
 
-    const rerollButtonText = addTextObject(this.scene, -4, -2, 'Reroll', TextStyle.PARTY);
+    const rerollButtonText = addTextObject(this.scene, -4, -2, '刷新', TextStyle.PARTY);
     rerollButtonText.setOrigin(0, 0);
     this.rerollButtonContainer.add(rerollButtonText);
 
@@ -65,7 +65,7 @@ export default class ModifierSelectUiHandler extends AwaitableUiHandler {
     this.lockRarityButtonContainer.setVisible(false);
     ui.add(this.lockRarityButtonContainer);
 
-    this.lockRarityButtonText = addTextObject(this.scene, -4, -2, 'Lock Rarities', TextStyle.PARTY);
+    this.lockRarityButtonText = addTextObject(this.scene, -4, -2, '锁定', TextStyle.PARTY);
     this.lockRarityButtonText.setOrigin(0, 0);
     this.lockRarityButtonContainer.add(this.lockRarityButtonText);
   }
@@ -287,13 +287,13 @@ export default class ModifierSelectUiHandler extends AwaitableUiHandler {
       ui.showText(options[this.cursor].modifierTypeOption.type.getDescription(this.scene));
     } else if (!cursor) {
       this.cursorObj.setPosition(6, this.lockRarityButtonContainer.visible ? -72 : -60);
-      ui.showText('Spend money to reroll your item options.');
+      ui.showText('花费金钱重新刷新你的物品选项。');
     } else if (cursor === 1) {
       this.cursorObj.setPosition((this.scene.game.canvas.width / 6) - 50, -60);
-      ui.showText('Transfer a held item from one Pokémon to another.');
+      ui.showText('将一个宝可梦的持有物转移给另一个宝可梦。');
     } else {
       this.cursorObj.setPosition(6, -60);
-      ui.showText('Lock item rarities on reroll (affects reroll cost).');
+      ui.showText('在刷新时锁定物品稀有度（影响刷新成本）。');
     }
 
     return ret;

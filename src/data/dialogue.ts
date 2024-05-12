@@ -16,2277 +16,2277 @@ export const trainerTypeDialogue = {
   [TrainerType.YOUNGSTER]: [
     {
       encounter: [
-        `Hey, wanna battle?`,
-        `Are you a new trainer too?`,
-        `Hey, I haven't seen you before. Let's battle!`,
-        `I just lost, so I'm trying to find more Pokémon.\nWait! You look weak! Come on, let's battle!`,
-        `Have we met or not? I don't really remember. Well, I guess it's nice to meet you anyway!`,
-        `All right! Let's go!`,
-        `All right! Here I come! I'll show you my power!`,
-        `Haw haw haw... I'll show you how hawesome my Pokémon are!`,
-        `No need to waste time saying hello. Bring it on whenever you're ready!`,
-        `Don't let your guard down, or you may be crying when a kid beats you.`,
-        `I've raised my Pokémon with great care. You're not allowed to hurt them!`,
-        `Glad you made it! It won't be an easy job from here.`,
-        `The battles continue forever! Welcome to the world with no end!`
+        "嘿，想来一场对战吗？",
+        "你也是新人训练家吗？",
+        "嘿，我好像没见过你。来对战吧！",
+        "我刚输了一场，所以正在找更多宝可梦。\n等等！你看起来很弱！来吧，我们来对战！",
+        "我们见过面吗？我记不太清了。嗯，不管怎样，很高兴认识你！",
+        "好吧！来吧！",
+        "好吧！我来了！我会让你见识我的厉害！",
+        "哈哈哈哈哈... 我会让你见识我的宝可梦有多厉害！",
+        "不用浪费时间打招呼了。你准备好了就放马过来吧！",
+        "别放松警惕，不然你可能会被一个小孩打败而哭鼻子。",
+        "我精心培育了我的宝可梦。你不能伤害它们！",
+        "很高兴你成功抵达这里！接下来的战斗可不会轻松。",
+        "对战永无止境！欢迎来到没有终点的世界！"
       ],
       victory: [
-        `Wow! You're strong!`,
-        `I didn't stand a chance, huh?`,
-        `I'll find you again when I'm older and beat you!`,
-        `Ugh. I don't have any more Pokémon.`,
-        `No way… NO WAY! How could I lose again…`,
-        `No! I lost!`,
-        `Whoa! You are incredible! I'm amazed and surprised!`,
-        `Could it be… How… My Pokémon and I are the strongest, though…`,
-        `I won't lose next time! Let's battle again sometime!`,
-        `Sheesh! Can't you see that I'm just a kid! It wasn't fair of you to go all out like that!`,
-        `Your Pokémon are more amazing! Trade with me!`,
-        `I got a little carried away earlier, but what job was I talking about?`,
-        `Ahaha! There it is! That's right! You're already right at home in this world!`
+        "哇！你真强！",
+        "我根本没有机会，是吧？",
+        "等我长大以后再来找你，打败你！",
+        "呃。我没有宝可梦了。",
+        "不可能… 不可能！我怎么又输了…",
+        "不！我输了！",
+        "哇！你太不可思议了！我惊讶极了！",
+        "难道… 怎么会… 我的宝可梦和我才是最强的…",
+        "下次我不会输的！找个时间再战一场吧！",
+        "哎呀！你没看到我只是个孩子吗！你这样全力以赴太不公平了！",
+        "你的宝可梦更厉害！和我交换吧！",
+        "我刚才有点得意忘形了，但我刚才说的工作是什么来着？",
+        "啊哈！就是这样！没错！你已经在这个世界里如鱼得水了！"
       ]
     },
     //LASS
     {
       encounter: [
-        `Let's have a battle, shall we?`,
-        `You look like a new trainer. Let's have a battle!`,
-        `I don't recognize you. How about a battle?`,
-        `Let's have a fun Pokémon battle!`,
-        `I'll show you the ropes of how to really use Pokémon!`,
-        `A serious battle starts from a serious beginning! Are you sure you're ready?`,
-        `You're only young once. And you only get one shot at a given battle. Soon, you'll be nothing but a memory.`,
-        `You'd better go easy on me, OK? Though I'll be seriously fighting!`,
-        `School is boring. I've got nothing to do. Yawn. I'm only battling to kill the time.`
+        "我们来一场对战吧，好吗？",
+        "你看起来像个新人训练家。我们来一场对战吧！",
+        "我不认识你。来一场对战怎么样？",
+        "我们来一场有趣的宝可梦对战吧！",
+        "我会教你如何真正使用宝可梦！",
+        "一场认真的对战从认真的开始！你确定你准备好了吗？",
+        "你只有一次年轻的机会。你也只有一次机会参加一场特定的战斗。很快，你将成为回忆。",
+        "你最好对我手下留情，好吗？不过我会认真战斗的！",
+        "上学很无聊。我没事可做。打哈欠。我只是为了消磨时间才战斗。"
       ],
       victory: [
-        `That was impressive! I've got a lot to learn.`,
-        `I didn't think you'd beat me that bad…`,
-        `I hope we get to have a rematch some day.`,
-        `That was pretty amazingly fun! You've totally exhausted me…`,
-        `You actually taught me a lesson! You're pretty amazing!`,
-        `Seriously, I lost. That is, like, seriously depressing, but you were seriously cool.`,
-        `I don't need memories like this. Deleting memory…`,
-        `Hey! I told you to go easy on me! Still, you're pretty cool when you're serious.`,
-        `I'm actually getting tired of battling… There's gotta be something new to do…`
+        "太棒了！我还有很多东西要学。",
+        "没想到你会把我打得那么惨…",
+        "希望有一天我们能再战一场。",
+        "真是太有趣了！你把我累坏了…",
+        "你真的给了我一个教训！你太棒了！",
+        "说真的，我输了。也就是说，真的很沮丧，但你真的很酷。",
+        "我不需要这样的回忆。删除记忆…",
+        "嘿！我告诉过你对我手下留情！不过，你认真起来的时候真的很酷。",
+        "我真的厌倦了战斗… 一定有新的事情要做…"
       ]
     }
   ],
   [TrainerType.BREEDER]: [
     {
       encounter: [
-        `Obedient Pokémon, selfish Pokémon… Pokémon have unique characteristics.`,
-        `Even though my upbringing and behavior are poor, I've raised my Pokémon well.`,
-        `Hmm, do you discipline your Pokémon? Pampering them too much is no good.`,
+        "听话的宝可梦，自私的宝可梦… 宝可梦有独特的个性。",
+        "虽然我的教养和行为都很差，但我把我的宝可梦养得很好。",
+        "嗯，你管教你的宝可梦吗？太溺爱它们可不好。"
       ],
       victory: [
-        `It is important to nurture and train each Pokémon's characteristics.`,
-        `Unlike my diabolical self, these are some good Pokémon.`,
-        `Too much praise can spoil both Pokémon and people.`,
+        "培养和训练每只宝可梦的特性很重要。",
+        "不像我这个恶魔，这些都是一些好宝可梦。",
+        "过多的赞美会宠坏宝可梦和人。"
       ],
       defeat:[
-        `You should not get angry at your Pokémon, even if you lose a battle.`,
-        `Right? Pretty good Pokémon, huh? I'm suited to raising things.`,
-        `No matter how much you love your Pokémon, you still have to discipline them when they misbehave.`
+        "即使你输了比赛，也不应该对你的宝可梦生气。",
+        "对吧？很棒的宝可梦，嗯？我适合养东西。",
+        "无论你多么爱你的宝可梦，当它们犯错时，你还是要管教它们。"
       ]
     },
     {
       encounter: [
-        `Pokémon never betray you. They return all the love you give them.`,
-        `Shall I give you a tip for training good Pokémon?`,
-        `I have raised these very special Pokémon using a special method.`
+        "宝可梦永远不会背叛你。它们会回报你所有的爱。",
+        "要我给你一些训练好宝可梦的建议吗？",
+        "我用一种特殊的方法培育了这些非常特别的宝可梦。"
       ],
       victory: [
-        `Ugh… It wasn't supposed to be like this. Did I administer the wrong blend?`,
-        `How could that happen to my Pokémon… What are you feeding your Pokémon?`,
-        `If I lose, that tells you I was just killing time. It doesn't damage my ego at all.`
+        "呃… 不应该是这样的。我是不是配错了？",
+        "我的宝可梦怎么会这样… 你给你的宝可梦吃什么？",
+        "如果我输了，那就说明我只是在消磨时间。这根本不会损害我的自尊心。"
       ],
       defeat: [
-        `This proves my Pokémon have accepted my love.`,
-        `The real trick behind training good Pokémon is catching good Pokémon.`,
-        `Pokémon will be strong or weak depending on how you raise them.`
+        "这证明我的宝可梦接受了我的爱。",
+        "训练好宝可梦的真正诀窍是捕捉好宝可梦。",
+        "宝可梦的强弱取决于你如何培养它们。"
       ]
     }
   ],
   [TrainerType.FISHERMAN]: [
     {
       encounter: [
-        `Aack! You made me lose a bite!\nWhat are you going to do about it?`,
-        `Go away! You're scaring the Pokémon!`,
-        `Let's see if you can reel in a victory!`,
+        "啊！你害我错失了鱼饵！\n你打算怎么办？",
+        "走开！你在吓唬宝可梦！",
+        "让我们看看你能不能钓到胜利！",
       ],
       victory: [
-        `Just forget about it.`,
-        `Next time, I'll be reelin' in the triumph!`,
-        `Guess I underestimated the currents this time.`,
+        "算了吧。",
+        "下次，我会钓到胜利！",
+        "我猜我这次低估了水流。"
       ]
     },
     {
       encounter: [
-        `Woah! I've hooked a big one!`,
-        `Line's in, ready to reel in success!`,
-        `Ready to make waves!`
+        "哇！我钓到一条大鱼了！",
+        "鱼线已经放好，准备钓到成功！",
+        "准备掀起波澜！"
       ],
       victory: [
-        `I'll be back with a stronger hook.`,
-        `I'll reel in victory next time.`,
-        `I'm just sharpening my hooks for the comeback!`
+        "我会带着更强的鱼钩回来的。",
+        "下次我会钓到胜利的。",
+        "我只是在磨尖我的鱼钩，准备卷土重来！"
       ]
     }
   ],
   [TrainerType.SWIMMER]: [
     {
       encounter: [
-        `Time to dive in!`,
-        `Let's ride the waves of victory!`,
-        `Ready to make a splash!`,
+        "是时候潜入水中了！",
+        "让我们乘着胜利的浪潮前进！",
+        "准备掀起水花！"
       ],
       victory: [
-        `Drenched in defeat!`,
-        `A wave of defeat!`,
-        `Back to shore, I guess.`,
+        "被失败淋湿了！",
+        "失败的浪潮！",
+        "我猜，该回到岸边了。",
       ]
     }
   ],
   [TrainerType.BACKPACKER]: [
     {
       encounter: [
-        `Pack up, game on!`,
-        `Let's see if you can keep pace!`,
-        `Gear up, challenger!`,
-        `I've spent 20 years trying to find myself… But where am I?`
+        "收拾好东西，游戏开始！",
+        "让我们看看你是否能跟上！",
+        "做好准备，挑战者！",
+        "我花了20年时间试图找到自我… 但我在哪里？"
       ],
       victory: [
-        `Tripped up this time!`,
-        `Oh, I think I'm lost.`,
-        `Dead end!`,
-        `Wait up a second! Hey! Don't you know who I am?`
+        "这次绊倒了！",
+        "哦，我想我迷路了。",
+        "死胡同！",
+        "等一下！嘿！你不知道我是谁吗？"
       ]
     }
   ],
   [TrainerType.ACE_TRAINER]: [
     {
       encounter: [
-        `You seem quite confident.`,
-        `Your Pokémon… Show them to me…`,
-        `Because I'm an Ace Trainer, people think I'm strong.`,
-        `Are you aware of what it takes to be an Ace Trainer?`
+        "你看起来很有自信。",
+        "你的宝可梦… 给我看看…",
+        "因为我是王牌训练家，所以人们认为我很强。",
+        "你知道成为王牌训练家需要什么吗？"
       ],
       victory: [
-        `Yes… You have good Pokémon…`,
-        `What?! But I'm a battling genius!`,
-        `Of course, you are the main character!`,
-        `OK! OK! You could be an Ace Trainer!`
+        "是的… 你有很好的宝可梦…",
+        "什么？！但我可是对战天才！",
+        "当然，你是主角！",
+        "好吧！好吧！你可能会成为王牌训练家！"
       ],
       defeat: [
-        `I am devoting my body and soul to Pokémon battles!`,
-        `All within my expectations… Nothing to be surprised about…`,
-        `I thought I'd grow up to be a frail person who looked like they would break if you squeezed them too hard.`,
-        `Of course I'm strong and don't lose. It's important that I win gracefully.`
+        "我正在全身心地投入到宝可梦对战中！",
+        "都在我的预料之中… 没什么好惊讶的…",
+        "我以为我会长大成为一个瘦弱的人，看起来一捏就会碎掉。",
+        "我当然很强，不会输。重要的是我要赢得漂亮。"
       ]
     }
   ],
   [TrainerType.PARASOL_LADY]: [
     {
       encounter: [
-        `Time to grace the battlefield with elegance and poise!`,
+        "是时候用优雅和沉着来点缀战场了！"
       ],
       victory: [
-        `My elegance remains unbroken!`,
+        "我的优雅依然完好无损！"
       ]
     }
   ],
   [TrainerType.TWINS]: [
     {
       encounter: [
-        `Get ready, because when we team up, it's double the trouble!`,
-        `Two hearts, one strategy – let's see if you can keep up with our twin power!`,
-        `Hope you're ready for double trouble, because we're about to bring the heat!`
+        "做好准备，因为当我们联手时，麻烦会加倍！",
+        "两颗心，一个策略 - 让我们看看你是否能跟上我们的双胞胎力量！",
+        "希望你准备好迎接双重麻烦，因为我们要放大招了！"
       ],
       victory: [
-        `We may have lost this round, but our bond remains unbreakable!`,
-        `Our twin spirit won't be dimmed for long.`,
-        `We'll come back stronger as a dynamic duo!`
+        "我们可能输掉了这一局，但我们的羁绊依然牢不可破！",
+        "我们的双胞胎精神不会黯淡太久。",
+        "我们会以更强大的姿态回归，成为充满活力的二人组！"
       ],
       defeat: [
-        `Twin power reigns supreme!`,
-        `Two hearts, one triumph!`,
-        `Double the smiles, double the victory dance!`
+        "双胞胎力量至上！",
+        "两颗心，一次胜利！",
+        "双倍的微笑，双倍的胜利之舞！"
       ],
     }
   ],
   [TrainerType.CYCLIST]: [
     {
       encounter: [
-        `Get ready to eat my dust!`,
-        `Gear up, challenger! I'm about to leave you in the dust!`,
-        `Pedal to the metal, let's see if you can keep pace!`
+        "准备好吃我的灰尘吧！",
+        "做好准备，挑战者！我马上就要让你吃灰了！",
+        "全速前进，让我们看看你是否能跟上！",
       ],
       victory: [
-        `Spokes may be still, but determination pedals on.`,
-        `Outpaced!`,
-        `The road to victory has many twists and turns yet to explore.`
+        "车轮可能静止不动，但决心仍在踩踏板。",
+        "被超越了！",
+        "通往胜利的道路还有许多曲折需要探索。"
       ]
     }
   ],
   [TrainerType.BLACK_BELT]: [
     {
       encounter: [
-        `I praise your courage in challenging me! For I am the one with the strongest kick!`,
-        `Oh, I see. Would you like to be cut to pieces? Or do you prefer the role of punching bag?`
+        "我赞扬你挑战我的勇气！因为我才是拥有最强踢击的人！",
+        "哦，我明白了。你想被切成碎片吗？还是你更喜欢扮演沙包的角色？"
       ],
       victory: [
-        `Oh. The Pokémon did the fighting. My strong kick didn't help a bit.`,
-        `Hmmm… If I was going to lose anyway, I was hoping to get totally messed up in the process.`
+        "哦。是宝可梦在战斗。我的强力踢击一点用都没有。",
+        "嗯… 如果我无论如何都会输，我希望在这个过程中被彻底打败。"
       ]
     },
     //BATTLE GIRL
     {
       encounter: [
-        `You don't have to try to impress me. You can lose against me.`,
+        "你不必试图给我留下深刻印象。你可以输给我。"
       ],
       victory: [
-        `It's hard to say good-bye, but we are running out of time…`,
+        "很难说再见，但我们的时间不多了…"
       ]
     }
   ],
   [TrainerType.HIKER]: [
     {
       encounter: [
-        `My middle-age spread has given me as much gravitas as the mountains I hike!`,
-        `I inherited this big-boned body from my parents… I'm like a living mountain range…`,
+        "我的中年发福让我和我去过的山一样有分量！",
+        "我从父母那里继承了这副大骨架… 我就像一座活生生的山脉…"
       ],
       victory: [
-        `At least I cannot lose when it comes to BMI!`,
-        `It's not enough… It's never enough. My bad cholesterol isn't high enough…`
+        "至少在体重指数方面我不会输！",
+        "这还不够… 永远不够。我的坏胆固醇还不够高…"
       ]
     }
   ],
   [TrainerType.RANGER]: [
     {
       encounter: [
-        `When I am surrounded by nature, most other things cease to matter.`,
-        `When I'm living without nature in my life, sometimes I'll suddenly feel an anxiety attack coming on.`
+        `当我被大自然包围时，其他大多数事情都变得无关紧要。`,
+        `当我的生活中没有自然时，有时我会突然感到焦虑症发作。`
       ],
       victory: [
-        `It doesn't matter to the vastness of nature whether I win or lose…`,
-        `Something like this is pretty trivial compared to the stifling feelings of city life.`
+        `对于浩瀚的自然而言，我输赢并不重要……`,
+        `与城市生活的压抑感相比，这样的事情微不足道。`
       ],
       defeat: [
-        `I won the battle. But victory is nothing compared to the vastness of nature…`,
-        `I'm sure how you feel is not so bad if you compare it to my anxiety attacks…`
+        `我赢得了战斗。但与浩瀚的自然相比，胜利算不了什么……`,
+        `我相信如果你把它和我的焦虑症相比，你的感受不会那么糟糕……`
       ]
     }
   ],
   [TrainerType.SCIENTIST]: [
     {
       encounter: [
-        `My research will lead this world to peace and joy.`,
+        `我的研究将带领这个世界走向和平与快乐。`,
       ],
       victory: [
-        `I am a genius… I am not supposed to lose against someone like you…`,
+        `我是天才……我不应该输给像你这样的人……`,
       ]
     }
   ],
   [TrainerType.STUDENT]: [
     {
       encounter: [
-        `…Heehee. I'm confident in my calculations and analysis.`,
-        `I'm gaining as much experience as I can because I want to be a Gym Leader someday.`
+        `…嘿嘿。我对自己的计算和分析很有信心。`,
+        `我正在尽可能多地积累经验，因为我想有一天成为道馆馆主。`
       ],
       victory: [
-        `Ohhhh… Calculation and analysis are perhaps no match for chance…`,
-        `Even difficult, trying experiences have their purpose, I suppose.`
+        `哦……计算和分析也许比不上运气……`,
+        `我想，即使是艰难的、令人沮丧的经历也有其意义。`
       ]
     }
   ],
   [TrainerType.ARTIST]: [
     {
       encounter: [
-        `I used to be popular, but now I am all washed up.`,
+        `我曾经很受欢迎，但现在我已经过气了。`,
       ],
       victory: [
-        `As times change, values also change. I realized that too late.`,
+        `时代在变，价值观也在变。我意识到这一点太晚了。`,
       ]
     }
   ],
   [TrainerType.GUITARIST]: [
     {
       encounter: [
-        `Get ready to feel the rhythm of defeat as I strum my way to victory!`,
+        `准备好感受失败的节奏吧，我将弹奏着我的吉他走向胜利！`,
       ],
       victory: [
-        `Silenced for now, but my melody of resilience will play on.`,
+        `现在安静了，但我坚韧的旋律将继续演奏。`,
       ]
     }
   ],
   [TrainerType.WORKER]: [
     {
       encounter: [
-        `It bothers me that people always misunderstand me. I'm a lot more pure than everyone thinks.`
+        `人们总是误解我，这让我很困扰。我比大家想象的要单纯得多。`
       ],
       victory: [
-        `I really don't want my skin to burn, so I want to stay in the shade while I work.`,
+        `我真的不想让我的皮肤被晒伤，所以我想在工作的时候待在阴凉处。`,
       ]
     },
     {
       encounter: [
-        `It bothers me that people always misunderstand me. 
-        $I'm a lot more pure than everyone thinks.`
+        `人们总是误解我，这让我很困扰。
+        $我比大家想象的要单纯得多。`
       ],
       victory: [
-        `I really don't want my skin to burn, so I want to stay in the shade while I work.`
+        `我真的不想让我的皮肤被晒伤，所以我想在工作的时候待在阴凉处。`,
       ],
       defeat: [
-        `My body and mind aren't necessarily always in sync.`
+        `我的身体和思想不一定总是一致的。`
       ]
     },
     {
       encounter: [
-        `I'll show you we can break you. We've been training in the field!`
+        `我会让你见识到我们可以打败你。我们一直在野外训练！`
       ],
       victory: [
-        `How strange… How could this be… I shouldn't have been outmuscled.`,
+        `真奇怪……怎么会这样……我不应该被肌肉战胜。`,
       ]
     },
   ],
   [TrainerType.HEX_MANIAC]: [
     {
       encounter: [
-        `I normally only ever listen to classical music, but if I lose, I think I shall try a bit of new age!`,
-        `I grow stronger with each tear I cry.`
+        `我通常只听古典音乐，但如果我输了，我想我会尝试一下新世纪音乐！`,
+        `我每哭一次眼泪，就会变得更强大。`
       ],
       victory: [
-        `Is this the dawning of the age of Aquarius?`,
-        `Now I can get even stronger. I grow with every grudge.`
+        `这是水瓶座时代的曙光吗？`,
+        `现在我可以变得更强大了。我随着每一次怨恨而成长。`
       ],
       defeat: [
-        `New age simply refers to twentieth century classical composers, right?`,
-        `Don't get hung up on sadness or frustration. You can use your grudges to motivate yourself.`
+        `新世纪音乐只是指二十世纪的古典作曲家，对吧？`,
+        `不要沉溺于悲伤或沮丧。你可以利用你的怨恨来激励自己。`
       ]
     }
   ],
   [TrainerType.PSYCHIC]: [
     {
       encounter: [
-        `Hi! Focus!`,
+        `嗨！集中注意力！`,
       ],
       victory: [
-        `Eeeeek!`,
+        `啊啊啊！`,
       ]
     }
   ],
   [TrainerType.OFFICER]: [
     {
       encounter: [
-        `Brace yourself, because justice is about to be served!`,
-        `Ready to uphold the law and serve justice on the battlefield!`
+        `做好准备，因为正义即将得到伸张！`,
+        `准备好在战场上维护法律，伸张正义！`
       ],
       victory: [
-        `The weight of justice feels heavier than ever…`,
-        `The shadows of defeat linger in the precinct.`
+        `正义的重担比以往任何时候都沉重……`,
+        `失败的阴影在警察局里挥之不去。`
       ]
     }
   ],
   [TrainerType.BEAUTY]: [
     {
       encounter: [
-        `My last ever battle… That's the way I'd like us to view this match…`
+        `我最后一次战斗……我希望我们能这样看待这场比赛……`
       ],
       victory: [
-        `It's been fun… Let's have another last battle again someday…`
+        `这很有趣……让我们改天再进行最后一次战斗……`
       ]
     }
   ],
   [TrainerType.BAKER]: [
     {
       encounter: [
-        `Hope you're ready to taste defeat!`
+        `希望你准备好品尝失败的滋味！`
       ],
       victory: [
-        `I'll bake a comeback.`
+        `我会卷土重来的。`
       ]
     }
   ],
   [TrainerType.BIKER]: [
     {
       encounter: [
-        `Time to rev up and leave you in the dust!`
+        `是时候加速把你甩在身后了！`
       ],
       victory: [
-        `I'll tune up for the next race.`
+        `我会为下一场比赛做好准备。`
       ]
     }
   ],
   [TrainerType.BROCK]: {
     encounter: [
-      `My expertise on Rock-type Pokémon will take you down! Come on!`,
-      `My rock-hard willpower will overwhelm you!`,
-      `Allow me to show you the true strength of my Pokémon!`
+      `我对岩石系宝可梦的专业知识会打败你！来吧！`,
+      `我坚如磐石的意志力会压倒你！`,
+      `请允许我向你展示我的宝可梦的真正实力！`
     ],
     victory: [
-      `Your Pokémon's strength have overcome my rock-hard defenses!`,
-      `The world is huge! I'm glad to have had a chance to battle you.`,
-      `Perhaps I should go back to pursuing my dream as a Pokémon Breeder…`
+      `你的宝可梦的力量已经战胜了我坚如磐石的防御！`,
+      `世界很大！我很高兴有机会和你战斗。`,
+      `也许我应该回去追求我成为宝可梦培育家的梦想……`
     ],
     defeat: [
-      `The best offense is a good defense!\nThat's my way of doing things!`,
-      `Come study rocks with me next time to better learn how to fight them!`,
-      `Hah, all my traveling around the regions is paying off!`
+      `最好的进攻就是好的防守！\n这就是我的做事方式！`,
+      `下次来和我一起研究岩石，以便更好地学习如何与它们战斗！`,
+      `哈，我所有的地区旅行都得到了回报！`
     ]
   },
   [TrainerType.MISTY]: {
     encounter: [
-      `My policy is an all out offensive with Water-type Pokémon!`,
-      `Hiya, I'll show you the strength of my aquatic Pokémon!`,
-      `My dream was to go on a journey and battle powerful trainers…\nWill you be a sufficient challenge?`
+      `我的战术是使用水系宝可梦全力进攻！`,
+      `嗨，我让你见识一下我的水系宝可梦的厉害！`,
+      `我的梦想是去旅行，与强大的训练家对战……\n你会是一个合格的对手吗？`
     ],
     victory: [
-      `You really are strong… I'll admit that you are skilled…`,
-      `Grrr… You know you just got lucky, right?!`,
-      `Wow, you're too much! I can't believe you beat me!`
+      `你真的很强……我承认你很厉害……`,
+      `可恶……你知道你只是侥幸赢了，对吧？！`,
+      `哇，你太厉害了！真不敢相信你打败了我！`
     ],
     defeat: [
-      `Was the mighty Misty too much for you?`,
-      `I hope you saw my Pokémon's elegant swimming techniques!`,
-      `Your Pokémon were no match for my pride and joys!`
+      `强大的小霞对你来说太难对付了吗？`,
+      `我希望你看到了我的宝可梦优雅的游泳技巧！`,
+      `你的宝可梦根本不是我的宝贝的对手！`
     ]
   },
   [TrainerType.LT_SURGE]: {
     encounter: [
-      `My Electric Pokémon saved me during the war! I'll show you how!`,
-      `Ten-hut! I'll shock you into surrender!`,
-      `I'll zap you just like I do to all my enemies in battle!`
+      `我的电系宝可梦在战争中救了我！我让你见识一下！`,
+      `立正！我要电击你直到你投降！`,
+      `我要像在战场上对付敌人一样电击你！`
     ],
     victory: [
-      `Whoa! Your team's the real deal, kid!`,
-      `Aaargh, you're strong! Even my electric tricks lost against you.`,
-      `That was an absolutely shocking loss!`
+      `哇！你的队伍真的很厉害，小子！`,
+      `啊，你很强！即使我的电击技巧也输给了你。`,
+      `那是一场绝对令人震惊的失败！`
     ],
     defeat: [
-      `Oh yeah! When it comes to Electric-type Pokémon, I'm number one in the world!`,
-      `Hahaha! That was an electrifying battle, kid!`,
-      `A Pokémon battle is war, and I have showed you first-hand combat!`
+      `哦耶！说到电系宝可梦，我是世界第一！`,
+      `哈哈哈！那是一场激动人心的战斗，小子！`,
+      `宝可梦对战就是战争，我已经让你见识了实战！`
     ]
   },
   [TrainerType.ERIKA]: {
     encounter: [
-      `Ah, the weather is lovely here…\nOh, a battle? Very well then.`,
-      `My Pokémon battling skills rival that of my flower arranging skills.`,
-      `Oh, I hope the pleasant aroma of my Pokémon doesn't put me to sleep again…`,
-      `Seeing flowers in a garden is so soothing.`
+      `啊，这里的天气真好……\n哦，对战吗？好吧。`,
+      `我的宝可梦对战技巧可以与我的插花技巧相媲美。`,
+      `哦，我希望我的宝可梦散发出的香味不会让我再次睡着……`,
+      `在花园里赏花真是太舒服了。`
     ],
     victory: [
-      `Oh! I concede defeat.`,
-      `That match was most delightful.`,
-      `Ah, it appears it is my loss…`,
-      `Oh, my goodness.`
+      `哦！我认输。`,
+      `那场比赛真是太令人愉快了。`,
+      `啊，看来我输了……`,
+      `哦，我的天哪。`
     ],
     defeat: [
-      `I was afraid I would doze off…`,
-      `Oh my, it seems my Grass Pokémon overwhelmed you.`,
-      `That battle was such a soothing experience.`,
-      `Oh… Is that all?`
+      `我真怕我会睡着……`,
+      `哦，我的天，看来我的草系宝可梦把你打败了。`,
+      `那场战斗真是令人舒缓。`,
+      `哦……就这样吗？`
     ]
   },
   [TrainerType.JANINE]: {
     encounter: [
-      `I am mastering the art of poisonous attacks.\nI shall spar with you today!`,
-      `Father trusts that I can hold my own.\nI will prove him right!`,
-      `My ninja techniques are only second to my Father's!\nCan you keep up?`
+      `我正在掌握毒系攻击的艺术。\n今天我要和你切磋一下！`,
+      `父亲相信我能独当一面。\n我会证明他是对的！`,
+      `我的忍者技巧仅次于我的父亲！\n你能跟上吗？`
     ],
     victory: [
-      `Even now, I still need training… I understand.`,
-      `Your battle technique has outmatched mine.`,
-      `I'm going to really apply myself and improve my skills.`
+      `即使是现在，我仍然需要训练……我明白了。`,
+      `你的战斗技巧已经超过了我。`,
+      `我要认真地提升我的技能。`
     ],
     defeat: [
-      `Fufufu… the poison has sapped all your strength to battle.`,
-      `Ha! You didn't stand a chance against my superior ninja skills!`,
-      `Father's faith in me has proven to not be misplaced.`
+      `呼呼呼……毒素已经耗尽了你所有的战斗力量。`,
+      `哈！你根本不是我高超的忍者技巧的对手！`,
+      `事实证明父亲对我的信任没有错。`
     ]
   },
   [TrainerType.SABRINA]: {
     encounter: [
-      `Through my psychic ability, I had a vision of your arrival!`,
-      `I dislike fighting, but if you wish, I will show you my powers!`,
-      `I can sense great ambition in you. I shall see if it not unfounded.`
+      `通过我的超能力，我预见到了你的到来！`,
+      `我不喜欢战斗，但如果你愿意，我可以展示我的力量！`,
+      `我能感觉到你雄心勃勃。我要看看这是否毫无根据。`
     ],
     victory: [
-      `Your power… It far exceeds what I foresaw…`,
-      `I failed to accurately predict your power.`,
-      `Even with my immense psychic powers, I cannot sense another as strong as you.`
+      `你的力量……远远超出了我的预料……`,
+      `我没能准确预测你的力量。`,
+      `即使我拥有强大的超能力，我也无法感知到像你一样强大的人。`
     ],
     defeat: [
-      `This victory… It is exactly as I foresaw in my visions!`,
-      `Perhaps it was another I sensed a great desire in…`,
-      `Hone your abilities before recklessly charging into battle.\nYou never know what the future may hold if you do…`
+      `这场胜利……正如我在幻象中预见的那样！`,
+      `也许是我感觉到了另一个人强烈的愿望……`,
+      `在鲁莽地投入战斗之前，先磨练你的能力。\n你永远不知道如果你这样做，未来会怎样……`
     ]
   },
   [TrainerType.BLAINE]: {
     encounter: [
-      `Hah! Hope you brought a Burn Heal!`,
-      `My fiery Pokémon will incinerate all challengers!`,
-      `Get ready to play with fire!`
+      `哈！希望你带了烧伤药！`,
+      `我火热的宝可梦会烧尽所有挑战者！`,
+      `准备好玩火吧！`
     ],
     victory: [
-      `I have burned down to nothing! Not even ashes remain!`,
-      `Didn't I stoke the flames high enough?`,
-      `I'm all burned out… But this makes my motivation to improve burn even hotter!`
+      `我已经烧成灰烬了！连灰烬都不剩了！`,
+      `我的火焰不够旺吗？`,
+      `我筋疲力尽了……但这让我提升火焰的动力更加强烈！`
     ],
     defeat: [
-      `My raging inferno cannot be quelled!`,
-      `My Pokémon have been powered up with the heat from this victory!`,
-      `Hah! My passion burns brighter than yours!`
+      `我的熊熊烈火无法扑灭！`,
+      `我的宝可梦被这场胜利的热量强化了！`,
+      `哈！我的热情比你更旺盛！`
     ]
   },
   [TrainerType.GIOVANNI]: {
     encounter: [
-      `I, the leader of Team Rocket, will make you feel a world of pain!`,
-      `My training here will be vital before I am to face my old associates again.`,
-      `I do not think you are prepared for the level of failure you are about to experience!`
+      `我，火箭队的首领，会让你感受到痛苦的世界！`,
+      `在我再次面对我的老伙伴之前，我在这里的训练至关重要。`,
+      `我认为你还没有准备好迎接即将到来的失败！`
     ],
     victory: [
-      `WHAT! Me, lose?! There is nothing I wish to say to you!`,
-      `Hmph… You could never understand what I hope to achieve.`,
-      `This defeat is merely delaying the inevitable.\nI will rise Team Rocket from the ashes in due time.`
+      `什么！我，输了？！我没什么想对你说的！`,
+      `哼……你永远不会明白我想 achieve 什么。`,
+      `这场失败只是推迟了不可避免的事情。\n我迟早会让火箭队从灰烬中崛起。`
     ],
     defeat: [
-      `Not being able to measure your own strength shows that you are still but a child.`,
-      `Do not try to interfere with me again.`,
-      `I hope you understand how foolish challenging me was.`
+      `无法衡量自己的力量表明你仍然只是一个孩子。`,
+      `不要再试图干涉我了。`,
+      `我希望你明白挑战我是多么愚蠢。`
     ]
   },
   [TrainerType.ROXANNE]: {
     encounter: [
-      `Would you kindly demonstrate how you battle?`,
-      `You can learn many things by battling many trainers.`,
-      `Oh, you caught me strategizing.\nWould you like to battle?`
+      `你能演示一下你的战斗方式吗？`,
+      `通过与许多训练家对战，你可以学到很多东西。`,
+      `哦，你发现我在制定策略了。\n你想对战吗？`
     ],
     victory: [
-      `Oh, I appear to have lost.\nI understand.`,
-      `It seems that I still have so much more to learn when it comes to battle.`,
-      `I'll take what I learned here today to heart.`
+      `哦，看来我输了。\n我明白了。`,
+      `看来在战斗方面，我还有很多东西要学。`,
+      `我会牢记今天在这里学到的东西。`
     ],
     defeat: [
-      `I have learned many things from our battle.\nI hope you have too.`,
-      `I look forward to battling you again.\nI hope you'll use what you've learned here.`,
-      `I won due to everything I have learned.`
+      `我从我们的战斗中学到了很多东西。\n希望你也是。`,
+      `我期待着再次与你对战。\n希望你能运用你在这里学到的东西。`,
+      `我赢了，因为我学到了一切。`
     ]
   },
   [TrainerType.BRAWLY]: {
     encounter: [
-      `Oh man, a challenger!\nLet's see what you can do!`,
-      `You seem like a big splash.\nLet's battle!`,
-      `Time to create a storm!\nLet's go!`
+      `哦，伙计，一个挑战者！\n让我看看你能做什么！`,
+      `你看起来很有活力。\n我们来对战吧！`,
+      `是时候掀起风暴了！\n我们开始吧！`
     ],
     victory: [
-      `Oh woah, you've washed me out!`,
-      `You surfed my wave and crashed me down!`,
-      `I feel like I'm lost in Granite Cave!`
+      `哦，哇，你把我冲走了！`,
+      `你乘着我的浪把我击倒了！`,
+      `我感觉自己迷失在石灰岩洞穴里了！`
     ],
     defeat: [
-      `Haha, I surfed the big wave!\nChallenge me again sometime.`,
-      `Surf with me again some time!`,
-      `Just like the tides come in and out, I hope you return to challenge me again.`
+      `哈哈，我冲浪了！\n找个时间再挑战我吧！`,
+      `找个时间再和我一起冲浪吧！`,
+      `就像潮起潮落一样，我希望你回来挑战我。`
     ]
   },
   [TrainerType.WATTSON]: {
     encounter: [
-      `Time to get shocked!\nWahahahaha!`,
-      `I'll make sparks fly!\nWahahahaha!`,
-      `I hope you brought Paralyz Heal!\nWahahahaha!`
+      `让你见识一下电击的威力！\n哇哈哈哈哈！`,
+      `我要让你火花四溅！\n哇哈哈哈哈！`,
+      `希望你带了麻痹恢复剂！\n哇哈哈哈哈！`
     ],
     victory: [
-      `Seems like I'm out of charge!\nWahahahaha!`,
-      `You've completely grounded me!\nWahahahaha!`,
-      `Thanks for the thrill!\nWahahahaha!`
+      `看来我的电力耗尽了！\n哇哈哈哈哈！`,
+      `你把我彻底击垮了！\n哇哈哈哈哈！`,
+      `谢谢你带来的刺激！\n哇哈哈哈哈！`
     ],
     defeat: [
-      `Recharge your batteries and challenge me again sometime!\nWahahahaha!`,
-      `I hope you found our battle electrifying!\nWahahahaha!`,
-      `Aren't you shocked I won?\nWahahahaha!`
+      `充电完毕再来挑战我吧！\n哇哈哈哈哈！`,
+      `希望你觉得这场战斗很精彩！\n哇哈哈哈哈！`,
+      `我赢了，你不震惊吗？\n哇哈哈哈哈！`
     ]
   },
   [TrainerType.FLANNERY]: {
     encounter: [
-      `Nice to meet you! Wait, no…\nI will crush you!`,
-      `I've only been a leader for a little while, but I'll smoke you!`,
-      `It's time to demonstrate the moves my grandfather has taught me! Let's battle!`
+      `很高兴认识你！等等，不对……\n我要打败你！`,
+      `我才当上道馆馆主没多久，但我一定会把你打得落花流水！`,
+      `是时候展示我爷爷教我的招式了！来战斗吧！`
     ],
     victory: [
-      `You remind me of my grandfather…\nNo wonder I lost.`,
-      `Am I trying too hard?\nI should relax, can't get too heated.`,
-      `Losing isn't going to smother me out.\nTime to reignite training!`
+      `你让我想起了我爷爷……\n难怪我会输。`,
+      `我是不是太用力了？\n我应该放松一下，不能太激动。`,
+      `失败不会让我气馁。\n是时候重新开始训练了！`
     ],
     defeat: [
-      `I hope I've made my grandfather proud…\nLet's battle again some time.`,
-      `I…I can't believe I won!\nDoing things my way worked!`,
-      `Let's exchange burning hot moves again soon!`
+      `希望我让爷爷感到骄傲……\n找个时间再战一场吧。`,
+      `我……我不敢相信我赢了！\n用我的方式果然奏效了！`,
+      `让我们很快再次交换炙热的招式吧！`
     ]
   },
   [TrainerType.NORMAN]: {
     encounter: [
-      `I'm surprised you managed to get here.\nLet's battle.`,
-      `I'll do everything in my power as a Gym Leader to win.\nLet's go!`,
-      `You better give this your all.\nIt's time to battle!`
+      `我很惊讶你竟然能走到这里。\n来战斗吧。`,
+      `我会尽我作为道馆馆主的一切力量来赢得胜利。\n开始吧！`,
+      `你最好全力以赴。\n是时候战斗了！`
     ],
     victory: [
-      `I lost to you…?\nRules are rules, though.`,
-      `Was moving from Olivine a mistake…?`,
-      `I can't believe it.\nThat was a great match.`
+      `我输给你了……？\n不过，规则就是规则。`,
+      `从圆朱市搬到这里是不是个错误……？`,
+      `我真不敢相信。\n那是一场很棒的比赛。`
     ],
     defeat: [
-      `We both tried our best.\nI hope we can battle again soon.`,
-      `You should try challenging my kid instead.\nYou might learn something!`,
-      `Thank you for the excellent battle.\nBetter luck next time.`
+      `我们都尽力了。\n希望我们能很快再次战斗。`,
+      `你应该去挑战我的孩子。\n你可能会学到一些东西！`,
+      `感谢你带来的精彩战斗。\n下次好运。`
     ]
   },
   [TrainerType.WINONA]: {
     encounter: [
-      `I've been soaring the skies looking for prey…\nAnd you're my target!`,
-      `No matter how our battle is, my Flying Pokémon and I will triumph with grace. Let's battle!`,
-      `I hope you aren't scared of heights.\nLet's ascend!`
+      `我一直在天空中翱翔寻找猎物……\n而你就是我的目标！`,
+      `无论战斗结果如何，我和我的飞行系宝可梦都会优雅地取得胜利。来战斗吧！`,
+      `希望你不会恐高。\n让我们一起升空吧！`
     ],
     victory: [
-      `You're the first Trainer I've seen with more grace than I.\nExcellently played.`,
-      `Oh, my Flying Pokémon have plummeted!\nVery well.`,
-      `Though I may have fallen, my Pokémon will continue to fly!`
+      `你是我见过的第一个比我更有风度的训练家。\n打得非常好。`,
+      `哦，我的飞行系宝可梦坠落了！\n干得好。`,
+      `虽然我可能失败了，但我的宝可梦会继续飞翔！`
     ],
     defeat: [
-      `My Flying Pokémon and I will forever dance elegantly!`,
-      `I hope you enjoyed our show.\nOur graceful dance is finished.`,
-      `Won't you come see our elegant choreography again?`
+      `我和我的飞行系宝可梦将永远优雅地舞蹈！`,
+      `希望你喜欢我们的表演。\n我们优雅的舞蹈结束了。`,
+      `你不想再来看一次我们优雅的舞蹈编排吗？`
     ]
   },
   [TrainerType.TATE]: {
     encounter: [
-      `Hehehe…\nWere you surprised to see me without my sister?`,
-      `I can see what you're thinking…\nYou want to battle!`,
-      `How can you defeat someone…\nWho knows your every move?`
+      `嘿嘿嘿……\n看到我没有和我姐姐在一起，你感到惊讶吗？`,
+      `我知道你在想什么……\n你想战斗！`,
+      `你怎么可能打败一个……\n对你的一举一动都了如指掌的人？`
     ],
     victory: [
-      `It can't be helped…\nI miss Liza…`,
-      `Your bond with your Pokémon was stronger than mine.`,
-      `If I were with Liza, we would have won.\nWe can finish each other's thoughts!`
+      `没办法……\n我想念莉拉……`,
+      `你和你宝可梦之间的羁绊比我更强。`,
+      `如果莉拉和我在一起，我们就会赢。\n我们能互相理解对方的想法！`
     ],
     defeat: [
-      `My Pokémon and I are superior!`,
-      `If you can't even defeat me, you'll never be able to defeat Liza either.`,
-      `It's all thanks to my strict training with Liza.\nI can make myself one with Pokémon.`
+      `我和我的宝可梦更胜一筹！`,
+      `如果你连我都打不过，那你也永远不可能打败莉拉。`,
+      `这都要归功于我和莉拉的严格训练。\n我能让自己与宝可梦融为一体。`
     ]
   },
   [TrainerType.LIZA]: {
     encounter: [
-      `Fufufu…\nWere you surprised to see me without my brother?`,
-      `I can determine what you desire…\nYou want to battle, don't you?`,
-      `How can you defeat someone…\nWho's one with their Pokémon?`
+      `呵呵呵……\n看到我没有和我哥哥在一起，你感到惊讶吗？`,
+      `我能看出你的愿望……\n你想战斗，对吧？`,
+      `你怎么可能打败一个……\n与宝可梦融为一体的人？`
     ],
     victory: [
-      `It can't be helped…\nI miss Tate…`,
-      `Your bond with your Pokémon…\nIt's stronger than mine.`,
-      `If I were with Tate, we would have won.\nWe can finish each other's sentences!`
+      `没办法……\n我想念小枫……`,
+      `你和你宝可梦之间的羁绊……\n比我更强。`,
+      `如果小枫和我在一起，我们就会赢。\n我们能互相接完对方的句子！`
     ],
     defeat: [
-      `My Pokémon and I are victorious.`,
-      `If you can't even defeat me, you'll never be able to defeat Tate either.`,
-      `It's all thanks to my strict training with Tate.\nI can synchronize myself with my Pokémon.`
+      `我和我的宝可梦取得了胜利。`,
+      `如果你连我都打不过，那你也永远不可能打败小枫。`,
+      `这都要归功于我和小枫的严格训练。\n我能让自己与宝可梦同步。`
     ]
   },
   [TrainerType.JUAN]: {
     encounter: [
-      `Now's not the time to act coy.\nLet's battle!`,
-      `Ahahaha, You'll be witness to my artistry with Water Pokémon!`,
-      `A typhoon approaches!\nWill you be able to test me?`,
-      `Please, you shall bear witness to our artistry.\nA grand illusion of water sculpted by my Pokémon and myself!`
+      `现在不是害羞的时候。\n来战斗吧！`,
+      `啊哈哈，你会见识到我使用水系宝可梦的艺术！`,
+      `台风来了！\n你能考验我吗？`,
+      `请欣赏我们的艺术。\n我和我的宝可梦雕刻出的宏伟水之幻象！`
     ],
     victory: [
-      `You may be a genius who can take on Wallace!`,
-      `I focused on elegance while you trained.\nIt's only natural that you defeated me.`,
-      `Ahahaha!\nVery well, You have won this time.`,
-      `From you, I sense the brilliant shine of skill that will overcome all.`
+      `你或许是個可以挑战米可利的天才！`,
+      `我专注于优雅，而你专注于训练。\n你打败我是理所当然的。`,
+      `啊哈哈！\n很好，这次你赢了。`,
+      `我从你身上感受到了能够克服一切的精湛技巧的光芒。`
     ],
     defeat: [
-      `My Pokémon and I have sculpted an illusion of Water and come out victorious.`,
-      `Ahahaha, I have won, and you have lost.`,
-      `Shall I loan you my outfit? It may help you battle!\nAhahaha, I jest!`,
-      `I'm the winner! Which is to say, you lost.`
+      `我和我的宝可梦雕刻出了水之幻象，取得了胜利。`,
+      `啊哈哈，我赢了，你输了。`,
+      `我把我的衣服借给你吧？也许能帮助你战斗！\n啊哈哈，我开玩笑的！`,
+      `我才是赢家！也就是说，你输了。`
     ]
   },
   [TrainerType.CRASHER_WAKE]: {
     encounter: [
-      `Crash! Crash! Watch out!\nCrasher Wake…is…heeere!`,
-      `Crash! Crash! Crasher Wake!`,
-      `I'm the tidal wave of power to wash you away!`
+      `冲撞！冲撞！小心！\n大叶…来…啦！`,
+      `冲撞！冲撞！大叶！`,
+      `我是要把你冲走的巨浪！`
     ],
     victory: [
-      `That puts a grin on my face!\nGuhahaha! That was a blast!`,
-      `Hunwah! It's gone and ended!\nHow will I say this…\nI want more! I wanted to battle a lot more!`,
-      `WHAAAAT!?`
+      `这让我很开心！\n呱哈哈！太爽了！`,
+      `哈啊！结束了！\n我该怎么说呢……\n我想要更多！我想要战斗更多！`,
+      `什么！？`
     ],
     defeat: [
-      `Yeeeeah! That's right!`,
-      `I won, but I want more! I wanted to battle a lot more!`,
-      `So long!`
+      `耶！没错！`,
+      `我赢了，但我想要更多！我想要战斗更多！`,
+      `再见！`
     ]
   },
   [TrainerType.FALKNER]: {
     encounter: [
-      `I'll show you the real power of the magnificent bird Pokémon!`,
-      `Winds, stay with me!`,
-      `Dad! I hope you're watching me battle from above!`
+      `我会让你见识到雄伟的鸟类宝可梦的真正力量！`,
+      `风啊，与我同在！`,
+      `爸爸！希望你在上面看着我战斗！`
     ],
     victory: [
-      `I understand… I'll bow out gracefully.`,
-      `A defeat is a defeat. You are strong indeed.`,
-      `…Shoot! Yeah, I lost.`
+      `我明白了…我优雅地认输。`,
+      `败了就是败了。你真的很强。`,
+      `……可恶！没错，我输了。`
     ],
     defeat: [
-      `Dad! I won with your cherished bird Pokémon…`,
-      `Bird Pokémon are the best after all!`,
-      `Feels like I'm catching up to my dad!`
+      `爸爸！我用你珍爱的鸟类宝可梦赢了……`,
+      `鸟类宝可梦终究是最棒的！`,
+      `感觉我正在追赶我爸爸！`
     ]
   },
   [TrainerType.NESSA]: {
     encounter: [
-      `No matter what kind of plan your refined mind may be plotting, my partner and I will be sure to sink it.`,
-      `I'm not here to chat. I'm here to win!`,
-      `This is a little gift from my Pokémon… I hope you can take it!`
+      `无论你那精明的脑袋在策划什么计划，我和我的伙伴一定会把它击沉。`,
+      `我不是来聊天的。我是来赢的！`,
+      `这是我的宝可梦送給你的一份小礼物…希望你能收下！`
     ],
     victory: [
-      `You and your Pokémon are just too much…`,
-      `How…? How can this be?!`,
-      `I was totally washed away!`
+      `你和你的宝可梦太强了…`,
+      `怎么会…？怎么会这样？！`,
+      `我完全被冲走了！`
     ],
     defeat: [
-      `The raging wave crashes again!`,
-      `Time to ride the wave of victory!`,
-      `Ehehe!`
+      `怒涛再次袭来！`,
+      `是时候乘着胜利的浪潮前进了！`,
+      `嘿嘿！`
     ]
   },
   [TrainerType.MELONY]: {
     encounter: [
-      `I'm not going to hold back!`,
-      `All righty, I suppose we should get started.`,
-      `I'll freeze you solid!`
+      `我不会手下留情的！`,
+      `好吧，我想我们应该开始了。`,
+      `我要把你冻成冰块！`
     ],
     victory: [
-      `You… You're pretty good, huh?`,
-      `If you find Gordie around, be sure to give him a right trashing, would you?`,
-      `I think you took breaking the ice a little too literally…`
+      `你…你很厉害，是吧？`,
+      `如果你在附近看到波普，一定要好好教训他一顿，好吗？`,
+      `我觉得你把破冰这回事看得太重了…`
     ],
     defeat: [
-      `Now do you see how severe battles can be?`,
-      `Hee! Looks like I went and won again!`,
-      `Are you holding back?`
+      `现在你见识到战斗的严酷了吧？`,
+      `嘿！看来我又赢了！`,
+      `你是在手下留情吗？`
     ]
   },
   [TrainerType.MARLON]: {
     encounter: [
-      `You look strong! Shoots! Let's start!`,
-      `I'm strong like the ocean's wide. You're gonna get swept away, fo' sho'.`,
-      `Oh ho, so I'm facing you! That's off the wall.`
+        `你看起来很强！来吧！我们开始吧！`,
+        `我像大海一样强壮。你会被冲走的，肯定的。`,
+        `哦吼，我要和你对战！太棒了。`
     ],
     victory: [
-      `You totally rocked that! You're raising some wicked Pokémon. You got this Trainer thing down!`,
-      `You don't just look strong, you're strong fo' reals! Eh, I was swept away, too!`,
-      `You're strong as a gnarly wave!`
+        `你真是太厉害了！你培养了一些很棒的宝可梦。你已经掌握了训练家的真谛！`,
+        `你不仅看起来强壮，而且真的很强壮！呃，我也被冲走了！`,
+        `你像巨浪一样强壮！`
     ],
     defeat: [
-      `You're tough, but it's not enough to sway the sea, 'K!`,
-      `Hee! Looks like I went and won again!`,
-      `Sweet, sweet victory!`
+        `你很强，但这还不足以撼动大海，知道吗！`,
+        `嘿嘿！看来我又赢了！`,
+        `甜蜜蜜的胜利！`
     ]
   },
   [TrainerType.SHAUNTAL]: {
-    encounter: [
-      `Excuse me. You're a challenger, right?\nI'm the Elite Four's Ghost-type Pokémon user, Shauntal, and I shall be your opponent.`,
-      `I absolutely love writing about Trainers who come here and the Pokémon they train.\nCould I use you and your Pokémon as a subject?`,
-      `Every person who works with Pokémon has a story to tell.\nWhat story is about to be told?`
-    ],
-    victory: [
-      `Wow. I'm dumbstruck!`,
-      `S-sorry! First, I must apologize to my Pokémon…\n\nI'm really sorry you had a bad experience because of me!`,
-      `Even in light of that, I'm still one of the Elite Four!`
-    ],
-    defeat: [
-      `Eheh.`,
-      `That gave me excellent material for my next novel!`,
-      `And so, another tale ends…`
-    ]
+      encounter: [
+          `打扰一下。你是挑战者，对吧？\n我是四天王的幽灵系宝可梦使用者，阿柳，我将是你的对手。`,
+          `我非常喜欢写关于来到这里的训练家和他们训练的宝可梦的故事。\n我可以把你和你的宝可梦作为主题吗？`,
+          `每个与宝可梦一起工作的人都有故事可讲。\n什么样的故事即将被讲述？`
+      ],
+      victory: [
+          `哇。我惊呆了！`,
+          `抱…抱歉！首先，我必须向我的宝可梦道歉…\n\n真的很抱歉，因为我让你有了不好的体验！`,
+          `即使如此，我仍然是四天王之一！`
+      ],
+      defeat: [
+          `嘿嘿。`,
+          `这为我的下一部小说提供了极好的素材！`,
+          `就这样，又一个故事结束了…`
+      ]
   },
   [TrainerType.MARSHAL]: {
-    encounter: [
-      `My mentor, Alder, sees your potential as a Trainer and is taking an interest in you.\nIt is my intention to test you--to take you to the limits of your strength. Kiai!`,
-      `Victory, decisive victory, is my intention! Challenger, here I come!`,
-      `In myself, I seek to develop the strength of a fighter and shatter any weakness in myself!\nPrevailing with the force of my convictions!`
-    ],
-    victory: [
-      `Whew! Well done!`,
-      `As your battles continue, aim for even greater heights!`,
-      `The strength shown by you and your Pokémon has deeply impressed me…`
-    ],
-    defeat: [
-      `Hmm.`,
-      `That was good battle.`,
-      `Haaah! Haaah! Haiyaaaah!`
-    ]
+      encounter: [
+          `我的师父，阿戴克，看到了你作为训练家的潜力，并对你产生了兴趣。\n我的目的是测试你——把你带到你的力量的极限。气合！`,
+          `胜利，决定性的胜利，是我的目标！挑战者，我来了！`,
+          `在我自己身上，我寻求培养战士的力量，粉碎我自身的任何弱点！\n以我坚定的信念取胜！`
+      ],
+      victory: [
+          `呼！做得好！`,
+          `随着你的战斗继续，目标是更高的境界！`,
+          `你和你的宝可梦所展现的力量给我留下了深刻的印象…`
+      ],
+      defeat: [
+          `嗯。`,
+          `这是一场很棒的战斗。`,
+          `哈啊啊！哈啊啊！嗨呀啊啊！`
+      ]
   },
   [TrainerType.CHEREN]: {
-    encounter: [
-      `You remind me of an old friend. That makes me excited about this Pokémon battle!`,
-      `Pokémon battles have no meaning if you don't think why you battle. 
-      $Or better said, it makes battling together with Pokémon meaningless.`,
-      `My name's Cheren! I'm a Gym Leader and a teacher! Pleasure to meet you.`
-    ],
-    victory: [
-      `Thank you! I saw what was missing in me.`,
-      `Thank you! I feel like I saw a little of the way toward my ideals.`,
-      `Hmm… This is problematic.`
-    ],
-    defeat: [
-      `As a Gym Leader, I aim to be a wall for you to overcome.`,
-      `All right!`,
-      `I made it where I am because Pokémon were by my side.\nPerhaps we need to think about why Pokémon help us not in terms of Pokémon and Trainers but as a relationship between living beings.`
-    ]
+      encounter: [
+          `你让我想起了一位老朋友。这让我对这场宝可梦对战感到兴奋！`,
+          `如果你不去思考你为什么要战斗，宝可梦对战就没有任何意义。\
+          $或者说得更准确一点，这会让与宝可梦一起战斗变得毫无意义。`,
+          `我叫切莲！我是道馆馆主，也是一名教师！很高兴认识你。`
+      ],
+      victory: [
+          `谢谢你！我看到了我缺少的东西。`,
+          `谢谢你！我觉得我看到了通往理想的一点点道路。`,
+          `嗯… 这是个问题。`
+      ],
+      defeat: [
+          `作为一名道馆馆主，我的目标是成为你需要克服的一堵墙。`,
+          `好吧！`,
+          `我之所以能走到今天，是因为宝可梦在我身边。\n也许我们需要思考一下为什么宝可梦会帮助我们，不是从宝可梦和训练家的角度，而是从生物之间关系的角度。`
+      ]
   },
   [TrainerType.CHILI]: {
-    encounter: [
-      `Yeeeeooow! Time to play with FIRE!! I'm the strongest of us brothers!`,
-      `Ta-da! The Fire-type scorcher Chili--that's me--will be your opponent!`,
-      `I'm going to show you what me and my blazing Fire types can do!`
-    ],
-    victory: [
-      `You got me. I am… burned… out…`,
-      `Whoa ho! You're on fire!`,
-      `Augh! You got me!`
-    ],
-    defeat: [
-      `I'm on fire! Play with me, and you'll get burned!`,
-      `When you play with fire, you get burned!`,
-      `I mean, c'mon, your opponent was me! You didn't have a chance!`
-    ]
+      encounter: [
+          `呀吼！是时候玩火了！！我是我们兄弟中最强的！`,
+          `哒哒！火系灼烧者伯特——那就是我——将是你的对手！`,
+          `我要让你看看我和我炽热的火系宝可梦能做什么！`
+      ],
+      victory: [
+          `你打败了我。我… 烧… 尽了…`,
+          `哇吼！你着火了！`,
+          `啊！你打败了我！`
+      ],
+      defeat: [
+          `我着火了！和我玩，你会被烧伤的！`,
+          `玩火者必自焚！`,
+          `我的意思是，拜托，你的对手是我！你没有机会！`
+      ]
   },
   [TrainerType.CILAN]: {
     encounter: [
-      `Nothing personal... No hard feelings... Me and my Grass-type Pokémon will...
-      $Um... We're gonna battle come what may.`,
-      `So, um, if you're OK with me, I'll, um, put everything I've got into being, er, you know, your opponent.`,
-      `OK… So, um, I'm Cilan, I like Grass-type Pokémon.`
+        `事不宜迟... 我们还是...      
+        $嗯... 我们来场对战吧，无论如何。`,
+        `所以，嗯，如果你觉得我可以的话，我，嗯，会全力以赴，呃，你知道的，成为你的对手。`,
+        `好的... 那么，嗯，我是小菊儿，我喜欢草属性宝可梦。`
     ],
     victory: [
-      `Er… Is it over now?`,
-      `…What a surprise. You are very strong, aren't you? 
-      $I guess my brothers wouldn't have been able to defeat you either…`,
-      `…Huh. Looks like my timing was, um, off?`
+        `呃... 结束了吗？`,
+        `...真令人惊讶。你很强，不是吗？      
+        $我想我的兄弟们也打不过你...`,
+        `... 呼。看来我的时机不对，嗯？`
     ],
     defeat: [
-      `Huh? Did I win?`,
-      `I guess… 
-      $I suppose I won, because I've been competing with my brothers Chili and Cress, and we all were able to get tougher.`,
-      `It…it was quite a thrilling experience…`
+        `嗯？我赢了吗？`,
+        `我想...      
+        $我想我赢了，因为我一直和我的兄弟阿宏和阿柏竞争，我们都变得更强了。`,
+        `这... 这真是一次激动人心的体验...`
     ]
   },
   [TrainerType.ROARK]: {
-    encounter: [
-      `I need to see your potential as a Trainer. And, I'll need to see the toughness of the Pokémon that battle with you!`,
-      `Here goes! These are my rocking Pokémon, my pride and joy!`,
-      `Rock-type Pokémon are simply the best!`,
-      `I need to see your potential as a Trainer. And, I'll need to see the toughness of the Pokémon that battle with you!`
-    ],
-    victory: [
-      `W-what? That can't be! My buffed-up Pokémon!`,
-      `…We lost control there. Next time I'd like to challenge you to a Fossil-digging race underground.`,
-      `With skill like yours, it's natural for you to win.`,
-      `Wh-what?! It can't be! Even that wasn't enough?`,
-      `I blew it.`
-    ],
-    defeat: [
-      `See? I'm proud of my rocking battle style!`,
-      `Thanks! The battle gave me confidence that I may be able to beat my dad!`,
-      `I feel like I just smashed through a really stubborn boulder!`
-    ]
+      encounter: [
+          `我要看看你作为训练家的潜力。而且，我还要看看与你并肩作战的宝可梦的韧性！`,
+          `开始了！这些是我的岩石宝可梦，我的骄傲和快乐！`,
+          `岩石属性宝可梦就是最棒的！`,
+          `我要看看你作为训练家的潜力。而且，我还要看看与你并肩作战的宝可梦的韧性！`
+      ],
+      victory: [
+          `什-什么？这不可能！我强化过的宝可梦！`,
+          `... 我们在那里失去了控制。下次我想在地下挑战你进行一场化石挖掘比赛。`,
+          `以你这样的技术，你赢是理所当然的。`,
+          `什-什么？！这不可能！即使那样也不够吗？`,
+          `我搞砸了。`
+      ],
+      defeat: [
+          `看到了吗？我为我的摇滚战斗风格感到自豪！`,
+          `谢谢！这场战斗给了我信心，我可能可以打败我爸爸！`,
+          `我感觉自己好像刚刚砸穿了一块非常顽固的巨石！`
+      ]
   },
   [TrainerType.MORTY]: {
-    encounter: [
-      `With a little more, I could see a future in which I meet the legendary Pokémon. You're going to help me reach that level!`,
-      `It's said that a rainbow-hued Pokémon will come down to appear before a truly powerful Trainer. 
-      $I believed that tale, so I have secretly trained here all my life. As a result, I can now see what others cannot. 
-      $I see a shadow of the person who will make the Pokémon appear. 
-      $I believe that person is me! You're going to help me reach that level!`,
-      `Whether you choose to believe or not, mystic power does exist.`,
-      `You can bear witness to the fruits of my training.`,
-      `You must make your soul one with that of Pokémon. Can you do this?`,
-      `Say, do you want to be part of my training?`
-    ],
-    victory: [
-      `I'm not good enough yet…`,
-      `I see… Your journey has taken you to far-away places and you have witnessed much more than I.
-      $I envy you for that…`,
-      `How is this possible…`,
-      `I don't think our potentials are so different. But you seem to have something more than that… So be it.`,
-      `Guess I need more training.`,
-      `That's a shame.`
-    ],
-    defeat: [
-      `I moved… one step ahead again.`,
-      `Fufufu…`,
-      `Wh-what?! It can't be! Even that wasn't enough?`,
-      `I feel like I just smashed through a really stubborn boulder!`,
-      `Ahahahah!`,
-      `I knew I would win!`
-    ]
+      encounter: [
+          `再多一点，我就能看到我遇到传说宝可梦的未来。你要帮我达到那个水平！`,
+          `据说彩虹色的宝可梦会出现在真正强大的训练家面前。      
+          $我相信那个传说，所以我一生都在这里秘密训练。因此，我现在可以看到其他人看不到的东西。      
+          $我看到了让宝可梦出现的人的影子。      
+          $我相信那个人就是我！你要帮我达到那个水平！`,
+          `无论你选择相信与否，神秘的力量确实存在。`,
+          `你可以见证我训练的成果。`,
+          `你必须让你的灵魂与宝可梦的灵魂融为一体。你能做到吗？`,
+          `说吧，你想成为我训练的一部分吗？`
+      ],
+      victory: [
+          `我还做得不够好...`,
+          `我明白了... 你的旅程带你去了很远的地方，你比我见多识广。      
+          $我很羡慕你...`,
+          `这怎么可能...`,
+          `我不认为我们的潜力有那么大的差别。但你似乎拥有一些更多的东西... 那就这样吧。`,
+          `看来我需要更多的训练。`,
+          `真可惜。`
+      ],
+      defeat: [
+          `我又向前迈进了一步。`,
+          `呼呼呼...`,
+          `什-什么？！这不可能！即使那样也不够吗？`,
+          `我感觉自己好像刚刚砸穿了一块非常顽固的巨石！`,
+          `啊哈哈哈！`,
+          `我就知道我会赢！`
+      ]
   },
   [TrainerType.CRISPIN]: {
-    encounter: [
-      `I wanna win, so that's exactly what I'll do!`,
-      `I battle because I wanna battle! And you know what? That's how it should be!`
-    ],
-    victory: [
-      `I wanted to win…but I lost!`,
-      `I lost…'cause I couldn't win!`      
-    ],
-    defeat: [
-      `Hey, wait a sec. Did I just win? I think I just won! Talk about satisfying!`,
-      `Wooo! That was amazing!`
-    ]
+      encounter: [
+          `我想赢，所以我一定会赢！`,
+          `我战斗是因为我想战斗！你知道吗？就应该是这样的！`
+      ],
+      victory: [
+          `我想赢... 但我输了！`,
+          `我输了... 因为我赢不了！`
+      ],
+      defeat: [
+          `嘿，等一下。我刚赢了吗？我想我刚赢了！真是太令人满意了！`,
+          `哇！太棒了！`
+      ]
   },
   [TrainerType.AMARYS]: {
-    encounter: [
-      `I want to be the one to help a certain person. That being the case, I cannot afford to lose.
-      $… Our battle starts now.`,
-      
-    ],
-    victory: [
-      `I am… not enough, I see.`,      
-    ],
-    defeat: [
-      `Victory belongs to me. Well fought.`,
-    ]
+      encounter: [
+          `我想成为帮助某个人的那个人。既然如此，我不能输。      
+          $... 我们的战斗现在开始。`,
+          
+      ],
+      victory: [
+          `我... 还不行，我明白了。`,
+      ],
+      defeat: [
+          `胜利属于我。打得好。`,
+      ]
   },
   [TrainerType.LACEY]: {
-    encounter: [
-      `I'll be facing you with my usual party as a member of the Elite Four.`,
-    ],
-    victory: [
-      `That was a great battle!`,      
-    ],
-    defeat: [
-      `Let's give your Pokémon a nice round of applause for their efforts!`,
-    ]
+      encounter: [
+          `我将以四天王的身份，用我常用的队伍与你对战。`,
+      ],
+      victory: [
+          `那真是一场精彩的战斗！`,
+      ],
+      defeat: [
+          `让我们为你的宝可梦的努力鼓掌！`,
+      ]
   },
   [TrainerType.DRAYTON]: {
-    encounter: [
-      `Man, I love chairs. Don't you love chairs? What lifesavers. 
-      $I don't get why everyone doesn't just sit all the time. Standing up's tiring work!`,
-    ],
-    victory: [
-      `Guess I should've expected that!`,      
-    ],
-    defeat: [
-      `Heh heh! Don't mind me, just scooping up a W over here. I get it if you're upset, but don't go full Kieran on me, OK?`,
-    ]
+      encounter: [
+          `伙计，我喜欢椅子。你不喜欢椅子吗？真是救星。      
+          $我不明白为什么每个人不都一直坐着。站起来很累！`,
+      ],
+      victory: [
+          `我早该想到的！`,
+      ],
+      defeat: [
+          `嘿嘿！别介意我，我只是在这里捞到一场胜利。如果你不高兴，我理解，但别对我发火，好吗？`,
+      ]
   },
   [TrainerType.RAMOS]: {
-    encounter: [
-      `Did yeh enjoy the garden playground I made with all these sturdy plants o' mine?
-      $Their strength is a sign o' my strength as a gardener and a Gym Leader! Yeh sure yer up to facing all that?`,
-    ],
-    victory: [
-      `Yeh believe in yer Pokémon… And they believe in yeh, too… It was a fine battle, sprout.`,      
-    ],
-    defeat: [
-      `Hohoho… Indeed. Frail little blades o' grass'll break through even concrete.`,
-    ]
+      encounter: [
+          `你喜欢我用这些坚固的植物做的花园游乐场吗？      
+          $它们的强大是我作为园丁和道馆馆主的实力的象征！你确定你能面对这一切吗？`,
+      ],
+      victory: [
+          `你相信你的宝可梦... 它们也相信你... 这是一场精彩的战斗，小芽。`,
+      ],
+      defeat: [
+          `吼吼吼... 确实。脆弱的小草叶甚至可以穿透混凝土。`,
+      ]
   },
   [TrainerType.VIOLA]: {
     encounter: [
-      `Whether it's the tears of frustration that follow a loss or the blossoming of joy that comes with victory…
-      $They're both great subjects for my camera! Fantastic! This'll be just fantastic! 
-      $Now come at me!`,
-      `My lens is always focused on victory--I won't let anything ruin this shot!`
+        `无论是输掉比赛后的沮丧泪水，还是胜利后绽放的喜悦…
+        $都是我相机的好素材！太棒了！这将会是一次很棒的拍摄！
+        $来吧，放马过来！`,
+        `我的镜头永远聚焦在胜利上——我不会让任何东西毁了这张照片！`
     ],
     victory: [
-      `You and your Pokémon have shown me a whole new depth of field! Fantastic! Just fantastic!`,
-      `The world you see through a lens, and the world you see with a Pokémon by your side…
-      $The same world can look entirely different depending on your view.`      
+        `你和你的宝可梦向我展示了一个全新的景深！太棒了！真是太棒了！`,
+        `你透过镜头看到的世界，以及你与宝可梦并肩作战时看到的世界…
+        $同一个世界，根据你的视角，看起来会完全不同。`
     ],
     defeat: [
-      `The photo from the moment of my victory will be a really winner, all right!`,
-      `Yes! I took some great photos!`
+        `我胜利那一刻的照片绝对会是最棒的，没错！`,
+        `是的！我拍了一些很棒的照片！`
     ]
   },
   [TrainerType.CANDICE]: {
-    encounter: [
-      `You want to challenge Candice? Sure thing! I was waiting for someone tough! 
-      $But I should tell you, I'm tough because I know how to focus.`,
-      `Pokémon, fashion, romance… It's all about focus! 
-      $I'll show you just what I mean. Get ready to lose!`
-    ],
-    victory: [
-      `I must say, I'm warmed up to you! I might even admire you a little.`,
-      `Wow! You're great! You've earned my respect! 
-      $I think your focus and will bowled us over totally. `      
-    ],
-    defeat: [
-      `I sensed your will to win, but I don't lose!`,
-      `See? Candice's focus! My Pokémon's focus is great, too!`
-    ]
+      encounter: [
+          `你想挑战小菘？当然可以！我一直在等待强劲的对手！
+          $但我得告诉你，我很强是因为我知道如何集中注意力。`,
+          `宝可梦、时尚、爱情…一切都与专注有关！
+          $我会让你见识一下我的意思。准备好认输吧！`
+      ],
+      victory: [
+          `我得说，我对你刮目相看了！我甚至可能有点佩服你。`,
+          `哇！你太棒了！你赢得了我的尊重！
+          $我认为你的专注和意志完全征服了我们。`
+      ],
+      defeat: [
+          `我感受到了你想赢的意志，但我不会输！`,
+          `看到了吗？小菘的专注力！我的宝可梦的专注力也很棒！`
+      ]
   },
   [TrainerType.GARDENIA]: {
-    encounter: [
-      `You have a winning aura about you. So, anyway, this will be fun. Let's have our battle!`,
-    ],
-    victory: [
-      `Amazing! You're very good, aren't you?`,
-    ],
-    defeat: [
-      `Yes! My Pokémon and I are perfectly good!`,
-    ]
+      encounter: [
+          `你身上有一种胜者的气息。所以，无论如何，这会很有趣。让我们来一场对战吧！`,
+      ],
+      victory: [
+          `太棒了！你很厉害，不是吗？`,
+      ],
+      defeat: [
+          `是的！我和我的宝可梦都非常棒！`,
+      ]
   },
   [TrainerType.AARON]: {
-    encounter: [
-      `Ok! Let me take you on!`,
-    ],
-    victory: [
-      `Battling is a deep and complex affair…`,
-    ],
-    defeat: [
-      `Victory over an Elite Four member doesn't come easily.`,
-    ]
+      encounter: [
+          `好的！让我来挑战你！`,
+      ],
+      victory: [
+          `对战是一件深奥而复杂的事情…`,
+      ],
+      defeat: [
+          `战胜四天王成员并非易事。`,
+      ]
   },
   [TrainerType.CRESS]: {
-    encounter: [
-      `That is correct! It shall be I and my esteemed Water types that you must face in battle!`,
-    ],
-    victory: [
-      `Lose? Me? I don't believe this.`,
-    ],
-    defeat: [
-      `This is the appropriate result when I'm your opponent.`,
-    ]
+      encounter: [
+          `没错！你必须面对的是我和我尊贵的水属性宝可梦！`,
+      ],
+      victory: [
+          `输？我？我不相信。`,
+      ],
+      defeat: [
+          `当你面对我时，这是理所当然的结果。`,
+      ]
   },
   [TrainerType.ALLISTER]: {
-    encounter: [
-      `'M Allister.\nH-here… I go…`,
-    ],
-    victory: [
-      `I nearly lost my mask from the shock… That was…
-      $Wow. I can see your skill for what it is.`,
-    ],
-    defeat: [
-      `Th-that was ace!`,
-    ]
+      encounter: [
+          `我是欧尼奥\n这…我来了…`,
+      ],
+      victory: [
+          `我差点被震惊得丢了面具…那真是…
+          $哇。我看到了你的实力。`,
+      ],
+      defeat: [
+          `那…那真是太棒了！`,
+      ]
   },
   [TrainerType.CLAY]: {
-    encounter: [
-      `Harrumph! Kept me waitin', didn't ya, kid? All right, time to see what ya can do!`,
-    ],
-    victory: [
-      `Man oh man… It feels good to go all out and still be defeated!`,
-    ],
-    defeat: [
-      `What's important is how ya react to losin'. 
-      $That's why folks who use losin' as fuel to get better are tough.`,
-    ]
+      encounter: [
+          `哼！让我等了很久，不是吗，小子？好吧，是时候看看你能做什么了！`,
+      ],
+      victory: [
+          `天哪…全力以赴却依然被打败的感觉真好！`,
+      ],
+      defeat: [
+          `重要的是你如何应对失败。
+          $这就是为什么把失败作为让自己变得更强的动力的人很厉害的原因。`,
+      ]
   },
   [TrainerType.KOFU]: {
-    encounter: [
-      `I'mma serve you a full course o' Water-type Pokémon! Don't try to eat 'em, though!`,
-    ],
-    victory: [
-      `Vaultin' Veluza! Yer a lively one, aren't ya! A little TOO lively, if I do say so myself!`,
-    ],
-    defeat: [
-      `You come back to see me again now, ya hear?`,
-    ]
+      encounter: [
+          `我要给你来一整套水属性宝可梦！不过，别想吃掉它们！`,
+      ],
+      victory: [
+          `跳跃吧！帝牙卢卡！你真活泼，不是吗！如果我一定要说的话，那就是有点太活泼了！`,
+      ],
+      defeat: [
+          `你再来找我吧，听到了吗？`,
+      ]
   },
   [TrainerType.TULIP]: {
-    encounter: [
-      `Allow me to put my skills to use to make your cute little Pokémon even more beautiful!`,
-    ],
-    victory: [
-      `Your strength has a magic to it that cannot be washed away.`,
-    ],
-    defeat: [
-      `You know, in my line of work, people who lack talent in one area or the other often fade away quickly—never to be heard of again.`,
-    ]
+      encounter: [
+          `请允许我用我的技术让你的可爱宝可梦变得更加美丽！`,
+      ],
+      victory: [
+          `你的力量有一种无法抹去的魔力。`,
+      ],
+      defeat: [
+          `你知道，在我这一行，在某个方面缺乏天赋的人往往很快就会销声匿迹——从此再也没有人听说过。`,
+      ]
   },
   [TrainerType.SIDNEY]: {
-    encounter: [
-      `I like that look you're giving me. I guess you'll give me a good match.
-      $That's good! Looking real good! All right!
-      $You and me, let's enjoy a battle that can only be staged here!`,
-    ],
-    victory: [
-      `Well, how do you like that? I lost! Eh, it was fun, so it doesn't matter.`,
-    ],
-    defeat: [
-      `No hard feelings, alright?`,
-    ]
+      encounter: [
+          `我喜欢你看着我的眼神。我猜你会给我一场精彩的比赛。
+          $很好！看起来真不错！好吧！
+          $你和我，让我们享受一场只有在这里才能上演的对战吧！`,
+      ],
+      victory: [
+          `怎么样？我输了！哎，很有趣，所以没关系。`,
+      ],
+      defeat: [
+          `别记仇，好吗？`,
+      ]
   },
   [TrainerType.PHOEBE]: {
-    encounter: [
-      `While I trained, I gained the ability to commune with Ghost-type Pokémon. 
-      $Yes, the bond I developed with Pokémon is extremely tight. 
-      $So, come on, just try and see if you can even inflict damage on my Pokémon!`,
-    ],
-    victory: [
-      `Oh, darn. I've gone and lost.`,
-    ],
-    defeat: [
-      `I look forward to battling you again sometime!`,
-    ]
+      encounter: [
+          `在训练的过程中，我获得了与幽灵属性宝可梦交流的能力。
+          $是的，我与宝可梦建立的羁绊非常紧密。
+          $所以，来吧，试试看，看看你能不能伤到我的宝可梦！`,
+      ],
+      victory: [
+          `哦，糟糕。我输了。`,
+      ],
+      defeat: [
+          `我期待着下次再和你对战！`,
+      ]
   },
   [TrainerType.GLACIA]: {
     encounter: [
-      `All I have seen are challenges by weak Trainers and their Pokémon. 
-      $What about you? It would please me to no end if I could go all out against you!`,
+        `我所看到的都是来自弱小的训练家和他们的宝可梦的挑战。
+        $你呢？如果我能全力以赴地与你较量，我会非常高兴！`,
     ],
     victory: [
-      `You and your Pokémon… How hot your spirits burn!
-      $The all-consuming heat overwhelms. 
-      $It's no surprise that my icy skills failed to harm you.`,
+        `你和你的宝可梦…你们的斗志是多么旺盛！
+        $势不可挡的热浪席卷而来。
+        $难怪我的冰雪技能无法伤到你。`,
     ],
     defeat: [
-      `A fiercely passionate battle, indeed.`,
+        `真是一场激烈的战斗。`,
     ]
   },
   [TrainerType.DRAKE]: {
-    encounter: [
-      `For us to battle with Pokémon as partners, do you know what it takes? Do you know what is needed? 
-      $If you don't, then you will never prevail over me!`,
-    ],
-    victory: [
-      `Superb, it should be said.`,
-    ],
-    defeat: [
-      `I gave my all for that battle!`,
-    ]
+      encounter: [
+          `我们与宝可梦并肩作战，你知道需要什么吗？你知道需要什么吗？
+          $如果你不知道，那你永远无法战胜我！`,
+      ],
+      victory: [
+          `应该说，非常出色。`,
+      ],
+      defeat: [
+          `我在那场战斗中倾尽全力！`,
+      ]
   },
   [TrainerType.WALLACE]: {
-    encounter: [
-      `There's something about you… A difference in your demeanor. 
-      $I think I sense that in you. Now, show me. Show me the power you wield with your Pokémon. 
-      $And I, in turn, shall present you with a performance of illusions in water by me and my Pokémon!`,
-    ],
-    victory: [
-      `Bravo. I realize now your authenticity and magnificence as a Pokémon Trainer. 
-      $I find much joy in having met you and your Pokémon. You have proven yourself worthy.`,
-    ],
-    defeat: [
-      `A grand illusion!`,
-    ]
+      encounter: [
+          `你身上有一种特质…一种与众不同的气质。
+          $我想我感受到了。来吧，让我看看。让我看看你和你的宝可梦所拥有的力量。
+          $而我，将向你展示我和我的宝可梦在水中创造的幻象表演！`,
+      ],
+      victory: [
+          `精彩。我现在意识到了你作为一名宝可梦训练家的真实性和伟大之处。
+          $我很高兴认识了你和你的宝可梦。你已经证明了自己的价值。`,
+      ],
+      defeat: [
+          `一场盛大的幻觉！`,
+      ]
   },
   [TrainerType.LORELEI]: {
-    encounter: [
-      `No one can best me when it comes to icy Pokémon! Freezing moves are powerful!
-      $Your Pokémon will be at my mercy when they are frozen solid! Hahaha! Are you ready?`,
-    ],
-    victory: [
-      `How dare you!`,
-    ],
-    defeat: [
-      `There's nothing you can do once you're frozen.`,
-    ]
+      encounter: [
+          `说到冰属性宝可梦，没有人能比我强！冰冻招式非常强大！
+          $当你的宝可梦被冻成冰块时，他们就会任我宰割！哈哈哈！你准备好了吗？`,
+      ],
+      victory: [
+          `你竟敢！`,
+      ],
+      defeat: [
+          `一旦被冻住，你就无计可施了。`,
+      ]
   },
   [TrainerType.WILL]: {
-    encounter: [
-      `I have trained all around the world, making my psychic Pokémon powerful.
-      $I can only keep getting better! Losing is not an option!`,
-    ],
-    victory: [
-      `I… I can't… believe it…`,
-    ],
-    defeat: [
-      `That was close. I wonder what it is that you lack.`,
-    ]
+      encounter: [
+          `我在世界各地训练，让我的超能力宝可梦变得强大。
+          $我只会越来越强！失败是不可能的！`,
+      ],
+      victory: [
+          `我…我…不敢相信…`,
+      ],
+      defeat: [
+          `好险。我不知道你缺少什么。`,
+      ]
   },
   [TrainerType.MALVA]: {
-    encounter: [
-      `I feel like my heart might just burst into flames. 
-      $I'm burning up with my hatred for you, runt!`,
-    ],
-    victory: [
-      `What news… So a new challenger has defeated Malva!`,
-    ],
-    defeat: [
-      `I am delighted! Yes, delighted that I could squash you beneath my heel.`,
-    ]
+      encounter: [
+          `我觉得我的心都要燃烧起来了。
+          $我对你充满了憎恨，小鬼！`,
+      ],
+      victory: [
+          `什么消息…一位新的挑战者打败了帕琦拉！`,
+      ],
+      defeat: [
+          `我很高兴！是的，我很高兴能把你踩在脚下。`,
+      ]
   },
   [TrainerType.HALA]: {
-    encounter: [
-      `Old Hala is here to make you holler!`,
-    ],
-    victory: [
-      `I could feel the power you gained on your journey.`,
-    ],
-    defeat: [
-      `Haha! What a delightful battle!`,
-    ]
+      encounter: [
+          `老库库伊来让你大吃一惊！`,
+      ],
+      victory: [
+          `我能感受到你在旅途中获得的力量。`,
+      ],
+      defeat: [
+          `哈哈！多么精彩的战斗！`,
+      ]
   },
   [TrainerType.MOLAYNE]: {
-    encounter: [
-      `I gave the captain position to my cousin Sophocles, but I'm confident in my ability. 
-      $My strength is like that of a supernova!`,
-    ],
-    victory: [
-      `I certainly found an interesting Trainer to face!`,
-    ],
-    defeat: [
-      `Ahaha. What an interesting battle.`,
-    ]
+      encounter: [
+          `我把岛屿之王的位置给了我的侄女莉莉艾，但我对自己的能力很有信心。
+          $我的力量就像超新星一样！`,
+      ],
+      victory: [
+          `我确实找到了一个有趣的训练家来对战！`,
+      ],
+      defeat: [
+          `啊哈哈。多么有趣的战斗。`,
+      ]
   },
   [TrainerType.RIKA]: {
-    encounter: [
-      `I'd say I'll go easy on you, but… I'd be lying! Think fast!`,
-    ],
-    victory: [
-      `Not bad, kiddo.`,
-    ],
-    defeat: [
-      `Nahahaha! You really are something else, kiddo!`,
-    ]
+      encounter: [
+          `我想说我会对你手下留情，但是…我是在撒谎！反应快点！`,
+      ],
+      victory: [
+          `不错，小子。`,
+      ],
+      defeat: [
+          `哈哈哈！你真是与众不同，小子！`,
+      ]
   },
   [TrainerType.BRUNO]: {
-    encounter: [
-      `We will grind you down with our superior power! Hoo hah!`,
-    ],
-    victory: [
-      `Why? How could I lose?`,
-    ],
-    defeat: [
-      `You can challenge me all you like, but the results will never change!`,
-    ]
+      encounter: [
+          `我们会用我们强大的力量将你击垮！吼哈！`,
+      ],
+      victory: [
+          `为什么？我怎么可能会输？`,
+      ],
+      defeat: [
+          `你可以随意挑战我，但结果永远不会改变！`,
+      ]
   },
   [TrainerType.BUGSY]: {
-    encounter: [
-      `Let me demonstrate what I've learned from my studies.`,
-    ],
-    victory: [
-      `Whoa, amazing! You're an expert on Pokémon! 
-      $My research isn't complete yet. OK, you win.`,
-    ],
-    defeat: [
-      `Thanks! Thanks to our battle, I was also able to make progress in my research!`,
-    ]
+      encounter: [
+          `让我展示一下我从研究中学到的东西。`,
+      ],
+      victory: [
+          `哇，太棒了！你是宝可梦专家！
+          $我的研究还没完成。好吧，你赢了。`,
+      ],
+      defeat: [
+          `谢谢！多亏了我们的战斗，我的研究也取得了进展！`,
+      ]
   },
   [TrainerType.KOGA]: {
-    encounter: [
-      `Fwahahahaha! Pokémon are not merely about brute force--you shall see soon enough!`,
-    ],
-    victory: [
-      `Ah! You've proven your worth!`,
-    ],
-    defeat: [
-      `Have you learned to fear the techniques of the ninja?`,
-    ]
+      encounter: [
+          `哈哈哈哈！宝可梦不仅仅是蛮力——你很快就会明白的！`,
+      ],
+      victory: [
+          `啊！你已经证明了自己的价值！`,
+      ],
+      defeat: [
+          `你学会了害怕忍者的技巧了吗？`,
+      ]
   },
   [TrainerType.BERTHA]: {
-    encounter: [
-      `Well, would you show this old lady how much you've learned?`,
-    ],
-    victory: [
-      `Well! Dear child, I must say, that was most impressive. 
-      $Your Pokémon believed in you and did their best to earn you the win. 
-      $Even though I've lost, I find myself with this silly grin!`,
-    ],
-    defeat: [
-      `Hahahahah! Looks like this old lady won!`,
-    ]
+      encounter: [
+          `好吧，你能给这位老太婆展示一下你学到了多少东西吗？`,
+      ],
+      victory: [
+          `好！亲爱的孩子，我必须说，这真是太令人印象深刻了。
+          $你的宝可梦相信你，并尽了最大努力为你赢得胜利。
+          $即使我输了，我还是忍不住傻笑！`,
+      ],
+      defeat: [
+          `哈哈哈哈！看来这位老太婆赢了！`,
+      ]
   },
   [TrainerType.LENORA]: {
     encounter: [
-      `Well then, challenger, I'm going to research how you battle with the Pokémon you've so lovingly raised!`,
+        `那么，挑战者，我要研究一下你是如何与你精心培育的宝可梦进行对战的！`,
     ],
     victory: [
-      `My theory about you was correct. You're more than just talented… You're motivated! I salute you!`,
+        `我对你的推论是正确的。你不仅仅是有天赋…你还有动力！我向你致敬！`,
     ],
     defeat: [
-      `Ah ha ha! If you lose, make sure to analyze why, and use that knowledge in your next battle!`,
+        `啊哈哈！如果你输了，一定要分析原因，并在下次战斗中利用这些知识！`,
     ]
   },
   [TrainerType.SIEBOLD]: {
-    encounter: [
-      `As long as I am alive, I shall strive onward to seek the ultimate cuisine... and the strongest opponents in battle!`,
-    ],
-    victory: [
-      `I shall store my memory of you and your Pokémon forever away within my heart.`,
-    ],
-    defeat: [
-      `Our Pokémon battle was like food for my soul. It shall keep me going. 
-      $That is how I will pay my respects to you for giving your all in battle!`,
-    ]
+      encounter: [
+          `只要我还活着，我就会继续努力寻找终极美食…以及战斗中最强的对手！`,
+      ],
+      victory: [
+          `我会将你和你宝可梦的记忆永远珍藏在我的心中。`,
+      ],
+      defeat: [
+          `我们宝可梦的对战就像是我灵魂的食物。它将支撑我继续前进。
+          $这就是我对你全力以赴战斗的敬意！`,
+      ]
   },
   [TrainerType.ROXIE]: {
-    encounter: [
-      `Get ready! I'm gonna knock some sense outta ya!`,
-    ],
-    victory: [
-      `Wild! Your reason's already more toxic than mine!`,
-    ],
-    defeat: [
-      `Hey, c'mon! Get serious! You gotta put more out there!`,
-    ]
+      encounter: [
+          `准备好了！我要让你清醒清醒！`,
+      ],
+      victory: [
+          `狂野！你的理由比我的更有毒！`,
+      ],
+      defeat: [
+          `嘿，拜托！认真点！你得拿出更多实力！`,
+      ]
   },
   [TrainerType.OLIVIA]: {
-    encounter: [
-      `No introduction needed here. Time to battle me, Olivia!`,
-    ],
-    victory: [
-      `Really lovely… Both you and your Pokémon…`,
-    ],
-    defeat: [
-      `Mmm-hmm.`,
-    ]
+      encounter: [
+          `这里不需要介绍。是时候和我，芙蓉对战了！`,
+      ],
+      victory: [
+          `真可爱…你和你的宝可梦…`,
+      ],
+      defeat: [
+          `嗯哼。`,
+      ]
   },
   [TrainerType.POPPY]: {
-    encounter: [
-      `Oooh! Do you wanna have a Pokémon battle with me?`,
-    ],
-    victory: [
-      `Uagh?! Mmmuuuggghhh…`,
-    ],
-    defeat: [
-      `Yaaay! I did it! I de-feet-ed you! You can come for… For… An avenge match? 
-      $Come for an avenge match anytime you want!`,
-    ]
+      encounter: [
+          `哦！你想和我进行宝可梦对战吗？`,
+      ],
+      victory: [
+          `哇？！嗯…`,
+      ],
+      defeat: [
+          `耶！我做到了！我打败了你！你可以来…来…复仇？
+          $随时都可以来复仇！`,
+      ]
   },
   [TrainerType.AGATHA]: {
-    encounter: [
-      `Pokémon are for battling! I'll show you how a real Trainer battles!`,
-    ],
-    victory: [
-      `Oh my! You're something special, child!`,
-    ],
-    defeat: [
-      `Bahaha. That's how a proper battle's done!`,
-    ]
+      encounter: [
+          `宝可梦是用来战斗的！我会让你看看真正的训练家是如何战斗的！`,
+      ],
+      victory: [
+          `我的天！你很特别，孩子！`,
+      ],
+      defeat: [
+          `哈哈哈。这才叫战斗！`,
+      ]
   },
   [TrainerType.FLINT]: {
-    encounter: [
-      `Hope you're warmed up, cause here comes the Big Bang!`,
-    ],
-    victory: [
-      `Incredible! Your moves are so hot, they make mine look lukewarm!`,
-    ],
-    defeat: [
-      `Huh? Is that it? I think you need a bit more passion.`,
-    ]
+      encounter: [
+          `希望你已经热身了，因为大爆炸来了！`,
+      ],
+      victory: [
+          `难以置信！你的招式太强了，让我看起来很逊！`,
+      ],
+      defeat: [
+          `嗯？就这样？我觉得你需要更多激情。`,
+      ]
   },
   [TrainerType.GRIMSLEY]: {
-    encounter: [
-      `The winner takes everything, and there's nothing left for the loser.`,
-    ],
-    victory: [
-      `When one loses, they lose everything… The next thing I'll look for will be victory, too!`,
-    ],
-    defeat: [
-      `If somebody wins, the person who fought against that person will lose.`,
-    ]
+      encounter: [
+          `胜者拥有一切，败者一无所有。`,
+      ],
+      victory: [
+          `一旦失败，就失去了一切…我接下来要寻找的也是胜利！`,
+      ],
+      defeat: [
+          `如果有人赢了，和他战斗的人就会输。`,
+      ]
   },
   [TrainerType.CAITLIN]: {
-    encounter: [
-      `It's me who appeared when the flower opened up. You who have been waiting…
-      $You look like a Pokémon Trainer with refined strength and deepened kindness. 
-      $What I look for in my opponent is superb strength… 
-      $Please unleash your power to the fullest!`,
-    ],
-    victory: [
-      `My Pokémon and I learned so much! I offer you my thanks.`,
-    ],
-    defeat: [
-      `I aspire to claim victory with elegance and grace.`,
-    ]
+      encounter: [
+          `花开的时候出现的是我。一直在等待的你…
+          $你看起来像是一位拥有精炼力量和深厚仁慈之心的宝可梦训练家。
+          $我在对手身上寻找的是超凡的力量…
+          $请尽情释放你的力量吧！`,
+      ],
+      victory: [
+          `我的宝可梦和我学到了很多东西！我向你表示感谢。`,
+      ],
+      defeat: [
+          `我渴望以优雅和风度赢得胜利。`,
+      ]
   },
   [TrainerType.DIANTHA]: {
-    encounter: [
-      `Battling against you and your Pokémon, all of you brimming with hope for the future… 
-      $Honestly, it just fills me up with energy I need to keep facing each new day! It does!`,
-    ],
-    victory: [
-      `Witnessing the noble spirits of you and your Pokémon in battle has really touched my heart…`,
-    ],
-    defeat: [
-      `Oh, fantastic! What did you think? My team was pretty cool, right?`,
-    ]
+      encounter: [
+          `与你和你的宝可梦战斗，你们都对未来充满希望…
+          $老实说，这让我充满了面对每一天所需的能量！真的！`,
+      ],
+      victory: [
+          `在战斗中见证你和你的宝可梦的高尚精神，真的触动了我的心…`,
+      ],
+      defeat: [
+          `哦，太棒了！你觉得怎么样？我的队伍很酷吧？`,
+      ]
   },
   [TrainerType.WIKSTROM]: {
-    encounter: [
-      `Well met, young challenger! Verily am I the famed blade of hardened steel, Duke Wikstrom! 
-      $Let the battle begin! En garde!`,
-    ],
-    victory: [
-      `Glorious! The trust that you share with your honorable Pokémon surpasses even mine!`,
-    ],
-    defeat: [
-      `What manner of magic is this? My heart, it doth hammer ceaselessly in my breast! 
-      $Winning against such a worthy opponent doth give my soul wings--thus do I soar!`,
-    ]
+      encounter: [
+          `很高兴认识你，年轻的挑战者！我正是著名的钢铁之刃，钢铠鸦骑士！
+          $战斗开始！准备好了！`,
+      ],
+      victory: [
+          `光荣！你与你尊敬的宝可梦之间的信任甚至超过了我！`,
+      ],
+      defeat: [
+          `这是什么魔法？我的心，它在我的胸膛里不停地跳动！
+          $战胜如此强大的对手让我的灵魂插上了翅膀——我飞翔了！`,
+      ]
   },
   [TrainerType.ACEROLA]: {
-    encounter: [
-      `Battling is just plain fun! Come on, I can take you!`,
-    ],
-    victory: [
-      `I'm… I'm speechless! How did you do it?!`,
-    ],
-    defeat: [
-      `Ehaha! What an amazing victory!`,
-    ]
+      encounter: [
+          `战斗很有趣！来吧，我接受你的挑战！`,
+      ],
+      victory: [
+          `我…我说不出话来！你是怎么做到的？！`,
+      ],
+      defeat: [
+          `诶哈哈！多么惊人的胜利！`,
+      ]
   },
   [TrainerType.LARRY_ELITE]: {
-    encounter: [
-      `Hello there… It's me, Larry.
-      $I serve as a member of the Elite Four too, yes… Unfortunately for me.`,
-    ],
-    victory: [
-      `Well, that took the wind from under our wings…`,
-    ],
-    defeat: [
-      `It's time for a meeting with the boss.`,
-    ]
+      encounter: [
+          `你好…是我，阿柳。
+          $我也是四天王的一员，是的…对我来说很不幸。`,
+      ],
+      victory: [
+          `好吧，这让我们失去了斗志…`,
+      ],
+      defeat: [
+          `是时候去见老板了。`,
+      ]
   },
   [TrainerType.LANCE]: {
-    encounter: [
-      `I've been waiting for you. Allow me to test your skill.`,
-      `I thought that you would be able to get this far. Let's get this started.`
-    ],
-    victory: [
-      `You got me. You are magnificent!`,
-      `I never expected another trainer to beat me… I'm surprised.`
-    ],
-    defeat: [
-      `That was close. Want to try again?`,
-      `It's not that you are weak. Don't let it bother you.`
-    ]
+      encounter: [
+          `我一直在等你。让我来测试一下你的实力。`,
+          `我以为你能走到这一步。让我们开始吧。`
+      ],
+      victory: [
+          `你打败了我。你太棒了！`,
+          `我从没想过会有别的训练家打败我…我很惊讶。`
+      ],
+      defeat: [
+          `好险。想再试一次吗？`,
+          `不是你太弱。别担心。`
+      ]
   },
   [TrainerType.KAREN]: {
-    encounter: [
-      `I am Karen. Would you care for a showdown with my Dark-type Pokémon?`,
-      `I am unlike those you've already met.`,
-      `You've assembled a charming team. Our battle should be a good one.`
-    ],
-    victory: [
-      `No! I can't win. How did you become so strong?`,
-      `I will not stray from my chosen path.`,
-      `The Champion is looking forward to meeting you.`
-    ],
-    defeat: [
-      `That's about what I expected.`,
-      `Well, that was relatively entertaining.`,
-      `Come visit me anytime.`
-    ]
+      encounter: [
+          `我是梨花。你想和我的恶属性宝可梦决一胜负吗？`,
+          `我和你之前遇到的那些人不一样。`,
+          `你组建了一支很有魅力的队伍。我们的战斗应该会很精彩。`
+      ],
+      victory: [
+          `不！我赢不了。你是怎么变得这么强的？`,
+          `我不会偏离我选择的道路。`,
+          `冠军期待着与你见面。`
+      ],
+      defeat: [
+          `这正是我所期望的。`,
+          `好吧，这还算有趣。`,
+          `随时欢迎你来拜访我。`
+      ]
   },
   [TrainerType.MILO]: {
-    encounter: [
-      `Sure seems like you understand Pokémon real well. 
-      $This is gonna be a doozy of a battle! 
-      $I'll have to Dynamax my Pokémon if I want to win!`,
-    ],
-    victory: [
-      `The power of Grass has wilted… What an incredible Challenger!`,
-    ],
-    defeat: [
-      `This'll really leave you in shock and awe.`,
-    ]
+      encounter: [
+          `看起来你真的很懂宝可梦。
+          $这将是一场精彩的战斗！
+          $如果我想赢，我必须让我的宝可梦极巨化！`,
+      ],
+      victory: [
+          `草的力量已经枯萎了…多么不可思议的挑战者！`,
+      ],
+      defeat: [
+          `这真的会让你震惊和敬畏。`,
+      ]
   },
   [TrainerType.LUCIAN]: {
     encounter: [
-      `Just a moment, please. The book I'm reading has nearly reached its thrilling climax… 
-      $The hero has obtained a mystic sword and is about to face their final trial… Ah, never mind. 
-      $Since you've made it this far, I'll put that aside and battle you. 
-      $Let me see if you'll achieve as much glory as the hero of my book!,`
+        `请稍等片刻。我正在读的书快要到高潮了…
+        $主人公得到了一把神秘的剑，即将面对最后的考验…啊，没关系。
+        $既然你已经走到这一步了，我就把书放下和你战斗。
+        $让我看看你是否能像我书中的主人公那样获得荣耀！`,
     ],
     victory: [
-      `I see… It appears you've put me in checkmate.`,
+        `我明白了…看来你已经将我逼入绝境了。`,
     ],
     defeat: [
-      `I have a reputation to uphold.`,
+        `我必须维护我的声誉。`,
     ]
   },
   [TrainerType.DRASNA]: {
-    encounter: [
-      `You must be a strong Trainer. Yes, quite strong indeed…
-      $That's just wonderful news! Facing opponents like you and your team will make my Pokémon grow like weeds!`
-    ],
-    victory: [
-      `Oh, dear me. That sure was a quick battle… I do hope you'll come back again sometime!`,
-    ],
-    defeat: [
-      `How can this be?`,
-    ]
+      encounter: [
+          `你一定是一位强大的训练家。是的，真的很强…
+          $这真是个好消息！面对像你和你的队伍这样的对手，我的宝可梦会像杂草一样疯长！`,
+      ],
+      victory: [
+          `哦，天哪。这真是场速战…我希望你能再来！`,
+      ],
+      defeat: [
+          `这怎么可能？`,
+      ]
   },
   [TrainerType.KAHILI]: {
-    encounter: [
-      `So, here you are… Why don't we see who the winds favor today, you… Or me?`
-    ],
-    victory: [
-      `It's frustrating to me as a member of the Elite Four, but it seems your strength is the real deal.`,
-    ],
-    defeat: [
-      `That was an ace!`,
-    ]
+      encounter: [
+          `所以，你来了…我们来看看今天风向偏向谁，你…还是我？`,
+      ],
+      victory: [
+          `作为四天王的一员，这让我很沮丧，但你的实力似乎是真的。`,
+      ],
+      defeat: [
+          `那真是太棒了！`,
+      ]
   },
   [TrainerType.HASSEL]: {
-    encounter: [
-      `Prepare to learn firsthand how the fiery breath of ferocious battle feels!`
-    ],
-    victory: [
-      `Fortune smiled on me this time, but… 
-      $Judging from how the match went, who knows if I will be so lucky next time.`,
-    ],
-    defeat: [
-      `That was an ace!`,
-    ]
+      encounter: [
+          `准备好亲身体验一下战斗的灼热气息吧！`,
+      ],
+      victory: [
+          `这次幸运女神眷顾了我，但是…
+          $从比赛的过程来看，谁知道下次我是否还会这么幸运。`,
+      ],
+      defeat: [
+          `那真是太棒了！`,
+      ]
   },
   [TrainerType.BLUE]: {
-    encounter: [
-      `You must be pretty good to get this far.`
-    ],
-    victory: [
-      `I've only lost to him and now to you… Him? Hee, hee…`,
-    ],
-    defeat: [
-      `See? My power is what got me here.`,
-    ]
+      encounter: [
+          `你能走到这一步，一定很厉害。`,
+      ],
+      victory: [
+          `我只输给他，现在又输给你了…他？嘿嘿…`,
+      ],
+      defeat: [
+          `看到了吗？我的力量让我走到今天。`,
+      ]
   },
   [TrainerType.PIERS]: {
-    encounter: [
-      `Get ready for a mosh pit with me and my party! Spikemuth, it's time to rock!`
-    ],
-    victory: [
-      `Me an' my team gave it our best. Let's meet up again for a battle some time…`,
-    ],
-    defeat: [
-      `My throat's ragged from shoutin'… But 'at was an excitin' battle!`,
-    ]
+      encounter: [
+          `准备好和我以及我的伙伴们一起狂欢吧！尖钉镇，是时候摇滚了！`,
+      ],
+      victory: [
+          `我和我的队伍尽力了。找个时间再见面战斗吧…`,
+      ],
+      defeat: [
+          `我的嗓子都喊哑了…但这真是场精彩的战斗！`,
+      ]
   },
   [TrainerType.RED]: {
-    encounter: [
-      `…!`
-    ],
-    victory: [
-      `…?`,
-    ],
-    defeat: [
-      `…!`,
-    ]
+      encounter: [
+          `…!`,
+      ],
+      victory: [
+          `…?`,
+      ],
+      defeat: [
+          `…!`,
+      ]
   },
   [TrainerType.JASMINE]: {
-    encounter: [
-      `Oh… Your Pokémon are impressive. I think I will enjoy this.`
-    ],
-    victory: [
-      `You are truly strong. I'll have to try much harder, too.`,
-    ],
-    defeat: [
-      `I never expected to win.`,
-    ]
+      encounter: [
+          `哦…你的宝可梦真令人印象深刻。我想我会很享受这场战斗的。`,
+      ],
+      victory: [
+          `你真的很强。我也要更加努力才行。`,
+      ],
+      defeat: [
+          `我从没想过会赢。`,
+      ]
   },
   [TrainerType.LANCE_CHAMPION]: {
-    encounter: [
-      `I am still the Champion. I won't hold anything back.`,
-    ],
-    victory: [
-      `This is the emergence of a new Champion.`,
-    ],
-    defeat: [
-      `I successfully defended my Championship.`,
-    ]
+      encounter: [
+          `我仍然是冠军。我不会手下留情的。`,
+      ],
+      victory: [
+          `新的冠军诞生了。`,
+      ],
+      defeat: [
+          `我成功卫冕了冠军头衔。`,
+      ]
   },
   [TrainerType.STEVEN]: {
-    encounter: [
-      `Tell me… What have you seen on your journey with your Pokémon? 
-      $What have you felt, meeting so many other Trainers out there? 
-      $Traveling this rich land… Has it awoken something inside you? 
-      $I want you to come at me with all that you've learned. 
-      $My Pokémon and I will respond in turn with all that we know!`,
-    ],
-    victory: [
-      `So I, the Champion, fall in defeat…`,
-    ],
-    defeat: [
-      `That was time well spent! Thank you!`,
-    ]
+      encounter: [
+          `告诉我…你在与宝可梦的旅程中看到了什么？
+          $你感觉到了什么，遇到了那么多其他的训练家？
+          $在这片富饶的土地上旅行…是否唤醒了你内心的某些东西？
+          $我希望你带着你所学到的一切来挑战我。
+          $我和我的宝可梦会用我们知道的一切来回应！`,
+      ],
+      victory: [
+          `我，冠军，被打败了…`,
+      ],
+      defeat: [
+          `这段时间过得很充实！谢谢你！`,
+      ]
   },
   [TrainerType.CYNTHIA]: {
-    encounter: [
-      `I, Cynthia, accept your challenge! There won't be any letup from me!`,
-    ],
-    victory: [
-      `No matter how fun the battle is, it will always end sometime…`,
-    ],
-    defeat: [
-      `Even if you lose, never lose your love of Pokémon.`,
-    ]
+      encounter: [
+          `我，竹兰，接受你的挑战！我不会手下留情的！`,
+      ],
+      victory: [
+          `无论战斗多么有趣，总会有结束的时候…`,
+      ],
+      defeat: [
+          `即使你输了，也不要失去对宝可梦的爱。`,
+      ]
   },
   [TrainerType.IRIS]: {
-    encounter: [
-      `Know what? I really look forward to having serious battles with strong Trainers! 
-      $I mean, come on! The Trainers who make it here are Trainers who desire victory with every fiber of their being! 
-      #And they are battling alongside Pokémon that have been through countless difficult battles! 
-      $If I battle with people like that, not only will I get stronger, my Pokémon will, too! 
-      $And we'll get to know each other even better! OK! Brace yourself! 
-      $I'm Iris, the Pokémon League Champion, and I'm going to defeat you!`,
-    ],
-    victory: [
-      `Aghhhh… I did my best, but we lost…`,
-    ],
-    defeat: [
-      `Yay! We won!`,
-    ]
+      encounter: [
+          `你知道吗？我真的很期待与强大的训练家进行认真的战斗！
+          $我是说，拜托！能来到这里的训练家都是渴望胜利的训练家！
+          $他们与经历过无数艰难战斗的宝可梦并肩作战！
+          $如果我和这样的人战斗，不仅我会变得更强，我的宝可梦也会！
+          $我们也会更加了解彼此！好吧！做好准备！
+          $我是艾莉丝，宝可梦联盟冠军，我要打败你！`,
+      ],
+      victory: [
+          `啊…我尽力了，但我们输了…`,
+      ],
+      defeat: [
+          `耶！我们赢了！`,
+      ]
   },
   [TrainerType.HAU]: {
-    encounter: [
-      `I wonder if a Trainer battles differently depending on whether they're from a warm region or a cold region.
-      $Let's test it out!`,
-    ],
-    victory: [
-      `That was awesome! I think I kinda understand your vibe a little better now!`,
-    ],
-    defeat: [
-      `Ma-an, that was some kinda battle!`,
-    ]
+      encounter: [
+          `我想知道训练家的战斗方式是否会因为来自温暖的地区还是寒冷的地区而有所不同。
+          $让我们来试试吧！`,
+      ],
+      victory: [
+          `太棒了！我觉得我现在有点了解你的感觉了！`,
+      ],
+      defeat: [
+          `伙计，这真是场战斗！`,
+      ]
   },
   [TrainerType.GEETA]: {
-    encounter: [
-      `I decided to throw my hat in the ring once more. 
-      $Come now… Show me the fruits of your training.`,
-    ],
-    victory: [
-      `I eagerly await news of all your achievements!`,
-    ],
-    defeat: [
-      `What's the matter? This isn't all, is it?`,
-    ]
+      encounter: [
+          `我决定再次加入这场竞争。
+          $来吧…让我看看你训练的成果。`,
+      ],
+      victory: [
+          `我热切地等待着你所有成就的消息！`,
+      ],
+      defeat: [
+          `怎么了？这就完了吗？`,
+      ]
   },
   [TrainerType.NEMONA]: {
-    encounter: [
-      `Yesss! I'm so psyched! Time for us to let loose!`,
-    ],
-    victory: [
-      `Well, that stinks, but I still had fun! I'll getcha next time!`,
-    ],
-    defeat: [
-      `Well, that was a great battle! Fruitful for sure.`,
-    ]
+      encounter: [
+          `太棒了！我太兴奋了！是时候让我们尽情发挥了！`,
+      ],
+      victory: [
+          `好吧，这太糟糕了，但我还是很开心！下次我会打败你的！`,
+      ],
+      defeat: [
+          `嗯，这真是场很棒的战斗！很有收获。`,
+      ]
   },
   [TrainerType.LEON]: {
-    encounter: [
-      `We're gonna have an absolutely champion time!`,
-    ],
-    victory: [
-      `My time as Champion is over… 
-      $But what a champion time it's been! 
-      $Thank you for the greatest battle I've ever had!`,
-    ],
-    defeat: [
-      `An absolute champion time, that was!`,
-    ]
+      encounter: [
+          `我们一定会度过一段美好的冠军时光！`,
+      ],
+      victory: [
+          `我作为冠军的时代结束了…
+          $但这真是段美好的冠军时光！
+          $谢谢你带给我最棒的战斗！`,
+      ],
+      defeat: [
+          `那真是段美好的冠军时光！`,
+      ]
   },
   [TrainerType.WHITNEY]: {
-    encounter: [
-      `Hey! Don't you think Pokémon are, like, super cute?`,
-    ],
-    victory: [
-      `Waaah! Waaah! You're so mean!`,
-    ],
-    defeat: [
-      `And that's that!`,
-    ]
+      encounter: [
+          `嘿！你不觉得宝可梦超级可爱吗？`,
+      ],
+      victory: [
+          `哇啊啊！哇啊啊！你太坏了！`,
+      ],
+      defeat: [
+          `就这样！`,
+      ]
   },
   [TrainerType.CHUCK]: {
     encounter: [
-      `Hah! You want to challenge me? Are you brave or just ignorant?`,
+        `哈！你想挑战我？你是勇敢还是无知？`,
     ],
     victory: [
-      `You're strong! Would you please make me your apprentice?`,
+        `你很强！你能收我为徒吗？`,
     ],
     defeat: [
-      `There. Do you realize how much more powerful I am than you?`,
+        `看到了吗？你知道我比你强大多少了吗？`,
     ]
   },
   [TrainerType.KATY]: {
-    encounter: [
-      `Don't let your guard down unless you would like to find yourself knocked off your feet!`,
-    ],
-    victory: [
-      `All of my sweet little Pokémon dropped like flies!`,
-    ],
-    defeat: [
-      `Eat up, my cute little Vivillon!`,
-    ]
+      encounter: [
+          `如果你不想被击倒的话，就不要放松警惕！`,
+      ],
+      victory: [
+          `我所有可爱的宝可梦都像苍蝇一样掉下来了！`,
+      ],
+      defeat: [
+          `吃吧，我可爱的彩粉蝶！`,
+      ]
   },
   [TrainerType.PRYCE]: {
-    encounter: [
-      `Youth alone does not ensure victory! Experience is what counts.`,
-    ],
-    victory: [
-      `Outstanding! That was perfect. Try not to forget what you feel now.`,
-    ],
-    defeat: [
-      `Just as I envisioned.`,
-    ]
+      encounter: [
+          `光有年轻并不能保证胜利！经验才是最重要的。`,
+      ],
+      victory: [
+          `出色！太完美了。试着不要忘记你现在的感觉。`,
+      ],
+      defeat: [
+          `正如我预料的那样。`,
+      ]
   },
   [TrainerType.CLAIR]: {
-    encounter: [
-      `Do you know who I am? And you still dare to challenge me?`,
-    ],
-    victory: [
-      `I wonder how far you can get with your skill level. This should be fascinating.`,
-    ],
-    defeat: [
-      `That's that.`,
-    ]
+      encounter: [
+          `你知道我是谁吗？你还敢挑战我？`,
+      ],
+      victory: [
+          `我想知道以你的水平能走多远。这应该很有趣。`,
+      ],
+      defeat: [
+          `就这样。`,
+      ]
   },
   [TrainerType.MAYLENE]: {
-    encounter: [
-      `I've come to challenge you now, and I won't hold anything back. 
-      $Please prepare yourself for battle!`,
-    ],
-    victory: [
-      `I admit defeat…`,
-    ],
-    defeat: [
-      `That was awesome.`,
-    ]
+      encounter: [
+          `我现在来挑战你，我不会手下留情的。
+          $请做好战斗准备！`,
+      ],
+      victory: [
+          `我认输…`,
+      ],
+      defeat: [
+          `太棒了。`,
+      ]
   },
   [TrainerType.FANTINA]: {
-    encounter: [
-      `You shall challenge me, yes? But I shall win. 
-      $That is what the Gym Leader of Hearthome does, non?`,
-    ],
-    victory: [
-      `You are so fantastically strong. I know why I have lost.`,
-    ],
-    defeat: [
-      `I am so, so, very happy!`,
-    ]
+      encounter: [
+          `你要挑战我，是吗？但我会赢的。
+          $这就是缘之市的馆主该做的事，不是吗？`,
+      ],
+      victory: [
+          `你太强了。我知道我为什么输了。`,
+      ],
+      defeat: [
+          `我太高兴了！`,
+      ]
   },
   [TrainerType.BYRON]: {
-    encounter: [
-      `Trainer! You're young, just like my son, Roark. 
-      $With more young Trainers taking charge, the future of Pokémon is bright! 
-      $So, as a wall for young people, I'll take your challenge!`,
-    ],
-    victory: [
-      `Hmm! My sturdy Pokémon--defeated!`,
-    ],
-    defeat: [
-      `Gwahahaha! How were my sturdy Pokémon?!`,
-    ]
+      encounter: [
+          `训练家！你很年轻，就像我的儿子，瓢太一样。
+          $有了更多年轻的训练家，宝可梦的未来一片光明！
+          $所以，作为年轻人的一面墙，我接受你的挑战！`,
+      ],
+      victory: [
+          `嗯！我坚韧的宝可梦——被打败了！`,
+      ],
+      defeat: [
+          `嘎哈哈！我的宝可梦怎么样？！`,
+      ]
   },
   [TrainerType.OLYMPIA]: {
-    encounter: [
-      `An ancient custom deciding one's destiny. The battle begins!`,
-    ],
-    victory: [
-      `Create your own path. Let nothing get in your way. Your fate, your future.`,
-    ],
-    defeat: [
-      `Our path is clear now.`,
-    ]
+      encounter: [
+          `决定命运的古老习俗。战斗开始！`,
+      ],
+      victory: [
+          `创造你自己的道路。不要让任何东西阻碍你。你的命运，你的未来。`,
+      ],
+      defeat: [
+          `我们的道路现在很清晰。`,
+      ]
   },
   [TrainerType.VOLKNER]: {
-    encounter: [
-      `Since you've come this far, you must be quite strong…
-      $I hope you're the Trainer who'll make me remember how fun it is to battle!`,
-    ],
-    victory: [
-      `You've got me beat…
-      $Your desire and the noble way your Pokémon battled for you… 
-      $I even felt thrilled during our match. That was a very good battle.`,
-    ],
-    defeat: [
-      `It was not shocking at all… 
-      $That is not what I wanted!`,
-    ]
+      encounter: [
+          `既然你已经走到这一步了，你一定很强…
+          你是那个能让我回忆起战斗乐趣的训练家！`,
+      ],
+      victory: [
+          `你打败了我…
+          $你的渴望和你宝可梦为你战斗的崇高方式…
+          $我甚至在比赛中感到激动。这真是一场很棒的战斗。`,
+      ],
+      defeat: [
+          `一点也不震惊…
+          $这不是我想要的！`,
+      ]
   },
   [TrainerType.BURGH]: {
-    encounter: [
-      `M'hm… If I win this battle, I feel like I can draw a picture unlike any before it. 
-      $OK! I can hear my battle muse loud and clear. Let's get straight to it!`,
-      `Of course, I'm really proud of all of my Pokémon! 
-      $Well now… Let's get right to it!`
-    ],
-    victory: [
-      `Is it over? Has my muse abandoned me?`,
-      `Hmm… It's over! You're incredible!`
-    ],
-    defeat: [
-      `Wow… It's beautiful somehow, isn't it…`,
-      `Sometimes I hear people say something was an ugly win. 
-      $I think if you're trying your best, any win is beautiful.`
-    ]
+      encounter: [
+          `嗯…如果我赢了这场战斗，我觉得我可以画出一幅与众不同的画。
+          $好吧！我能听到我的战斗缪斯在大声而清晰地呼唤我。让我们开始吧！`,
+          `当然，我为我的所有宝可梦感到骄傲！
+          $那么…让我们开始吧！`
+      ],
+      victory: [
+          `结束了吗？我的缪斯抛弃我了吗？`,
+          `嗯…结束了！你太不可思议了！`
+      ],
+      defeat: [
+          `哇…不知怎么的，它很美，不是吗…`,
+          `有时候我听到人们说某件事是一场丑陋的胜利。
+          $我认为，如果你尽力了，任何胜利都是美丽的。`
+      ]
   },
   [TrainerType.ELESA]: {
-    encounter: [
-      `C'est fini! When I'm certain of that, I feel an electric jolt run through my body! 
-      $I want to feel the sensation, so now my beloved Pokémon are going to make your head spin!`,
-    ],
-    victory: [
-      `I meant to make your head spin, but you shocked me instead.`,
-    ],
-    defeat: [
-      `That was unsatisfying somehow… Will you give it your all next time?`,
-    ]
+      encounter: [
+          `结束了！当我能确定这一点时，我感觉到一股电流贯穿我的全身！
+          $我想感受这种感觉，所以现在我心爱的宝可梦要让你头晕目眩了！`,
+      ],
+      victory: [
+          `我本来想让你头晕目眩，但你却让我震惊。`,
+      ],
+      defeat: [
+          `不知怎么的，这并不令人满意…下次你会全力以赴吗？`,
+      ]
   },
   [TrainerType.SKYLA]: {
-    encounter: [
-      `It's finally time for a showdown! That means the Pokémon battle that decides who's at the top, right? 
-      $I love being on the summit! 'Cause you can see forever and ever from high places! 
-      $So, how about you and I have some fun?`,
-    ],
-    victory: [
-      `Being your opponent in battle is a new source of strength to me. Thank you!`,
-    ],
-    defeat: [
-      `Win or lose, you always gain something from a battle, right?`,
-    ]
+      encounter: [
+          `终于到了决战的时候了！那就是决定谁是顶尖的宝可梦对战，对吧？
+          $我喜欢站在山顶上！因为你可以从高处看到永远！
+          $那么，我们一起玩玩怎么样？`,
+      ],
+      victory: [
+          `成为你的对手是我新的力量源泉。谢谢你！`,
+      ],
+      defeat: [
+          `无论输赢，你总能从战斗中学到一些东西，对吧？`,
+      ]
   },
   [TrainerType.BRYCEN]: {
-    encounter: [
-      `There is also strength in being with other people and Pokémon. 
-      $Receiving their support makes you stronger. I'll show you this power!`,
-    ],
-    victory: [
-      `The wonderful combination of you and your Pokémon! What a beautiful friendship!`,
-    ],
-    defeat: [
-      `Extreme conditions really test you and train you!`,
-    ]
+      encounter: [
+          `与其他人和宝可梦在一起也是一种力量。
+          $得到他们的支持会让你变得更强。我会向你展示这种力量！`,
+      ],
+      victory: [
+          `你和你的宝可梦的完美组合！多么美好的友谊！`,
+      ],
+      defeat: [
+          `极端条件真的会考验你，并让你得到锻炼！`,
+      ]
   },
   [TrainerType.DRAYDEN]: {
-    encounter: [
-      `What I want to find is a young Trainer who can show me a bright future. 
-      $Let's battle with everything we have: your skill, my experience, and the love we've raised our Pokémon with!`,
-    ],
-    victory: [
-      `This intense feeling that floods me after a defeat… I don't know how to describe it.`,
-    ],
-    defeat: [
-      `Harrumph! I know your ability is greater than that!`,
-    ]
+      encounter: [
+          `我想找的是一位能向我展示光明未来的年轻训练家。
+          $让我们用我们拥有的一切来战斗：你的技术，我的经验，以及我们对宝可梦的爱！`,
+      ],
+      victory: [
+          `失败后这种强烈的感觉…我不知道该如何形容。`,
+      ],
+      defeat: [
+          `哼！我知道你的能力比这强！`,
+      ]
   },
   [TrainerType.GRANT]: {
-    encounter: [
-      `There is only one thing I wish for. 
-      $That by surpassing one another, we find a way to even greater heights.`,
-    ],
-    victory: [
-      `You are a wall that I am unable to surmount!`,
-    ],
-    defeat: [
-      `Do not give up. 
-      $That is all there really is to it. 
-      $The most important lessons in life are simple.`,
-    ]
+      encounter: [
+          `我只希望一件事。
+          $那就是通过互相超越，我们找到一条通往更高峰的道路。`,
+      ],
+      victory: [
+          `你是一堵我无法逾越的墙！`,
+      ],
+      defeat: [
+          `不要放弃。
+          $这就是全部。
+          $人生中最重要的一课很简单。`,
+      ]
   },
   [TrainerType.KORRINA]: {
-    encounter: [
-      `Time for Lady Korrina's big appearance!`,
-    ],
-    victory: [
-      `It's your very being that allows your Pokémon to evolve!`,
-    ],
-    defeat: [
-      `What an explosive battle!`,
-    ]
+      encounter: [
+          `轮到可尔妮小姐大显身手了！`,
+      ],
+      victory: [
+          `是你的存在让你的宝可梦得以进化！`,
+      ],
+      defeat: [
+          `多么爆炸性的战斗！`,
+      ]
   },
   [TrainerType.CLEMONT]: {
     encounter: [
-      `Oh! I'm glad that we got to meet!`,
+        `哦！很高兴我们能见面！`,
     ],
     victory: [
-      `Your passion for battle inspires me!`,
+        `你对战斗的热情激励了我！`,
     ],
     defeat: [
-      `Looks like my Trainer-Grow-Stronger Machine, Mach 2 is really working!`,
+        `看来我的训练家变强机器2号真的有效！`,
     ]
   },
   [TrainerType.VALERIE]: {
-    encounter: [
-      `Oh, if it isn't a young Trainer… It is lovely to get to meet you like this. 
-      $Then I suppose you have earned yourself the right to a battle, as a reward for your efforts. 
-      $The elusive Fairy may appear frail as the breeze and delicate as a bloom, but it is strong.`,
-    ],
-    victory: [
-      `I hope that you will find things worth smiling about tomorrow…`,
-    ],
-    defeat: [
-      `Oh goodness, what a pity…`,
-    ]
+      encounter: [
+          `哦，这不是一位年轻的训练家吗……很高兴能这样遇见你。 
+          $看来你已经赢得了战斗的权利，作为你努力的奖励。 
+          $难以捉摸的妖精可能看起来像微风一样脆弱，像花朵一样娇嫩，但它很强大。`,
+      ],
+      victory: [
+          `我希望你明天能找到值得微笑的事情……`,
+      ],
+      defeat: [
+          `哦，天哪，真可惜……`,
+      ]
   },
   [TrainerType.WULFRIC]: {
-    encounter: [
-      `You know what? We all talk big about what you learn from battling and bonds and all that…
-      $But really, I just do it 'cause it's fun. 
-      $Who cares about the grandstanding? Let's get to battling!`,
-    ],
-    victory: [
-      `Outstanding! I'm tough as an iceberg, but you smashed me through and through!`,
-    ],
-    defeat: [
-      `Tussle with me and this is what happens!`,
-    ]
+      encounter: [
+          `你知道吗？我们都夸夸其谈从战斗、羁绊等等中学到了什么…… 
+          $但说真的，我只是因为它很有趣才这么做。 
+          $谁在乎那些夸夸其谈？让我们开始战斗吧！`,
+      ],
+      victory: [
+          `太棒了！我像冰山一样坚硬，但你却把我彻底粉碎了！`,
+      ],
+      defeat: [
+          `跟我较量，就会发生这种事！`,
+      ]
   },
   [TrainerType.KABU]: {
-    encounter: [
-      `Every Trainer and Pokémon trains hard in pursuit of victory. 
-      $But that means your opponent is also working hard to win. 
-      $In the end, the match is decided by which side is able to unleash their true potential.`,
-    ],
-    victory: [
-      `I'm glad I could battle you today!`,
-    ],
-    defeat: [
-      `That's a great way for me to feel my own growth!`,
-    ]
+      encounter: [
+          `每个训练家和宝可梦都为了追求胜利而努力训练。 
+          $但这意味着你的对手也在努力争取胜利。 
+          $最终，比赛的胜负取决于哪一方能够释放出他们的真正潜力。`,
+      ],
+      victory: [
+          `我很高兴今天能和你战斗！`,
+      ],
+      defeat: [
+          `这对我来说是感受自身成长的绝佳方式！`,
+      ]
   },
   [TrainerType.BEA]: {
-    encounter: [
-      `Do you have an unshakable spirit that won't be moved, no matter how you are attacked? 
-      $I think I'll just test that out, shall I?`,
-    ],
-    victory: [
-      `I felt the fighting spirit of your Pokémon as you led them in battle.`,
-    ],
-    defeat: [
-      `That was the best sort of match anyone could ever hope for.`,
-    ]
+      encounter: [
+          `你是否拥有不可动摇的精神，无论受到怎样的攻击都不会动摇？ 
+          $我想我会测试一下，怎么样？`,
+      ],
+      victory: [
+          `我感受到了你在战斗中领导宝可梦时的战斗精神。`,
+      ],
+      defeat: [
+          `那是任何人所能期待的最好的比赛。`,
+      ]
   },
   [TrainerType.OPAL]: {
-    encounter: [
-      `Let me have a look at how you and your partner Pokémon behave!`,
-    ],
-    victory: [
-      `Your pink is still lacking, but you're an excellent Trainer with excellent Pokémon.`,
-    ],
-    defeat: [
-      `Too bad for you, I guess.`,
-    ]
+      encounter: [
+          `让我看看你和你的宝可梦伙伴的表现！`,
+      ],
+      victory: [
+          `你的粉色还不够，但你是一位拥有优秀宝可梦的优秀训练家。`,
+      ],
+      defeat: [
+          `对你来说太糟糕了，我猜。`,
+      ]
   },
   [TrainerType.BEDE]: {
-    encounter: [
-      `I suppose I should prove beyond doubt just how pathetic you are and how strong I am.`,
-    ],
-    victory: [
-      `I see… Well, that's fine. I wasn't really trying all that hard anyway.`,
-    ],
-    defeat: [
-      `Not a bad job, I suppose.`,
-    ]
+      encounter: [
+          `我想我应该毫无疑问地证明你有多可悲，我有多强大。`,
+      ],
+      victory: [
+          `我明白了……好吧，没关系。反正我也没有尽全力。`,
+      ],
+      defeat: [
+          `做得还不错，我想。`,
+      ]
   },
   [TrainerType.GORDIE]: {
-    encounter: [
-      `So, let's get this over with.`,
-    ],
-    victory: [
-      `I just want to climb into a hole… Well, I guess it'd be more like falling from here.`,
-    ],
-    defeat: [
-      `Battle like you always do, victory will follow!`,
-    ]
+      encounter: [
+          `所以，让我们结束这一切吧。`,
+      ],
+      victory: [
+          `我只想爬进一个洞里……好吧，我想更像是从这里掉下去。`,
+      ],
+      defeat: [
+          `像往常一样战斗，胜利就会随之而来！`,
+      ]
   },
   [TrainerType.MARNIE]: {
-    encounter: [
-      `The truth is, when all's said and done… I really just wanna become Champion for myself! 
-      $So don't take it personal when I kick your butt!`,
-    ],
-    victory: [
-      `OK, so I lost… But I got to see a lot of the good points of you and your Pokémon!`,
-    ],
-    defeat: [
-      `Hope you enjoyed our battle tactics.`,
-    ]
+      encounter: [
+          `事实是，当一切都说完做完之后……我真的只想为自己成为冠军！ 
+          $所以当我打败你的时候，不要放在心上！`,
+      ],
+      victory: [
+          `好吧，我输了……但我看到了你和你的宝可梦的很多优点！`,
+      ],
+      defeat: [
+          `希望你喜欢我们的战斗策略。`,
+      ]
   },
   [TrainerType.RAIHAN]: {
-    encounter: [
-      `I'm going to defeat the Champion, win the whole tournament, and prove to the world just how strong the great Raihan really is!`,
-    ],
-    victory: [
-      `I look this good even when I lose. 
-      $It's a real curse. 
-      $Guess it's time for another selfie!`,
-    ],
-    defeat: [
-      `Let's take a selfie to remember this.`,
-    ]
+      encounter: [
+          `我要打败冠军，赢得整个锦标赛，向全世界证明伟大的莱翰到底有多强！`,
+      ],
+      victory: [
+          `即使我输了，我也很好看。 
+          $这真是个诅咒。 
+          $我想是时候再来张自拍了！`,
+      ],
+      defeat: [
+          `让我们拍张自拍来纪念这一刻。`,
+      ]
   },
   [TrainerType.BRASSIUS]: {
-    encounter: [
-      `I assume you are ready? Let our collaborative work of art begin!`,
-    ],
-    victory: [
-      `Ahhh…vant-garde!`,
-    ],
-    defeat: [
-      `I will begin on a new piece at once!`,
-    ]
+      encounter: [
+          `我想你已经准备好了？让我们开始我们的艺术合作吧！`,
+      ],
+      victory: [
+          `啊……前卫！`,
+      ],
+      defeat: [
+          `我将立即开始新的作品！`,
+      ]
   },
   [TrainerType.IONO]: {
-    encounter: [
-      `How're ya feelin' about this battle?
-      $...
-      $Let's get this show on the road! How strong is our challenger? 
-      $I 'unno! Let's find out together!`,
-    ],
-    victory: [
-      `You're as flashy and bright as a 10,000,000-volt Thunderbolt, friendo!`,
-    ],
-    defeat: [
-      `Your eyeballs are MINE!`,
-    ]
+      encounter: [
+          `你觉得这场战斗怎么样？ 
+          $... 
+          $让我们开始这场表演吧！我们的挑战者有多强？ 
+          $我不知道！让我们一起找出答案！`,
+      ],
+      victory: [
+          `你就像1000万伏特的十万伏特一样耀眼夺目，朋友！`,
+      ],
+      defeat: [
+          `你的眼球是我的！`,
+      ]
   },
   [TrainerType.LARRY]: {
-    encounter: [
-      `When all's said and done, simplicity is strongest.`,
-    ],
-    victory: [
-      `A serving of defeat, huh?`,
-    ],
-    defeat: [
-      `I'll call it a day.`,
-    ]
+      encounter: [
+          `总而言之，简单就是最强。`,
+      ],
+      victory: [
+          `一份失败，嗯？`,
+      ],
+      defeat: [
+          `今天就到此为止。`,
+      ]
   },
   [TrainerType.RYME]: {
-    encounter: [
-      `Come on, baby! Rattle me down to the bone!`,
-    ],
-    victory: [
-      `You're cool, my friend—you move my SOUL!`,
-    ],
-    defeat: [
-      `Later, baby!`,
-    ]
+      encounter: [
+          `来吧，宝贝！把我摇到骨子里！`,
+      ],
+      victory: [
+          `你很酷，我的朋友——你打动了我的灵魂！`,
+      ],
+      defeat: [
+          `回头见，宝贝！`,
+      ]
   },
   [TrainerType.GRUSHA]: {
-    encounter: [
-      `All I need to do is make sure the power of my Pokémon chills you to the bone!`,
-    ],
-    victory: [
-      `Your burning passion… I kinda like it, to be honest.`,
-    ],
-    defeat: [
-      `Things didn't heat up for you.`,
-    ]
-  },  
+      encounter: [
+          `我只需要确保我的宝可梦的力量能让你冷到骨子里！`,
+      ],
+      victory: [
+          `你燃烧的激情……老实说，我有点喜欢。`,
+      ],
+      defeat: [
+          `事情对你来说没有升温。`,
+      ]
+  }, 
   [TrainerType.RIVAL]: [
-    {
-      encounter: [
-        `@c{smile}Hey, I was looking for you! I knew you were eager to get going but I expected at least a goodbye…
-        $@c{smile_eclosed}So you're really pursuing your dream after all?\n I almost can't believe it.
-        $@c{serious_smile_fists}Since we're here, how about a battle?\nAfter all, I want to make sure you're ready.
-        $@c{serious_mopen_fists}Don't hold back, I want you to give me everything you've got!`
-      ],
-      victory: [
-        `@c{shock}Wow… You cleaned me out.\nAre you actually a beginner?
-        $@c{smile}Maybe it was a bit of luck but…\nWho knows you might just be able to go all the way.
-        $By the way, the professor asked me to give you these items. They look pretty cool.
-        $@c{serious_smile_fists}Good luck out there!`
-      ]
-    },
-    {
-      encounter: [
-        `@c{smile_wave}There you are! I've been looking everywhere for you!\n@c{angry_mopen}Did you forget to say goodbye to your best friend?
-        $@c{smile_ehalf}You're going after your dream, huh?\nThat day is really today isn't it…
-        $@c{smile}Anyway, I'll forgive you for forgetting me, but on one condition. @c{smile_wave_wink}You have to battle me!
-        $@c{angry_mopen}Give it your all! Wouldn't want your adventure to be over before it started, right?`
-      ],
-      victory: [
-        `@c{shock}You just started and you're already this strong?!@d{96}\n@c{angry}You totally cheated, didn't you?
-        $@c{smile_wave_wink}Just kidding!@d{64} @c{smile_eclosed}I lost fair and square… I have a feeling you're going to do really well out there.
-        $@c{smile}By the way, the professor wanted me to give you some items. Hopefully they're helpful!
-        $@c{smile_wave}Do your best like always! I believe in you!`
-      ]
-    }
+      {
+          encounter: [
+              `@c{smile}嘿，我一直在找你！我知道你渴望出发，但我希望至少能说再见…… 
+              $@c{smile_eclosed}所以你真的在追求你的梦想？\n我简直不敢相信。 
+              n$@c{serious_smile_fists}既然我们在这里，不如来一场战斗？\n毕竟，我想确保你已经准备好了。 
+              $@c{serious_mopen_fists}别客气，我要你全力以赴！`
+          ],
+          victory: [
+              `@c{shock}哇……你把我打得落花流水。\n你真的是个新手吗？ 
+              $@c{smile}也许是运气好吧……\n谁知道你也许能一路走下去。 
+              $对了，教授让我把这些东西给你。它们看起来很酷。 
+              $@c{serious_smile_fists}祝你好运！`
+          ]
+      },
+      {
+          encounter: [
+              `@c{smile_wave}你在这里！我到处找你！\n@c{angry_mopen}你忘了跟你最好的朋友说再见了吗？ 
+              $@c{smile_ehalf}你在追逐你的梦想，嗯？\n那一天真的就是今天，不是吗…… 
+              $@c{smile}不管怎样，我会原谅你忘记我，但有一个条件。@c{smile_wave_wink}你必须跟我战斗！ 
+              $@c{angry_mopen}全力以赴！可不想你的冒险还没开始就结束，对吧？`
+          ],
+          victory: [
+              `@c{shock}你才刚开始就那么强了？！@d{96}\n@c{angry}你完全作弊了，对吧？ 
+              $@c{smile_wave_wink}开玩笑的！@d{64} @c{smile_eclosed}我输得心服口服……我感觉你会在那里做得很好。 
+              $@c{smile}对了，教授想让我给你一些东西。希望它们有用！ 
+              $@c{smile_wave}像往常一样尽力而为！我相信你！`
+          ]
+      }
   ],
   [TrainerType.RIVAL_2]: [
     {
-      encounter: [
-        `@c{smile}Hey, you're here too?\n@c{smile_eclosed}Still a perfect record, huh…?
-        $@c{serious_mopen_fists}I know it kind of looks like I followed you here, but that's mostly not true.
-        $@c{serious_smile_fists}Honestly though, I've been itching for a rematch since you beat me back at home.
-        $I've been doing a lot of my own training so I'll definitely put up a fight this time.
-        $@c{serious_mopen_fists}Don't hold back, just like before!\nLet's go!`
-      ],
-      victory: [
-        `@c{neutral_eclosed}Oh. I guess I was overconfident.
-        $@c{smile}That's alright, though. I figured this might happen.\n@c{serious_mopen_fists}It just means I need to try harder for next time!\n
-        $@c{smile}Oh, not that you really need the help, but I had an extra one of these lying around and figured you might want it.\n
-        $@c{serious_smile_fists}Don't expect another one after this, though!\nI can't keep giving my opponent an advantage after all.
-        $@c{smile}Anyway, take care!`
-      ]
+        encounter: [
+            `@c{smile}嘿，你也在这里？\n@c{smile_eclosed}仍然保持着完美的记录，是吗……？ 
+            $@c{serious_mopen_fists}我知道看起来我好像跟着你到这里来了，但大部分都不是真的。 
+            $@c{serious_smile_fists}不过说实话，自从你在家里打败我之后，我就一直渴望再战一场。 
+            $我一直在进行大量的训练，所以这次我一定会全力以赴。 
+            $@c{serious_mopen_fists}不要手下留情，就像以前一样！\n我们开始吧！`
+        ],
+        victory: [
+            `@c{neutral_eclosed}哦。我想我太自信了。 
+            $@c{smile}不过没关系。我预料到会发生这种情况。\n@c{serious_mopen_fists}这只是意味着我下次需要更加努力！\n 
+            $@c{smile}哦，不是说你真的需要帮助，但我有一个多余的这个，我想你可能会想要它。\n 
+            $@c{serious_smile_fists}不过，别指望下次还能再得到一个！\n毕竟我不能一直给我的对手优势。 
+            $@c{smile}总之，保重！`
+        ]
     },
     {
-      encounter: [
-        `@c{smile_wave}Oh, fancy meeting you here. Looks like you're still undefeated. @c{angry_mopen}Huh… Not bad!
-        $@c{angry_mopen}I know what you're thinking, and no, I wasn't creeping on you. @c{smile_eclosed}I just happened to be in the area.
-        $@c{smile_ehalf}I'm happy for you but I just want to let you know that it's OK to lose sometimes.
-        $@c{smile}We learn from our mistakes, often more than we would if we kept succeeding.
-        $@c{angry_mopen}In any case, I've been training hard for our rematch, so you'd better give it your all!`
-      ],
-      victory: [
-        `@c{neutral}I… wasn't supposed to lose that time…
-        $@c{smile}Aw well. That just means I'll have to train even harder for next time!
-        $@c{smile_wave}I also got you another one of these!\n@c{smile_wave_wink}No need to thank me~.
-        $@c{angry_mopen}This is the last one, though! You won't be getting anymore freebies from me after this!
-        $@c{smile_wave}Keep at it!`
-      ],
-      defeat: [
-        `It's OK to lose sometimes…`
-      ]
+        encounter: [
+            `@c{smile_wave}哦，真巧在这里遇见你。看来你还没有输过。@c{angry_mopen}哼……还不错！ 
+            $@c{angry_mopen}我知道你在想什么，不，我没有跟踪你。@c{smile_eclosed}我只是碰巧在这个地区。 
+            $@c{smile_ehalf}我为你感到高兴，但我只想让你知道，有时候输了也没关系。 
+            $@c{smile}我们从错误中吸取教训，往往比我们不断成功学到的更多。 
+            $@c{angry_mopen}无论如何，我已经为我们的复赛努力训练了，所以你最好全力以赴！`
+        ],
+        victory: [
+            `@c{neutral}我……不应该输掉那次的…… 
+            $@c{smile}哎呀，好吧。这只是意味着我下次必须更加努力地训练！ 
+            $@c{smile_wave}我还给你弄了另一个！\n@c{smile_wave_wink}不用谢我〜。 
+            $@c{angry_mopen}不过，这是最后一个！你以后不会再从我这里得到免费赠品了！ 
+            $@c{smile_wave}继续努力！`
+        ],
+        defeat: [
+            `有时候输了也没关系……`
+        ]
     }
   ],
   [TrainerType.RIVAL_3]: [
-    {
-      encounter: [
-        `@c{smile}Hey, look who it is! It's been a while.\n@c{neutral}You're… still undefeated? Huh.
-        $@c{neutral_eclosed}Things have been kind of… strange.\nIt's not the same back home without you.
-        $@c{serious}I know it's selfish, but I need to get this off my chest.\n@c{neutral_eclosed}I think you're in over your head here.
-        $@c{serious}Never losing once is just unrealistic.\nWe need to lose sometimes in order to grow.
-        $@c{neutral_eclosed}You've had a great run but there's still so much ahead, and it only gets harder. @c{neutral}Are you prepared for that?
-        $@c{serious_mopen_fists}If so, prove it to me.`
-      ],
-      victory: [
-        `@c{angry_mhalf}This is ridiculous… I've hardly stopped training…\nHow are we still so far apart?`
-      ]
-    },
-    {
-      encounter: [
-        `@c{smile_wave}Long time no see! Still haven't lost, huh.\n@c{angry}You're starting to get on my nerves. @c{smile_wave_wink}Just kidding!
-        $@c{smile_ehalf}But really, don't you miss home by now? Or… me?\nI… I mean, we've really missed you.
-        $@c{smile_eclosed}I support you in your dream and everything, but the reality is you're going to lose sooner or later.
-        $@c{smile}And when you do, I'll be there for you like always.\n@c{angry_mopen}Now, let me show you how strong I've become!`
-      ],
-      victory: [
-        `@c{shock}After all that… it wasn't enough…?\nYou'll never come back at this rate…`
-      ],
-      defeat: [
-        `You gave it your best, now let's go home.`
-      ]
-    }
+      {
+          encounter: [
+              `@c{smile}嘿，看看是谁来了！好久不见了。\n@c{neutral}你……还没有输过？嗯。 
+              $@c{neutral_eclosed}事情有点……奇怪。\n没有你，家就不一样了。 
+              $@c{serious}我知道这很自私，但我需要把这件事说出来。\n@c{neutral_eclosed}我认为你在这里有点自不量力。 
+              $@c{serious}一次都没有输过是不现实的。\n我们需要输几次才能成长。 
+              $@c{neutral_eclosed}你已经跑得很好了，但前面还有很长的路要走，而且只会越来越难。@c{neutral}你准备好了吗？ 
+              $@c{serious_mopen_fists}如果是这样，向我证明吧。`
+          ],
+          victory: [
+              `@c{angry_mhalf}这太荒谬了……我几乎没有停止训练……\n我们之间的差距怎么会还这么大？`
+          ]
+      },
+      {
+          encounter: [
+              `@c{smile_wave}好久不见！还没有输过，嗯。\n@c{angry}你开始让我紧张了。@c{smile_wave_wink}开玩笑的！ 
+              $@c{smile_ehalf}但说真的，你现在难道不想家了吗？或者……我？\n我……我是说，我们真的很想你。 
+              $@c{smile_eclosed}我支持你实现你的梦想，但现实是你迟早会输的。 
+              $@c{smile}当你输的时候，我会像往常一样在你身边。\n@c{angry_mopen}现在，让我让你看看我变得有多强壮！`
+          ],
+          victory: [
+              `@c{shock}经历了这一切……还不够……？\n照这样下去，你永远不会回来了……`
+          ],
+          defeat: [
+              `你已经尽力了，现在让我们回家吧。`
+          ]
+      }
   ],
   [TrainerType.RIVAL_4]: [
-    {
-      encounter: [
-        `@c{neutral}Hey.
-        $I won't mince words or pleasantries with you.\n@c{neutral_eclosed}I'm here to win, plain and simple.
-        $@c{serious_mhalf_fists}I've learned to maximize my potential by putting all my time into training.
-        $@c{smile}You get a lot of extra time when you cut out the unnecessary sleep and social interaction.
-        $@c{serious_mopen_fists}None of that matters anymore, not until I win.
-        $@c{neutral_eclosed}I've even reached the point where I don't lose anymore.\n@c{smile_eclosed}I suppose your philosophy wasn't so wrong after all.
-        $@c{angry_mhalf}Losing is for the weak, and I'm not weak anymore.
-        $@c{serious_mopen_fists}Prepare yourself.`
-      ],
-      victory: [
-        `@c{neutral}What…@d{64} What are you?`
-      ]
-    },
-    {
-      encounter: [
-        `@c{neutral}It's me! You didn't forget about me again… did you?
-        $@c{smile}You should be proud of how far you made it. Congrats!\nBut it looks like it's the end of your journey.
-        $@c{smile_eclosed}You've awoken something in me I never knew was there.\nIt seems like all I do now is train.
-        $@c{smile_ehalf}I hardly even eat or sleep now, I just train my Pokémon all day, getting stronger every time.
-        $@c{neutral}In fact, I… hardly recognize myself.
-        $And now, I've finally reached peak performance.\nI don't think anyone could beat me now.
-        $And you know what? It's all because of you.\n@c{smile_ehalf}I don't know whether to thank you or hate you.
-        $@c{angry_mopen}Prepare yourself.`
-      ],
-      victory: [
-        `@c{neutral}What…@d{64} What are you?`
-      ],
-      defeat: [
-        `$@c{smile}You should be proud of how far you made it.`
-      ]
-    }
+      {
+          encounter: [
+              `@c{neutral}嘿。 
+              $我不会跟你拐弯抹角或客套。\n@c{neutral_eclosed}我来这里是为了赢，就这么简单。 
+              $@c{serious_mhalf_fists}我已经学会了通过把所有时间都投入到训练中来最大限度地发挥我的潜力。 
+              $@c{smile}当你减少不必要的睡眠和社交互动时，你会得到很多额外的时间。 
+              $@c{serious_mopen_fists}这些都不重要了，直到我赢了为止。 
+              $@c{neutral_eclosed}我甚至已经到了不再输的地步。\n@c{smile_eclosed}我想你的哲学毕竟没有错。 
+              $@c{angry_mhalf}失败是弱者的行为，而我不再软弱了。 
+              $@c{serious_mopen_fists}做好准备吧。`
+          ],
+          victory: [
+              `@c{neutral}什么……@d{64} 你是什么人？`
+          ]
+      },
+      {
+          encounter: [
+              `@c{neutral}是我！你没有再忘了我吧……是吗？ 
+              $@c{smile}你应该为你走了这么远感到自豪。恭喜你！\n但看来你的旅程到此为止了。 
+              $@c{smile_eclosed}你唤醒了我内心深处从未意识到的东西。\n现在我似乎一直在训练。 
+              $@c{smile_ehalf}我现在几乎不吃不睡，只是整天训练我的宝可梦，每次都变得更强壮。 
+              $@c{neutral}事实上，我……几乎认不出我自己了。 
+              $现在，我终于达到了最佳状态。\n我认为现在没有人能打败我。 
+              $你知道吗？这都是因为你。\n@c{smile_ehalf}我不知道该感谢你还是恨你。 
+              $@c{angry_mopen}做好准备吧。`
+          ],
+          victory: [
+              `@c{neutral}什么……@d{64} 你是什么人？`
+          ],
+          defeat: [
+              `$@c{smile}你应该为你走了这么远感到自豪。`
+          ]
+      }
   ],
   [TrainerType.RIVAL_5]: [
-    {
-      encounter: [
-        `@c{neutral}…`
-      ],
-      victory: [
-        `@c{neutral}…`
-      ]
-    },
-    {
-      encounter: [
-        `@c{neutral}…`
-      ],
-      victory: [
-        `@c{neutral}…`
-      ]
-    },
-    {
-      defeat: [
-        `$@c{smile_ehalf}…`
-      ]
-    }
+      {
+          encounter: [
+              `@c{neutral}……`
+          ],
+          victory: [
+              `@c{neutral}……`
+          ]
+      },
+      {
+          encounter: [
+              `@c{neutral}……`
+          ],
+          victory: [
+              `@c{neutral}……`
+          ]
+      },
+      {
+          defeat: [
+              `$@c{smile_ehalf}……`
+          ]
+      }
   ],
   [TrainerType.RIVAL_6]: [
-    {
-      encounter: [
-        `@c{smile_eclosed}We meet again.
-        $@c{neutral}I've had some time to reflect on all this.\nThere's a reason this all seems so strange.
-        $@c{neutral_eclosed}Your dream, my drive to beat you…\nIt's all a part of something greater.
-        $@c{serious}This isn't about me, or about you… This is about the world, @c{serious_mhalf_fists}and it's my purpose to push you to your limits.
-        $@c{neutral_eclosed}Whether I've fulfilled that purpose I can't say, but I've done everything in my power.
-        $@c{neutral}This place we ended up in is terrifying… Yet somehow I feel unphased, like I've been here before.
-        $@c{serious_mhalf_fists}You feel the same, don't you?
-        $@c{serious}…and it's like something here is speaking to me.\nThis is all the world's known for a long time now.
-        $Those times we cherished together that seem so recent are nothing but a distant memory.
-        $@c{neutral_eclosed}Who can say whether they were ever even real in the first place.
-        $@c{serious_mopen_fists}You need to keep pushing, because if you don't, it will never end. You're the only one who can do this.
-        $@c{serious_smile_fists}I hardly know what any of this means, I just know that it's true.
-        $@c{serious_mopen_fists}If you can't defeat me here and now, you won't stand a chance.`
-      ],
-      victory: [
-        `@c{smile_eclosed}It looks like my work is done here.
-        $I want you to promise me one thing.\n@c{smile}After you heal the world, please come home.`
-      ]
-    },
-    {
-      encounter: [
-        `@c{smile_ehalf}So it's just us again.
-        $@c{smile_eclosed}You know, I keep going around and around in my head…
-        $@c{smile_ehalf}There's something to all this, why everything seems so strange now…
-        $@c{smile}You have your dream, and I have this ambition in me…
-        $I just can't help but feel there's a greater purpose to all this, to what we're doing, you and I.
-        $@c{smile_eclosed}I think I'm supposed to push you… to your limits.
-        $@c{smile_ehalf}I'm not sure if I've been doing a good job at that, but I've tried my best up to now.
-        $It's something about this strange and dreadful place… Everything seems so clear…
-        $This… is all the world's known for a long time now.
-        $@c{smile_eclosed}It's like I can barely remember the memories we cherished together.
-        $@c{smile_ehalf}Were they even real? They seem so far away now…
-        $@c{angry_mopen}You need to keep pushing, because if you don't, it will never end. You're the only one who can do this.
-        $@c{smile_ehalf}I… don't know what all this means… but I feel it's true.
-        $@c{neutral}If you can't defeat me here and now, you won't stand a chance.`
-      ],
-      victory: [
-        `@c{smile_ehalf}I… I think I fulfilled my purpose…
-        $@c{smile_eclosed}Promise me… After you heal the world… Please… come home safe.
-        $@c{smile_ehalf}…Thank you.`
-      ]
-    }
+      {
+          encounter: [
+              `@c{smile_eclosed}我们又见面了。 
+              $@c{neutral}我花了一些时间反思这一切。\n这一切看起来如此奇怪是有原因的。 
+              $@c{neutral_eclosed}你的梦想，我想要打败你的动力……\n这一切都是更伟大的事物的一部分。 
+              $@c{serious}这不是关于我，也不是关于你……这是关于世界，@c{serious_mhalf_fists}我的目的是将你推向极限。 
+              $@c{neutral_eclosed}我不能说我是否已经实现了这个目标，但我已经尽我所能地做了一切。 
+              $@c{neutral}我们最终到达的这个地方很可怕……然而不知何故，我却感到无动于衷，就像我以前来过这里一样。 
+              $@c{serious_mhalf_fists}你也有同样的感觉，不是吗？ 
+              $@c{serious}……而且就像这里有什么东西在跟我说话。\n这已经是全世界都知道很久的事了。 
+              $那些我们一起珍惜的时光，看起来是那么近，却不过是一段遥远的记忆。 
+              $@c{neutral_eclosed}谁又能说它们最初是否真实存在过呢。 
+              $@c{serious_mopen_fists}你需要继续前进，因为如果你不这样做，它就永远不会结束。你是唯一能做到这一点的人。 
+              $@c{serious_smile_fists}我几乎不知道这一切意味着什么，我只知道这是真的。 
+              $@c{serious_mopen_fists}如果你现在不能在这里打败我，你就没有机会了。`
+          ],
+          victory: [
+              `@c{smile_eclosed}看来我的工作到这里就完成了。 
+              $我想要你答应我一件事。\n@c{smile}在你治愈世界之后，请回家。`
+          ]
+      },
+      {
+          encounter: [
+              `@c{smile_ehalf}所以又只剩下我们了。 
+              $@c{smile_eclosed}你知道，我一直在我的脑海里转来转去…… 
+              $@c{smile_ehalf}这一切都是有原因的，为什么现在一切都显得如此奇怪…… 
+              $@c{smile}你有你的梦想，我心中也有这样的雄心壮志…… 
+              $我不禁觉得这一切，我们正在做的一切，你和我，都有一个更伟大的目的。 
+              $@c{smile_eclosed}我认为我应该把你推向……极限。 
+              $@c{smile_ehalf}我不确定我在这方面做得是否足够好，但我已经尽力了。 
+              $这是一个关于这个奇怪而可怕的地方……一切似乎都如此清晰…… 
+              $这……已经是全世界都知道很久的事了。 
+              $@c{smile_eclosed}我几乎记不起我们一起珍惜的回忆了。 
+              $@c{smile_ehalf}它们是真实的吗？它们现在看起来如此遥远…… 
+              $@c{angry_mopen}你需要继续前进，因为如果你不这样做，它就永远不会结束。你是唯一能做到这一点的人。 
+              $@c{smile_ehalf}我……我不知道这一切意味着什么……但我感觉这是真的。 
+              $@c{neutral}如果你现在不能在这里打败我，你就没有机会了。`
+          ],
+          victory: [
+              `@c{smile_ehalf}我……我认为我实现了我的目标…… 
+              $@c{smile_eclosed}答应我……在你治愈世界之后……请……安全回家。 
+              $@c{smile_ehalf}……谢谢你。`
+          ]
+      }
   ]
 };
 
 export const battleSpecDialogue = {
   [BattleSpec.FINAL_BOSS]: {
-    encounter: `It appears the time has finally come once again.\nYou know why you have come here, do you not?
-               $You were drawn here, because you have been here before.\nCountless times.
-               $Though, perhaps it can be counted.\nTo be precise, this is in fact your 5,643,853rd cycle.
-               $Each cycle your mind reverts to its former state.\nEven so, somehow, remnants of your former selves remain.
-               $Until now you have yet to succeed, but I sense a different presence in you this time.\n
-               $You are the only one here, though it is as if there is… another.
-               $Will you finally prove a formidable challenge to me?\nThe challenge I have longed for for millennia?
-               $We begin.`,
-    firstStageWin: `I see. The presence I felt was indeed real.\nIt appears I no longer need to hold back.
-                   $Do not disappoint me.`,
-    secondStageWin: `…Magnificent.`
+      encounter: `看来时间终于再次到来了。\n你知道你为什么来这里，不是吗？ 
+      $你被吸引到这里来，是因为你以前来过这里。\n无数次。 
+      $虽然，也许可以计算出来。\n确切地说，这实际上是你的第5,643,853个周期。 
+      $每个周期，你的思想都会恢复到以前的状态。\n即便如此，不知何故，你以前自我的残余依然存在。 
+      $到目前为止，你还没有成功，但我感觉到你这次体内有一种不同的存在。\n 
+      $你是这里唯一的一个，但就好像有……另一个人。 
+      $你最终会对我构成强大的挑战吗？\n我已经渴望了千年的挑战？ 
+      $我们开始吧。`,
+      firstStageWin: `我明白了。我感受到的存在确实是真实的。\n看来我不再需要退缩了。 
+      $不要让我失望。`,
+      secondStageWin: `……太棒了。`
   }
 };
 

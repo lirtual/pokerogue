@@ -18,7 +18,7 @@ export function updateUserInfo(): Promise<[boolean, integer]> {
           break;
         }
       }
-      loggedInUser = { username: 'Guest', lastSessionSlot: lastSessionSlot };
+      loggedInUser = { username: '我', lastSessionSlot: lastSessionSlot };
       return resolve([ true, 200 ]);
     }
     Utils.apiFetch('account/info', true).then(response => {

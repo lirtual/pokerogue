@@ -15,7 +15,7 @@ import { Stat, getStatName } from "../data/pokemon-stat";
 import { PokemonHeldItemModifier } from "../modifier/modifier";
 import { StatusEffect } from "../data/status-effect";
 import { getBiomeName } from "../data/biomes";
-import { Nature, getNatureStatMultiplier } from "../data/nature";
+import { Nature, getNatureStatMultiplier, getNatureChineseValue } from "../data/nature";
 import { loggedInUser } from "../account";
 import { PlayerGender } from "../system/game-data";
 import { Variant, getVariantTint } from "#app/data/variant";
@@ -100,23 +100,23 @@ export default class SummaryUiHandler extends UiHandler {
     this.tabSprite.setOrigin(1, 1);
     this.summaryContainer.add(this.tabSprite);
 
-    const summaryLabel = addTextObject(this.scene, 4, -165, 'Pokémon Info', TextStyle.SUMMARY);
-    summaryLabel.setOrigin(0, 1);
-    this.summaryContainer.add(summaryLabel);
+    // const summaryLabel = addTextObject(this.scene, 4, -165, 'Pokémon Info', TextStyle.SUMMARY);
+    // summaryLabel.setOrigin(0, 1);
+    // this.summaryContainer.add(summaryLabel);
 
     this.shinyOverlay = this.scene.add.image(6, -54, 'summary_overlay_shiny');
     this.shinyOverlay.setOrigin(0, 1);
     this.shinyOverlay.setVisible(false);
     this.summaryContainer.add(this.shinyOverlay);
 
-    this.numberText = addTextObject(this.scene, 17, -149, '0000', TextStyle.SUMMARY);
+    this.numberText = addTextObject(this.scene, 18, -149, '0000', TextStyle.SUMMARY, { fontSize: '64px' });
     this.numberText.setOrigin(0, 1);
     this.summaryContainer.add(this.numberText);
 
     this.pokemonSprite = this.scene.initPokemonSprite(this.scene.add.sprite(56, -106, `pkmn__sub`), null, false, true);
     this.summaryContainer.add(this.pokemonSprite);
 
-    this.nameText = addTextObject(this.scene, 6, -54, '', TextStyle.SUMMARY);
+    this.nameText = addTextObject(this.scene, 6, -52, '', TextStyle.SUMMARY, { fontSize: '64px' });
     this.nameText.setOrigin(0, 0);
     this.summaryContainer.add(this.nameText);
 
@@ -174,7 +174,7 @@ export default class SummaryUiHandler extends UiHandler {
     this.levelText.setOrigin(0, 1);
     this.summaryContainer.add(this.levelText);
 
-    this.genderText = addTextObject(this.scene, 96, -17, '', TextStyle.SUMMARY);
+    this.genderText = addTextObject(this.scene, 94, -19, '', TextStyle.SUMMARY, { fontSize: '52px' });
     this.genderText.setOrigin(0, 1);
     this.summaryContainer.add(this.genderText);
 
@@ -205,11 +205,20 @@ export default class SummaryUiHandler extends UiHandler {
     moveEffectBg.setOrigin(0, 0);
     this.moveEffectContainer.add(moveEffectBg);
 
-    const moveEffectLabels = addTextObject(this.scene, 8, 12, 'Power\nAccuracy\nCategory', TextStyle.SUMMARY);
-    moveEffectLabels.setLineSpacing(9);
-    moveEffectLabels.setOrigin(0, 0);
+    // const moveEffectLabels = addTextObject(this.scene, 8, 12, 'Power\nAccuracy\nCategory', TextStyle.SUMMARY);
+    // moveEffectLabels.setLineSpacing(9);
+    // moveEffectLabels.setOrigin(0, 0);
 
-    this.moveEffectContainer.add(moveEffectLabels);
+    // this.moveEffectContainer.add(moveEffectLabels);
+    const powerLabel = addTextObject(this.scene,  16, 14, '威力', TextStyle.SUMMARY, { fontSize: '66px' });
+    powerLabel.setOrigin(0, 0);
+    this.moveEffectContainer.add(powerLabel);
+    const accuracyLabel = addTextObject(this.scene,  16, 29, '命中率', TextStyle.SUMMARY, { fontSize: '66px' });
+    accuracyLabel.setOrigin(0, 0);
+    this.moveEffectContainer.add(accuracyLabel);
+    const categoryLabel = addTextObject(this.scene,  16, 46, '分类', TextStyle.SUMMARY, { fontSize: '66px' });
+    categoryLabel.setOrigin(0, 0);
+    this.moveEffectContainer.add(categoryLabel);
 
     this.movePowerText = addTextObject(this.scene, 99, 27, '0', TextStyle.WINDOW_ALT);
     this.movePowerText.setOrigin(1, 1);
@@ -508,7 +517,7 @@ export default class SummaryUiHandler extends UiHandler {
         } else
           this.hideMoveEffect();
 
-        this.moveDescriptionText.setText(selectedMove?.effect || '');
+        this.moveDescriptionText.setText(Utils.wrapText(selectedMove?.effect || '', 21));
         const moveDescriptionLineCount = Math.floor(this.moveDescriptionText.displayHeight / 14.83);
 
         if (this.descriptionScrollTween) {
@@ -637,12 +646,12 @@ export default class SummaryUiHandler extends UiHandler {
         const profileContainer = this.scene.add.container(0, -pageBg.height);
         pageContainer.add(profileContainer);
 
-        const trainerLabel = addTextObject(this.scene, 7, 12, 'OT/', TextStyle.SUMMARY_ALT);
+        const trainerLabel = addTextObject(this.scene, 7, 12, '训练家/', TextStyle.SUMMARY_ALT, { fontSize: '66px' });
         trainerLabel.setOrigin(0, 0);
         profileContainer.add(trainerLabel);
 
-        const trainerText = addTextObject(this.scene, 25, 12, loggedInUser?.username || 'Unknown',
-          this.scene.gameData.gender === PlayerGender.FEMALE ? TextStyle.SUMMARY_PINK : TextStyle.SUMMARY_BLUE);
+        const trainerText = addTextObject(this.scene, 45, 12, loggedInUser?.username || '未知',
+          this.scene.gameData.gender === PlayerGender.FEMALE ? TextStyle.SUMMARY_PINK : TextStyle.SUMMARY_BLUE , { fontSize: '66px' });
         trainerText.setOrigin(0, 0);
         profileContainer.add(trainerText);
 
@@ -650,15 +659,15 @@ export default class SummaryUiHandler extends UiHandler {
         trainerIdText.setOrigin(0, 0);
         profileContainer.add(trainerIdText);
 
-        const typeLabel = addTextObject(this.scene, 7, 28, 'Type/', TextStyle.WINDOW_ALT);
+        const typeLabel = addTextObject(this.scene, 7, 28, '属性/', TextStyle.WINDOW_ALT, { fontSize: '66px' });
         typeLabel.setOrigin(0, 0);
         profileContainer.add(typeLabel);
 
         const getTypeIcon = (index: integer, type: Type, tera: boolean = false) => {
-          const xCoord = 39 + 34 * index;
+          const xCoord = 36 + 34 * index;
           const typeIcon = !tera
-            ? this.scene.add.sprite(xCoord, 42, 'types', Type[type].toLowerCase())
-            : this.scene.add.sprite(xCoord, 42, 'type_tera');
+            ? this.scene.add.sprite(xCoord, 40, 'types', Type[type].toLowerCase())
+            : this.scene.add.sprite(xCoord, 40, 'type_tera');
           if (tera) {
             typeIcon.setScale(0.5);
             const typeRgb = getTypeRgb(type);
@@ -688,11 +697,11 @@ export default class SummaryUiHandler extends UiHandler {
 
         const ability = this.pokemon.getAbility(true);
 
-        const abilityNameText = addTextObject(this.scene, 7, 66, ability.name, TextStyle.SUMMARY_ALT);
+        const abilityNameText = addTextObject(this.scene, 7, 67, ability.name, TextStyle.SUMMARY_ALT, { fontSize: '62px' });
         abilityNameText.setOrigin(0, 1);
         profileContainer.add(abilityNameText);
 
-        const abilityDescriptionText = addTextObject(this.scene, 7, 69, ability.description, TextStyle.WINDOW_ALT, { wordWrap: { width: 1224 } });
+        const abilityDescriptionText = addTextObject(this.scene, 7, 68, Utils.wrapText(ability.description, 22), TextStyle.WINDOW_ALT, { fontSize: '56px', wordWrap: { width: 1224 } });
         abilityDescriptionText.setOrigin(0, 0);
         profileContainer.add(abilityDescriptionText);
 
@@ -720,9 +729,9 @@ export default class SummaryUiHandler extends UiHandler {
           });
         }
 
-        let memoString = `${getBBCodeFrag(Utils.toReadableString(Nature[this.pokemon.getNature()]), TextStyle.SUMMARY_RED)}${getBBCodeFrag(' nature,', TextStyle.WINDOW_ALT)}\n${getBBCodeFrag(`${this.pokemon.metBiome === -1 ? 'apparently ' : ''}met at Lv`, TextStyle.WINDOW_ALT)}${getBBCodeFrag(this.pokemon.metLevel.toString(), TextStyle.SUMMARY_RED)}${getBBCodeFrag(',', TextStyle.WINDOW_ALT)}\n${getBBCodeFrag(getBiomeName(this.pokemon.metBiome), TextStyle.SUMMARY_RED)}${getBBCodeFrag('.', TextStyle.WINDOW_ALT)}`;
+        let memoString = `${getBBCodeFrag('性格', TextStyle.WINDOW_ALT)}${getBBCodeFrag(getNatureChineseValue(this.pokemon.getNature()), TextStyle.SUMMARY_RED)}\n${getBBCodeFrag(`${this.pokemon.metBiome === -1 ? '显然是' : ''}在Lv`, TextStyle.WINDOW_ALT)}${getBBCodeFrag(this.pokemon.metLevel.toString(), TextStyle.SUMMARY_RED)}${getBBCodeFrag('时遇到的，', TextStyle.WINDOW_ALT)}\n${getBBCodeFrag(getBiomeName(this.pokemon.metBiome), TextStyle.SUMMARY_RED)}${getBBCodeFrag('。', TextStyle.WINDOW_ALT)}`;
        
-        const memoText = addBBCodeTextObject(this.scene, 7, 113, memoString, TextStyle.WINDOW_ALT);
+        const memoText = addBBCodeTextObject(this.scene, 7, 113, memoString, TextStyle.WINDOW_ALT, { fontSize: '56px' });
         memoText.setOrigin(0, 0);
         profileContainer.add(memoText);
         break;
@@ -741,7 +750,7 @@ export default class SummaryUiHandler extends UiHandler {
 
           const natureStatMultiplier = getNatureStatMultiplier(this.pokemon.getNature(), s);
 
-          const statLabel = addTextObject(this.scene, 27 + 115 * colIndex, 56 + 16 * rowIndex, statName, natureStatMultiplier === 1 ? TextStyle.SUMMARY : natureStatMultiplier > 1 ? TextStyle.SUMMARY_PINK : TextStyle.SUMMARY_BLUE);
+          const statLabel = addTextObject(this.scene, 27 + 115 * colIndex, 57 + 16 * rowIndex, statName, natureStatMultiplier === 1 ? TextStyle.SUMMARY : natureStatMultiplier > 1 ? TextStyle.SUMMARY_PINK : TextStyle.SUMMARY_BLUE, { fontSize: '66px' });
           statLabel.setOrigin(0.5, 0);
           statsContainer.add(statLabel);
 
@@ -749,7 +758,7 @@ export default class SummaryUiHandler extends UiHandler {
             ? Utils.formatStat(this.pokemon.stats[s])
             : `${Utils.formatStat(this.pokemon.hp, true)}/${Utils.formatStat(this.pokemon.getMaxHp(), true)}`;
 
-          const statValue = addTextObject(this.scene, 120 + 88 * colIndex, 56 + 16 * rowIndex, statValueText, TextStyle.WINDOW_ALT);
+          const statValue = addTextObject(this.scene, 120 + 88 * colIndex, 57 + 16 * rowIndex, statValueText, TextStyle.WINDOW_ALT);
           statValue.setOrigin(1, 0);
           statsContainer.add(statValue);
         });
@@ -771,11 +780,11 @@ export default class SummaryUiHandler extends UiHandler {
         const relLvExp = getLevelRelExp(this.pokemon.level + 1, this.pokemon.species.growthRate);
         const expRatio = this.pokemon.level < this.scene.getMaxExpLevel() ? this.pokemon.levelExp / relLvExp : 0;
 
-        const expLabel = addTextObject(this.scene, 6, 112, 'EXP. Points', TextStyle.SUMMARY);
+        const expLabel = addTextObject(this.scene, 18, 113, '经验值', TextStyle.SUMMARY, { fontSize: '66px' });
         expLabel.setOrigin(0, 0);
         statsContainer.add(expLabel);
 
-        const nextLvExpLabel = addTextObject(this.scene, 6, 128, 'Next Lv.', TextStyle.SUMMARY);
+        const nextLvExpLabel = addTextObject(this.scene, 18, 129, '升级需', TextStyle.SUMMARY, { fontSize: '66px' });
         nextLvExpLabel.setOrigin(0, 0);
         statsContainer.add(nextLvExpLabel);
 
@@ -816,8 +825,8 @@ export default class SummaryUiHandler extends UiHandler {
         extraRowOverlay.setOrigin(0, 1);
         this.extraMoveRowContainer.add(extraRowOverlay);
 
-        const extraRowText = addTextObject(this.scene, 35, 0, this.summaryUiMode === SummaryUiMode.LEARN_MOVE ? this.newMove.name : 'Cancel',
-          this.summaryUiMode === SummaryUiMode.LEARN_MOVE ? TextStyle.SUMMARY_PINK : TextStyle.SUMMARY);
+        const extraRowText = addTextObject(this.scene, 35, 0, this.summaryUiMode === SummaryUiMode.LEARN_MOVE ? this.newMove.name : '取消',
+          this.summaryUiMode === SummaryUiMode.LEARN_MOVE ? TextStyle.SUMMARY_PINK : TextStyle.SUMMARY, { fontSize: '66px' });
         extraRowText.setOrigin(0, 1);
         this.extraMoveRowContainer.add(extraRowText);
 
@@ -827,12 +836,12 @@ export default class SummaryUiHandler extends UiHandler {
           newMoveTypeIcon.setOrigin(0, 1);
           this.extraMoveRowContainer.add(newMoveTypeIcon);
 
-          const ppOverlay = this.scene.add.image(163, -1, 'summary_moves_overlay_pp');
+          const ppOverlay = this.scene.add.image(162, -2, 'summary_moves_overlay_pp');
           ppOverlay.setOrigin(0, 1);
           this.extraMoveRowContainer.add(ppOverlay);
 
           const pp = Utils.padInt(this.newMove.pp, 2, '  ');
-          const ppText = addTextObject(this.scene, 173, 1, `${pp}/${pp}`, TextStyle.WINDOW);
+          const ppText = addTextObject(this.scene, 173, 1, `${pp}/${pp}`, TextStyle.WINDOW, { fontSize: '66px' });
           ppText.setOrigin(0, 1);
           this.extraMoveRowContainer.add(ppText);
         }
@@ -851,15 +860,15 @@ export default class SummaryUiHandler extends UiHandler {
             moveRowContainer.add(typeIcon);
           }
 
-          const moveText = addTextObject(this.scene, 35, 0, move ? move.getName() : '-', TextStyle.SUMMARY);
+          const moveText = addTextObject(this.scene, 35, 0, move ? move.getName() : '-', TextStyle.SUMMARY, { fontSize: '66px' });
           moveText.setOrigin(0, 1);
           moveRowContainer.add(moveText);
 
-          const ppOverlay = this.scene.add.image(163, -1, 'summary_moves_overlay_pp');
+          const ppOverlay = this.scene.add.image(162, -2, 'summary_moves_overlay_pp');
           ppOverlay.setOrigin(0, 1);
           moveRowContainer.add(ppOverlay);
 
-          const ppText = addTextObject(this.scene, 173, 1, '--/--', TextStyle.WINDOW);
+          const ppText = addTextObject(this.scene, 173, 0, '--/--', TextStyle.WINDOW, { fontSize: '66px' });
           ppText.setOrigin(0, 1);
 
           if (move) {
@@ -871,7 +880,7 @@ export default class SummaryUiHandler extends UiHandler {
           moveRowContainer.add(ppText);
         }
 
-        this.moveDescriptionText = addTextObject(this.scene, 2, 84, '', TextStyle.WINDOW_ALT, { wordWrap: { width: 1212 } });
+        this.moveDescriptionText = addTextObject(this.scene, 2, 84, '', TextStyle.WINDOW_ALT, { fontSize: '56px', wordWrap: { width: 1212 } });
         this.movesContainer.add(this.moveDescriptionText);
 
         const moveDescriptionTextMaskRect = this.scene.make.graphics({});

@@ -11,7 +11,7 @@ import { Tutorial, handleTutorial } from "../tutorial";
 import { EggTier } from "../data/enums/egg-type";
 import {Button} from "../enums/buttons";
 
-const defaultText = 'Select a machine.';
+const defaultText = '选择一台机器。';
 
 export default class EggGachaUiHandler extends MessageUiHandler {
   private eggGachaContainer: Phaser.GameObjects.Container;
@@ -89,7 +89,7 @@ export default class EggGachaUiHandler extends MessageUiHandler {
 
       const gachaInfoContainer = this.scene.add.container(160, 46);
 
-      const gachaUpLabel = addTextObject(this.scene, 4, 0, 'UP!', TextStyle.WINDOW_ALT);
+      const gachaUpLabel = addTextObject(this.scene, 4, 0, '扭动吧！', TextStyle.WINDOW_ALT);
       gachaUpLabel.setOrigin(0, 0);
       gachaInfoContainer.add(gachaUpLabel);
 
@@ -102,12 +102,12 @@ export default class EggGachaUiHandler extends MessageUiHandler {
           gachaInfoContainer.add(pokemonIcon);
           break;
         case GachaType.MOVE:
-          gachaUpLabel.setText('Move UP!');
+          gachaUpLabel.setText('扭出惊喜！');
           gachaUpLabel.setX(0);
           gachaUpLabel.setOrigin(0.5, 0);
           break;
         case GachaType.SHINY:
-          gachaUpLabel.setText('Shiny UP!');
+          gachaUpLabel.setText('闪耀登场！');
           gachaUpLabel.setX(0);
           gachaUpLabel.setOrigin(0.5, 0);
           break;
@@ -151,7 +151,7 @@ export default class EggGachaUiHandler extends MessageUiHandler {
     this.eggGachaOptionSelectBg.setOrigin(1, 1);
     this.eggGachaOptionsContainer.add(this.eggGachaOptionSelectBg);
 
-    const optionText = addTextObject(this.scene, 0, 0, '    x1    1 Pull\n    x10  10 Pulls\n    x1     5 Pulls\n    x1    10 Pulls\n    x1    25 Pulls\nCancel', TextStyle.WINDOW);
+    const optionText = addTextObject(this.scene, 0, 0, '  x1    1次\n  x10  10次\n  x1    5次\n  x1   10次\n  x1   25次\n取消', TextStyle.WINDOW);
     optionText.setLineSpacing(12);
     this.eggGachaOptionsContainer.add(optionText);
 

@@ -144,7 +144,7 @@ export class BlockRecoilDamageAttr extends AbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]) {
-    return getPokemonMessage(pokemon, `'s ${abilityName}\nprotected it from recoil!`);
+    return getPokemonMessage(pokemon, `的 ${abilityName} 使其免受反冲伤害！`);
   }
 }
 
@@ -264,7 +264,7 @@ export class BlockItemTheftAbAttr extends AbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]) {
-    return getPokemonMessage(pokemon, `'s ${abilityName}\nprevents item theft!`);
+    return getPokemonMessage(pokemon, `的 ${abilityName} 使其不会被偷走道具！`);
   }
 }
 
@@ -360,7 +360,7 @@ export class TypeImmunityHealAbAttr extends TypeImmunityAbAttr {
         if (!simulated) {
           const abilityName = (!passive ? pokemon.getAbility() : pokemon.getPassiveAbility()).name;
           pokemon.scene.unshiftPhase(new PokemonHealPhase(pokemon.scene, pokemon.getBattlerIndex(),
-            Math.max(Math.floor(pokemon.getMaxHp() / 4), 1), getPokemonMessage(pokemon, `'s ${abilityName}\nrestored its HP a little!`), true));
+            Math.max(Math.floor(pokemon.getMaxHp() / 4), 1), getPokemonMessage(pokemon, `的 ${abilityName} 使其HP些微恢复！`), true));
         }
       }
       return true;
@@ -456,7 +456,7 @@ export class PostDefendDisguiseAbAttr extends PostDefendAbAttr {
         return false;
       pokemon.damageAndUpdate(recoilDamage, HitResult.OTHER);
       pokemon.turnData.damageTaken += recoilDamage;
-      pokemon.scene.queueMessage(getPokemonMessage(pokemon, '\'s disguise was busted!'));
+      pokemon.scene.queueMessage(getPokemonMessage(pokemon, '的伪装被识破了！'));
       return true;
     }
 
@@ -523,7 +523,7 @@ export class MoveImmunityAbAttr extends PreDefendAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return `It doesn\'t affect ${pokemon.name}!`;
+    return `这对${pokemon.name}没有效果！`;
   }
 }
 
@@ -550,7 +550,7 @@ export class MoveImmunityStatChangeAbAttr extends MoveImmunityAbAttr {
 export class ReverseDrainAbAttr extends PostDefendAbAttr {
   applyPostDefend(pokemon: Pokemon, passive: boolean, attacker: Pokemon, move: PokemonMove, hitResult: HitResult, args: any[]): boolean {
     if (!!move.getMove().getAttrs(HitHealAttr).length || !!move.getMove().getAttrs(StrengthSapHealAttr).length ) {
-      pokemon.scene.queueMessage(getPokemonMessage(attacker, ` sucked up the liquid ooze!`));
+      pokemon.scene.queueMessage(getPokemonMessage(attacker, `吸入了液体软泥！`));
       return true;
     }
     return false;
@@ -677,7 +677,7 @@ export class PostDefendTypeChangeAbAttr extends PostDefendAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(pokemon, `'s ${abilityName}\nmade it the ${Utils.toReadableString(Type[pokemon.getTypes(true)[0]])} type!`);
+    return getPokemonMessage(pokemon, `的${abilityName}\n使其变为${Utils.toReadableString(Type[pokemon.getTypes(true)[0]])}属性！`);
   }
 }
 
@@ -795,7 +795,7 @@ export class PostDefendContactDamageAbAttr extends PostDefendAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(pokemon, `'s ${abilityName}\nhurt its attacker!`);
+    return getPokemonMessage(pokemon, `的 ${abilityName} 伤害了攻击者！`);
   }
 }
 
@@ -833,7 +833,7 @@ export class PostDefendAbilitySwapAbAttr extends PostDefendAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(pokemon, ` swapped\nabilities with its target!`);
+    return getPokemonMessage(pokemon, `与它的目标交换了特性！`);
   }
 }
 
@@ -856,7 +856,7 @@ export class PostDefendAbilityGiveAbAttr extends PostDefendAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(pokemon, ` gave its target\n${abilityName}!`);
+    return getPokemonMessage(pokemon, `赋予它的目标${abilityName}！`);
   }
 }
 
@@ -886,7 +886,7 @@ export class PostDefendMoveDisableAbAttr extends PostDefendAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(this.attacker, `'s ${this.move.getName()}\nwas disabled!`);
+    return getPokemonMessage(this.attacker, `的 ${this.move.getName()} 被禁止了！`);
   }
 }
 
@@ -1106,7 +1106,7 @@ export class PostAttackStealHeldItemAbAttr extends PostAttackAbAttr {
           const stolenItem = heldItems[pokemon.randSeedInt(heldItems.length)];
           pokemon.scene.tryTransferHeldItemModifier(stolenItem, pokemon, false, false).then(success => {
             if (success)
-              pokemon.scene.queueMessage(getPokemonMessage(pokemon, ` stole\n${defender.name}'s ${stolenItem.type.name}!`));
+              pokemon.scene.queueMessage(getPokemonMessage(pokemon, `偷走了\n${defender.name}的${stolenItem.type.name}！`));
             resolve(success);
           });
           return;
@@ -1194,7 +1194,7 @@ export class PostDefendStealHeldItemAbAttr extends PostDefendAbAttr {
           const stolenItem = heldItems[pokemon.randSeedInt(heldItems.length)];
           pokemon.scene.tryTransferHeldItemModifier(stolenItem, pokemon, false, false).then(success => {
             if (success)
-              pokemon.scene.queueMessage(getPokemonMessage(pokemon, ` stole\n${attacker.name}'s ${stolenItem.type.name}!`));
+              pokemon.scene.queueMessage(getPokemonMessage(pokemon, `偷走了\n${attacker.name}的${stolenItem.type.name}！`));
             resolve(success);
           });
           return;
@@ -1292,7 +1292,7 @@ export class CopyFaintedAllyAbilityAbAttr extends PostKnockOutAbAttr {
   applyPostKnockOut(pokemon: Pokemon, passive: boolean, knockedOut: Pokemon, args: any[]): boolean | Promise<boolean> {
     if (pokemon.isPlayer() === knockedOut.isPlayer() && !knockedOut.getAbility().hasAttr(UncopiableAbilityAbAttr)) {
       pokemon.summonData.ability = knockedOut.getAbility().id;
-      pokemon.scene.queueMessage(getPokemonMessage(knockedOut, `'s ${allAbilities[knockedOut.getAbility().id].name} was taken over!`));
+      pokemon.scene.queueMessage(getPokemonMessage(knockedOut, `的 ${allAbilities[knockedOut.getAbility().id].name} 被夺取了！`));
       return true;
     }
     
@@ -1323,7 +1323,7 @@ export class IntimidateImmunityAbAttr extends AbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(pokemon, `'s ${abilityName} prevented it from being Intimidated!`);
+    return getPokemonMessage(pokemon, `的 ${abilityName} 使其没有被威吓！`);
   }
 }
 
@@ -1437,7 +1437,7 @@ export class PostSummonAllyHealAbAttr extends PostSummonAbAttr {
     const target = pokemon.getAlly();
     if (target?.isActive(true)) {
       target.scene.unshiftPhase(new PokemonHealPhase(target.scene, target.getBattlerIndex(),
-        Math.max(Math.floor(pokemon.getMaxHp() / this.healRatio), 1), getPokemonMessage(target, ` drank down all the\nmatcha that ${pokemon.name} made!`), true, !this.showAnim));
+        Math.max(Math.floor(pokemon.getMaxHp() / this.healRatio), 1), getPokemonMessage(target, `喝光了${pokemon.name}做的所有抹茶！`), true, !this.showAnim));
       return true;
     }
     
@@ -1540,7 +1540,7 @@ export class TraceAbAttr extends PostSummonAbAttr {
 
     pokemon.summonData.ability = target.getAbility().id;
 
-    pokemon.scene.queueMessage(getPokemonMessage(pokemon, ` traced ${target.name}'s\n${allAbilities[target.getAbility().id].name}!`));
+    pokemon.scene.queueMessage(getPokemonMessage(pokemon, `追踪了${target.name}的\n${allAbilities[target.getAbility().id].name}！`));
 
     return true;
   }
@@ -1576,7 +1576,7 @@ export class PostSummonTransformAbAttr extends PostSummonAbAttr {
 
     pokemon.loadAssets(false).then(() => pokemon.playAnim());
 
-    pokemon.scene.queueMessage(getPokemonMessage(pokemon, ` transformed\ninto ${target.name}!`));
+    pokemon.scene.queueMessage(getPokemonMessage(pokemon, `变身成了${target.name}！`));
 
     return true;
   }
@@ -1642,7 +1642,7 @@ export class ProtectStatAbAttr extends PreStatChangeAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(pokemon, `'s ${abilityName}\nprevents lowering its ${this.protectedStat !== undefined ? getBattleStatName(this.protectedStat) : 'stats'}!`);
+    return getPokemonMessage(pokemon, `的${abilityName}\n使其${this.protectedStat !== undefined ? getBattleStatName(this.protectedStat) : '能力'}无法降低！`);
   }
 }
 
@@ -1671,7 +1671,7 @@ export class StatusEffectImmunityAbAttr extends PreSetStatusAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(pokemon, `'s ${abilityName}\nprevents ${this.immuneEffects.length ? getStatusEffectDescriptor(args[0] as StatusEffect) : 'status problems'}!`);
+    return getPokemonMessage(pokemon, `的${abilityName}\n使其${this.immuneEffects.length ? getStatusEffectDescriptor(args[0] as StatusEffect) : '异常状态'}无效！`);
   }
 }
 
@@ -1700,7 +1700,7 @@ export class BattlerTagImmunityAbAttr extends PreApplyBattlerTagAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(pokemon, `'s ${abilityName}\nprevents ${(args[0] as BattlerTag).getDescriptor()}!`);
+    return getPokemonMessage(pokemon, `的${abilityName}\n使其${(args[0] as BattlerTag).getDescriptor()}无效！`);
   }
 }
 
@@ -1907,7 +1907,7 @@ export class ForewarnAbAttr extends PostSummonAbAttr {
         }
       }
     }
-    pokemon.scene.queueMessage(getPokemonMessage(pokemon, " was forewarned about " + maxMove + "!"));
+    pokemon.scene.queueMessage(getPokemonMessage(pokemon, " 注意到了" + maxMove + "！"));
     return true;
   }
 }
@@ -1919,7 +1919,7 @@ export class FriskAbAttr extends PostSummonAbAttr {
 
   applyPostSummon(pokemon: Pokemon, passive: boolean, args: any[]): boolean {
     for (let opponent of pokemon.getOpponents()) {
-      pokemon.scene.queueMessage(getPokemonMessage(pokemon, " frisked " + opponent.name + "\'s " + opponent.getAbility().name + "!"));
+      pokemon.scene.queueMessage(getPokemonMessage(pokemon, "探测了" + opponent.name + "的" + opponent.getAbility().name + "!"));
     }
     return true;
   }
@@ -1985,7 +1985,7 @@ export class PostWeatherLapseHealAbAttr extends PostWeatherLapseAbAttr {
       const scene = pokemon.scene;
       const abilityName = (!passive ? pokemon.getAbility() : pokemon.getPassiveAbility()).name;
       scene.unshiftPhase(new PokemonHealPhase(scene, pokemon.getBattlerIndex(),
-        Math.max(Math.floor(pokemon.getMaxHp() / (16 / this.healFactor)), 1), getPokemonMessage(pokemon, `'s ${abilityName}\nrestored its HP a little!`), true));
+        Math.max(Math.floor(pokemon.getMaxHp() / (16 / this.healFactor)), 1), getPokemonMessage(pokemon, `的${abilityName}特性\n恢复了少许HP！`), true));
       return true;
     }
 
@@ -2006,7 +2006,7 @@ export class PostWeatherLapseDamageAbAttr extends PostWeatherLapseAbAttr {
     if (pokemon.getHpRatio() < 1) {
       const scene = pokemon.scene;
       const abilityName = (!passive ? pokemon.getAbility() : pokemon.getPassiveAbility()).name;
-      scene.queueMessage(getPokemonMessage(pokemon, ` is hurt\nby its ${abilityName}!`));
+      scene.queueMessage(getPokemonMessage(pokemon, `被自己的${abilityName}伤害了！`));
       pokemon.damageAndUpdate(Math.ceil(pokemon.getMaxHp() / (16 / this.damageFactor)), HitResult.OTHER);
       return true;
     }
@@ -2134,7 +2134,7 @@ export class PostTurnHealAbAttr extends PostTurnAbAttr {
       const scene = pokemon.scene;
       const abilityName = (!passive ? pokemon.getAbility() : pokemon.getPassiveAbility()).name;
       scene.unshiftPhase(new PokemonHealPhase(scene, pokemon.getBattlerIndex(),
-        Math.max(Math.floor(pokemon.getMaxHp() / 16), 1), getPokemonMessage(pokemon, `'s ${abilityName}\nrestored its HP a little!`), true));
+        Math.max(Math.floor(pokemon.getMaxHp() / 16), 1), getPokemonMessage(pokemon, `的${abilityName}特性\n恢复了少许HP！`), true));
       return true;
     }
 
@@ -2271,7 +2271,7 @@ export class ArenaTrapAbAttr extends CheckTrappedAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(pokemon, `\'s ${abilityName}\nprevents switching!`);
+    return getPokemonMessage(pokemon, `的${abilityName}特性\n使其无法交换！`);
   }
 }
 
@@ -2300,7 +2300,7 @@ export class PostBattleLootAbAttr extends PostBattleAbAttr {
       const randItem = Utils.randSeedItem(postBattleLoot);
       if (pokemon.scene.tryTransferHeldItemModifier(randItem, pokemon, false, true, true)) {
         postBattleLoot.splice(postBattleLoot.indexOf(randItem), 1);
-        pokemon.scene.queueMessage(getPokemonMessage(pokemon, ` picked up\n${randItem.type.name}!`));
+        pokemon.scene.queueMessage(getPokemonMessage(pokemon, `捡起了${randItem.type.name}！`));
         return true;
       }
     }
@@ -2340,7 +2340,7 @@ export class PostFaintContactDamageAbAttr extends PostFaintAbAttr {
   }
 
   getTriggerMessage(pokemon: Pokemon, abilityName: string, ...args: any[]): string {
-    return getPokemonMessage(pokemon, `'s ${abilityName} hurt\nits attacker!`);
+    return getPokemonMessage(pokemon, `的${abilityName}特性\n对其攻击者造成了伤害！`);
   }
 }
 
@@ -3050,7 +3050,7 @@ export function initAbilities() {
     new Ability(Abilities.KLUTZ, 4)
       .unimplemented(),
     new Ability(Abilities.MOLD_BREAKER, 4)
-      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, ' breaks the mold!'))
+      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, '打破了常规！'))
       .attr(MoveAbilityBypassAbAttr),
     new Ability(Abilities.SUPER_LUCK, 4)
       .attr(BonusCritAbAttr)
@@ -3059,7 +3059,7 @@ export function initAbilities() {
       .attr(PostFaintContactDamageAbAttr,4)
       .bypassFaint(),
     new Ability(Abilities.ANTICIPATION, 4)
-      .conditionalAttr(getAnticipationCondition(), PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, ' shuddered!')),
+      .conditionalAttr(getAnticipationCondition(), PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, '颤抖了一下！')),
     new Ability(Abilities.FOREWARN, 4)
       .attr(ForewarnAbAttr),
     new Ability(Abilities.UNAWARE, 4)
@@ -3224,10 +3224,10 @@ export function initAbilities() {
       .attr(BattleStatMultiplierAbAttr, BattleStat.ACC, 1.1)
       .partial(),
     new Ability(Abilities.TURBOBLAZE, 5)
-      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, ' is radiating a blazing aura!'))
+      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, '散发着炽热的气场！'))
       .attr(MoveAbilityBypassAbAttr),
     new Ability(Abilities.TERAVOLT, 5)
-      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, ' is radiating a bursting aura!'))
+      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, '散发着爆裂的气场！'))
       .attr(MoveAbilityBypassAbAttr),
     new Ability(Abilities.AROMA_VEIL, 6)
       .ignorable()
@@ -3283,10 +3283,10 @@ export function initAbilities() {
     new Ability(Abilities.PARENTAL_BOND, 6)
       .unimplemented(),
     new Ability(Abilities.DARK_AURA, 6)
-      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, ' is radiating a Dark Aura!'))
+      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, '散发着黑暗的气场！'))
       .attr(FieldMoveTypePowerBoostAbAttr, Type.DARK, 4 / 3),
     new Ability(Abilities.FAIRY_AURA, 6)
-      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, ' is radiating a Fairy Aura!'))
+      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, '散发着妖精的气场！'))
       .attr(FieldMoveTypePowerBoostAbAttr, Type.FAIRY, 4 / 3),
     new Ability(Abilities.AURA_BREAK, 6)
       .ignorable()
@@ -3520,7 +3520,7 @@ export function initAbilities() {
       .attr(UncopiableAbilityAbAttr)
       .attr(UnswappableAbilityAbAttr)
       .attr(NoTransformAbilityAbAttr)
-      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, '\'s Neutralizing Gas filled the area!'))
+      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, '的「中和气体」充满了整个场地！'))
       .partial(),
     new Ability(Abilities.PASTEL_VEIL, 8)
       .attr(StatusEffectImmunityAbAttr, StatusEffect.POISON, StatusEffect.TOXIC)
