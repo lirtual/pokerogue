@@ -12,7 +12,7 @@ export enum TempBattleStat {
 
 export function getTempBattleStatName(tempBattleStat: TempBattleStat) {
   if (tempBattleStat === TempBattleStat.CRIT)
-    return 'critical-hit ratio';
+    return '暴击率';
   return getBattleStatName(tempBattleStat as integer as BattleStat);
 }
 
