@@ -237,17 +237,19 @@ export default class BattleMessageUiHandler extends MessageUiHandler {
     };
 
     if (value > 30)
-      return coloredText('Best', value > starterIvs[typeIv]);
-    if (value === 30)
-      return coloredText('Fantastic', value > starterIvs[typeIv]);
-    if (value > 20)
-      return coloredText('Very Good', value > starterIvs[typeIv]);
-    if (value > 10)
-      return coloredText('Pretty Good', value > starterIvs[typeIv]);
-    if (value > 0)
-      return coloredText('Decent', value > starterIvs[typeIv]);
-
-    return coloredText('No Good', value > starterIvs[typeIv]);
+      if (value > 30)
+        return coloredText('汉化', value > starterIvs[typeIv]);
+      if (value === 30)
+        return coloredText('超棒', value > starterIvs[typeIv]);
+      if (value > 20)
+        return coloredText('很棒', value > starterIvs[typeIv]);
+      if (value > 10)
+        return coloredText('不错', value > starterIvs[typeIv]);
+      if (value > 0)
+        return coloredText('凑合', value > starterIvs[typeIv]);
+  
+      return coloredText('糟糕', value > starterIvs[typeIv]);
+  
   }
 
   showNameText(name: string): void {
