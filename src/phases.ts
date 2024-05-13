@@ -1190,19 +1190,19 @@ export class SummonPhase extends PartyMemberPokemonPhase {
     const partyMember = this.getPokemon();
     // If the Pokemon about to be sent out is fainted, switch to the first non-fainted Pokemon
     if (partyMember.isFainted()) {
-      console.warn("即将派出的宝可梦处于濒死状态。正在尝试解决...");
+      console.warn("The Pokemon about to be sent out is fainted. Attempting to resolve...");
       const party = this.getParty();
       
       // Find the first non-fainted Pokemon index above the current one
       const nonFaintedIndex = party.findIndex((p, i) => i > this.partyMemberIndex && !p.isFainted());
       if (nonFaintedIndex === -1) {
-        console.error("队伍详情:\n", party);
-        throw new Error("所有可用的宝可梦都失去战斗能力了！");
+        console.error("Party Details:\n", party);
+        throw new Error("All available Pokemon were fainted!");
       }
 
       // Swaps the fainted Pokemon and the first non-fainted Pokemon in the party
       [party[this.partyMemberIndex], party[nonFaintedIndex]] = [party[nonFaintedIndex], party[this.partyMemberIndex]]; 
-      console.warn("将 %s %O 与 %s %O 交换了位置", partyMember?.name, partyMember, party[0]?.name, party[0]);
+      console.warn("Swapped %s %O with %s %O", partyMember?.name, partyMember, party[0]?.name, party[0]);
     }
 
     if (this.player) {
@@ -2062,7 +2062,7 @@ export class TurnEndPhase extends FieldPhase {
 
       if (this.scene.arena.terrain?.terrainType === TerrainType.GRASSY && pokemon.isGrounded()) {
         this.scene.unshiftPhase(new PokemonHealPhase(this.scene, pokemon.getBattlerIndex(),
-          Math.max(pokemon.getMaxHp() >> 4, 1), getPokemonMessage(pokemon, '的生命值已恢复。'), true));
+          Math.max(pokemon.getMaxHp() >> 4, 1), getPokemonMessage(pokemon, '的HP已恢复。'), true));
       }
 
       if (!pokemon.isPlayer()) {
@@ -2368,7 +2368,7 @@ const moveTarget = this.targets.length === 1
     if (this.move.getMove().getAttrs(ChargeAttr).length) {
       const lastMove = this.pokemon.getLastXMoves() as TurnMove[];
       if (!lastMove.length || lastMove[0].move !== this.move.getMove().id || lastMove[0].result !== MoveResult.OTHER){
-        this.scene.queueMessage(getPokemonMessage(this.pokemon, `使用\n${this.move.getName()}!`), 500);
+        this.scene.queueMessage(getPokemonMessage(this.pokemon, `使用\n${this.move.getName()}！`), 500);
         return;
       }
     }
@@ -2866,7 +2866,7 @@ export class StatChangePhase extends PokemonPhase {
       if (relLevelStats.length > 1) {
         statsFragment = relLevelStats.length >= 5
           ? 'stats'
-          : `${relLevelStats.slice(0, -1).map(s => getBattleStatName(s)).join(', ')}${relLevelStats.length > 2 ? ',' : ''}和${getBattleStatName(relLevelStats[relLevelStats.length - 1])}`;
+          : `${relLevelStats.slice(0, -1).map(s => getBattleStatName(s)).join(', ')}${relLevelStats.length > 2 ? ',' : ''} and ${getBattleStatName(relLevelStats[relLevelStats.length - 1])}`;
       } else
         statsFragment = getBattleStatName(relLevelStats[0]);
       messages.push(getPokemonMessage(this.getPokemon(), `的${statsFragment} ${getBattleStatLevelChangeDescription(Math.abs(parseInt(rl)), levels >= 1)}!`));
@@ -3445,7 +3445,7 @@ export class MoneyRewardPhase extends BattlePhase {
 
     this.scene.addMoney(moneyAmount.value);
 
-    this.scene.ui.showText(`你赢得了 ₽${moneyAmount.value.toLocaleString('en-US')}！`, null, () => this.end(), null, true);
+    this.scene.ui.showText(`你赢得了₽${moneyAmount.value.toLocaleString('en-US')}！`, null, () => this.end(), null, true);
   }
 }
 
@@ -3513,7 +3513,7 @@ export class RibbonModifierRewardPhase extends ModifierRewardPhase {
         this.scene.playSound('level_up_fanfare');
         this.scene.ui.setMode(Mode.MESSAGE);
         this.scene.ui.fadeIn(250).then(() => {
-          this.scene.ui.showText(`${this.species.name}首次通关${this.scene.gameMode.getName()}模式！\n你获得了${newModifier.type.name}！`, null, () => {
+          this.scene.ui.showText(`${this.species.name} beat ${this.scene.gameMode.getName()} Mode for the first time!\nYou received ${newModifier.type.name}!`, null, () => {
             resolve();
           }, null, true, 1500);
         });
@@ -4041,7 +4041,7 @@ export class PokemonHealPhase extends CommonAnimPhase {
         pokemon.resetStatus();
         pokemon.updateInfo().then(() => super.end());
     } else if (this.showFullHpMessage)
-      this.message = getPokemonMessage(pokemon, `的生命值已满！`);
+      this.message = getPokemonMessage(pokemon, `的HP已满！`);
 
     if (this.message)
       this.scene.queueMessage(this.message);
