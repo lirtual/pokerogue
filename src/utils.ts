@@ -344,6 +344,10 @@ export function rgbaToInt(rgba: integer[]): integer {
 }
 
 export function wrapText(text: string, wrapLength:integer) {
+  if(!text){
+    return text;
+  }
+
   let wrappedText = '';
 
   for (let i = 0; i < text.length; i += wrapLength) {
