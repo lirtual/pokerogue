@@ -7,6 +7,7 @@ import { BattlerTagType } from "./enums/battler-tag-type";
 import { getStatusEffectHealText } from "./status-effect";
 import * as Utils from "../utils";
 import { DoubleBerryEffectAbAttr, ReduceBerryUseThresholdAbAttr, applyAbAttrs } from "./ability";
+import * as Localizer from "../localizer";
 
 export enum BerryType {
   SITRUS,
@@ -22,28 +23,12 @@ export enum BerryType {
   LEPPA
 }
 
-// 定义一个映射表，将枚举值映射到对应的中文值
-const berryTypeMap = {
-  [BerryType.SITRUS]: '柑果',
-  [BerryType.LUM]: '亮光果',
-  [BerryType.ENIGMA]: '神秘果',
-  [BerryType.LIECHI]: '荔枝果',
-  [BerryType.GANLON]: '龙睛果',
-  [BerryType.PETAYA]: '火龙果',
-  [BerryType.APICOT]: '杏仔果',
-  [BerryType.SALAC]: '沙鳞果',
-  [BerryType.LANSAT]: '蓝橘果',
-  [BerryType.STARF]: '星桃果',
-  [BerryType.LEPPA]: '零余果'
-};
-
-// 获取对应枚举值的中文值
-function getBerryTypeChineseValue(berryType) {
-  return berryTypeMap[berryType];
+function getBerryChineseName(berryType: BerryType) {
+  return Localizer.getItemName(getBerryName(berryType));
 }
 
 export function getBerryName(berryType: BerryType) {
-  return getBerryTypeChineseValue(berryType);
+  return `${Utils.toReadableString(BerryType[berryType])} Berry`;
 }
 
 export function getBerryEffectDescription(berryType: BerryType) {
@@ -124,7 +109,7 @@ export function getBerryEffectFunc(berryType: BerryType): BerryEffectFunc {
         const hpHealed = new Utils.NumberHolder(Math.floor(pokemon.getMaxHp() / 4));
         applyAbAttrs(DoubleBerryEffectAbAttr, pokemon, null, hpHealed);
         pokemon.scene.unshiftPhase(new PokemonHealPhase(pokemon.scene, pokemon.getBattlerIndex(),
-          hpHealed.value, getPokemonMessage(pokemon, `的${getBerryName(berryType)}恢复了体力！`), true));
+          hpHealed.value, getPokemonMessage(pokemon, `的${getBerryChineseName(berryType)}恢复了体力！`), true));
       };
     case BerryType.LUM:
       return (pokemon: Pokemon) => {
@@ -171,7 +156,7 @@ export function getBerryEffectFunc(berryType: BerryType): BerryEffectFunc {
           pokemon.battleData.berriesEaten.push(berryType);
         const ppRestoreMove = pokemon.getMoveset().find(m => !m.getPpRatio());
         ppRestoreMove.ppUsed = Math.max(ppRestoreMove.ppUsed - 10, 0);
-        pokemon.scene.queueMessage(getPokemonMessage(pokemon, `使用${getBerryName(berryType)}恢复了${ppRestoreMove.getName()}的PP！`));
+        pokemon.scene.queueMessage(getPokemonMessage(pokemon, `使用${getBerryChineseName(berryType)}恢复了${ppRestoreMove.getName()}的PP！`));
       };
   }
 }
