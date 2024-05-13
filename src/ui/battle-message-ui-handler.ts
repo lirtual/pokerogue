@@ -238,7 +238,7 @@ export default class BattleMessageUiHandler extends MessageUiHandler {
 
     if (value > 30)
       if (value > 30)
-        return coloredText('汉化', value > starterIvs[typeIv]);
+        return coloredText('最佳', value > starterIvs[typeIv]);
       if (value === 30)
         return coloredText('超棒', value > starterIvs[typeIv]);
       if (value > 20)
