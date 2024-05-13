@@ -4267,7 +4267,7 @@ export class AttemptCapturePhase extends PokemonPhase {
       Promise.all([ pokemon.hideInfo(), this.scene.gameData.setPokemonCaught(pokemon) ]).then(() => {
         if (this.scene.getParty().length === 6) {
           const promptRelease = () => {
-            this.scene.ui.showText(`Your party is full.\nRelease a Pokémon to make room for ${pokemon.name}?`, null, () => {
+            this.scene.ui.showText(`你的队伍已满。\n要释放一只宝可梦来为${pokemon.name}腾出空间吗？`, null, () => {
               this.scene.ui.setMode(Mode.CONFIRM, () => {
                 this.scene.ui.setMode(Mode.PARTY, PartyUiMode.RELEASE, this.fieldIndex, (slotIndex: integer, _option: PartyOption) => {
                   this.scene.ui.setMode(Mode.MESSAGE).then(() => {

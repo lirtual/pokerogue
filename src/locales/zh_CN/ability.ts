@@ -259,7 +259,7 @@ export const ability: AbilityTranslationEntries = {
   },
   overgrow: {
     name: "茂盛",
-    description: "ＨＰ减少的时候，草属性的招式威力会提高。ＨＰ减少的时候，草属性的招式威力会提高。ＨＰ减少的时候，草属性的招式威力会提高。",
+    description: "ＨＰ减少的时候，草属性的招式威力会提高。",
   },
   blaze: {
     name: "猛火",
