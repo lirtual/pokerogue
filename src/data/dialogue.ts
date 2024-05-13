@@ -2077,7 +2077,7 @@ export const trainerTypeDialogue = {
           encounter: [
               `@c{smile}嘿，我一直在找你！\n我知道你渴望出发，但我希望至少能说再见…… 
               $@c{smile_eclosed}所以你真的在追求你的梦想？\n我简直不敢相信。 
-              n$@c{serious_smile_fists}既然我们在这里，不如来一场战斗？\n毕竟，我想确保你已经准备好了。 
+              $@c{serious_smile_fists}既然我们在这里，不如来一场战斗？\n毕竟，我想确保你已经准备好了。 
               $@c{serious_mopen_fists}别客气，我要你全力以赴！`
           ],
           victory: [
