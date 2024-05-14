@@ -115,7 +115,7 @@ export class EvolutionPhase extends Phase {
     const evolutionHandler = this.scene.ui.getHandler() as EvolutionSceneHandler;
     const preName = this.pokemon.name;
     
-    this.scene.ui.showText(`What?\n${preName} is evolving!`, null, () => {
+    this.scene.ui.showText(`什么？\n${preName}正在进化！`, null, () => {
       this.pokemon.cry();
 
       this.pokemon.getPossibleEvolution(this.evolution).then(evolvedPokemon => {
@@ -187,8 +187,8 @@ export class EvolutionPhase extends Phase {
 
                           this.scene.unshiftPhase(new EndEvolutionPhase(this.scene));
 
-                          this.scene.ui.showText(`${preName} stopped evolving.`, null, () => {
-                            this.scene.ui.showText(`Would you like to pause evolutions for ${preName}?\nEvolutions can be re-enabled from the party screen.`, null, () => {
+                          this.scene.ui.showText(`${preName}停止进化了。`, null, () => {
+                            this.scene.ui.showText(`你想暂停 ${preName} 的进化吗？\n你可以从队伍界面重新启用进化。`, null, () => {
                               const end = () => {
                                 this.scene.ui.showText(null, 0);
                                 this.scene.playBgm();
@@ -198,7 +198,7 @@ export class EvolutionPhase extends Phase {
                               this.scene.ui.setOverlayMode(Mode.CONFIRM, () => {
                                 this.scene.ui.revertMode();
                                 this.pokemon.pauseEvolutions = true;
-                                this.scene.ui.showText(`Evolutions have been paused for ${preName}.`, null, end, 3000);
+                                this.scene.ui.showText(`${preName} 的进化已被暂停。`, null, end, 3000);
                               }, () => {
                                 this.scene.ui.revertMode();
                                 this.scene.time.delayedCall(3000, end);
@@ -249,7 +249,7 @@ export class EvolutionPhase extends Phase {
                                             this.scene.playSoundWithoutBgm('evolution_fanfare');
                                             
                                             evolvedPokemon.destroy();
-                                            this.scene.ui.showText(`Congratulations!\nYour ${preName} evolved into ${this.pokemon.name}!`, null, () => this.end(), null, true, Utils.fixedInt(4000));
+                                            this.scene.ui.showText(`恭喜！\n你的 ${preName} 进化成了 ${this.pokemon.name}！`, null, () => this.end(), null, true, Utils.fixedInt(4000));
                                             this.scene.time.delayedCall(Utils.fixedInt(4250), () => this.scene.playBgm());
                                           });
                                         });
