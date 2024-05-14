@@ -1,0 +1,46 @@
+{
+  "headers": [
+      {
+          "source": "/",
+          "headers": [
+              {
+                  "key": "Cache-Control",
+                  "value": "s-maxage=86400, stale-while-revalidate=3600"
+              },
+              {
+                  "key": "CDN-Cache-Control",
+                  "value": "max-age=86400"
+              },
+              {
+                  "key": "Vercel-CDN-Cache-Control",
+                  "value": "max-age=86400"
+              },
+              {
+                  "key": "Cloudflare-CDN-Cache-Control",
+                  "value": "max-age=86400"
+              }
+          ]
+      },
+      {
+          "source": "(.*)",
+          "headers": [
+              {
+                  "key": "Cache-Control",
+                  "value": "s-maxage=86400, stale-while-revalidate=3600"
+              },
+              {
+                  "key": "CDN-Cache-Control",
+                  "value": "max-age=86400"
+              },
+              {
+                  "key": "Vercel-CDN-Cache-Control",
+                  "value": "max-age=86400"
+              },
+              {
+                  "key": "Cloudflare-CDN-Cache-Control",
+                  "value": "max-age=86400"
+              }
+          ]
+      }
+  ]
+}
