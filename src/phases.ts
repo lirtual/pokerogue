@@ -2866,7 +2866,7 @@ export class StatChangePhase extends PokemonPhase {
       if (relLevelStats.length > 1) {
         statsFragment = relLevelStats.length >= 5
           ? 'stats'
-          : `${relLevelStats.slice(0, -1).map(s => getBattleStatName(s)).join(', ')}${relLevelStats.length > 2 ? ',' : ''} and ${getBattleStatName(relLevelStats[relLevelStats.length - 1])}`;
+          : `${relLevelStats.slice(0, -1).map(s => getBattleStatName(s)).join(', ')}${relLevelStats.length > 2 ? ',' : ''}和${getBattleStatName(relLevelStats[relLevelStats.length - 1])}`;
       } else
         statsFragment = getBattleStatName(relLevelStats[0]);
       messages.push(getPokemonMessage(this.getPokemon(), `的${statsFragment} ${getBattleStatLevelChangeDescription(Math.abs(parseInt(rl)), levels >= 1)}!`));
@@ -3513,7 +3513,7 @@ export class RibbonModifierRewardPhase extends ModifierRewardPhase {
         this.scene.playSound('level_up_fanfare');
         this.scene.ui.setMode(Mode.MESSAGE);
         this.scene.ui.fadeIn(250).then(() => {
-          this.scene.ui.showText(`${this.species.name} beat ${this.scene.gameMode.getName()} Mode for the first time!\nYou received ${newModifier.type.name}!`, null, () => {
+          this.scene.ui.showText(`${this.species.name} 首次通关 ${this.scene.gameMode.getName()} 模式！\n你获得了 ${newModifier.type.name}！`, null, () => {
             resolve();
           }, null, true, 1500);
         });
@@ -3536,7 +3536,7 @@ export class GameOverPhase extends BattlePhase {
     super.start();
 
     if (this.victory || !this.scene.enableRetries)
-      this.handleGameOver();
+      this.handleClearSession();
     else {
       this.scene.ui.showText(`你想从战斗开始时重新尝试吗？`, null, () => {
         this.scene.ui.setMode(Mode.CONFIRM, () => {
@@ -3561,16 +3561,18 @@ export class GameOverPhase extends BattlePhase {
               this.end();
             });
           });
-        }, () => this.handleGameOver(), false, 0, 0, 1000);
+        }, () => this.handleClearSession(), false, 0, 0, 1000);
       });
     }
   }
 
-  handleGameOver(): void {
-    const doGameOver = (newClear: boolean) => {
+  handleClearSession(): void {
+    this.scene.gameData.tryClearSession(this.scene, this.scene.sessionSlotId).then((success: boolean | [boolean, boolean]) => {
+      if (!success[0])
+        return this.scene.reset(true);
       this.scene.time.delayedCall(1000, () => {
         let firstClear = false;
-        if (this.victory && newClear) {
+        if (this.victory && success[1]) {
           if (this.scene.gameMode.isClassic) {
             firstClear = this.scene.validateAchv(achvs.CLASSIC_VICTORY);
             this.scene.gameData.gameStats.sessionsWon++;
@@ -3581,37 +3583,29 @@ export class GameOverPhase extends BattlePhase {
                 this.awardRibbon(pokemon, true);
               }
             }
-          } else if (this.scene.gameMode.isDaily && newClear)
+          } else if (this.scene.gameMode.isDaily && success[1])
             this.scene.gameData.gameStats.dailyRunSessionsWon++;
         }
+        this.scene.gameData.saveSystem();
         const fadeDuration = this.victory ? 10000 : 5000;
         this.scene.fadeOutBgm(fadeDuration, true);
-        const activeBattlers = this.scene.getField().filter(p => p?.isActive(true));
-        activeBattlers.map(p => p.hideInfo());
         this.scene.ui.fadeOut(fadeDuration).then(() => {
-          [ this.scene.field, ...activeBattlers ].map(a => a.setVisible(false));
           this.scene.setFieldScale(1, true);
           this.scene.clearPhaseQueue();
           this.scene.ui.clearText();
-          if (newClear)
             this.handleUnlocks();
-          if (this.victory && newClear) {
+          if (this.victory && success[1]) {
             for (let species of this.firstRibbons)
               this.scene.unshiftPhase(new RibbonModifierRewardPhase(this.scene, modifierTypes.VOUCHER_PLUS, species));
             if (!firstClear)
               this.scene.unshiftPhase(new GameOverModifierRewardPhase(this.scene, modifierTypes.VOUCHER_PREMIUM));
           }
-          this.scene.pushPhase(new PostGameOverPhase(this.scene));
+          this.scene.reset();
+          this.scene.unshiftPhase(new TitlePhase(this.scene));
           this.end();
         });
       });
-    };
-    if (this.victory) {
-      Utils.apiFetch(`savedata/newclear?slot=${this.scene.sessionSlotId}`, true)
-        .then(response => response.json())
-        .then(newClear => doGameOver(newClear));
-    } else
-      doGameOver(false);
+    });
   }
 
   handleUnlocks(): void {

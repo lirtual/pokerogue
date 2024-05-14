@@ -2896,7 +2896,7 @@ export function initAbilities() {
       .attr(PostBiomeChangeWeatherChangeAbAttr, WeatherType.SANDSTORM),
     new Ability(Abilities.PRESSURE, 3)
       .attr(IncreasePpAbAttr)
-      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, ' is exerting its Pressure!')),
+      .attr(PostSummonMessageAbAttr, (pokemon: Pokemon) => getPokemonMessage(pokemon, '发动了压迫感！')),
     new Ability(Abilities.THICK_FAT, 3)
       .attr(ReceivedTypeDamageMultiplierAbAttr, Type.FIRE, 0.5)
       .attr(ReceivedTypeDamageMultiplierAbAttr, Type.ICE, 0.5)

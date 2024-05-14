@@ -309,16 +309,16 @@ export function getSpeciesFormChangeMessage(pokemon: Pokemon, formChange: Specie
   const isGmax = formChange.formKey.indexOf(SpeciesFormKey.GIGANTAMAX) > -1;
   const isEmax = formChange.formKey.indexOf('eternamax') > -1;
   const isRevert = !isMega && formChange.formKey === pokemon.species.forms[0].formKey;
-  const prefix = !pokemon.isPlayer() ? pokemon.hasTrainer() ? 'Foe ' : 'Wild ' : 'Your ';
+  const prefix = !pokemon.isPlayer() ? pokemon.hasTrainer() ? '对手 ' : '野生 ' : '你的 ';
   if (isMega)
-    return `${prefix}${preName} mega-evolved\ninto ${pokemon.name}!`;
+    return `${prefix}${preName} 超级进化\n成了 ${pokemon.name}！`;
   if (isGmax)
-    return `${prefix}${preName} Gigantamaxed\ninto ${pokemon.name}!`;
+    return `${prefix}${preName} 极巨化\n成了 ${pokemon.name}！`;
   if (isEmax)
-    return `${prefix}${preName} Eternamaxed\ninto ${pokemon.name}!`;
+    return `${prefix}${preName} 永恒之光\n成了 ${pokemon.name}！`;
   if (isRevert)
-    return `${prefix}${pokemon.name} reverted\nto its original form!`;
-  return `${prefix}${preName} changed form!`;
+    return `${prefix}${pokemon.name} 变回了\n原本的样子！`;
+  return `${prefix}${preName} 改变了形态！`;
 }
 
 interface PokemonFormChanges {

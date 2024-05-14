@@ -182,13 +182,13 @@ export class GameMode implements GameModeConfig {
   getName(): string {
     switch (this.modeId) {
       case GameModes.CLASSIC:
-        return 'Classic';
+        return '经典';
       case GameModes.ENDLESS:
-        return 'Endless';
+        return '无尽';
       case GameModes.SPLICED_ENDLESS:
-        return 'Endless (Spliced)';
+        return '无尽（拼接）';
       case GameModes.DAILY:
-        return 'Daily Run';
+        return '每日挑战';
     }
   }
 }
