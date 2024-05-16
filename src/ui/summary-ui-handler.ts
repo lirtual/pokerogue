@@ -185,7 +185,7 @@ export default class SummaryUiHandler extends UiHandler {
 
     this.statusContainer.add(statusBg);
     
-    const statusLabel = addTextObject(this.scene, 3, 0, 'Status', TextStyle.SUMMARY);
+    const statusLabel = addTextObject(this.scene, 3, 0, '状态', TextStyle.SUMMARY);
     statusLabel.setOrigin(0, 0);
 
     this.statusContainer.add(statusLabel);
@@ -685,7 +685,7 @@ export default class SummaryUiHandler extends UiHandler {
           profileContainer.add(getTypeIcon(types.length, this.pokemon.getTeraType(), true));
 
         if (this.pokemon.getLuck()) {
-          const luckLabelText = addTextObject(this.scene, 141, 28, 'Luck:', TextStyle.SUMMARY_ALT);
+          const luckLabelText = addTextObject(this.scene, 141, 28, '幸运:', TextStyle.SUMMARY_ALT);
           luckLabelText.setOrigin(0, 0);
           profileContainer.add(luckLabelText);
           

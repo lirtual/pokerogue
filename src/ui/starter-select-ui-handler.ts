@@ -436,7 +436,7 @@ export default class StarterSelectUiHandler extends MessageUiHandler {
     this.type2Icon.setOrigin(0, 0);
     this.starterSelectContainer.add(this.type2Icon);
 
-    this.pokemonLuckLabelText = addTextObject(this.scene, 8, 89, 'Luck:', TextStyle.WINDOW_ALT, { fontSize: '48px' });
+    this.pokemonLuckLabelText = addTextObject(this.scene, 8, 89, '幸运:', TextStyle.WINDOW_ALT, { fontSize: '48px' });
     this.pokemonLuckLabelText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonLuckLabelText);
 
@@ -449,7 +449,7 @@ export default class StarterSelectUiHandler extends MessageUiHandler {
     this.pokemonCandyIcon.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonCandyIcon);
 
-    this.pokemonFormText = addTextObject(this.scene, 6, 42, 'Form', TextStyle.WINDOW_ALT, { fontSize: '42px' });
+    this.pokemonFormText = addTextObject(this.scene, 6, 42, '形态', TextStyle.WINDOW_ALT, { fontSize: '42px' });
     this.pokemonFormText.setOrigin(0, 0);
     this.starterSelectContainer.add(this.pokemonFormText);
 

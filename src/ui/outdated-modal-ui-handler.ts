@@ -31,7 +31,7 @@ export default class OutdatedModalUiHandler extends ModalUiHandler {
   setup(): void {
     super.setup();
 
-    const label = addTextObject(this.scene, this.getWidth() / 2, this.getHeight() / 2, 'Your client is currently outdated.\nPlease reload to update the game.\n\nIf this error persists, please clear your browser cache.', TextStyle.WINDOW, { fontSize: '48px', align: 'center' });
+    const label = addTextObject(this.scene, this.getWidth() / 2, this.getHeight() / 2, '如果该错误持续存在，请清除浏览器缓存。', TextStyle.WINDOW, { fontSize: '48px', align: 'center' });
     label.setOrigin(0.5, 0.5);
 
     this.modalContainer.add(label);

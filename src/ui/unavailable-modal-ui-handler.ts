@@ -35,7 +35,7 @@ export default class UnavailableModalUiHandler extends ModalUiHandler {
   setup(): void {
     super.setup();
 
-    const label = addTextObject(this.scene, this.getWidth() / 2, this.getHeight() / 2, 'Oops! There was an issue contacting the server.\n\nYou may leave this window open,\nthe game will automatically reconnect.', TextStyle.WINDOW, { fontSize: '48px', align: 'center' });
+    const label = addTextObject(this.scene, this.getWidth() / 2, this.getHeight() / 2, '哎呀！联系服务器时出现问题。\n您可以保持此窗口打开，\n游戏将自动重新连接。', TextStyle.WINDOW, { fontSize: '48px', align: 'center' });
     label.setOrigin(0.5, 0.5);
 
     this.modalContainer.add(label);
