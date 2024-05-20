@@ -6,23 +6,13 @@ import { TrainerType } from "./enums/trainer-type";
 import { TimeOfDay } from "./enums/time-of-day";
 import { Biome } from "./enums/biome";
 import { SpeciesFormEvolution } from "./pokemon-evolutions";
+import i18next from "#app/plugins/i18n";
 
 export function getBiomeName(biome: Biome | -1) {
   if (biome === -1)
     return '地点你已经记不清了';
-  switch (biome) {
-    case Biome.GRASS:
-      return '草地';
-    case Biome.RUINS:
-      return '古代遗迹';
-    case Biome.ABYSS:
-      return '深渊';
-    case Biome.SPACE:
-      return '同温层';
-    case Biome.END:
-      return '最终之地';
-    default:
-      return Utils.toReadableString(Biome[biome]);
+  else {
+    return i18next.t(`biome:${Biome[biome]}`);
   }
 }
 

@@ -22,7 +22,7 @@ export function getBattleStatName(stat: BattleStat) {
     case BattleStat.SPD:
       return '速度';
     case BattleStat.ACC:
-      return '命中率';
+      return '命中';
     case BattleStat.EVA:
       return '闪避';
     default:

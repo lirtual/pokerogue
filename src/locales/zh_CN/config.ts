@@ -21,6 +21,7 @@ import { weather } from "./weather";
 import { battleMessageUiHandler } from "./battle-message-ui-handler";
 import { berry } from "./berry";
 import { voucher } from "./voucher";
+import {biome} from "#app/locales/zh_CN/biome";
 
 
 export const zhCnConfig = {
@@ -49,4 +50,5 @@ export const zhCnConfig = {
     battleMessageUiHandler: battleMessageUiHandler,
     berry: berry,
     voucher: voucher,
+    biome: biome,
 }

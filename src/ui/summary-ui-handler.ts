@@ -15,7 +15,7 @@ import { Stat, getStatName } from "../data/pokemon-stat";
 import { PokemonHeldItemModifier } from "../modifier/modifier";
 import { StatusEffect } from "../data/status-effect";
 import { getBiomeName } from "../data/biomes";
-import { Nature, getNatureStatMultiplier, getNatureChineseValue } from "../data/nature";
+import {Nature, getNatureStatMultiplier, getNatureName} from "../data/nature";
 import { loggedInUser } from "../account";
 import { PlayerGender } from "../system/game-data";
 import { Variant, getVariantTint } from "#app/data/variant";
@@ -232,7 +232,7 @@ export default class SummaryUiHandler extends UiHandler {
     const powerLabel = addTextObject(this.scene,  16, 14, '威力', TextStyle.SUMMARY, { fontSize: '66px' });
     powerLabel.setOrigin(0, 0);
     this.moveEffectContainer.add(powerLabel);
-    const accuracyLabel = addTextObject(this.scene,  16, 29, '命中率', TextStyle.SUMMARY, { fontSize: '66px' });
+    const accuracyLabel = addTextObject(this.scene,  16, 29, '命中', TextStyle.SUMMARY, { fontSize: '66px' });
     accuracyLabel.setOrigin(0, 0);
     this.moveEffectContainer.add(accuracyLabel);
     const categoryLabel = addTextObject(this.scene,  16, 46, '分类', TextStyle.SUMMARY, { fontSize: '66px' });
@@ -784,7 +784,7 @@ export default class SummaryUiHandler extends UiHandler {
         this.passiveContainer?.nameText.setVisible(false);
         this.passiveContainer?.descriptionText.setVisible(false);
 
-        let memoString = `${getBBCodeFrag('性格', TextStyle.WINDOW_ALT)}${getBBCodeFrag(getNatureChineseValue(this.pokemon.getNature()), TextStyle.SUMMARY_RED)}\n${getBBCodeFrag(`${this.pokemon.metBiome === -1 ? '显然是' : ''}在Lv`, TextStyle.WINDOW_ALT)}${getBBCodeFrag(this.pokemon.metLevel.toString(), TextStyle.SUMMARY_RED)}${getBBCodeFrag('时遇到的，', TextStyle.WINDOW_ALT)}\n${getBBCodeFrag(getBiomeName(this.pokemon.metBiome), TextStyle.SUMMARY_RED)}${getBBCodeFrag('。', TextStyle.WINDOW_ALT)}`;
+        let memoString = `${getBBCodeFrag('性格', TextStyle.WINDOW_ALT)}${getBBCodeFrag(getNatureName(this.pokemon.getNature()), TextStyle.SUMMARY_RED)}\n${getBBCodeFrag(`${this.pokemon.metBiome === -1 ? '似乎在' : ''}等级`, TextStyle.WINDOW_ALT)}${getBBCodeFrag(this.pokemon.metLevel.toString(), TextStyle.SUMMARY_RED)}${getBBCodeFrag('时遇到的，', TextStyle.WINDOW_ALT)}\n${getBBCodeFrag(getBiomeName(this.pokemon.metBiome), TextStyle.SUMMARY_RED)}${getBBCodeFrag('。', TextStyle.WINDOW_ALT)}`;
        
         const memoText = addBBCodeTextObject(this.scene, 7, 113, memoString, TextStyle.WINDOW_ALT, { fontSize: '56px' });
         memoText.setOrigin(0, 0);

@@ -85,7 +85,7 @@ export function getBerryEffectFunc(berryType: BerryType): BerryEffectFunc {
         const hpHealed = new Utils.NumberHolder(Math.floor(pokemon.getMaxHp() / 4));
         applyAbAttrs(DoubleBerryEffectAbAttr, pokemon, null, hpHealed);
         pokemon.scene.unshiftPhase(new PokemonHealPhase(pokemon.scene, pokemon.getBattlerIndex(),
-          hpHealed.value, getPokemonMessage(pokemon, `的${getBerryChineseName(berryType)}恢复了体力！`), true));
+          hpHealed.value, getPokemonMessage(pokemon, `的${getBerryName(berryType)}恢复了体力！`), true));
       };
     case BerryType.LUM:
       return (pokemon: Pokemon) => {

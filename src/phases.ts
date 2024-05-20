@@ -250,14 +250,14 @@ export class TitlePhase extends Phase {
           });
         return true;
       }
-    // },
-    // {
-    //   label: i18next.t('menu:dailyRun'),
-    //   handler: () => {
-    //     this.initDailyRun();
-    //     return true;
-    //   },
-    //   keepOpen: true
+    },
+    {
+      label: i18next.t('menu:dailyRun'),
+      handler: () => {
+        this.initDailyRun();
+        return true;
+      },
+      keepOpen: true
     });
     const config: OptionSelectConfig = {
       options: options,
@@ -3598,7 +3598,7 @@ export class GameOverPhase extends BattlePhase {
     super.start();
 
     if (this.victory || !this.scene.enableRetries)
-      this.handleClearSession();
+      this.handleGameOver();
     else {
       this.scene.ui.showText(`你想从战斗开始时重新尝试吗？`, null, () => {
         this.scene.ui.setMode(Mode.CONFIRM, () => {
@@ -3623,7 +3623,7 @@ export class GameOverPhase extends BattlePhase {
               this.end();
             });
           });
-        }, () => this.handleClearSession(), false, 0, 0, 1000);
+        }, () => this.handleGameOver(), false, 0, 0, 1000);
       });
     }
   }
@@ -3633,7 +3633,7 @@ export class GameOverPhase extends BattlePhase {
       this.scene.disableMenu = true;
       this.scene.time.delayedCall(1000, () => {
         let firstClear = false;
-        if (this.victory && success[1]) {
+        if (this.victory && newClear) {
           if (this.scene.gameMode.isClassic) {
             firstClear = this.scene.validateAchv(achvs.CLASSIC_VICTORY);
             this.scene.gameData.gameStats.sessionsWon++;
@@ -3644,12 +3644,13 @@ export class GameOverPhase extends BattlePhase {
                 this.awardRibbon(pokemon, true);
               }
             }
-          } else if (this.scene.gameMode.isDaily && success[1])
+          } else if (this.scene.gameMode.isDaily && newClear)
             this.scene.gameData.gameStats.dailyRunSessionsWon++;
         }
-        this.scene.gameData.saveSystem();
         const fadeDuration = this.victory ? 10000 : 5000;
         this.scene.fadeOutBgm(fadeDuration, true);
+        const activeBattlers = this.scene.getField().filter(p => p?.isActive(true));
+        activeBattlers.map(p => p.hideInfo());
         this.scene.ui.fadeOut(fadeDuration).then(() => {
           activeBattlers.map(a => a.setVisible(false));
           this.scene.setFieldScale(1, true);

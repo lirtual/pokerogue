@@ -21,33 +21,6 @@ export enum Type {
   STELLAR
 };
 
-const typeMap = {
-  [Type.UNKNOWN]: '未知',
-  [Type.NORMAL]: '一般',
-  [Type.FIGHTING]: '格斗',
-  [Type.FLYING]: '飞行',
-  [Type.POISON]: '毒',
-  [Type.GROUND]: '地面',
-  [Type.ROCK]: '岩石',
-  [Type.BUG]: '虫',
-  [Type.GHOST]: '幽灵',
-  [Type.STEEL]: '钢',
-  [Type.FIRE]: '火',
-  [Type.WATER]: '水',
-  [Type.GRASS]: '草',
-  [Type.ELECTRIC]: '电',
-  [Type.PSYCHIC]: '超能力',
-  [Type.ICE]: '冰',
-  [Type.DRAGON]: '龙',
-  [Type.DARK]: '恶',
-  [Type.FAIRY]: '妖精',
-  [Type.STELLAR]: '星'
-};
-
-export function getTypeChineseValue(type: Type) {
-  return typeMap[type];
-}
-
 export type TypeDamageMultiplier = 0 | 0.125 | 0.25 | 0.5 | 1 | 2 | 4 | 8;
 
 export function getTypeDamageMultiplier(attackType: integer, defType: integer): TypeDamageMultiplier {
