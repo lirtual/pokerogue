@@ -288,7 +288,7 @@ export const trainerTypeDialogue = {
       ]
     }
   ],
-  [TrainerType.STUDENT]: [
+  [TrainerType.SCHOOL_KID]: [
     {
       encounter: [
         `…嘿嘿。我对自己的计算和分析很有信心。`,
@@ -909,10 +909,11 @@ export const trainerTypeDialogue = {
   },
   [TrainerType.MORTY]: {
       encounter: [
-          `再多一点，我就能看到我遇到传说宝可梦的未来。\n你要帮我达到那个水平！`,
-          `据说彩虹色的宝可梦会出现在真正强大的训练家面前。      
-          $我相信那个传说，所以我一生都在这里秘密训练。\n因此，我现在可以看到其他人看不到的东西。      
-          $我看到了让宝可梦出现的人的影子。      
+          `再多一点，我就能看到我遇到传说宝可梦的未来。
+          $你要帮我达到那个水平！`,
+          `据说彩虹色的宝可梦会出现在真正强大的训练家面前。 
+          $我相信那个传说，所以我一生都在这里秘密训练。\n因此，我现在可以看到其他人看不到的东西。 
+          $我看到了让宝可梦出现的人的影子。 
           $我相信那个人就是我！你要帮我达到那个水平！`,
           `无论你选择相信与否，神秘的力量确实存在。`,
           `你可以见证我训练的成果。`,
@@ -921,10 +922,11 @@ export const trainerTypeDialogue = {
       ],
       victory: [
           `我还做得不够好...`,
-          `我明白了... \n你的旅程带你去了很远的地方，你比我见多识广。      
+          `我明白了... \n你的旅程带你去了很远的地方，你比我见多识广。
           $我很羡慕你...`,
           `这怎么可能...`,
-          `我不认为我们的潜力有那么大的差别。\n但你似乎拥有一些更多的东西... 那就这样吧。`,
+          `我不认为我们的潜力有那么大的差别。
+          $但你似乎拥有一些更多的东西... 那就这样吧。`,
           `看来我需要更多的训练。`,
           `真可惜。`
       ],
@@ -955,7 +957,7 @@ export const trainerTypeDialogue = {
       encounter: [
           `我想成为帮助某个人的那个人。\n既然如此，我不能输。      
           $... 我们的战斗现在开始。`,
-          
+
       ],
       victory: [
           `我... 还不行，我明白了。`,
@@ -2071,7 +2073,7 @@ export const trainerTypeDialogue = {
       defeat: [
           `事情对你来说没有升温。`,
       ]
-  }, 
+  },
   [TrainerType.RIVAL]: [
       {
           encounter: [
@@ -2289,6 +2291,25 @@ export const battleSpecDialogue = {
       secondStageWin: `……太棒了。`
   }
 };
+
+export const miscDialogue = {
+  ending: [
+    `@c{smile}Oh? You won?@d{96} @c{smile_eclosed}I guess I should've known.\nBut, you're back now.
+    $@c{smile}It's over.@d{64} You ended the loop.
+    $@c{serious_smile_fists}You fulfilled your dream too, didn't you?\nYou didn't lose even once.
+    $@c{neutral}I'm the only one who'll remember what you did.@d{96}\nI guess that's okay, isn't it?
+    $@c{serious_smile_fists}Your legend will always live on in our hearts.
+    $@c{smile_eclosed}Anyway, I've had about enough of this place, haven't you? Let's head home.
+    $@c{serious_smile_fists}Maybe when we get back, we can have another battle?\nIf you're up to it.`,
+    `@c{shock}You're back?@d{32} Does that mean…@d{96} you won?!\n@c{smile_ehalf}I should have known you had it in you.
+    $@c{smile_eclosed}Of course… I always had that feeling.\n@c{smile}It's over now, right? You ended the loop.
+    $@c{smile_ehalf}You fulfilled your dream too, didn't you?\nYou didn't lose even once.
+    $I'll be the only one to remember what you did.\n@c{angry_mopen}I'll try not to forget!
+    $@c{smile_wave_wink}Just kidding!@d{64} @c{smile}I'd never forget.@d{32}\nYour legend will live on in our hearts.
+    $@c{smile_wave}Anyway,@d{64} it's getting late…@d{96} I think?\nIt's hard to tell in this place.
+    $Let's go home. @c{smile_wave_wink}Maybe tomorrow, we can have another battle, for old time's sake?`
+  ]
+}
 
 export function getCharVariantFromDialogue(message: string): string {
   const variantMatch = /@c\{(.*?)\}/.exec(message);

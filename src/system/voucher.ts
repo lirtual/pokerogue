@@ -2,6 +2,7 @@ import BattleScene from "../battle-scene";
 import { TrainerType } from "../data/enums/trainer-type";
 import { ModifierTier } from "../modifier/modifier-tier";
 import { Achv, AchvTier, achvs } from "./achv";
+import i18next from '../plugins/i18n';
 
 export enum VoucherType {
   REGULAR,
@@ -52,14 +53,14 @@ export class Voucher {
 export function getVoucherTypeName(voucherType: VoucherType): string {
   switch (voucherType) {
     case VoucherType.REGULAR:
-      return '普通蛋券';
+      return i18next.t("voucher:eggVoucher");
     case VoucherType.PLUS:
-      return '高级蛋券';
+      return i18next.t("voucher:eggVoucherPlus");
     case VoucherType.PREMIUM:
-      return '稀有蛋券';
+      return i18next.t("voucher:eggVoucherPremium");
     case VoucherType.GOLDEN:
-      return '黄金蛋券';
-  }  
+      return i18next.t("voucher:eggVoucherGold");
+  }
 }
 
 export function getVoucherTypeIcon(voucherType: VoucherType): string {
@@ -75,9 +76,8 @@ export function getVoucherTypeIcon(voucherType: VoucherType): string {
   }
 }
 
-
 export interface Vouchers {
-  [key: string]: Voucher
+  [key: string]: Voucher;
 }
 
 export const vouchers: Vouchers = {};
@@ -87,6 +87,8 @@ const voucherAchvs: Achv[] = [ achvs.CLASSIC_VICTORY ];
 {
   (function() {
     import('../data/trainer-config').then(tc => {
+      const trainerConfigs = tc.trainerConfigs;
+
       for (let achv of voucherAchvs) {
         const voucherType = achv.score >= 150
           ? VoucherType.GOLDEN
@@ -98,7 +100,6 @@ const voucherAchvs: Achv[] = [ achvs.CLASSIC_VICTORY ];
         vouchers[achv.id] = new Voucher(voucherType, achv.description);
       }
 
-      const trainerConfigs = tc.trainerConfigs;
       const bossTrainerTypes = Object.keys(trainerConfigs)
         .filter(tt => trainerConfigs[tt].isBoss && trainerConfigs[tt].getDerivedType() !== TrainerType.RIVAL);
 
@@ -107,12 +108,17 @@ const voucherAchvs: Achv[] = [ achvs.CLASSIC_VICTORY ];
           ? VoucherType.PLUS
           : VoucherType.PREMIUM;
         const key = TrainerType[trainerType];
-        vouchers[key] = new Voucher(voucherType, `击败${trainerConfigs[trainerType].name}`);
+        const trainerName = trainerConfigs[trainerType].name;
+        vouchers[key] = new Voucher(
+          voucherType,
+          i18next.t("voucher:defeatTrainer", { trainerName })
+        );
       }
 
       const voucherKeys = Object.keys(vouchers);
-      for (let k of voucherKeys)
+      for (let k of voucherKeys) {
         vouchers[k].id = k;
+      }
     });
   })();
 }

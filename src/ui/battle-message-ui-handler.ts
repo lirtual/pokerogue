@@ -7,6 +7,7 @@ import { getStatName, Stat } from "../data/pokemon-stat";
 import { addWindow } from "./ui-theme";
 import BBCodeText from "phaser3-rex-plugins/plugins/bbcodetext";
 import {Button} from "../enums/buttons";
+import i18next from '../plugins/i18n';
 
 export default class BattleMessageUiHandler extends MessageUiHandler {
   private levelUpStatsContainer: Phaser.GameObjects.Container;
@@ -31,7 +32,7 @@ export default class BattleMessageUiHandler extends MessageUiHandler {
     this.textCallbackTimer = null;
 
     const bg = this.scene.add.sprite(0, 0, 'bg', this.scene.windowType);
-                bg.setOrigin(0, 1);
+    bg.setOrigin(0, 1);
     ui.add(bg);
 
     this.bg = bg;
@@ -234,22 +235,20 @@ export default class BattleMessageUiHandler extends MessageUiHandler {
       const textStyle: TextStyle = isBetter ? TextStyle.SUMMARY_GREEN : TextStyle.SUMMARY;
       const color = getTextColor(textStyle, false, uiTheme);
       return `[color=${color}][shadow=${getTextColor(textStyle, true, uiTheme)}]${text}[/shadow][/color]`;
-    };
+};
 
-    if (value > 30)
       if (value > 30)
-        return coloredText('最佳', value > starterIvs[typeIv]);
+        return coloredText(i18next.t('battleMessageUiHandler:ivBest'), value > starterIvs[typeIv]);
       if (value === 30)
-        return coloredText('超棒', value > starterIvs[typeIv]);
+        return coloredText(i18next.t('battleMessageUiHandler:ivFantastic'), value > starterIvs[typeIv]);
       if (value > 20)
-        return coloredText('很棒', value > starterIvs[typeIv]);
+        return coloredText(i18next.t('battleMessageUiHandler:ivVeryGood'), value > starterIvs[typeIv]);
       if (value > 10)
-        return coloredText('不错', value > starterIvs[typeIv]);
+        return coloredText(i18next.t('battleMessageUiHandler:ivPrettyGood'), value > starterIvs[typeIv]);
       if (value > 0)
-        return coloredText('凑合', value > starterIvs[typeIv]);
-  
-      return coloredText('糟糕', value > starterIvs[typeIv]);
-  
+        return coloredText(i18next.t('battleMessageUiHandler:ivDecent'), value > starterIvs[typeIv]);
+
+        return coloredText(i18next.t('battleMessageUiHandler:ivNoGood'), value > starterIvs[typeIv]);
   }
 
   showNameText(name: string): void {

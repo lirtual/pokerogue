@@ -7,7 +7,7 @@ import { BattlerTagType } from "./enums/battler-tag-type";
 import { getStatusEffectHealText } from "./status-effect";
 import * as Utils from "../utils";
 import { DoubleBerryEffectAbAttr, ReduceBerryUseThresholdAbAttr, applyAbAttrs } from "./ability";
-import * as Localizer from "../localizer";
+import i18next from '../plugins/i18n';
 
 export enum BerryType {
   SITRUS,
@@ -23,36 +23,12 @@ export enum BerryType {
   LEPPA
 }
 
-function getBerryChineseName(berryType: BerryType) {
-  return Localizer.getItemName(getBerryName(berryType));
+export function getBerryName(berryType: BerryType): string {
+  return i18next.t(`berry:${BerryType[berryType]}.name`);
 }
 
-export function getBerryName(berryType: BerryType) {
-  return `${Utils.toReadableString(BerryType[berryType])} Berry`;
-}
-
-export function getBerryEffectDescription(berryType: BerryType) {
-  switch (berryType) {
-    case BerryType.SITRUS:
-      return '当宝可梦的HP低于50%时，恢复25%的HP。';
-    case BerryType.LUM:
-      return '治疗任何非永久性状态异常和混乱状态。';
-    case BerryType.ENIGMA:
-      return '如果受到超级有效的招式攻击，则恢复25%的HP。';
-    case BerryType.LIECHI:
-    case BerryType.GANLON:
-    case BerryType.PETAYA:
-    case BerryType.APICOT:
-    case BerryType.SALAC:
-      const stat = (berryType - BerryType.LIECHI) as BattleStat;
-      return `如果宝可梦的HP低于25%，则提升 ${getBattleStatName(stat)}。`;
-    case BerryType.LANSAT:
-      return '如果宝可梦的HP低于25%，则提升其击中要害率。';
-    case BerryType.STARF:
-      return '如果生命值低于25%，则大幅提升一项随机属性';
-    case BerryType.LEPPA:
-      return '如果招式PP值降为0，则恢复该招式10PP值';
-  }
+export function getBerryEffectDescription(berryType: BerryType): string {
+  return i18next.t(`berry:${BerryType[berryType]}.effect`);
 }
 
 export type BerryPredicate = (pokemon: Pokemon) => boolean;
@@ -154,9 +130,11 @@ export function getBerryEffectFunc(berryType: BerryType): BerryEffectFunc {
       return (pokemon: Pokemon) => {
         if (pokemon.battleData)
           pokemon.battleData.berriesEaten.push(berryType);
-        const ppRestoreMove = pokemon.getMoveset().find(m => !m.getPpRatio());
-        ppRestoreMove.ppUsed = Math.max(ppRestoreMove.ppUsed - 10, 0);
-        pokemon.scene.queueMessage(getPokemonMessage(pokemon, `使用${getBerryChineseName(berryType)}恢复了${ppRestoreMove.getName()}的PP！`));
+        const ppRestoreMove = pokemon.getMoveset().find(m => !m.getPpRatio()) ? pokemon.getMoveset().find(m => !m.getPpRatio()) : pokemon.getMoveset().find(m => m.getPpRatio() < 1);
+        if(ppRestoreMove !== undefined){
+          ppRestoreMove.ppUsed = Math.max(ppRestoreMove.ppUsed - 10, 0);
+            pokemon.scene.queueMessage(getPokemonMessage(pokemon, ` 使用 ${getBerryName(berryType)} 恢复了 ${ppRestoreMove.getName()} 的PP！`));
+        }
       };
   }
 }

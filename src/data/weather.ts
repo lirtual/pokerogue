@@ -1,5 +1,5 @@
 import { Biome } from "./enums/biome";
-import { getPokemonMessage } from "../messages";
+import { getPokemonMessage, getPokemonPrefix } from "../messages";
 import Pokemon from "../field/pokemon";
 import { Type } from "./type";
 import Move, { AttackMove } from "./move";
@@ -7,6 +7,7 @@ import * as Utils from "../utils";
 import BattleScene from "../battle-scene";
 import { SuppressWeatherEffectAbAttr } from "./ability";
 import { TerrainType } from "./terrain";
+import i18next from "i18next";
 
 export enum WeatherType {
   NONE,
@@ -121,23 +122,23 @@ export class Weather {
 export function getWeatherStartMessage(weatherType: WeatherType): string {
   switch (weatherType) {
     case WeatherType.SUNNY:
-      return '阳光变得耀眼！';
+      return i18next.t('weather:sunnyStartMessage');
     case WeatherType.RAIN:
-      return '下起了雨！';
+      return i18next.t('weather:rainStartMessage');
     case WeatherType.SANDSTORM:
-      return '刮起了沙尘暴！';
+      return i18next.t('weather:sandstormStartMessage');
     case WeatherType.HAIL:
-      return '下起了冰雹！';
+      return i18next.t('weather:hailStartMessage');
     case WeatherType.SNOW:
-      return '下起了雪！';
+      return i18next.t('weather:snowStartMessage');
     case WeatherType.FOG:
-      return '出现了浓雾！';
+      return i18next.t('weather:fogStartMessage');
     case WeatherType.HEAVY_RAIN:
-      return '下起了倾盆大雨！';
+      return i18next.t('weather:heavyRainStartMessage');
     case WeatherType.HARSH_SUN:
-      return '阳光变得灼热！';
+      return i18next.t('weather:harshSunStartMessage');
     case WeatherType.STRONG_WINDS:
-      return '刮起了强风！';
+      return i18next.t('weather:strongWindsStartMessage');
   }
 
   return null;
@@ -146,23 +147,23 @@ export function getWeatherStartMessage(weatherType: WeatherType): string {
 export function getWeatherLapseMessage(weatherType: WeatherType): string {
   switch (weatherType) {
     case WeatherType.SUNNY:
-      return '阳光强烈！';
+      return i18next.t('weather:sunnyLapseMessage');
     case WeatherType.RAIN:
-      return '大雨持续！';
+      return i18next.t('weather:rainLapseMessage');
     case WeatherType.SANDSTORM:
-      return '沙暴肆虐！';
+      return i18next.t('weather:sandstormLapseMessage');
     case WeatherType.HAIL:
-      return '冰雹持续落下！';
+      return i18next.t('weather:hailLapseMessage');
     case WeatherType.SNOW:
-      return '雪花飘落！';
+      return i18next.t('weather:snowLapseMessage');
     case WeatherType.FOG:
-      return '浓雾弥漫！';
+      return i18next.t('weather:fogLapseMessage');
     case WeatherType.HEAVY_RAIN:
-      return '暴雨倾盆！';
+      return i18next.t('weather:heavyRainLapseMessage');
     case WeatherType.HARSH_SUN:
-      return '烈日炎炎！';
+      return i18next.t('weather:harshSunLapseMessage');
     case WeatherType.STRONG_WINDS:
-      return '狂风呼啸！';
+      return i18next.t('weather:strongWindsLapseMessage');
   }
 
   return null;
@@ -171,9 +172,9 @@ export function getWeatherLapseMessage(weatherType: WeatherType): string {
 export function getWeatherDamageMessage(weatherType: WeatherType, pokemon: Pokemon): string {
   switch (weatherType) {
     case WeatherType.SANDSTORM:
-      return getPokemonMessage(pokemon, '被沙暴\n吹得睁不开眼!');
+      return i18next.t('weather:sandstormDamageMessage', {pokemonPrefix: getPokemonPrefix(pokemon), pokemonName: pokemon.name});
     case WeatherType.HAIL:
-      return getPokemonMessage(pokemon, '被冰雹\n砸得生疼!');
+      return i18next.t('weather:hailDamageMessage', {pokemonPrefix: getPokemonPrefix(pokemon), pokemonName: pokemon.name});
   }
 
   return null;
@@ -182,23 +183,23 @@ export function getWeatherDamageMessage(weatherType: WeatherType, pokemon: Pokem
 export function getWeatherClearMessage(weatherType: WeatherType): string {
   switch (weatherType) {
     case WeatherType.SUNNY:
-      return '阳光消散了。';
+      return i18next.t('weather:sunnyClearMessage');
     case WeatherType.RAIN:
-      return '雨停了。';
+      return i18next.t('weather:rainClearMessage');
     case WeatherType.SANDSTORM:
-      return '沙暴平息了。';
+      return i18next.t('weather:sandstormClearMessage');
     case WeatherType.HAIL:
-      return '冰雹停了。';
+      return i18next.t('weather:hailClearMessage');
     case WeatherType.SNOW:
-      return '雪停了。';
+      return i18next.t('weather:snowClearMessage');
     case WeatherType.FOG:
-      return '雾散了。';
+      return i18next.t('weather:fogClearMessage');
     case WeatherType.HEAVY_RAIN:
-      return '暴雨停了。';
+      return i18next.t('weather:heavyRainClearMessage');
     case WeatherType.HARSH_SUN:
-      return '烈日消退了。';
+      return i18next.t('weather:harshSunClearMessage');
     case WeatherType.STRONG_WINDS:
-      return '狂风止息了。';
+      return i18next.t('weather:strongWindsClearMessage');
   }
 
   return null;
@@ -235,7 +236,7 @@ export function getTerrainBlockMessage(pokemon: Pokemon, terrainType: TerrainTyp
     return getPokemonMessage(pokemon, ' 身周环绕起保护性的迷雾！');
   } else {
     return getPokemonMessage(pokemon, ` 受${Utils.toReadableString(TerrainType[terrainType])}地形的保护！`);
-  }  
+  }
 }
 
 interface WeatherPoolEntry {
