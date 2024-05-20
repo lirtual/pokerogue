@@ -1,21 +1,21 @@
 import { SimpleTranslationEntries } from "#app/plugins/i18n";
 
 export const egg: SimpleTranslationEntries = {
-  "egg": "Egg",
-  "greatTier": "Rare",
-  "ultraTier": "Epic",
-  "masterTier": "Legendary",
-  "defaultTier": "Common",
-  "hatchWavesMessageSoon": "Sounds can be heard coming from inside! It will hatch soon!",
-  "hatchWavesMessageClose": "It appears to move occasionally. It may be close to hatching.",
-  "hatchWavesMessageNotClose": "What will hatch from this? It doesn't seem close to hatching.",
-  "hatchWavesMessageLongTime": "It looks like this Egg will take a long time to hatch.",
-  "gachaTypeLegendary": "Legendary Rate Up",
-  "gachaTypeMove": "Rare Egg Move Rate Up",
-  "gachaTypeShiny": "Shiny Rate Up",
-  "selectMachine": "Select a machine.",
-  "notEnoughVouchers": "You don't have enough vouchers!",
-  "tooManyEggs": "You have too many eggs!",
-  "pull": "Pull",
-  "pulls": "Pulls"
+  "egg": "蛋",
+  "greatTier": "稀有",
+  "ultraTier": "史诗",
+  "masterTier": "传说",
+  "defaultTier": "普通",
+  "hatchWavesMessageSoon": "里面传来声音！似乎快要孵化了！",
+  "hatchWavesMessageClose": "有时好像会动一下。就快孵化了吧？",
+  "hatchWavesMessageNotClose": "会孵化出什么呢？看来还需要很长时间才能孵化。",
+  "hatchWavesMessageLongTime": "这个蛋需要很长时间才能孵化。",
+  "gachaTypeLegendary": "传说概率上升",
+  "gachaTypeMove": "稀有概率上升",
+  "gachaTypeShiny": "闪光概率上升",
+  "selectMachine": "选择一个机器。",
+  "notEnoughVouchers": "你没有足够的兑换券！",
+  "tooManyEggs": "你的蛋太多啦！",
+  "pull": "抽",
+  "pulls": "连抽"
 } as const;
