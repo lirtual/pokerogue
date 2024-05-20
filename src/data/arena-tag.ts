@@ -40,7 +40,7 @@ export abstract class ArenaTag {
   onAdd(arena: Arena): void { }
 
   onRemove(arena: Arena): void {
-    arena.scene.queueMessage(`${this.getMoveName()}\'s effect wore off${this.side === ArenaTagSide.PLAYER ? '\non your side' : this.side === ArenaTagSide.ENEMY ? '\non the foe\'s side' : ''}.`);
+    arena.scene.queueMessage(`${this.getMoveName()}的效果消失了${this.side === ArenaTagSide.PLAYER ? '\n在你这边' : this.side === ArenaTagSide.ENEMY ? '\n在对手那边' : ''}。`);
   }
 
   onOverlap(arena: Arena): void { }
@@ -65,13 +65,13 @@ export class MistTag extends ArenaTag {
     super.onAdd(arena);
 
     const source = arena.scene.getPokemonById(this.sourceId);
-    arena.scene.queueMessage(getPokemonMessage(source, `'s team became\nshrouded in mist!`));
+    arena.scene.queueMessage(getPokemonMessage(source, `的队伍被迷雾笼罩了！`));
   }
 
   apply(arena: Arena, args: any[]): boolean {
     (args[0] as Utils.BooleanHolder).value = true;
 
-    arena.scene.queueMessage('The mist prevented\nthe lowering of stats!');
+    arena.scene.queueMessage('迷雾阻止了能力值的降低！');
     
     return true;
   }
@@ -110,7 +110,7 @@ class ReflectTag extends WeakenMoveScreenTag {
   }
 
   onAdd(arena: Arena): void {
-    arena.scene.queueMessage(`Reflect reduced the damage of physical moves${this.side === ArenaTagSide.PLAYER ? '\non your side' : this.side === ArenaTagSide.ENEMY ? '\non the foe\'s side' : ''}.`);
+    arena.scene.queueMessage(`${this.side === ArenaTagSide.PLAYER ? '我方' : this.side === ArenaTagSide.ENEMY ? '对手' : ''}的光墙减少了物理招式的伤害。`);
   }
 }
 
@@ -132,7 +132,7 @@ class LightScreenTag extends WeakenMoveScreenTag {
   }
 
   onAdd(arena: Arena): void {
-    arena.scene.queueMessage(`Light Screen reduced the damage of special moves${this.side === ArenaTagSide.PLAYER ? '\non your side' : this.side === ArenaTagSide.ENEMY ? '\non the foe\'s side' : ''}.`);
+    arena.scene.queueMessage(`${this.side === ArenaTagSide.PLAYER ? '我方' : this.side === ArenaTagSide.ENEMY ? '对手' : ''}的反射壁减少了特殊招式的伤害。`);
   }
 }
 
@@ -142,7 +142,7 @@ class AuroraVeilTag extends WeakenMoveScreenTag {
   }
 
   onAdd(arena: Arena): void {
-    arena.scene.queueMessage(`Aurora Veil reduced the damage of moves${this.side === ArenaTagSide.PLAYER ? '\non your side' : this.side === ArenaTagSide.ENEMY ? '\non the foe\'s side' : ''}.`);
+    arena.scene.queueMessage(`${this.side === ArenaTagSide.PLAYER ? '我方' : this.side === ArenaTagSide.ENEMY ? '对手' : ''}的光墙减少了招式的伤害。`);
   }
 }
 
@@ -158,7 +158,7 @@ class WishTag extends ArenaTag {
   onAdd(arena: Arena): void {
     const user = arena.scene.getPokemonById(this.sourceId);
     this.battlerIndex = user.getBattlerIndex();
-    this.triggerMessage = getPokemonMessage(user, '\'s wish\ncame true!');
+    this.triggerMessage = getPokemonMessage(user, '的愿望实现了！');
     this.healHp = Math.max(Math.floor(user.getMaxHp() / 2), 1);
   }
   
@@ -196,11 +196,11 @@ class MudSportTag extends WeakenMoveTypeTag {
   }
 
   onAdd(arena: Arena): void {
-    arena.scene.queueMessage('Electricity\'s power was weakened!');
+    arena.scene.queueMessage('电系招式的威力降低了！');
   }
 
   onRemove(arena: Arena): void {
-    arena.scene.queueMessage('The effects of Mud Sport\nhave faded.');
+    arena.scene.queueMessage('泥巴射击的效果消失了。');
   }
 }
 
@@ -210,11 +210,11 @@ class WaterSportTag extends WeakenMoveTypeTag {
   }
 
   onAdd(arena: Arena): void {
-    arena.scene.queueMessage('Fire\'s power was weakened!');
+    arena.scene.queueMessage('火系招式的威力降低了！');
   }
 
   onRemove(arena: Arena): void {
-    arena.scene.queueMessage('The effects of Water Sport\nhave faded.');
+    arena.scene.queueMessage('潮湿的效果消失了。');
   }
 }
 
@@ -263,7 +263,7 @@ class SpikesTag extends ArenaTrapTag {
     super.onAdd(arena);
 
     const source = arena.scene.getPokemonById(this.sourceId);
-    arena.scene.queueMessage(`${this.getMoveName()} were scattered\nall around ${source.getOpponentDescriptor()}'s feet!`);
+    arena.scene.queueMessage(`${this.getMoveName()} 四处散落\n${source.getOpponentDescriptor()} 的脚边！`);
   }
 
   activateTrap(pokemon: Pokemon): boolean {
@@ -275,7 +275,7 @@ class SpikesTag extends ArenaTrapTag {
         const damageHpRatio = 1 / (10 - 2 * this.layers);
         const damage = Math.ceil(pokemon.getMaxHp() * damageHpRatio);
 
-        pokemon.scene.queueMessage(getPokemonMessage(pokemon, ' is hurt\nby the spikes!'));
+        pokemon.scene.queueMessage(getPokemonMessage(pokemon, '被尖刺\\n刺伤了！'));
         pokemon.damageAndUpdate(damage, HitResult.OTHER);
         if (pokemon.turnData) pokemon.turnData.damageTaken += damage;
         return true;
@@ -298,7 +298,7 @@ class ToxicSpikesTag extends ArenaTrapTag {
     super.onAdd(arena);
     
     const source = arena.scene.getPokemonById(this.sourceId);
-    arena.scene.queueMessage(`${this.getMoveName()} were scattered\nall around ${source.getOpponentDescriptor()}'s feet!`);
+    arena.scene.queueMessage(`${this.getMoveName()} 四处散落\n${source.getOpponentDescriptor()} 的脚边！`);
   }
 
   onRemove(arena: Arena): void {
@@ -311,7 +311,7 @@ class ToxicSpikesTag extends ArenaTrapTag {
       if (pokemon.isOfType(Type.POISON)) {
         this.neutralized = true;
         if (pokemon.scene.arena.removeTag(this.tagType)) {
-          pokemon.scene.queueMessage(getPokemonMessage(pokemon, ` absorbed the ${this.getMoveName()}!`));
+          pokemon.scene.queueMessage(getPokemonMessage(pokemon, ` 吸收了 ${this.getMoveName()}！`));
           return true;
         }
       } else if (!pokemon.status) {
@@ -363,7 +363,7 @@ class StealthRockTag extends ArenaTrapTag {
     super.onAdd(arena);
 
     const source = arena.scene.getPokemonById(this.sourceId);
-    arena.scene.queueMessage(`Pointed stones float in the air\naround ${source.getOpponentDescriptor()}!`);
+    arena.scene.queueMessage(`尖锐的石头漂浮在空中\n${source.getOpponentDescriptor()} 的周围！`);
   }
 
   getDamageHpRatio(pokemon: Pokemon): number {
@@ -406,7 +406,7 @@ class StealthRockTag extends ArenaTrapTag {
 
     if (damageHpRatio) {
       const damage = Math.ceil(pokemon.getMaxHp() * damageHpRatio);
-      pokemon.scene.queueMessage(`Pointed stones dug into\n${pokemon.name}!`);
+      pokemon.scene.queueMessage(`尖锐的石头刺入了\n${pokemon.name}！`);
       pokemon.damageAndUpdate(damage, HitResult.OTHER);
       if (pokemon.turnData) pokemon.turnData.damageTaken += damage;
     }
@@ -429,7 +429,7 @@ class StickyWebTag extends ArenaTrapTag {
     super.onAdd(arena);
     
     const source = arena.scene.getPokemonById(this.sourceId);
-    arena.scene.queueMessage(`A ${this.getMoveName()} has been laid out on the ground around the opposing team!`);
+    arena.scene.queueMessage(`${this.getMoveName()} 已布置在地面上，包围了对方队伍！`);
   }
 
   activateTrap(pokemon: Pokemon): boolean {
@@ -437,7 +437,7 @@ class StickyWebTag extends ArenaTrapTag {
       const cancelled = new Utils.BooleanHolder(false);
       applyAbAttrs(ProtectStatAbAttr, pokemon, cancelled);
       if (!cancelled.value) {
-        pokemon.scene.queueMessage(`The opposing ${pokemon.name} was caught in a sticky web!`);
+        pokemon.scene.queueMessage(`对方的 ${pokemon.name} 被黏糊糊的网困住了！`);
         const statLevels = new Utils.NumberHolder(-1);
         pokemon.scene.unshiftPhase(new StatChangePhase(pokemon.scene, pokemon.getBattlerIndex(), false, [BattleStat.SPD], statLevels.value));
       }
@@ -460,11 +460,11 @@ export class TrickRoomTag extends ArenaTag {
   }
 
   onAdd(arena: Arena): void {
-    arena.scene.queueMessage(getPokemonMessage(arena.scene.getPokemonById(this.sourceId), ' twisted\nthe dimensions!'));
+    arena.scene.queueMessage(getPokemonMessage(arena.scene.getPokemonById(this.sourceId), ' 扭曲了\n维度！'));
   }
 
   onRemove(arena: Arena): void {
-    arena.scene.queueMessage('The twisted dimensions\nreturned to normal!');
+    arena.scene.queueMessage('扭曲的维度恢复了正常！');
   }
 }
 
@@ -474,11 +474,11 @@ export class GravityTag extends ArenaTag {
   }
 
   onAdd(arena: Arena): void {
-    arena.scene.queueMessage('Gravity intensified!');
+    arena.scene.queueMessage('重力增强了！');
   }
 
   onRemove(arena: Arena): void {
-    arena.scene.queueMessage('Gravity returned to normal!');
+    arena.scene.queueMessage('重力恢复了正常！');
   }
 }
 
@@ -488,11 +488,11 @@ class TailwindTag extends ArenaTag {
   }
 
   onAdd(arena: Arena): void {
-    arena.scene.queueMessage(`The Tailwind blew from behind${this.side === ArenaTagSide.PLAYER ? '\nyour' : this.side === ArenaTagSide.ENEMY ? '\nthe opposing' : ''} team!`);
+    arena.scene.queueMessage(`顺风从${this.side === ArenaTagSide.PLAYER ? '\n你' : this.side === ArenaTagSide.ENEMY ? '\n对方' : ''}队伍的背后吹来！`);
   }
 
   onRemove(arena: Arena): void {
-    arena.scene.queueMessage(`${this.side === ArenaTagSide.PLAYER ? 'Your' : this.side === ArenaTagSide.ENEMY ? 'The opposing' : ''} team's Tailwind petered out!`);
+    arena.scene.queueMessage(`${this.side === ArenaTagSide.PLAYER ? '你' : this.side === ArenaTagSide.ENEMY ? '对方' : ''}队伍的顺风消失了！`);
   }
 }
 

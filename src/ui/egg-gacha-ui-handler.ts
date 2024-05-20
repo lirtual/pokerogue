@@ -153,14 +153,14 @@ export default class EggGachaUiHandler extends MessageUiHandler {
     this.eggGachaOptionsContainer.add(this.eggGachaOptionSelectBg);
 
     const pullOptions = [
-      { multiplier: 'x1', description: `1 ${i18next.t('egg:pull')}` },
+      { multiplier: 'x1', description: ` 1 ${i18next.t('egg:pull')}` },
       { multiplier: 'x10', description: `10 ${i18next.t('egg:pulls')}` },
-      { multiplier: 'x1', description: `5 ${i18next.t('egg:pulls')}` },
+      { multiplier: 'x1', description: ` 5 ${i18next.t('egg:pulls')}` },
       { multiplier: 'x1', description: `10 ${i18next.t('egg:pulls')}` },
       { multiplier: 'x1', description: `25 ${i18next.t('egg:pulls')}` }
     ];
 
-    const pullOptionsText = pullOptions.map(option => `     ${option.multiplier.padEnd(4)} ${option.description}`).join('\n');
+    const pullOptionsText = pullOptions.map(option => `  ${option.multiplier.padEnd(3)} ${option.description}`).join('\n');
 
     const optionText = addTextObject(
       this.scene,
@@ -171,7 +171,7 @@ export default class EggGachaUiHandler extends MessageUiHandler {
     );
 
     optionText.setLineSpacing(28);
-    optionText.setFontSize('80px');
+    optionText.setFontSize('68px');
 
     this.eggGachaOptionsContainer.add(optionText);
 

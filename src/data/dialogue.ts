@@ -2091,14 +2091,17 @@ export const trainerTypeDialogue = {
       },
       {
           encounter: [
-              `@c{smile_wave}你在这里！我到处找你！\n@c{angry_mopen}你忘了跟你最好的朋友说再见了吗？ 
+              `@c{smile_wave}你在这里！我到处找你！
+              $@c{angry_mopen}你忘了跟你最好的朋友说再见了吗？ 
               $@c{smile_ehalf}你在追逐你的梦想，嗯？\n那一天真的就是今天，不是吗…… 
-              $@c{smile}不管怎样，我会原谅你忘记我，但有一个条件。\n@c{smile_wave_wink}你必须跟我战斗！ 
+              $@c{smile}不管怎样，我会原谅你忘记我，但有一个条件。
+              $@c{smile_wave_wink}你必须跟我战斗！ 
               $@c{angry_mopen}全力以赴！\n可不想你的冒险还没开始就结束，对吧？`
           ],
           victory: [
-              `@c{shock}你才刚开始就那么强了？！@d{96}\n@c{angry}你完全作弊了，对吧？ 
-              $@c{smile_wave_wink}开玩笑的！\n@d{64} @c{smile_eclosed}我输得心服口服……我感觉你会在那里做得很好。 
+              `@c{shock}你才刚开始就那么强了？！@d{96}$@c{angry}你完全作弊了，对吧？ 
+              $@c{smile_wave_wink}开玩笑的！\n@d{64} 
+              $@c{smile_eclosed}我输得心服口服……我感觉你会在那里做得很好。 
               $@c{smile}对了，教授想让我给你一些东西。希望它们有用！ 
               $@c{smile_wave}像往常一样尽力而为！我相信你！`
           ]
@@ -2107,7 +2110,7 @@ export const trainerTypeDialogue = {
   [TrainerType.RIVAL_2]: [
     {
         encounter: [
-            `@c{smile}嘿，你也在这里？\n@c{smile_eclosed}仍然保持着完美的记录，是吗……？ 
+            `@c{smile}嘿，你也在这里？\n$@c{smile_eclosed}仍然保持着完美的记录，是吗……？ 
             $@c{serious_mopen_fists}我知道看起来我好像跟着你到这里来了，\n但大部分都不是真的。 
             $@c{serious_smile_fists}不过说实话，自从你在家里打败我之后，\n我就一直渴望再战一场。 
             $我一直在进行大量的训练，\n所以这次我一定会全力以赴。 
@@ -2115,7 +2118,7 @@ export const trainerTypeDialogue = {
         ],
         victory: [
             `@c{neutral_eclosed}哦。我想我太自信了。 
-            $@c{smile}不过没关系。我预料到会发生这种情况。\n@c{serious_mopen_fists}这只是意味着我下次需要更加努力！\n 
+            $@c{smile}不过没关系。我预料到会发生这种情况。\n$@c{serious_mopen_fists}这只是意味着我下次需要更加努力！\n 
             $@c{smile}哦，不是说你真的需要帮助，\n但我有一个多余的这个，我想你可能会想要它。
             $@c{serious_smile_fists}不过，别指望下次还能再得到一个！\n毕竟我不能一直给我的对手优势。 
             $@c{smile}总之，保重！`
@@ -2123,8 +2126,8 @@ export const trainerTypeDialogue = {
     },
     {
         encounter: [
-            `@c{smile_wave}哦，真巧在这里遇见你。看来你还没有输过。\n@c{angry_mopen}哼……还不错！ 
-            $@c{angry_mopen}我知道你在想什么，不，我没有跟踪你。\n@c{smile_eclosed}我只是碰巧在这个地区。 
+            `@c{smile_wave}哦，真巧在这里遇见你。看来你还没有输过。\n$@c{angry_mopen}哼……还不错！ 
+            $@c{angry_mopen}我知道你在想什么，不，我没有跟踪你。\n$@c{smile_eclosed}我只是碰巧在这个地区。 
             $@c{smile_ehalf}我为你感到高兴，\n但我只想让你知道，有时候输了也没关系。 
             $@c{smile}我们从错误中吸取教训，\n往往比我们不断成功学到的更多。 
             $@c{angry_mopen}无论如何，我已经为我们的复赛努力训练了，\n所以你最好全力以赴！`
@@ -2132,7 +2135,7 @@ export const trainerTypeDialogue = {
         victory: [
             `@c{neutral}我……不应该输掉那次的…… 
             $@c{smile}哎呀，好吧。\n这只是意味着我下次必须更加努力地训练！ 
-            $@c{smile_wave}我还给你弄了另一个！\n@c{smile_wave_wink}不用谢我〜。 
+            $@c{smile_wave}我还给你弄了另一个！\n$@c{smile_wave_wink}不用谢我〜。 
             $@c{angry_mopen}不过，这是最后一个！\n你以后不会再从我这里得到免费赠品了！ 
             $@c{smile_wave}继续努力！`
         ],
@@ -2144,11 +2147,11 @@ export const trainerTypeDialogue = {
   [TrainerType.RIVAL_3]: [
       {
           encounter: [
-              `@c{smile}嘿，看看是谁来了！好久不见了。\n@c{neutral}你……还没有输过？嗯。 
+              `@c{smile}嘿，看看是谁来了！好久不见了。\n$@c{neutral}你……还没有输过？嗯。 
               $@c{neutral_eclosed}事情有点……奇怪。\n没有你，家就不一样了。 
-              $@c{serious}我知道这很自私，但我需要把这件事说出来。\n@c{neutral_eclosed}我认为你在这里有点自不量力。 
+              $@c{serious}我知道这很自私，但我需要把这件事说出来。\n$@c{neutral_eclosed}我认为你在这里有点自不量力。 
               $@c{serious}一次都没有输过是不现实的。\n我们需要输几次才能成长。 
-              $@c{neutral_eclosed}你已经跑得很好了，但前面还有很长的路要走，\n而且只会越来越难。@c{neutral}你准备好了吗？ 
+              $@c{neutral_eclosed}你已经跑得很好了，但前面还有很长的路要走，\n而且只会越来越难。$@c{neutral}你准备好了吗？ 
               $@c{serious_mopen_fists}如果是这样，向我证明吧。`
           ],
           victory: [
@@ -2157,10 +2160,10 @@ export const trainerTypeDialogue = {
       },
       {
           encounter: [
-              `@c{smile_wave}好久不见！还没有输过，嗯。@c{angry}你开始让我紧张了。\n@c{smile_wave_wink}开玩笑的！ 
+              `@c{smile_wave}好久不见！还没有输过，嗯。$@c{angry}你开始让我紧张了。\n$@c{smile_wave_wink}开玩笑的！ 
               $@c{smile_ehalf}但说真的，你现在难道不想家了吗？或者……我？\n我……我是说，我们真的很想你。 
               $@c{smile_eclosed}我支持你实现你的梦想，但现实是你迟早会输的。 
-              $@c{smile}当你输的时候，我会像往常一样在你身边。\n@c{angry_mopen}现在，让我让你看看我变得有多强壮！`
+              $@c{smile}当你输的时候，我会像往常一样在你身边。\n$@c{angry_mopen}现在，让我让你看看我变得有多强壮！`
           ],
           victory: [
               `@c{shock}经历了这一切……还不够……？\n照这样下去，你永远不会回来了……`
@@ -2174,11 +2177,11 @@ export const trainerTypeDialogue = {
       {
           encounter: [
               `@c{neutral}嘿。 
-              $我不会跟你拐弯抹角或客套。\n@c{neutral_eclosed}我来这里是为了赢，就这么简单。 
+              $我不会跟你拐弯抹角或客套。\n$@c{neutral_eclosed}我来这里是为了赢，就这么简单。 
               $@c{serious_mhalf_fists}我已经学会了通过把所有时间都投入到训练中\n来最大限度地发挥我的潜力。 
               $@c{smile}当你减少不必要的睡眠和社交互动时，\n你会得到很多额外的时间。 
               $@c{serious_mopen_fists}这些都不重要了，直到我赢了为止。 
-              $@c{neutral_eclosed}我甚至已经到了不再输的地步。\n@c{smile_eclosed}我想你的哲学毕竟没有错。 
+              $@c{neutral_eclosed}我甚至已经到了不再输的地步。\n$@c{smile_eclosed}我想你的哲学毕竟没有错。 
               $@c{angry_mhalf}失败是弱者的行为，而我不再软弱了。 
               $@c{serious_mopen_fists}做好准备吧。`
           ],
@@ -2194,7 +2197,7 @@ export const trainerTypeDialogue = {
               $@c{smile_ehalf}我现在几乎不吃不睡，\n只是整天训练我的宝可梦，每次都变得更强壮。 
               $@c{neutral}事实上，我……几乎认不出我自己了。 
               $现在，我终于达到了最佳状态。\n我认为现在没有人能打败我。 
-              $你知道吗？这都是因为你。\n@c{smile_ehalf}我不知道该感谢你还是恨你。 
+              $你知道吗？这都是因为你。\n$@c{smile_ehalf}我不知道该感谢你还是恨你。 
               $@c{angry_mopen}做好准备吧。`
           ],
           victory: [
@@ -2234,7 +2237,7 @@ export const trainerTypeDialogue = {
               `@c{smile_eclosed}我们又见面了。 
               $@c{neutral}我花了一些时间反思这一切。\n这一切看起来如此奇怪是有原因的。 
               $@c{neutral_eclosed}你的梦想，我想要打败你的动力……\n这一切都是更伟大的事物的一部分。 
-              $@c{serious}这不是关于我，也不是关于你……这是关于世界，\n@c{serious_mhalf_fists}我的目的是将你推向极限。 
+              $@c{serious}这不是关于我，也不是关于你……这是关于世界，\n$@c{serious_mhalf_fists}我的目的是将你推向极限。 
               $@c{neutral_eclosed}我不能说我是否已经实现了这个目标，\n但我已经尽我所能地做了一切。 
               $@c{neutral}我们最终到达的这个地方很可怕……然而不知何故，\n我却感到无动于衷，就像我以前来过这里一样。 
               $@c{serious_mhalf_fists}你也有同样的感觉，不是吗？ 
@@ -2247,7 +2250,7 @@ export const trainerTypeDialogue = {
           ],
           victory: [
               `@c{smile_eclosed}看来我的工作到这里就完成了。 
-              $我想要你答应我一件事。\n@c{smile}在你治愈世界之后，请回家。`
+              $我想要你答应我一件事。\n$@c{smile}在你治愈世界之后，请回家。`
           ]
       },
       {
@@ -2294,20 +2297,20 @@ export const battleSpecDialogue = {
 
 export const miscDialogue = {
   ending: [
-    `@c{smile}Oh? You won?@d{96} @c{smile_eclosed}I guess I should've known.\nBut, you're back now.
-    $@c{smile}It's over.@d{64} You ended the loop.
-    $@c{serious_smile_fists}You fulfilled your dream too, didn't you?\nYou didn't lose even once.
-    $@c{neutral}I'm the only one who'll remember what you did.@d{96}\nI guess that's okay, isn't it?
-    $@c{serious_smile_fists}Your legend will always live on in our hearts.
-    $@c{smile_eclosed}Anyway, I've had about enough of this place, haven't you? Let's head home.
-    $@c{serious_smile_fists}Maybe when we get back, we can have another battle?\nIf you're up to it.`,
-    `@c{shock}You're back?@d{32} Does that mean…@d{96} you won?!\n@c{smile_ehalf}I should have known you had it in you.
-    $@c{smile_eclosed}Of course… I always had that feeling.\n@c{smile}It's over now, right? You ended the loop.
-    $@c{smile_ehalf}You fulfilled your dream too, didn't you?\nYou didn't lose even once.
-    $I'll be the only one to remember what you did.\n@c{angry_mopen}I'll try not to forget!
-    $@c{smile_wave_wink}Just kidding!@d{64} @c{smile}I'd never forget.@d{32}\nYour legend will live on in our hearts.
-    $@c{smile_wave}Anyway,@d{64} it's getting late…@d{96} I think?\nIt's hard to tell in this place.
-    $Let's go home. @c{smile_wave_wink}Maybe tomorrow, we can have another battle, for old time's sake?`
+    `@c{smile}哦？你赢了？@d{96} $@c{smile_eclosed}我早就该猜到了。\n不过，你回来了。
+    $@c{smile}一切都结束了。@d{64} 你打破了循环。
+    $@c{serious_smile_fists}你也实现了自己的梦想，不是吗？\n你一次都没有输过。
+    $@c{neutral}只有我会记得你所做的一切。@d{96}\n我想这样也没关系，对吧？
+    $@c{serious_smile_fists}你的传奇将永远活在我们心中。
+    $@c{smile_eclosed}总之，我已经受够了这个地方，你呢？我们回家吧。
+    $@c{serious_smile_fists}也许等我们回去后，我们可以再战一场？\n如果你愿意的话。`,
+    `@c{shock}你回来了？@d{32} 这意味着…@d{96} 你赢了？！\n$@c{smile_ehalf}我早就该知道你一定能做到。
+    $@c{smile_eclosed}当然… 我一直都有这种感觉。\n$@c{smile}现在一切都结束了吧？你打破了循环。
+    $@c{smile_ehalf}你也实现了自己的梦想，不是吗？\n你一次都没有输过。
+    $只有我会记得你所做的一切。\n$@c{angry_mopen}我会努力不忘记的！
+    $@c{smile_wave_wink}开玩笑的！@d{64} $@c{smile}我永远不会忘记。@d{32}\n你的传奇将永远活在我们心中。
+    $@c{smile_wave}总之，@d{64} 时间不早了…@d{96} 我想？\n在这个地方很难判断时间。
+    $我们回家吧。$@c{smile_wave_wink}也许明天，我们可以再战一场，为了旧时光？`
   ]
 }
 

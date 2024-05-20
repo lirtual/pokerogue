@@ -22,6 +22,7 @@ import { battleMessageUiHandler } from "./battle-message-ui-handler";
 import { berry } from "./berry";
 import { voucher } from "./voucher";
 import {biome} from "#app/locales/zh_CN/biome";
+import {egg} from "#app/locales/zh_CN/egg";
 
 
 export const zhCnConfig = {
@@ -29,7 +30,7 @@ export const zhCnConfig = {
     abilityTriggers: abilityTriggers,
     battle: battle,
     commandUiHandler: commandUiHandler,
-    // egg: egg,
+    egg: egg,
     fightUiHandler: fightUiHandler,
     growth: growth,
     menu: menu,
