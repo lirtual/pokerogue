@@ -1,11 +1,10 @@
 import { SimpleTranslationEntries } from "#app/plugins/i18n";
 
 export const tutorial: SimpleTranslationEntries = {
-    "intro": `此版本为Lirtual个人汉化版本。该网站的创建是\n
-    $早期官方服务的不稳定与汉化的不完善背景下，\n而为玩家提供免费的游戏汉化服务。
-    $如今，官方服务稳定，由于开源社区的活跃，\n现也已逐步完善对中文的支持。
-    $因此，本网站会保持运作，但不再提供内容更新\n2024-05-20
-    $如果您喜爱这款游戏请支持Pokerogue官方网站\nhttps://pokerogue.net
+    "intro": `本站为个人汉化，建于官服不稳定且汉化不完\n善的时期，旨在为玩家提供免费的汉化服务。
+    $目前，由于本人精力有限，且官服已大幅改善，且\n逐步完善了汉化，因此也不再有必要继续维护更新。
+    $衷心感谢大家对本站的喜爱与支持！—2024-05-20\n本站将继续不停服开放，但不再提供内容更新。
+    $如果您喜爱这款游戏，请支持 Pokerogue 官方网站：https://pokerogue.net
     $欢迎来到PokéRogue！这是一款以战斗为核心的\n融合了roguelite元素的宝可梦同人游戏。
     $本游戏未进行商业化，我们没有Pokémon\n或Pokémon使用的版权资产的所有权。
     $游戏仍在开发中，但已可完整游玩。\n如需报告错误，请使用 Discord 社区。
